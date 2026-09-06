@@ -1,0 +1,103 @@
+/*
+ * Walkridge Field Map — plugin CSS.
+ * Structural map container rules only; visual tokens come from the
+ * parent theme's walkridge.css custom properties.
+ */
+
+/* ── Map overlay ─────────────────────────────────────────────── */
+.map-field-overlay {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  z-index: 320;
+}
+.map-field-overlay[hidden] { display: none !important; }
+
+.map-overlay-panel {
+  max-width: min(1100px, 100%);
+  width: 100%;
+  height: min(86vh, 840px);
+  max-height: 92vh;
+}
+
+.map-overlay-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  padding: 0.55rem 0.7rem 0.75rem;
+}
+
+.map-overlay-body .diorama-stage {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  height: auto;
+}
+
+/* ── OL host (inside .diorama-stage.is-ol) ──────────────────── */
+.diorama-stage.is-ol {
+  position: relative;
+  perspective: none;
+  overflow: visible;
+  padding: 14px 14px 8px;
+  background: linear-gradient(#5c3d24, #2a1a0e);
+  cursor: default;
+  min-height: 0;
+  touch-action: auto;
+}
+
+.ol-host {
+  position: relative;
+  height: min(68vh, 640px);
+  min-height: 420px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #07111c;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+
+.map-overlay-body .diorama-stage.is-ol { min-height: 0; }
+.map-overlay-body .ol-host {
+  height: 100%;
+  min-height: 360px;
+}
+
+/* ── Inline map button (inside prose text) ──────────────────── */
+.inline-map-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7em;
+  height: 1.7em;
+  margin: 0 0.18em;
+  padding: 0;
+  vertical-align: -0.28em;
+  border: 1px solid rgba(224, 177, 90, 0.55);
+  background: rgba(224, 177, 90, 0.14);
+  color: var(--gold-300, #f0d9a0);
+  cursor: pointer;
+  border-radius: 50%;
+}
+.inline-map-btn:hover,
+.place-map-btn:hover,
+.place-map-btn.is-active {
+  border-color: var(--gold-500, #e0be72);
+  background: #1a2734;
+}
+
+/* ── Itinerary map (completed walk) ─────────────────────────── */
+[data-itinerary-map].diorama-stage.is-ol { min-height: 0; }
+
+[data-itinerary-map] .ol-host {
+  height: min(62vh, 560px);
+  min-height: 360px;
+}
+
+/* ── Light-mode map adjustments ─────────────────────────────── */
+[data-theme="light"] .diorama-stage.is-ol {
+  background: linear-gradient(#c9b48a, #a08650);
+}
+
+[data-theme="light"] .map-field-overlay .modal-head {
+  background: var(--color-surface);
+}

@@ -1,0 +1,20 @@
+/*
+Theme Name:  Walkridge Child
+Theme URI:   https://github.com/matthummel-pa/wp-walkridge
+Description: Child theme for Walkridge — safe place for CSS and template overrides that survive parent updates.
+Author:      Matt Hummel
+Author URI:  https://matthummel.com/
+Template:    walkridge
+Version:     1.0.0
+Requires at least: 6.6
+Requires PHP: 8.3
+Text Domain: walkridge-child
+License:     GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags:        custom-logo, custom-menu, e-commerce, translation-ready
+*/
+
+/*
+ * Add CSS overrides below, or enqueue extra styles from functions.php.
+ * Keep the parent folder named walkridge.
+ */

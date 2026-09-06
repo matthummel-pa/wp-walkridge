@@ -1,0 +1,35 @@
+---
+description: Native SEO — title, description, canonical, Open Graph, Twitter cards. Yield to SEO plugins.
+globs: app/setup.php,app/Support/**/*.php,resources/views/layouts/**/*.blade.php,resources/views/**/*.blade.php
+alwaysApply: false
+---
+
+# Native SEO
+
+Prefer implementing SEO in this Sage theme. Do not install Yoast, Rank Math, SEOPress, or AIOSEO in the concept demo environment. If a buyer activates one later, native tags must **yield** (skip duplicates).
+
+## Every public template should output
+
+| Tag | Rule |
+| --- | --- |
+| `<title>` | Prefer `{Page Title} \| Hallowed Ground`. Keep visible title ≤ 60 characters. Use `document_title_parts` / `pre_get_document_title` — do not echo a second `<title>`. |
+| `<meta name="description">` | 150–160 characters. Unique per template. |
+| `<link rel="canonical">` | Absolute URL of this view. |
+| Open Graph | `og:title`, `og:description`, `og:image`, `og:url`, `og:type` |
+| Twitter | `twitter:card` = `summary_large_image`, plus title / description / image |
+
+## How to pick values
+
+1. **Title** — page / product / post title. Front page: brand + short offer, not “Home | …”.
+2. **Description** — page excerpt or tour-offer copy. Concept voice: licensed-guide battlefield tours in Gettysburg. Mention fiction only when the page is clearly demo chrome.
+3. **Canonical / og:url** — `home_url('/')` on front; `get_permalink()` on singular; do not use `get_permalink()` on a non-singular query.
+4. **Image** — featured image → theme default under `public/images/` (cannon / Wentz / downtown). Absolute URL.
+
+Escape everything (`esc_attr`, `esc_url`). Skip `is_admin()`, feeds, and REST. Prefer a single writer (e.g. `App\Support\Seo`) hooked from `app/setup.php` on `wp_head`.
+
+## Do not
+
+- Leave empty descriptions on marketing pages
+- Output duplicate canonical / description tags
+- Ship Rank Math / Yoast “just for now” on the concept site
+- Use luxury-broker or generic travel-blog fallbacks

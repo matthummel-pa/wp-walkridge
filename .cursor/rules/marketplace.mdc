@@ -1,0 +1,51 @@
+---
+description: ThemeForest / WordPress.org / own-site seller rules — plugin territory, WPCS, demo assets, footer credits
+globs: app/**/*.php,resources/views/**/*.blade.php,bin/**/*.sh,plugins/**/*.php,docs/marketplace/**
+alwaysApply: false
+---
+
+# Marketplace and distribution
+
+Matt asked to package this theme for sale. Follow these rules on marketplace work. README / `readme.txt` / ThemeForest documentation copy: `.cursor/rules/theme-shop-readme.mdc`.
+
+This repo is a **concept Sage theme** for licensed-guide battlefield tours. WooCommerce powers bookable tours. Companion plugins **Hallowed Ground Bookings** and **Hallowed Ground Field Map** (`plugins/`) are sold separately in the pack — never zip them inside the theme folder for WordPress.org.
+
+## Where the money is
+
+| Channel | What to ship | Honest limit |
+| --- | --- | --- |
+| **Own site** | Full pack (theme + child + optional plugins + docs) | Best margin |
+| **ThemeForest / Envato** | Same pack + concept/preview URL | Reviewers expect Customizer, child theme, docs, GPL assets, no dummy license |
+| **WordPress.org** | Theme zip only. No bundled plugins. `readme.txt` + `screenshot.png` (1200×900) | Sage + Acorn will likely fail first review. Lite / traffic listing later |
+
+Do **not** add Freemius, Envato banners, affiliate chrome, or “upgrade to Pro” nags.
+
+## Plugin territory
+
+- Theme zip: presentation + WooCommerce theme support. No companion plugin zips inside.
+- Bookings / Field Map: separate zips in the seller pack.
+- WooCommerce itself: install from WordPress.org.
+
+## Theme Check and WPCS
+
+Escape every output (`esc_html`, `esc_attr`, `esc_url`, `wp_kses_post`). Prefix: `hg_`, `HG_`, or Acorn `App\`. **Text domain is `hallowed-ground`**. Zero notices with `WP_DEBUG` true.
+
+## Demo data and licensing
+
+GPL-compatible assets only. Self-hosted OFL fonts and Wikimedia / public-domain Gettysburg images in `public/images/` are OK. List every bundled resource in `CREDITS.md` / `readme.txt` Resources. Concept phones stay `555`; emails stay `@hallowedground.test`.
+
+## Footer, admin, and identity
+
+Author credit (Matt Hummel / matthummel.com) must be removable via **Customize → Identity**. Use `rel="nofollow noopener"`. Front-end copyright is the buyer’s site name + year. No admin upsells. Identity comes from `App\Support\Identity` / Customizer.
+
+## Required store files
+
+`style.css` headers, `readme.txt`, `screenshot.png`, `license.txt`, `CREDITS.md`, `child-theme/`, `docs/marketplace/` hub. Pack copies docs into `Documentation/`. Do not put `SELLING.md`, `themeforest-listing.md`, or `wordpress-org.md` inside the buyer zip.
+
+## Do not
+
+- Bundle Bookings / Field Map inside the theme zip
+- Add theme GA / SEO metaboxes
+- Leave unescaped `{!! $raw !!}` or unprefixed globals
+- Claim WordPress.org approval while this is still Sage
+- Hard-require a dofollow backlink

@@ -1,0 +1,3194 @@
+# Copyright (C) 2026 Matt Hummel
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Walkridge 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/workspace\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-05T08:50:20+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: walkridge\n"
+
+#. Theme Name of the theme
+#: style.css
+#: app/blocks.php:20
+#: app/blocks.php:175
+msgid "Walkridge"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://matthummel.com/projects/hallowed-ground/"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "WooCommerce-ready Sage 11 theme for licensed-guide battlefield tours — bookable tours, guides, and area pages. Customizer identity, Blade + Tailwind + Vite. Concept demo by Matt Hummel."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Matt Hummel"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://matthummel.com/"
+msgstr ""
+
+#: app/admin.php:13
+#: app/admin.php:14
+#: app/admin.php:58
+msgid "Theme Status"
+msgstr ""
+
+#: app/admin.php:26
+#: app/block-generator.php:25
+#: app/blocks.php:216
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: app/admin.php:40
+msgid "ago"
+msgstr ""
+
+#: app/admin.php:41
+msgid "Never recorded"
+msgstr ""
+
+#: app/admin.php:60
+msgid "Production zips already include compiled assets. Rebuild on the command line after a git pull — never from the browser on shared hosting."
+msgstr ""
+
+#: app/admin.php:65
+msgid "Theme"
+msgstr ""
+
+#: app/admin.php:71
+msgid "Node requirement"
+msgstr ""
+
+#: app/admin.php:76
+msgid "Built assets"
+msgstr ""
+
+#: app/admin.php:79
+msgid "manifest.json present"
+msgstr ""
+
+#: app/admin.php:80
+msgid "entries"
+msgstr ""
+
+#: app/admin.php:82
+msgid "manifest.json missing — run npm run build"
+msgstr ""
+
+#: app/admin.php:87
+msgid "Last rebuild recorded"
+msgstr ""
+
+#: app/admin.php:92
+msgid "Git commit"
+msgstr ""
+
+#: app/admin.php:99
+msgid "Rebuild from the CLI"
+msgstr ""
+
+#: app/admin.php:104
+msgid "Store / ThemeForest zips already ship public/build and vendor — buyers do not need Node on the host."
+msgstr ""
+
+#: app/admin.php:114
+msgid "Refund Policy Settings"
+msgstr ""
+
+#: app/admin.php:125
+msgid "This meta box is only active on the Refund Policy page."
+msgstr ""
+
+#: app/admin.php:133
+msgid "Effective date"
+msgstr ""
+
+#: app/admin.php:134
+msgid "Store name"
+msgstr ""
+
+#: app/admin.php:135
+msgid "Store URL"
+msgstr ""
+
+#: app/admin.php:136
+msgid "Contact email"
+msgstr ""
+
+#: app/admin.php:137
+msgid "Refund window (days)"
+msgstr ""
+
+#: app/admin.php:138
+msgid "Bug resolution window (days)"
+msgstr ""
+
+#: app/admin.php:139
+msgid "Duplicate-purchase window (days)"
+msgstr ""
+
+#: app/admin.php:140
+msgid "Response time (business days)"
+msgstr ""
+
+#: app/admin.php:141
+msgid "Min refund processing days"
+msgstr ""
+
+#: app/admin.php:142
+msgid "Max refund processing days"
+msgstr ""
+
+#: app/admin.php:163
+msgid "Changes here update the live Refund Policy page immediately on save."
+msgstr ""
+
+#: app/block-generator.php:14
+#: app/block-generator.php:15
+#: app/block-generator.php:106
+msgid "Block Generator"
+msgstr ""
+
+#: app/block-generator.php:34
+#: app/blocks.php:221
+msgid "Security check failed."
+msgstr ""
+
+#: app/block-generator.php:51
+msgid "Block ID is required."
+msgstr ""
+
+#: app/block-generator.php:53
+msgid "Block ID must start with a letter and contain only lowercase letters, numbers, and underscores."
+msgstr ""
+
+#: app/block-generator.php:57
+msgid "Block title is required."
+msgstr ""
+
+#: app/block-generator.php:97
+msgid "Star"
+msgstr ""
+
+#: app/block-generator.php:98
+msgid "Page"
+msgstr ""
+
+#: app/block-generator.php:99
+msgid "Location"
+msgstr ""
+
+#: app/block-generator.php:100
+msgid "Team"
+msgstr ""
+
+#: app/block-generator.php:101
+msgid "Tickets"
+msgstr ""
+
+#: app/block-generator.php:102
+msgid "Flag"
+msgstr ""
+
+#: app/block-generator.php:107
+msgid "Create custom Walkridge blocks without writing code. Generated blocks use walkridge/custom and store field values as block attributes."
+msgstr ""
+
+#: app/block-generator.php:109
+msgid "Block saved."
+msgstr ""
+
+#: app/block-generator.php:120
+msgid "Block ID"
+msgstr ""
+
+#: app/block-generator.php:124
+#: resources/js/blocks/index.js:538
+#: resources/js/blocks/index.js:558
+msgid "Title"
+msgstr ""
+
+#: app/block-generator.php:128
+msgid "Description"
+msgstr ""
+
+#: app/block-generator.php:132
+msgid "Icon"
+msgstr ""
+
+#: app/block-generator.php:142
+#: resources/js/blocks/index.js:807
+msgid "Fields"
+msgstr ""
+
+#: app/block-generator.php:145
+msgid "field_id"
+msgstr ""
+
+#: app/block-generator.php:146
+msgid "Label"
+msgstr ""
+
+#: app/block-generator.php:148
+#: resources/js/blocks/index.js:543
+#: resources/js/blocks/index.js:563
+msgid "Text"
+msgstr ""
+
+#: app/block-generator.php:149
+msgid "Textarea"
+msgstr ""
+
+#: app/block-generator.php:150
+msgid "URL"
+msgstr ""
+
+#: app/block-generator.php:151
+msgid "Image URL"
+msgstr ""
+
+#: app/block-generator.php:152
+msgid "Toggle"
+msgstr ""
+
+#: app/block-generator.php:154
+msgid "Default"
+msgstr ""
+
+#: app/block-generator.php:158
+msgid "Add field"
+msgstr ""
+
+#: app/block-generator.php:159
+msgid "Save block"
+msgstr ""
+
+#: app/block-generator.php:162
+msgid "Saved custom blocks"
+msgstr ""
+
+#: app/block-generator.php:164
+msgid "None yet."
+msgstr ""
+
+#: app/block-generator.php:175
+msgid "Delete"
+msgstr ""
+
+#: app/blocks.php:184
+msgid "Walkridge — Page intro"
+msgstr ""
+
+#: app/blocks.php:189
+msgid "Walkridge — Home starter"
+msgstr ""
+
+#: app/blocks.php:205
+#: app/blocks.php:206
+#: app/blocks.php:242
+msgid "Walkridge Blocks"
+msgstr ""
+
+#. translators: 1: migrated count, 2: skipped count
+#: app/blocks.php:229
+#, php-format
+msgid "Migration finished. Migrated: %1$d. Skipped: %2$d."
+msgstr ""
+
+#. translators: %d: pages updated
+#: app/blocks.php:237
+#, php-format
+msgid "Demo block content seeded on %d page(s)."
+msgstr ""
+
+#: app/blocks.php:246
+msgid "Convert legacy page-intro custom fields into Walkridge Gutenberg blocks, or re-seed demo page layouts."
+msgstr ""
+
+#: app/blocks.php:249
+msgid "Migrate page fields → blocks"
+msgstr ""
+
+#: app/blocks.php:250
+msgid "Seed demo block layouts"
+msgstr ""
+
+#: app/blocks.php:264
+msgid "See All Tours"
+msgstr ""
+
+#: app/blocks.php:376
+msgid "Filter tours"
+msgstr ""
+
+#: app/blocks.php:377
+msgid "All tours"
+msgstr ""
+
+#: app/blocks.php:378
+#: app/Support/Tours.php:21
+#: app/Support/Tours.php:43
+msgid "Historical"
+msgstr ""
+
+#: app/blocks.php:379
+#: app/Support/Tours.php:54
+msgid "After dark"
+msgstr ""
+
+#: app/blocks.php:385
+msgid "No tours are published yet. Add WooCommerce products or run the setup seed."
+msgstr ""
+
+#: app/blocks.php:395
+msgid "Compare"
+msgstr ""
+
+#: app/blocks.php:396
+msgid "Pick by pace, access, and light."
+msgstr ""
+
+#: app/blocks.php:400
+#: app/Support/Tours.php:101
+#: app/Support/Tours.php:128
+msgid "Tour"
+msgstr ""
+
+#: app/blocks.php:401
+msgid "Type"
+msgstr ""
+
+#: app/blocks.php:402
+msgid "Duration"
+msgstr ""
+
+#: app/blocks.php:403
+msgid "Cap"
+msgstr ""
+
+#: app/blocks.php:404
+msgid "Adult"
+msgstr ""
+
+#: app/blocks.php:416
+#: resources/views/partials/tour-card.blade.php:34
+msgid "Book This Tour"
+msgstr ""
+
+#: app/blocks.php:472
+msgid "Walkridge Battlefield Tours was founded by a former park ranger and a local family who wanted visitors to experience the battlefield the way locals understand it — grounded in primary sources and walked at a pace that lets the landscape do the talking."
+msgstr ""
+
+#: app/blocks.php:473
+msgid "Every walking and bus tour is led by a guide certified through the same licensing program the national park uses."
+msgstr ""
+
+#: app/customizer.php:13
+#: app/marketplace.php:59
+msgid "Identity"
+msgstr ""
+
+#: app/customizer.php:14
+msgid "Tour office name, phone, and chrome buyers change first. Concept defaults stay until you overwrite them."
+msgstr ""
+
+#: app/customizer.php:19
+msgid "Brand name"
+msgstr ""
+
+#: app/customizer.php:20
+msgid "Brand subtitle"
+msgstr ""
+
+#: app/customizer.php:21
+msgid "Header tagline"
+msgstr ""
+
+#: app/customizer.php:22
+msgid "Phone"
+msgstr ""
+
+#: app/customizer.php:23
+msgid "Email"
+msgstr ""
+
+#: app/customizer.php:24
+msgid "Header button label"
+msgstr ""
+
+#: app/customizer.php:25
+msgid "Header button URL"
+msgstr ""
+
+#: app/customizer.php:26
+msgid "Header rail (left)"
+msgstr ""
+
+#: app/customizer.php:27
+msgid "Header rail (right)"
+msgstr ""
+
+#: app/customizer.php:28
+msgid "Footer credit text"
+msgstr ""
+
+#: app/customizer.php:29
+msgid "Footer credit URL"
+msgstr ""
+
+#: app/customizer.php:30
+msgid "Facebook URL"
+msgstr ""
+
+#: app/customizer.php:31
+msgid "Instagram URL"
+msgstr ""
+
+#: app/customizer.php:32
+msgid "TripAdvisor URL"
+msgstr ""
+
+#: app/customizer.php:33
+msgid "X / Twitter handle (e.g. @walkridge)"
+msgstr ""
+
+#: app/customizer.php:58
+#: resources/js/blocks/index.js:330
+msgid "Address"
+msgstr ""
+
+#: app/customizer.php:68
+#: resources/views/sections/footer.blade.php:96
+#: resources/js/blocks/index.js:335
+msgid "Hours"
+msgstr ""
+
+#: app/customizer.php:78
+msgid "Footer blurb"
+msgstr ""
+
+#: app/customizer.php:79
+msgid "Leave empty for the concept sentence."
+msgstr ""
+
+#: app/customizer.php:89
+msgid "Show concept demo badge"
+msgstr ""
+
+#: app/customizer.php:99
+msgid "Show removable author credit in the footer"
+msgstr ""
+
+#: app/filters.php:18
+msgid "Continued"
+msgstr ""
+
+#. translators: 1: brand name, 2: sender name
+#: app/forms.php:82
+#, php-format
+msgid "[%1$s] Message from %2$s"
+msgstr ""
+
+#: app/forms.php:100
+#: app/forms.php:132
+msgid "Security check failed. Please try again."
+msgstr ""
+
+#: app/forms.php:109
+#: app/forms.php:176
+msgid "Please add your name, a valid email, and a message."
+msgstr ""
+
+#. translators: %s: phone number provided by the visitor
+#: app/forms.php:114
+#: app/forms.php:181
+#, php-format
+msgid "Phone: %s"
+msgstr ""
+
+#. translators: %s: sender first name-ish
+#: app/forms.php:122
+#: app/forms.php:188
+#, php-format
+msgid "Thanks, %s — your message is on its way to guest services."
+msgstr ""
+
+#: app/forms.php:137
+#: app/forms.php:198
+msgid "Add a valid email to join the field notes list."
+msgstr ""
+
+#. translators: %s: brand name
+#: app/forms.php:151
+#: app/forms.php:212
+#, php-format
+msgid "[%s] New field-notes signup"
+msgstr ""
+
+#: app/forms.php:163
+#: app/forms.php:217
+msgid "You are on the field notes list. Welcome."
+msgstr ""
+
+#: app/marketplace.php:30
+#: app/marketplace.php:56
+msgid "Walkridge Setup"
+msgstr ""
+
+#: app/marketplace.php:31
+msgid "Theme Setup"
+msgstr ""
+
+#: app/marketplace.php:41
+msgid "You do not have permission to edit theme options."
+msgstr ""
+
+#: app/marketplace.php:57
+msgid "Buyer checklist — walk these once after you activate the theme. No upsells."
+msgstr ""
+
+#: app/marketplace.php:59
+msgid "Brand name, phone, email, address, hours, and header button."
+msgstr ""
+
+#: app/marketplace.php:60
+msgid "Site Identity / Logo"
+msgstr ""
+
+#: app/marketplace.php:60
+msgid "Upload a logo under Site Identity. Header falls back to the compass mark."
+msgstr ""
+
+#: app/marketplace.php:61
+msgid "Menus"
+msgstr ""
+
+#: app/marketplace.php:63
+msgid "Primary and Footer menus are assigned."
+msgstr ""
+
+#: app/marketplace.php:64
+msgid "Assign Primary and Footer menus (Appearance → Menus)."
+msgstr ""
+
+#: app/marketplace.php:66
+msgid "WooCommerce"
+msgstr ""
+
+#: app/marketplace.php:66
+msgid "Install and activate WooCommerce, create tour products, and set the Shop page. Booking CTAs point at the shop."
+msgstr ""
+
+#: app/marketplace.php:67
+msgid "Companion plugins"
+msgstr ""
+
+#: app/marketplace.php:69
+msgid "Walkridge Bookings is active."
+msgstr ""
+
+#: app/marketplace.php:70
+msgid "Install Walkridge Bookings (and optional Field Map) from the marketplace pack for date/slot checkout and the interactive map."
+msgstr ""
+
+#: app/marketplace.php:72
+msgid "Pages"
+msgstr ""
+
+#: app/marketplace.php:72
+msgid "Publish Pages with slugs tours, guides, area, contact, and refund-policy so the Blade templates attach."
+msgstr ""
+
+#: app/marketplace.php:74
+msgid "Turn off the concept demo badge and author credit under Customize → Identity before you show this to a client."
+msgstr ""
+
+#: app/marketplace.php:75
+msgid "Current brand:"
+msgstr ""
+
+#: app/page-fields.php:17
+#: app/page-fields.php:97
+#: resources/views/page-tours.blade.php:4
+#: resources/views/sections/header.blade.php:46
+msgid "Tours"
+msgstr ""
+
+#: app/page-fields.php:18
+#: app/page-fields.php:110
+#: app/Support/PageFields.php:30
+#: resources/views/sections/footer.blade.php:80
+#: resources/views/sections/header.blade.php:89
+msgid "Our Guides"
+msgstr ""
+
+#: app/page-fields.php:19
+#: app/page-fields.php:99
+#: app/page-fields.php:111
+#: resources/views/sections/footer.blade.php:81
+#: resources/views/sections/header.blade.php:56
+#: resources/views/sections/header.blade.php:90
+msgid "The Area"
+msgstr ""
+
+#: app/page-fields.php:20
+#: app/page-fields.php:100
+#: resources/views/page-contact.blade.php:8
+#: resources/views/sections/footer.blade.php:102
+#: resources/views/sections/footer.blade.php:146
+#: resources/views/sections/header.blade.php:57
+#: resources/views/sections/header.blade.php:91
+msgid "Contact"
+msgstr ""
+
+#: app/page-fields.php:21
+#: app/page-fields.php:113
+#: app/Support/PageFields.php:55
+#: resources/views/page-refund-policy.blade.php:4
+#: resources/views/sections/footer.blade.php:92
+#: resources/views/sections/footer.blade.php:145
+msgid "Refund Policy"
+msgstr ""
+
+#: app/page-fields.php:98
+#: resources/views/page-guides.blade.php:4
+#: resources/views/sections/header.blade.php:55
+msgid "Guides"
+msgstr ""
+
+#: app/page-fields.php:109
+#: resources/views/sections/footer.blade.php:77
+#: resources/views/sections/header.blade.php:86
+msgid "All Tours"
+msgstr ""
+
+#: app/page-fields.php:112
+#: app/Support/PageFields.php:44
+#: resources/views/sections/footer.blade.php:89
+msgid "Contact & FAQ"
+msgstr ""
+
+#: app/setup.php:128
+msgid "Primary Navigation"
+msgstr ""
+
+#: app/setup.php:129
+msgid "Footer Navigation"
+msgstr ""
+
+#: app/setup.php:247
+#: resources/views/sections/header.blade.php:32
+msgid "Primary"
+msgstr ""
+
+#: app/setup.php:252
+msgid "Footer"
+msgstr ""
+
+#: app/Support/Identity.php:26
+msgid "Battlefield Tours"
+msgstr ""
+
+#: app/Support/Identity.php:38
+msgid "Licensed-guide battlefield tours"
+msgstr ""
+
+#. translators: %s: short address line
+#: app/Support/Identity.php:106
+#, php-format
+msgid "Day tours · %s"
+msgstr ""
+
+#: app/Support/Identity.php:115
+msgid "Evening lantern walks · downtown Gettysburg"
+msgstr ""
+
+#: app/Support/Identity.php:125
+msgid "Licensed-guide battlefield tours. Walking, bus, and evening lantern experiences for individuals, families, and groups."
+msgstr ""
+
+#: app/Support/Identity.php:132
+msgid "Book a Tour"
+msgstr ""
+
+#: app/Support/Identity.php:166
+msgid "Theme by Matt Hummel"
+msgstr ""
+
+#: app/Support/PageFields.php:25
+msgid "Tours & Tickets"
+msgstr ""
+
+#: app/Support/PageFields.php:26
+msgid "Battlefield tours & tickets"
+msgstr ""
+
+#: app/Support/PageFields.php:27
+msgid "Choose from licensed-guide experiences across the battlefield — a walking tour of the main ridges, a hike to the rocky high ground, an ADA-accessible bus loop, an evening lantern walk downtown, and a private sunrise tour."
+msgstr ""
+
+#: app/Support/PageFields.php:31
+msgid "Meet your licensed battlefield guides"
+msgstr ""
+
+#: app/Support/PageFields.php:32
+msgid "Every walking and bus tour is led by a licensed battlefield guide who passed the same demanding certification the park uses. That means accurate history, no filler, and a guide who can answer the hard questions."
+msgstr ""
+
+#: app/Support/PageFields.php:35
+msgid "About the Area"
+msgstr ""
+
+#: app/Support/PageFields.php:36
+msgid "The battlefield & how to find us"
+msgstr ""
+
+#. translators: %s: street address line
+#: app/Support/PageFields.php:39
+#, php-format
+msgid "Everything you need to plan a visit — the park, the ground our tours cover, where to meet us on %s, parking, driving directions, and the towns we serve."
+msgstr ""
+
+#. translators: 1: brand name, 2: brand subtitle
+#: app/Support/PageFields.php:47
+#, php-format
+msgid "Contact %1$s %2$s"
+msgstr ""
+
+#: app/Support/PageFields.php:51
+msgid "Questions about a tour, accessibility, or a private group? Reach us by phone, email, or the form below — and check the frequently asked questions before you go."
+msgstr ""
+
+#: app/Support/PageFields.php:54
+msgid "Store Policy"
+msgstr ""
+
+#. translators: 1: brand name, 2: brand subtitle
+#: app/Support/Seo.php:76
+#, php-format
+msgid "%1$s %2$s — Licensed Gettysburg Tours"
+msgstr ""
+
+#: app/Support/Seo.php:203
+msgid "News and notes from licensed-guide battlefield tours in Gettysburg, PA."
+msgstr ""
+
+#: app/Support/Seo.php:210
+msgid "Book licensed-guide Gettysburg battlefield tours — walking, bus, lantern, and private sunrise experiences."
+msgstr ""
+
+#: app/Support/Seo.php:233
+msgid "Choose licensed-guide Gettysburg battlefield tours — walking, bus, lantern walk, and private sunrise experiences. Small groups, Association-licensed guides."
+msgstr ""
+
+#: app/Support/Seo.php:234
+msgid "Meet Association-licensed Gettysburg battlefield guides. Walking, bus, lantern, and private sunrise tours led by historians who know the ground."
+msgstr ""
+
+#: app/Support/Seo.php:235
+msgid "Plan your Gettysburg visit — battlefield ridges, downtown Lincoln Square, lodging nearby, and how our licensed-guide tours fit the day."
+msgstr ""
+
+#. translators: %s: brand name
+#: app/Support/Seo.php:238
+#, php-format
+msgid "Contact %s Battlefield Tours in Gettysburg, PA — phone, email, ticket-office hours, gift certificates, groups, and FAQ."
+msgstr ""
+
+#: app/Support/Tours.php:22
+msgid "2 hours"
+msgstr ""
+
+#: app/Support/Tours.php:23
+msgid "Up to 15 guests"
+msgstr ""
+
+#: app/Support/Tours.php:24
+msgid "Moderate · 2 mi walking"
+msgstr ""
+
+#: app/Support/Tours.php:27
+msgid "A guided walk across the main ridges covering the turning points of all three days of the battle."
+msgstr ""
+
+#: app/Support/Tours.php:32
+msgid "Historical · ADA"
+msgstr ""
+
+#: app/Support/Tours.php:33
+msgid "3.5 hours"
+msgstr ""
+
+#: app/Support/Tours.php:34
+msgid "Up to 24 guests"
+msgstr ""
+
+#: app/Support/Tours.php:35
+msgid "Easy · Seated, ADA accessible"
+msgstr ""
+
+#: app/Support/Tours.php:38
+msgid "A narrated motorcoach loop of the full battlefield with two guided stops, including the site of the final assault."
+msgstr ""
+
+#: app/Support/Tours.php:44
+msgid "2.5 hours"
+msgstr ""
+
+#: app/Support/Tours.php:45
+msgid "Up to 12 guests"
+msgstr ""
+
+#: app/Support/Tours.php:46
+msgid "Strenuous · Rocky, hills"
+msgstr ""
+
+#: app/Support/Tours.php:49
+msgid "A rugged hike to the most fought-over high ground of the second day, with time among the boulders below the ridge."
+msgstr ""
+
+#: app/Support/Tours.php:55
+msgid "90 minutes"
+msgstr ""
+
+#: app/Support/Tours.php:56
+msgid "Up to 20 guests"
+msgstr ""
+
+#: app/Support/Tours.php:57
+msgid "Easy · Evening, level ground"
+msgstr ""
+
+#: app/Support/Tours.php:60
+msgid "An after-dark walking tour through the historic downtown, pairing real wartime accounts with candlelit storytelling."
+msgstr ""
+
+#: app/Support/Tours.php:65
+msgid "Historical · Private"
+msgstr ""
+
+#: app/Support/Tours.php:66
+msgid "3 hours"
+msgstr ""
+
+#: app/Support/Tours.php:67
+msgid "Up to 6 guests"
+msgstr ""
+
+#: app/Support/Tours.php:68
+msgid "Moderate · Customized route"
+msgstr ""
+
+#: app/Support/Tours.php:71
+msgid "A private dawn tour with a senior guide, customized to your interests — for up to six guests."
+msgstr ""
+
+#: app/Support/Tours.php:144
+msgid "Battlefield Highlights Walking Tour"
+msgstr ""
+
+#: app/Support/Tours.php:145
+msgid "Deluxe Battlefield Bus Tour"
+msgstr ""
+
+#: app/Support/Tours.php:146
+msgid "Ridge & Ravine Battlefield Hike"
+msgstr ""
+
+#: app/Support/Tours.php:147
+msgid "After-Dark Lantern Walk"
+msgstr ""
+
+#: app/Support/Tours.php:148
+msgid "Sunrise Private Battlefield Experience"
+msgstr ""
+
+#. translators: %1$s is replaced with the number of comments and %2$s with the post title
+#: app/View/Composers/Comments.php:25
+#, php-format
+msgctxt "comments title"
+msgid "%1$s response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: app/View/Composers/Comments.php:26
+msgctxt "comments title"
+msgid "One"
+msgstr ""
+
+#: app/View/Composers/Comments.php:57
+msgid "&larr; Older comments"
+msgstr ""
+
+#: app/View/Composers/Comments.php:71
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: app/View/Composers/Post.php:34
+msgid "Latest Posts"
+msgstr ""
+
+#. translators: %s is replaced with the search query
+#: app/View/Composers/Post.php:44
+#, php-format
+msgid "Search Results for %s"
+msgstr ""
+
+#: app/View/Composers/Post.php:50
+msgid "Not Found"
+msgstr ""
+
+#: app/View/Composers/Post.php:63
+msgid "Pages:"
+msgstr ""
+
+#: functions.php:14
+msgid "Error locating autoloader. Please run <code>composer install</code>."
+msgstr ""
+
+#. translators: %s is replaced with the relative file path
+#: functions.php:43
+#, php-format
+msgid "Error locating <code>%s</code> for inclusion."
+msgstr ""
+
+#. Template Name of the theme
+msgid "Custom Template"
+msgstr ""
+
+#: resources/views/404.blade.php:8
+msgid "Sorry, but the page you are trying to view does not exist."
+msgstr ""
+
+#: resources/views/forms/search.blade.php:4
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: resources/views/forms/search.blade.php:10
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: resources/views/forms/search.blade.php:16
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: resources/views/index.blade.php:8
+#: resources/views/search.blade.php:8
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: resources/views/layouts/app.blade.php:25
+msgid "Skip to main content"
+msgstr ""
+
+#: resources/views/layouts/app.blade.php:45
+msgid "This is a design concept by Matt Hummel"
+msgstr ""
+
+#: resources/views/layouts/app.blade.php:46
+msgid "Concept · Matt Hummel"
+msgstr ""
+
+#: resources/views/page-area.blade.php:4
+#: resources/views/page-contact.blade.php:8
+#: resources/views/page-guides.blade.php:4
+#: resources/views/page-refund-policy.blade.php:4
+#: resources/views/page-tours.blade.php:4
+msgid "Breadcrumb"
+msgstr ""
+
+#: resources/views/page-area.blade.php:4
+#: resources/views/page-contact.blade.php:8
+#: resources/views/page-guides.blade.php:4
+#: resources/views/page-refund-policy.blade.php:4
+#: resources/views/page-tours.blade.php:4
+#: resources/views/sections/footer.blade.php:76
+#: resources/views/sections/header.blade.php:85
+msgid "Home"
+msgstr ""
+
+#: resources/views/page-area.blade.php:4
+msgid "Area"
+msgstr ""
+
+#: resources/views/page-contact.blade.php:19
+msgid "Reach Us"
+msgstr ""
+
+#: resources/views/page-contact.blade.php:20
+msgid "Ticket office & guest services"
+msgstr ""
+
+#: resources/views/page-contact.blade.php:25
+msgid "Fiction-range sample number — not a live line"
+msgstr ""
+
+#: resources/views/page-contact.blade.php:38
+msgid "Send a Message"
+msgstr ""
+
+#: resources/views/page-contact.blade.php:39
+msgid "Ask us anything"
+msgstr ""
+
+#: resources/views/page-contact.blade.php:42
+msgid "Your name"
+msgstr ""
+
+#: resources/views/page-contact.blade.php:46
+msgid "Phone (optional)"
+msgstr ""
+
+#: resources/views/page-contact.blade.php:47
+msgid "(717) 555-0100"
+msgstr ""
+
+#: resources/views/page-contact.blade.php:50
+msgid "Email address"
+msgstr ""
+
+#: resources/views/page-contact.blade.php:54
+msgid "Message"
+msgstr ""
+
+#: resources/views/page-contact.blade.php:58
+msgid "Send Message"
+msgstr ""
+
+#: resources/views/partials/book-band.blade.php:3
+msgid "Reserve your spot in three minutes."
+msgstr ""
+
+#: resources/views/partials/book-band.blade.php:11
+msgid "Ready When You Are"
+msgstr ""
+
+#: resources/views/partials/book-band.blade.php:13
+msgid "Pick a tour, choose a date, and check out securely. You will get a confirmation with your ticket number by email."
+msgstr ""
+
+#: resources/views/partials/book-band.blade.php:17
+#: resources/views/sections/footer.blade.php:126
+msgid "Secure checkout"
+msgstr ""
+
+#: resources/views/partials/book-band.blade.php:22
+msgid "Free cancellation up to 24h"
+msgstr ""
+
+#: resources/views/partials/book-band.blade.php:33
+msgid "Start Booking"
+msgstr ""
+
+#: resources/views/partials/comments.blade.php:37
+msgid "Comments are closed."
+msgstr ""
+
+#: resources/views/partials/entry-meta.blade.php:7
+msgid "By"
+msgstr ""
+
+#: resources/views/partials/info-strip.blade.php:13
+msgid "Tours depart daily, rain or shine"
+msgstr ""
+
+#: resources/views/partials/info-strip.blade.php:18
+#: resources/views/sections/footer.blade.php:136
+msgid "Association-licensed guides"
+msgstr ""
+
+#: resources/views/partials/tour-card.blade.php:28
+#: resources/views/partials/tour-card.blade.php:30
+msgid " /adult"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:11
+msgid "Field notes"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:12
+msgid "Dates, weather calls, and new departures."
+msgstr ""
+
+#. translators: %s: office location / address line
+#: resources/views/sections/footer.blade.php:16
+#, php-format
+msgid "A short list from %s. Hook this into your ESP via the wr_newsletter_subscribed action."
+msgstr ""
+
+#. translators: %s: office location / address line
+#: resources/views/sections/footer.blade.php:20
+#, php-format
+msgid "A short list from %s. Dates, weather calls, and new departures."
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:35
+msgid "Email address for field notes list"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:36
+msgid "you@email.com"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:37
+msgid "Join the list"
+msgstr ""
+
+#. translators: %s: office / brand name
+#: resources/views/sections/footer.blade.php:50
+#, php-format
+msgid "%s on Facebook"
+msgstr ""
+
+#. translators: %s: office / brand name
+#: resources/views/sections/footer.blade.php:54
+#, php-format
+msgid "%s on Instagram"
+msgstr ""
+
+#. translators: %s: office / brand name
+#: resources/views/sections/footer.blade.php:58
+#, php-format
+msgid "%s on TripAdvisor"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:63
+msgid "Explore"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:78
+#: resources/views/sections/header.blade.php:87
+msgid "Historical tours"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:79
+msgid "Lantern walk"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:86
+msgid "Plan"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:88
+#: resources/views/sections/header.blade.php:92
+msgid "Book & Pay"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:90
+#: resources/views/sections/header.blade.php:52
+msgid "Gift certificates"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:91
+#: resources/views/sections/header.blade.php:51
+msgid "Groups & schools"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:105
+msgid "Concept address — replace under Customize → Identity"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:106
+msgid "Fiction-range sample number"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:111
+msgid "Proudly serving our local community and the surrounding area."
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:115
+msgid "Checkout ready for"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:131
+msgid "Free cancellation window"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:143
+msgid "All rights reserved."
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:155
+msgid "Call"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:48
+msgid "Historical battlefield tours"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:48
+msgid "Walking, bus, hike, and private sunrise"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:49
+#: resources/views/sections/header.blade.php:88
+msgid "After-dark lantern walk"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:49
+msgid "History after dark downtown — not a gimmick"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:50
+msgid "See all tours"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:50
+msgid "Filter by day field or evening"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:51
+msgid "Families, reunions, and classrooms"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:52
+msgid "Give the gift of history"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:65
+msgid "Toggle colour theme"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:66
+msgid "Switch to dark mode"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:67
+msgid "Switch to light mode"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:77
+msgid "Open menu"
+msgstr ""
+
+#: resources/views/sections/header.blade.php:83
+msgid "Mobile navigation"
+msgstr ""
+
+#. translators: %s: office phone number
+#: resources/views/sections/header.blade.php:95
+#, php-format
+msgid "Call %s"
+msgstr ""
+
+#: resources/views/woocommerce.blade.php:4
+msgid "Shop"
+msgstr ""
+
+#: resources/views/woocommerce.blade.php:8
+msgid "The shop is not available right now."
+msgstr ""
+
+#: resources/js/blocks/index.js:71
+msgid "Rendering preview…"
+msgstr ""
+
+#: resources/js/blocks/index.js:77
+msgid "Preview error — check block attributes or save the page to refresh."
+msgstr ""
+
+#: resources/js/blocks/index.js:165
+msgid "Replace image"
+msgstr ""
+
+#: resources/js/blocks/index.js:165
+msgid "Choose image"
+msgstr ""
+
+#: resources/js/blocks/index.js:176
+msgid "Remove image"
+msgstr ""
+
+#: resources/js/blocks/index.js:191
+msgid "Home Hero"
+msgstr ""
+
+#: resources/js/blocks/index.js:215
+msgid "Hero copy"
+msgstr ""
+
+#: resources/js/blocks/index.js:217
+#: resources/js/blocks/index.js:533
+#: resources/js/blocks/index.js:553
+msgid "Eyebrow"
+msgstr ""
+
+#: resources/js/blocks/index.js:218
+msgid "Title (HTML: em/strong)"
+msgstr ""
+
+#: resources/js/blocks/index.js:219
+msgid "Lede paragraph"
+msgstr ""
+
+#: resources/js/blocks/index.js:220
+#: resources/js/blocks/index.js:620
+msgid "Primary button label"
+msgstr ""
+
+#: resources/js/blocks/index.js:221
+#: resources/js/blocks/index.js:626
+msgid "Secondary button label"
+msgstr ""
+
+#: resources/js/blocks/index.js:228
+msgid "Button URLs"
+msgstr ""
+
+#: resources/js/blocks/index.js:229
+#: resources/js/blocks/index.js:624
+msgid "Primary button URL"
+msgstr ""
+
+#: resources/js/blocks/index.js:230
+#: resources/js/blocks/index.js:630
+msgid "Secondary button URL"
+msgstr ""
+
+#: resources/js/blocks/index.js:234
+msgid "Background image"
+msgstr ""
+
+#: resources/js/blocks/index.js:236
+#: resources/js/blocks/index.js:646
+msgid "Preset image"
+msgstr ""
+
+#: resources/js/blocks/index.js:239
+msgid "Cannon (default)"
+msgstr ""
+
+#: resources/js/blocks/index.js:240
+msgid "Wentz farmstead"
+msgstr ""
+
+#: resources/js/blocks/index.js:241
+#: resources/js/blocks/index.js:651
+msgid "Downtown Gettysburg"
+msgstr ""
+
+#: resources/js/blocks/index.js:244
+msgid "Overridden by a custom image upload below."
+msgstr ""
+
+#: resources/js/blocks/index.js:247
+msgid "Custom background image"
+msgstr ""
+
+#: resources/js/blocks/index.js:258
+msgid "Page Intro"
+msgstr ""
+
+#: resources/js/blocks/index.js:282
+msgid "Defaults are pulled from page-slug presets when fields are left empty."
+msgstr ""
+
+#: resources/js/blocks/index.js:288
+msgid "Page intro"
+msgstr ""
+
+#: resources/js/blocks/index.js:290
+#: resources/js/blocks/index.js:403
+#: resources/js/blocks/index.js:453
+#: resources/js/blocks/index.js:522
+#: resources/js/blocks/index.js:609
+#: resources/js/blocks/index.js:738
+msgid "Eyebrow label"
+msgstr ""
+
+#: resources/js/blocks/index.js:291
+#: resources/js/blocks/index.js:454
+#: resources/js/blocks/index.js:523
+#: resources/js/blocks/index.js:610
+#: resources/js/blocks/index.js:698
+#: resources/js/blocks/index.js:739
+msgid "Heading"
+msgstr ""
+
+#: resources/js/blocks/index.js:292
+msgid "Intro paragraph"
+msgstr ""
+
+#: resources/js/blocks/index.js:307
+msgid "Info Strip"
+msgstr ""
+
+#: resources/js/blocks/index.js:323
+msgid "Visible items"
+msgstr ""
+
+#: resources/js/blocks/index.js:325
+msgid "Phone number"
+msgstr ""
+
+#: resources/js/blocks/index.js:350
+msgid "Section Heading"
+msgstr ""
+
+#: resources/js/blocks/index.js:389
+msgid "Align left"
+msgstr ""
+
+#: resources/js/blocks/index.js:390
+msgid "Align center"
+msgstr ""
+
+#: resources/js/blocks/index.js:391
+msgid "Align right"
+msgstr ""
+
+#: resources/js/blocks/index.js:401
+msgid "Content"
+msgstr ""
+
+#: resources/js/blocks/index.js:404
+msgid "Heading (HTML: em/strong)"
+msgstr ""
+
+#: resources/js/blocks/index.js:405
+#: resources/js/blocks/index.js:455
+#: resources/js/blocks/index.js:524
+#: resources/js/blocks/index.js:699
+#: resources/js/blocks/index.js:740
+msgid "Supporting text"
+msgstr ""
+
+#: resources/js/blocks/index.js:406
+msgid "Anchor ID (for #links)"
+msgstr ""
+
+#: resources/js/blocks/index.js:413
+msgid "Style"
+msgstr ""
+
+#: resources/js/blocks/index.js:415
+msgid "Alternate background (dark surface)"
+msgstr ""
+
+#: resources/js/blocks/index.js:430
+msgid "Tour Grid"
+msgstr ""
+
+#: resources/js/blocks/index.js:451
+msgid "Section copy"
+msgstr ""
+
+#: resources/js/blocks/index.js:462
+msgid "Display options"
+msgstr ""
+
+#: resources/js/blocks/index.js:464
+msgid "Max tours shown (0 = all)"
+msgstr ""
+
+#: resources/js/blocks/index.js:473
+msgid "Show category filter bar"
+msgstr ""
+
+#: resources/js/blocks/index.js:478
+msgid "Show comparison table"
+msgstr ""
+
+#: resources/js/blocks/index.js:494
+msgid "Pathway Cards"
+msgstr ""
+
+#: resources/js/blocks/index.js:520
+msgid "Section intro"
+msgstr ""
+
+#: resources/js/blocks/index.js:531
+msgid "Left card — Historical"
+msgstr ""
+
+#: resources/js/blocks/index.js:547
+#: resources/js/blocks/index.js:567
+msgid "Card link URL"
+msgstr ""
+
+#: resources/js/blocks/index.js:551
+msgid "Right card — After Dark"
+msgstr ""
+
+#: resources/js/blocks/index.js:581
+msgid "About Split"
+msgstr ""
+
+#: resources/js/blocks/index.js:607
+msgid "Copy"
+msgstr ""
+
+#: resources/js/blocks/index.js:611
+msgid "Body (HTML allowed)"
+msgstr ""
+
+#: resources/js/blocks/index.js:618
+msgid "Call-to-action buttons"
+msgstr ""
+
+#: resources/js/blocks/index.js:634
+msgid "Layout"
+msgstr ""
+
+#: resources/js/blocks/index.js:636
+msgid "Flip: image on the left"
+msgstr ""
+
+#: resources/js/blocks/index.js:639
+msgid "By default the image is on the right."
+msgstr ""
+
+#: resources/js/blocks/index.js:644
+msgid "Image"
+msgstr ""
+
+#: resources/js/blocks/index.js:649
+msgid "Wentz farmstead (default)"
+msgstr ""
+
+#: resources/js/blocks/index.js:650
+msgid "Cannon"
+msgstr ""
+
+#: resources/js/blocks/index.js:654
+msgid "Overridden by a custom upload below."
+msgstr ""
+
+#: resources/js/blocks/index.js:657
+msgid "Caption"
+msgstr ""
+
+#: resources/js/blocks/index.js:662
+msgid "Custom image upload"
+msgstr ""
+
+#: resources/js/blocks/index.js:673
+msgid "Book Band"
+msgstr ""
+
+#: resources/js/blocks/index.js:693
+msgid "This is the page-level booking CTA — distinct from the global site footer."
+msgstr ""
+
+#: resources/js/blocks/index.js:696
+msgid "Booking CTA"
+msgstr ""
+
+#: resources/js/blocks/index.js:700
+#: resources/js/blocks/index.js:741
+msgid "Button label"
+msgstr ""
+
+#: resources/js/blocks/index.js:716
+msgid "CTA Band"
+msgstr ""
+
+#: resources/js/blocks/index.js:736
+msgid "CTA copy"
+msgstr ""
+
+#: resources/js/blocks/index.js:748
+msgid "Button URL"
+msgstr ""
+
+#: resources/js/blocks/index.js:749
+msgid "Destination URL"
+msgstr ""
+
+#: resources/js/blocks/index.js:761
+msgid "Custom (Generator)"
+msgstr ""
+
+#: resources/js/blocks/index.js:772
+msgid "Select a generated block…"
+msgstr ""
+
+#: resources/js/blocks/index.js:790
+msgid "Custom block"
+msgstr ""
+
+#: resources/js/blocks/index.js:792
+msgid "Definition"
+msgstr ""
+
+#: resources/js/blocks/index.js:801
+msgid "Create definitions under Tools → Walkridge Blocks."
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Red (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Red (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Red (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Red (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Red (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Red (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Red (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Red (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Red (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Red (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Red (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Orange (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Orange (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Orange (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Orange (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Orange (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Orange (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Orange (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Orange (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Orange (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Orange (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Orange (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Amber (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Amber (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Amber (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Amber (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Amber (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Amber (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Amber (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Amber (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Amber (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Amber (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Amber (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Yellow (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Yellow (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Yellow (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Yellow (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Yellow (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Yellow (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Yellow (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Yellow (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Yellow (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Yellow (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Yellow (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Lime (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Lime (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Lime (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Lime (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Lime (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Lime (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Lime (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Lime (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Lime (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Lime (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Lime (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Green (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Green (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Green (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Green (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Green (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Green (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Green (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Green (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Green (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Green (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Green (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Emerald (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Emerald (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Emerald (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Emerald (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Emerald (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Emerald (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Emerald (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Emerald (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Emerald (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Emerald (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Emerald (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Teal (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Teal (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Teal (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Teal (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Teal (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Teal (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Teal (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Teal (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Teal (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Teal (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Teal (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Cyan (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Cyan (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Cyan (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Cyan (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Cyan (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Cyan (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Cyan (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Cyan (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Cyan (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Cyan (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Cyan (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Sky (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Sky (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Sky (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Sky (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Sky (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Sky (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Sky (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Sky (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Sky (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Sky (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Sky (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Blue (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Blue (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Blue (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Blue (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Blue (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Blue (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Blue (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Blue (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Blue (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Blue (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Blue (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Indigo (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Indigo (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Indigo (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Indigo (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Indigo (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Indigo (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Indigo (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Indigo (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Indigo (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Indigo (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Indigo (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Violet (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Violet (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Violet (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Violet (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Violet (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Violet (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Violet (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Violet (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Violet (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Violet (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Violet (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Purple (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Purple (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Purple (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Purple (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Purple (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Purple (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Purple (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Purple (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Purple (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Purple (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Purple (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Fuchsia (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Fuchsia (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Fuchsia (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Fuchsia (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Fuchsia (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Fuchsia (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Fuchsia (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Fuchsia (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Fuchsia (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Fuchsia (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Fuchsia (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Pink (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Pink (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Pink (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Pink (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Pink (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Pink (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Pink (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Pink (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Pink (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Pink (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Pink (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Rose (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Rose (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Rose (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Rose (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Rose (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Rose (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Rose (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Rose (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Rose (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Rose (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Rose (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Slate (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Slate (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Slate (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Slate (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Slate (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Slate (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Slate (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Slate (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Slate (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Slate (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Slate (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Gray (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Gray (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Gray (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Gray (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Gray (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Gray (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Gray (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Gray (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Gray (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Gray (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Gray (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Zinc (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Zinc (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Zinc (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Zinc (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Zinc (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Zinc (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Zinc (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Zinc (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Zinc (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Zinc (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Zinc (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Neutral (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Neutral (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Neutral (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Neutral (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Neutral (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Neutral (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Neutral (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Neutral (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Neutral (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Neutral (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Neutral (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Stone (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Stone (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Stone (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Stone (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Stone (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Stone (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Stone (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Stone (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Stone (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Stone (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Stone (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mauve (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mauve (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mauve (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mauve (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mauve (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mauve (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mauve (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mauve (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mauve (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mauve (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mauve (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Olive (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Olive (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Olive (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Olive (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Olive (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Olive (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Olive (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Olive (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Olive (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Olive (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Olive (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mist (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mist (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mist (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mist (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mist (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mist (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mist (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mist (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mist (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mist (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Mist (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Taupe (50)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Taupe (100)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Taupe (200)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Taupe (300)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Taupe (400)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Taupe (500)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Taupe (600)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Taupe (700)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Taupe (800)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Taupe (900)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Taupe (950)"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "Black"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Color name"
+msgid "White"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font family name"
+msgid "sans"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font family name"
+msgid "serif"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font family name"
+msgid "mono"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "xs"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "sm"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "base"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "lg"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "2xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "3xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "4xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "5xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "6xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "7xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "8xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Font size name"
+msgid "9xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Border radius size name"
+msgid "xs"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Border radius size name"
+msgid "sm"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Border radius size name"
+msgid "md"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Border radius size name"
+msgid "lg"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Border radius size name"
+msgid "xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Border radius size name"
+msgid "2xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Border radius size name"
+msgid "3xl"
+msgstr ""
+
+#: public/build/assets/theme.json
+msgctxt "Border radius size name"
+msgid "4xl"
+msgstr ""

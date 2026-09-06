@@ -1,0 +1,52 @@
+---
+description: WCAG 2.2 AA — contrast, color-independent status, focus, 44px targets, semantics, reduced motion
+globs: resources/css/**/*.css,resources/js/**/*.js,resources/views/**/*.blade.php
+alwaysApply: false
+---
+
+# Accessibility (WCAG 2.2 AA)
+
+Implement in `hallowed-ground.css`, Blade, and JS. Tokens stay slate + gold + parchment. Do **not** introduce purple/indigo SaaS defaults or flat cream-serif clichés.
+
+## A. Color and contrast
+
+**Contrast 4.5:1.** Body text MUST be at least 4.5:1 against its background. Large text / bold UI (≥18px or ≥14px bold) may use 3:1.
+
+Hallowed Ground floors (do not go lighter on dark UI):
+
+| Role | Token | Notes |
+| --- | --- | --- |
+| Body on dark | parchment / `--color-ink` on slate | Default marketing chrome |
+| Secondary | `--color-ink-soft` `#d5ccbb` | Prefer for paragraphs |
+| Muted labels / mono | slate-400 `#9bb4c9` | Lightest allowed on dark surfaces |
+| On gold buttons | `--color-on-gold` `#14100a` | Never parchment on gold-500 without checking |
+
+Gold `#e0be72` is for accents/buttons, not long body copy on parchment-light panels without contrast checks.
+
+**Color independence.** Errors, validation, and status MUST not rely on color alone. Pair color with an icon **and** text.
+
+## B. Keyboard and touch
+
+**Focus-visible rings.** NEVER `outline: none` without a replacement ring. Prefer gold focus:
+
+```css
+:focus-visible {
+  outline: 3px solid var(--gold-500);
+  outline-offset: 3px;
+}
+```
+
+**44×44 touch targets.** Every button, nav item, and form control MUST have a minimum tap area of 44×44 CSS pixels on mobile.
+
+**Semantics over divs.** On-page actions → `<button type="button">`. URL changes → `<a href>`. Forbidden: click-only `<div>` / `<span>`.
+
+## C. Motion
+
+Honor `prefers-reduced-motion`. Compass spin and reveal animations must zero out under the query. No uncancellable JS timers for decoration.
+
+## Do not
+
+- Use indigo focus rings or purple gradient themes
+- `outline-none` with no ring
+- Color-only errors
+- Div-as-button

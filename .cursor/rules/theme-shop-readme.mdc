@@ -1,0 +1,63 @@
+---
+description: Prep README / readme.txt / SUPPORT for ThemeForest, TemplateMonster, and own-site theme shops — Sage 11 zip vs git
+globs: README.md,readme.txt,SUPPORT.md,.gitignore,style.css,docs/marketplace/**,bin/build-*.sh,composer.json,package.json
+alwaysApply: false
+---
+
+# Theme-shop README and Sage distribution
+
+When prepping **README.md**, **readme.txt**, **SUPPORT.md**, or the marketplace pack: treat this as a **Sage 11 + Acorn + Blade + Vite 8** theme. Product name is **Walkridge**. Install folder and text domain stay **`walkridge`**. GitHub repo is **`wp-walkridge`**.
+
+## Audience split
+
+| Surface | Audience | Content |
+| --- | --- | --- |
+| **README.md** | Potential buyers, theme stores, GitHub visitors | Marketable pitch, benefits, what’s included, zip install, link to SUPPORT for tech |
+| **SUPPORT.md** | Buyers who need help + developers | SEO policy, plugins, editing, **tech stack**, local Sage/dev, packaging, templates, troubleshooting |
+| **readme.txt** | WP / ThemeForest parser | Short description, install, FAQ |
+
+Do **not** dump Sage/Vite/Blade/local-dev/packaging tables into README. Do **not** put local-SEO disclaimers or LocalBusiness/NAP schema talk in README — that belongs under SUPPORT → SEO (regular only).
+
+## README.md outline (buyer-facing)
+
+1. Product title + one-line pitch (tours → guides → shop)
+2. Table: live concept, catalog, support, author, **`walkridge`** folder, version
+3. Fiction-only callout (`555` phones, `@walkridge.test`)
+4. Who it’s for
+5. What you get (benefits + blocks/pages/Customizer in buyer language)
+6. Regular SEO as a benefit only (title / description / social tags; optional Yoast later) — **no local SEO copy**
+7. Quick install from marketplace zip + high-level requirements
+8. Link to **SUPPORT.md** for technical docs
+9. License GPLv2+
+
+## SUPPORT.md outline (tech + help)
+
+1. Where to start (docs map)
+2. **SEO (regular only)** — native tags yield to plugins; explicitly **no** local SEO / LocalBusiness pack
+3. Plugins, editing (blocks + Identity)
+4. Technical stack, theme templates
+5. Local development, packaging
+6. Before you file an issue / what the theme does not do
+
+## Repository vs production zip
+
+Git is Sage **source**. Market buyers get a **built zip**. Do not tell a ThemeForest buyer to run `composer install` / `npm run build` on the host.
+
+| Surface | What lives there |
+| --- | --- |
+| Git (`main`) | Blade, PHP, `resources/`, lockfiles. **No** `vendor/`, **no** `public/build/` |
+| `walkridge.zip` (`bin/build-theme-zip.sh`) | Runtime only: compiled `public/build`, production `vendor/`, `style.css`, `readme.txt`, `screenshot.png` |
+| Outer seller pack | Inner theme zip + child + optional Bookings / Field Map + Documentation |
+
+## `style.css` theme header
+
+Keep Theme Name **Walkridge**, Text Domain **`walkridge`**, License **GNU General Public License v2 or later**, Requires PHP **8.3**, Requires at least **6.6**, Tested up to matching `readme.txt`. Author Matt Hummel / https://matthummel.com/. Plain URLs only.
+
+## Do not
+
+- Lead README with Composer/npm or a “Built with” stack table
+- Put local SEO / LocalBusiness / NAP schema language in README
+- Commit `vendor/` or `public/build/` to git to “help ThemeForest”
+- Put `SELLING.md` inside the buyer zip
+- Rename the install folder away from `walkridge` in README “for branding”
+- Canonical GitHub repo: `matthummel-pa/wp-walkridge`

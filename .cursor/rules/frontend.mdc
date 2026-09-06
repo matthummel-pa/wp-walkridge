@@ -1,0 +1,35 @@
+---
+description: Hallowed Ground CSS tokens, WooCommerce CTAs, and front-end JS
+globs: resources/css/**/*.css,resources/js/**/*.js,resources/views/**/*.blade.php
+alwaysApply: false
+---
+
+# Front end
+
+## Visual system
+
+Tokens live in `resources/css/hallowed-ground.css` `:root`:
+
+- Slate `#0c1218` / `#17212c`, gold `#e0be72`, parchment `#f7f1e3`
+- No default “SaaS blue” or purple gradient themes
+- Layout / type / photo overlays: see `ui-aesthetics.mdc`
+- Contrast, focus rings, 44px targets, semantics, reduced motion: see `accessibility.mdc`
+- Labels, input types, button states, `aria-live`: see `conversion-ux.mdc`
+
+Shared chrome: `resources/views/sections/` (header/footer) and partials (`info-strip`, `book-band`). Header / footer nav use assigned WordPress menus with the concept page list as fallback. Identity (phone, brand, CTA) comes from Customizer via `App\Support\Identity`.
+
+Fonts are self-hosted (Archivo Black, Atkinson Hyperlegible, IBM Plex Mono). Do not swap to Inter/Roboto defaults.
+
+## Assets
+
+`npm run build` is required. Manifest is `public/build/` and **gitignored**. Missing manifest = white-screen “Vite manifest not found.”
+
+`vite.config.js` `base` is `/wp-content/themes/hallowed-ground/public/build/`. If the folder slug changes, update `base` and rebuild.
+
+## Booking CTAs
+
+Booking CTAs point at the WooCommerce shop (`Identity::shopUrl()`), unless Customize → Identity sets a custom header button URL. Prefer that helper over hardcoded `/shop/`.
+
+## UI changes
+
+Verify the changed route in a browser (or local `wp server` at `:8080`) — homepage, tours, shop, and any page that shares the same composer data. Check desktop and a ~390px viewport when layout changes.

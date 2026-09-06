@@ -1,0 +1,8 @@
+@import "tailwindcss" theme(static);
+@source "../../app/**/*.php";
+@source "../**/*.blade.php";
+@source "../**/*.js";
+
+/* Walkridge Battlefield Tours — concept design system.
+   Ported from the static tour-walkridge-tours-theme demo. */
+@import "./walkridge.css";

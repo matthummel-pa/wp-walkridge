@@ -1,0 +1,349 @@
+@import "tailwindcss";
+
+/*
+ * Editor stylesheet — Walkridge Gutenberg block editor.
+ *
+ * Scoped to the block editor canvas so SSR previews (ServerSideRender)
+ * look like the front-end without pulling in the full site chrome.
+ */
+
+/* ── Theme tokens (mirror walkridge.css :root) ───────────────────── */
+.editor-styles-wrapper {
+  --slate-950:#070b10;
+  --slate-900:#0c1218;
+  --slate-850:#111820;
+  --slate-800:#17212c;
+  --slate-700:#243446;
+  --slate-600:#3d5670;
+  --slate-400:#9bb4c9;
+  --slate-300:#c5d4e0;
+
+  --gold-800:#6b521f;
+  --gold-700:#7a5f24;
+  --gold-600:#c9a24a;
+  --gold-500:#e0be72;
+  --gold-300:#f0d9a0;
+  --gold-200:#f7ebc8;
+
+  --parchment-50:#f7f1e3;
+  --parchment-100:#efe6d0;
+  --parchment-200:#e2d4b4;
+  --parchment-300:#cbb992;
+
+  --ink-950:#0a0908;
+  --ink-900:#161310;
+  --ink-700:#c9c0b0;
+  --ink-500:#a39886;
+
+  --lantern-900:#140e18;
+  --lantern-700:#2a1c33;
+  --lantern-500:#c9a06a;
+
+  --brick:#d36a3a;
+  --brick-soft:#f0a57a;
+  --navy:#07111c;
+
+  --color-bg: #07111c;
+  --color-surface: #101a26;
+  --color-surface-2: #172433;
+  --color-ink: var(--parchment-50);
+  --color-ink-soft: #d5ccbb;
+  --color-primary: var(--slate-800);
+  --color-primary-dark: var(--navy);
+  --color-accent: var(--gold-500);
+  --color-accent-dark: var(--gold-800);
+  --color-accent-light: var(--gold-300);
+  --color-border: rgba(224,177,90,0.22);
+  --color-on-gold: #14100a;
+
+  --font-ui: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-head: 'Archivo Black', 'Arial Black', Impact, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --maxw: 1240px;
+  --gutter: clamp(1.25rem, 4vw, 3.25rem);
+  --ease: cubic-bezier(.22,.61,.36,1);
+
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+}
+
+/* ── SSR block wrapper ───────────────────────────────────────────── */
+.wr-block-ssr {
+  position: relative;
+  background: var(--color-bg);
+  /* Full-width bleeding */
+  margin-left: calc(-1 * var(--gutter, 2rem));
+  margin-right: calc(-1 * var(--gutter, 2rem));
+}
+
+/* ── Keep .reveal elements visible — no IntersectionObserver here ── */
+.editor-styles-wrapper .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* ── Hide the site footer/header if they ever leak into the canvas ── */
+.editor-styles-wrapper .site-header,
+.editor-styles-wrapper .site-footer,
+.editor-styles-wrapper .info-rail,
+.editor-styles-wrapper [class*="site-header"],
+.editor-styles-wrapper [class*="site-footer"] {
+  display: none !important;
+}
+
+/* ── Block selection outline tint to match dark theme ───────────── */
+.block-editor-block-list__layout.is-root-container > .block-editor-block-list__block.is-selected::after {
+  box-shadow: 0 0 0 2px var(--gold-500);
+}
+
+/* ── Section / wrap sizing mirror ───────────────────────────────── */
+.editor-styles-wrapper .wrap {
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter, 2rem);
+  padding-right: var(--gutter, 2rem);
+}
+
+.editor-styles-wrapper .section {
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.editor-styles-wrapper .section-alt {
+  background: var(--color-surface);
+}
+
+/* ── Typography mirror ───────────────────────────────────────────── */
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3 {
+  font-family: var(--font-head);
+  color: var(--color-ink);
+}
+
+.editor-styles-wrapper p {
+  font-family: var(--font-ui);
+  color: var(--color-ink-soft);
+}
+
+.editor-styles-wrapper .eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Button mirror ───────────────────────────────────────────────── */
+.editor-styles-wrapper .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: background 0.18s var(--ease), color 0.18s var(--ease);
+}
+
+.editor-styles-wrapper .btn-primary {
+  background: var(--gold-500);
+  color: var(--color-on-gold);
+}
+
+.editor-styles-wrapper .btn-outline {
+  border: 1px solid var(--gold-500);
+  color: var(--gold-300);
+}
+
+/* ── Hero block mirror ───────────────────────────────────────────── */
+.editor-styles-wrapper .hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.editor-styles-wrapper .hero-media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.38;
+}
+
+.editor-styles-wrapper .hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editor-styles-wrapper .hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.editor-styles-wrapper .hero-brand {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+  margin-bottom: 0.75rem;
+}
+
+.editor-styles-wrapper .hero-title {
+  font-family: var(--font-head);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.08;
+  color: #fff;
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
+
+.editor-styles-wrapper .hero-title em {
+  color: var(--gold-300);
+  font-style: normal;
+}
+
+.editor-styles-wrapper .hero-lede {
+  max-width: 580px;
+  line-height: 1.65;
+  color: var(--parchment-200);
+  margin-bottom: 1.5rem;
+}
+
+.editor-styles-wrapper .hero-ctas {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+/* ── Page intro mirror ───────────────────────────────────────────── */
+.editor-styles-wrapper .page-intro {
+  background: var(--color-surface);
+  padding: 3rem 0;
+}
+
+.editor-styles-wrapper .page-intro h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin: 0.25rem 0 0.6rem;
+}
+
+/* ── Section heading mirror ──────────────────────────────────────── */
+.editor-styles-wrapper .section-head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.editor-styles-wrapper .section-head h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin: 0.25rem 0 0.6rem;
+}
+
+/* ── About split mirror ──────────────────────────────────────────── */
+.editor-styles-wrapper .about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.editor-styles-wrapper .about-media img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.editor-styles-wrapper .about-media figcaption {
+  font-size: 0.72rem;
+  color: var(--ink-700);
+  margin-top: 0.35rem;
+  font-family: var(--font-mono);
+}
+
+/* ── Split / pathway cards mirror ───────────────────────────────── */
+.editor-styles-wrapper .split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.editor-styles-wrapper .pathway {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  display: block;
+  text-decoration: none;
+  min-height: 280px;
+}
+
+.editor-styles-wrapper .pathway img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.editor-styles-wrapper .pathway .inner {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem;
+}
+
+.editor-styles-wrapper .pathway h3 {
+  font-size: 1.2rem;
+  margin: 0.25rem 0 0.5rem;
+  color: #fff;
+}
+
+/* ── Tour grid mirror ────────────────────────────────────────────── */
+.editor-styles-wrapper .tour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.4rem;
+}
+
+/* ── Book / CTA band mirror ──────────────────────────────────────── */
+.editor-styles-wrapper .book-band,
+.editor-styles-wrapper .cta-band-inner {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* ── Info strip mirror ───────────────────────────────────────────── */
+.editor-styles-wrapper .info-strip {
+  background: var(--slate-800);
+  padding: 0.75rem 0;
+}
+
+/* ── Block inserter notice for walkridge blocks ──────────────────── */
+.wr-editor-notice {
+  background: rgba(224,190,114,0.1);
+  border-left: 3px solid var(--gold-500);
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono, monospace);
+  color: var(--gold-300, #f0d9a0);
+  border-radius: var(--radius-sm, 2px);
+}

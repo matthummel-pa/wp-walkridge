@@ -1,0 +1,58 @@
+---
+description: PHP conventions for the Sage 11 theme app layer (setup, filters, Composers)
+globs: app/**/*.php
+alwaysApply: false
+---
+
+# PHP / Sage 11 App Layer Conventions
+
+## Namespace
+
+All PHP in `app/` uses the `App` namespace:
+
+```php
+namespace App;
+```
+
+## Key files
+
+| File | Purpose |
+|---|---|
+| `app/setup.php` | Theme support, WooCommerce wrappers, script/style enqueues |
+| `app/filters.php` | WordPress filter hooks |
+| `app/View/Composers/App.php` | Data shared across all views |
+| `app/View/Composers/Post.php` | Data for single post/page views |
+
+## Adding data to Blade views — use View Composers, not blade PHP blocks
+
+```php
+// app/View/Composers/App.php
+public function with(): array
+{
+    return [
+        'siteName' => get_bloginfo('name'),
+    ];
+}
+```
+
+## WooCommerce integration
+
+- Theme support and wrapper removal: `app/setup.php`
+- Shop/product/cart/checkout Blade wrapper: `resources/views/woocommerce.blade.php`
+- "Coming soon" mode must be disabled: `wp option update woocommerce_coming_soon no`
+
+## Asset URLs — always use the Vite facade
+
+```php
+use Illuminate\Support\Facades\Vite;
+
+Vite::asset('resources/images/logo.svg');  // ✅
+get_template_directory_uri() . '/public/build/...'  // ❌ hardcoded, breaks on hot reload
+```
+
+## PHP lint
+
+```bash
+./vendor/bin/pint --test   # check only
+./vendor/bin/pint          # auto-fix
+```

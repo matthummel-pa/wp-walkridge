@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "supabase": {
+      "command": "/exec-daemon/npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-postgrest"
+      ]
+    }
+  }
+}

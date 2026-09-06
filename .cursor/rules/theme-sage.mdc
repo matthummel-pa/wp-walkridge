@@ -1,0 +1,43 @@
+---
+description: Sage 11 theme, WooCommerce pages, Blade conventions for Hallowed Ground
+globs: app/**/*.php,resources/views/**/*.blade.php
+alwaysApply: false
+---
+
+# Theme (Sage 11)
+
+Stack: Blade + Acorn + Tailwind v4 + Vite 8. Design CSS is `resources/css/hallowed-ground.css`, not ad-hoc Tailwind utility soup.
+
+## WooCommerce
+
+Theme support and wrapper removal live in `app/setup.php`. Shop / product / cart / checkout render through `resources/views/woocommerce.blade.php`. Booking CTAs use `App\Support\Identity::shopUrl()`.
+
+Companion plugins (optional, sold separately):
+
+- `plugins/hallowed-ground-bookings` — tour slots / party pricing
+- `plugins/hallowed-ground-field-map` — `[hg_field_map]` shortcode
+
+## Page templates (slug-based)
+
+| Slug | Template |
+| --- | --- |
+| (front) | `front-page.blade.php` |
+| tours | `page-tours.blade.php` |
+| guides | `page-guides.blade.php` |
+| area | `page-area.blade.php` |
+| contact | `page-contact.blade.php` |
+| refund-policy | `page-refund-policy.blade.php` |
+
+Editing `page-{slug}.blade.php` only takes effect if a published Page with that slug exists.
+
+## Query / templates
+
+Do **not** set `is_page` / `is_singular` without a real `WP_Post`. Sage / `post-template.php` will 500. After Blade edits: `wp acorn view:clear --path="$HOME/wp" --allow-root`.
+
+## Identity
+
+Buyer-facing phone, email, brand, hours, concept badge: `App\Support\Identity` + `app/customizer.php`. Defaults stay fiction (`(717) 555-0100`, `tours@hallowedground.test`).
+
+## Admin
+
+Prefer Customizer + normal page/product editing. Do not reintroduce Elementor or the site editor as the required editing path.

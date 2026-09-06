@@ -1,0 +1,6 @@
+{
+  "center": { "lat": 39.812, "lng": -77.236 },
+  "zoom": 13.4,
+  "rotation": -0.18,
+  "note": "OpenLayers + OpenStreetMap. No API key. rotation is radians. Sage: ACF options for center/zoom; pins remain area_place CPT."
+}

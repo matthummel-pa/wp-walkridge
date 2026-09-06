@@ -1,0 +1,51 @@
+---
+description: Blade template conventions and gotchas for the Hallowed Ground Sage 11 theme
+globs: resources/views/**/*.blade.php
+alwaysApply: false
+---
+
+# Blade Template Conventions
+
+## Slug-based page routing
+
+Content pages map to WordPress Pages by slug — there is no catch-all template:
+
+| Template file | Required WP page slug |
+|---|---|
+| `front-page.blade.php` | (site front page) |
+| `page-tours.blade.php` | `tours` |
+| `page-guides.blade.php` | `guides` |
+| `page-area.blade.php` | `area` |
+| `page-contact.blade.php` | `contact` |
+
+Editing a `page-{slug}.blade.php` only takes effect if a published Page with that exact slug exists (created by `bin/setup-wp.sh`).
+
+## Layout and shared partials
+
+- All pages extend `layouts.app`
+- Shared sections: `partials/info-strip`, `partials/book-band`
+- Shop URL: use `wc_get_page_permalink('shop')` with `home_url('/shop')` fallback
+
+```blade
+@php
+  $shopUrl = function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop');
+@endphp
+```
+
+## After editing Blade files — clear Acorn cache
+
+Blade templates are compiled and cached by Acorn. Changes won't appear until the cache is cleared:
+
+```bash
+wp acorn view:clear --path="$HOME/wp" --allow-root
+# or
+wp acorn optimize:clear --path="$HOME/wp" --allow-root
+```
+
+## After editing CSS/JS — rebuild Vite assets
+
+```bash
+npm run build
+```
+
+Pages throw a fatal "Vite manifest not found" error if `public/build/` is missing.

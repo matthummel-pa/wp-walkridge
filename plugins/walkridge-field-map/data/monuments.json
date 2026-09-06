@@ -1,0 +1,6514 @@
+{
+  "version": 1,
+  "title": "Gettysburg battlefield monuments",
+  "note": "Coordinates from OpenStreetMap (ODbL). Photographs are Wikimedia Commons files identified as public domain or U.S. government work. Not every pin has a verified public-domain photo.",
+  "attribution": "© OpenStreetMap contributors. Photos: Wikimedia Commons (public domain / U.S. government).",
+  "monuments": [
+    {
+      "id": "osm-node-2902183222",
+      "title": "13th VT Randall",
+      "lat": 39.809665,
+      "lng": -77.236226,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/13th_Vermont_Volunteer_Infantry_Regiment_%2810475696236%29.jpg/960px-13th_Vermont_Volunteer_Infantry_Regiment_%2810475696236%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A13th_Vermont_Volunteer_Infantry_Regiment_%2810475696236%29.jpg"
+    },
+    {
+      "id": "osm-node-2902183226",
+      "title": "106th PA Curry",
+      "lat": 39.812623,
+      "lng": -77.235614,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-2902183227",
+      "title": "US General Alexander Webb",
+      "lat": 39.812963,
+      "lng": -77.235351,
+      "category": "monument",
+      "osmType": "memorial",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Brigadier_General_Alexander_Webb_%2810475669335%29.jpg/960px-Brigadier_General_Alexander_Webb_%2810475669335%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3ABrigadier_General_Alexander_Webb_%2810475669335%29.jpg"
+    },
+    {
+      "id": "osm-node-3028962616",
+      "title": "1st PA Reserves Co K - McPherson",
+      "lat": 39.830604,
+      "lng": -77.231305,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-3028964991",
+      "title": "US Sergeant Amos Humiston KIA Memorial",
+      "lat": 39.832034,
+      "lng": -77.228712,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4485288305",
+      "title": "US General Alexander Hays",
+      "lat": 39.816803,
+      "lng": -77.234574,
+      "category": "monument",
+      "osmType": "memorial",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/General_Alexander_Hays_Statue%2C_63rd_Pennsylvania_Infantry_%2810475671445%29.jpg/960px-General_Alexander_Hays_Statue%2C_63rd_Pennsylvania_Infantry_%2810475671445%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AGeneral_Alexander_Hays_Statue%2C_63rd_Pennsylvania_Infantry_%2810475671445%29.jpg"
+    },
+    {
+      "id": "osm-node-4485288308",
+      "title": "Confederate Soldiers and Sailors",
+      "lat": 39.784999,
+      "lng": -77.254037,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4485288310",
+      "title": "US Brigadier General Gouverneur K. Warren(w)",
+      "lat": 39.792497,
+      "lng": -77.236736,
+      "category": "monument",
+      "osmType": "memorial",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/General_Gouverneur_Warren_on_Little_Round_Top_which_He_Ordered_Union_Troops_to_Defend_%2810475678745%29.jpg/960px-General_Gouverneur_Warren_on_Little_Round_Top_which_He_Ordered_Union_Troops_to_Defend_%2810475678745%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AGeneral_Gouverneur_Warren_on_Little_Round_Top_which_He_Ordered_Union_Troops_to_Defend_%2810475678745%29.jpg"
+    },
+    {
+      "id": "osm-node-4485288317",
+      "title": "CS Armistead KIA",
+      "lat": 39.813115,
+      "lng": -77.235961,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4485288319",
+      "title": "CS HQ Longstreet",
+      "lat": 39.800015,
+      "lng": -77.256398,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4485288326",
+      "title": "US 2-1-2nd Brigade NY Irish Brigade Kelly",
+      "lat": 39.797064,
+      "lng": -77.24512,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Meagher%27s_Irish_Brigade_Monument_at_Gettysburg.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Bill Dowling.; Public domain)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AMeagher%27s_Irish_Brigade_Monument_at_Gettysburg.jpg"
+    },
+    {
+      "id": "osm-node-4485288329",
+      "title": "140th NY Patrick O'Rorke+ / Ernst",
+      "lat": 39.7915,
+      "lng": -77.236962,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4485288330",
+      "title": "US General Samuel Crawford",
+      "lat": 39.795934,
+      "lng": -77.238777,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4485288333",
+      "title": "US Major William Wells",
+      "lat": 39.784882,
+      "lng": -77.245656,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4485288360",
+      "title": "11th PA Res \"40th PA Volunteer Infantry Regiment\" Jackson",
+      "lat": 39.797018,
+      "lng": -77.240098,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4485288364",
+      "title": "4th NY Artillery “Smith’s Battery” Smith",
+      "lat": 39.792043,
+      "lng": -77.242514,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/4th_New_York_Independent_Battery_Artillery_Monument_%2810475702816%29.jpg/960px-4th_New_York_Independent_Battery_Artillery_Monument_%2810475702816%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A4th_New_York_Independent_Battery_Artillery_Monument_%2810475702816%29.jpg"
+    },
+    {
+      "id": "osm-node-4485288366",
+      "title": "91st PA Sinex",
+      "lat": 39.792168,
+      "lng": -77.236739,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4485288367",
+      "title": "99th PA Moore(w) / Fritz",
+      "lat": 39.79239,
+      "lng": -77.242269,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4486002434",
+      "title": "US General Andrew Humphreys",
+      "lat": 39.808237,
+      "lng": -77.243844,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4486002437",
+      "title": "US Albert Woolson",
+      "lat": 39.816163,
+      "lng": -77.234825,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4486002440",
+      "title": "CS HQ 2nd Corps Ewell",
+      "lat": 39.831159,
+      "lng": -77.219609,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4486002449",
+      "title": "US General John Gibbon",
+      "lat": 39.811031,
+      "lng": -77.235383,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4486002457",
+      "title": "154th NY Allen",
+      "lat": 39.835206,
+      "lng": -77.227565,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4486125238",
+      "title": "KY State",
+      "lat": 39.819728,
+      "lng": -77.231111,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4487576363",
+      "title": "US General Hancock wounded",
+      "lat": 39.808769,
+      "lng": -77.237031,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4487576365",
+      "title": "Rogers House Marker",
+      "lat": 39.808485,
+      "lng": -77.244002,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4487576369",
+      "title": "44th NY Rice / Conner & 12th NY Ryder",
+      "lat": 39.791297,
+      "lng": -77.237001,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4489439118",
+      "title": "Alonzo Cushing",
+      "lat": 39.813152,
+      "lng": -77.235675,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4489439119",
+      "title": "Culp Brothers' Memorial",
+      "lat": 39.819902,
+      "lng": -77.234297,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4489439121",
+      "title": "CS HQ 3rd Corp A.P. Hill",
+      "lat": 39.818006,
+      "lng": -77.248207,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4489439123",
+      "title": "US HQ Brigadier General Henry Hunt",
+      "lat": 39.813666,
+      "lng": -77.231805,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4489439125",
+      "title": "US HQ 12th Corps Slocum",
+      "lat": 39.80806,
+      "lng": -77.217896,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4489439126",
+      "title": "US HQ 6th Corps Sedgwick",
+      "lat": 39.79767,
+      "lng": -77.234835,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4489439132",
+      "title": "US 1st MD \"Potomac Home Brigade\" Maulsby",
+      "lat": 39.814787,
+      "lng": -77.21688,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4489439133",
+      "title": "US HQ 6-2-2nd Brigade \"1st Vermont Brigade\" L.A.Grant",
+      "lat": 39.785161,
+      "lng": -77.232304,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4489439139",
+      "title": "43rd NC Kenan(w) / Lewis",
+      "lat": 39.818534,
+      "lng": -77.215435,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4489439141",
+      "title": "5th NH Hapgood",
+      "lat": 39.795022,
+      "lng": -77.241871,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4489668452",
+      "title": "US Col. Strong Vincent+ mortally wounded mark",
+      "lat": 39.790469,
+      "lng": -77.23767,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-4489668460",
+      "title": "5th MI Pulford",
+      "lat": 39.797212,
+      "lng": -77.244822,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-4497088990",
+      "title": "17th CT Fowler+ / Brady",
+      "lat": 39.82261,
+      "lng": -77.228133,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689244621",
+      "title": "15th MA Ward+ / Joslin",
+      "lat": 39.810787,
+      "lng": -77.236113,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689244622",
+      "title": "1st MN Messick / Farrell",
+      "lat": 39.810563,
+      "lng": -77.236099,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/1st_Minnesota_Volunteer_Infantry_Monument_%2810475861843%29.jpg/960px-1st_Minnesota_Volunteer_Infantry_Monument_%2810475861843%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A1st_Minnesota_Volunteer_Infantry_Monument_%2810475861843%29.jpg"
+    },
+    {
+      "id": "osm-node-5689244623",
+      "title": "82nd NY “2nd New York State Militia” Huston+ / Darrow",
+      "lat": 39.810406,
+      "lng": -77.236063,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689244624",
+      "title": "80th NY “20th NYSM” \"Ulster Guard“ Gates",
+      "lat": 39.810102,
+      "lng": -77.236259,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689244626",
+      "title": "5th US Artillery Battery C Weir",
+      "lat": 39.810041,
+      "lng": -77.235968,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689244628",
+      "title": "121st PA  Alexander Biddle / Chapman Biddle",
+      "lat": 39.810918,
+      "lng": -77.235407,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689244629",
+      "title": "19th MA Devereaux",
+      "lat": 39.811525,
+      "lng": -77.235382,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689244630",
+      "title": "20th MA Revere+ / Macy(w) / Abbott",
+      "lat": 39.811473,
+      "lng": -77.236122,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689244631",
+      "title": "7th MI Steele+ /  Curtis",
+      "lat": 39.811817,
+      "lng": -77.236171,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689244632",
+      "title": "59th NY Thoman+ / McFadden",
+      "lat": 39.812081,
+      "lng": -77.236217,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689244633",
+      "title": "69th PA O’Kane+ / Tschudy+ / Duffy(w) / Davis",
+      "lat": 39.812649,
+      "lng": -77.236265,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689247087",
+      "title": "72nd PA \"Fire Zouave\" Baxter(w) / Hesser",
+      "lat": 39.81302,
+      "lng": -77.236239,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/72nd_Pennsylvania_Infantry_Monument_%2810475962953%29.jpg/960px-72nd_Pennsylvania_Infantry_Monument_%2810475962953%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A72nd_Pennsylvania_Infantry_Monument_%2810475962953%29.jpg"
+    },
+    {
+      "id": "osm-node-5689247088",
+      "title": "72nd PA \"Philadelphia Brigade\" Baxter(w) / Hesser",
+      "lat": 39.812917,
+      "lng": -77.23573,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689264812",
+      "title": "3rd MI B. Pierce(w) / E. Pierce",
+      "lat": 39.800227,
+      "lng": -77.249269,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689264813",
+      "title": "141st PA Madill",
+      "lat": 39.801095,
+      "lng": -77.248819,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689264816",
+      "title": "68th PA “Scott Legion” Tippin / Davis",
+      "lat": 39.801487,
+      "lng": -77.249142,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689264817",
+      "title": "63rd PA Danks",
+      "lat": 39.801845,
+      "lng": -77.250108,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689272930",
+      "title": "10th NY Battery Philips",
+      "lat": 39.800658,
+      "lng": -77.247113,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5689272931",
+      "title": "5th MA Battery Philips",
+      "lat": 39.800582,
+      "lng": -77.246895,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5691654281",
+      "title": "10th US Clinton(w)",
+      "lat": 39.794911,
+      "lng": -77.241361,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5691654282",
+      "title": "11th US Floyd-Jones",
+      "lat": 39.79474,
+      "lng": -77.241264,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5691654283",
+      "title": "12th US Dunn",
+      "lat": 39.794761,
+      "lng": -77.241111,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5691654284",
+      "title": "6th US Bootes(w)",
+      "lat": 39.794804,
+      "lng": -77.240969,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5691654286",
+      "title": "4th US Adams",
+      "lat": 39.794935,
+      "lng": -77.240881,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5691654287",
+      "title": "3rd US Freedly(w) / Lay",
+      "lat": 39.795185,
+      "lng": -77.240797,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-5716180524",
+      "title": "US HQ 3rd Corp Sickles(w) / Birney",
+      "lat": 39.801858,
+      "lng": -77.242983,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508231",
+      "title": "84th PA Opp",
+      "lat": 39.808206,
+      "lng": -77.23531,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508232",
+      "title": "8th PA Cavalry Corrie",
+      "lat": 39.808513,
+      "lng": -77.234609,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508233",
+      "title": "4th NY Cavalry Pruyn",
+      "lat": 39.808639,
+      "lng": -77.234588,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508234",
+      "title": "2th NY Cavalry Harhaus",
+      "lat": 39.808844,
+      "lng": -77.234555,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508235",
+      "title": "US HQ 2nd Corps Hancock(w) / Gibbon(w) / Hays",
+      "lat": 39.808405,
+      "lng": -77.23492,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508236",
+      "title": "US HQ Cavalry Corps Pleasanton",
+      "lat": 39.808152,
+      "lng": -77.234906,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508237",
+      "title": "15th NY Engineers Cassin & 50th NY Engineers Pettes",
+      "lat": 39.808239,
+      "lng": -77.233251,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508238",
+      "title": "US HQ Engineer Brigade Benham",
+      "lat": 39.808193,
+      "lng": -77.232928,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508239",
+      "title": "US Battalion of Engineers Mendell",
+      "lat": 39.808166,
+      "lng": -77.232629,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508240",
+      "title": "US HQ 1st Corps Doubleday(w) / Newton",
+      "lat": 39.807803,
+      "lng": -77.23163,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508245",
+      "title": "US HQ 1st Cavalry Artillery Brigade Robertson",
+      "lat": 39.808018,
+      "lng": -77.231131,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508246",
+      "title": "2nd US Artillery Battery B & L Heaton",
+      "lat": 39.808001,
+      "lng": -77.230868,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508248",
+      "title": "1st OH Cavalry Co A Jones & Co C Stanford",
+      "lat": 39.808404,
+      "lng": -77.230629,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508249",
+      "title": "1st WV Cavalry Richmond",
+      "lat": 39.808711,
+      "lng": -77.230676,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508250",
+      "title": "NH Sharpshooters 1st Reg Berdan / Trepp & 2nd Reg Stoughton",
+      "lat": 39.808126,
+      "lng": -77.236205,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508252",
+      "title": "17st ME Merrill",
+      "lat": 39.807939,
+      "lng": -77.236059,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508253",
+      "title": "9th MI Artillery Battery Daniels",
+      "lat": 39.807813,
+      "lng": -77.235962,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508254",
+      "title": "US HQ 1st Regular Brigade Artillery Reserve Ransom",
+      "lat": 39.80769,
+      "lng": -77.235866,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508255",
+      "title": "4th US Artillery Battery C “Thomas’ Battery” Thomas",
+      "lat": 39.807537,
+      "lng": -77.235747,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508256",
+      "title": "PA Light Artillery Battery C & F Thompson",
+      "lat": 39.807298,
+      "lng": -77.235561,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508258",
+      "title": "NJ Artillery Battery A “Hexamer’s Battery” Parsons",
+      "lat": 39.807546,
+      "lng": -77.235376,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508259",
+      "title": "HQ US 1-3-3rd Brigade “Second Vermont Brigade” Stannard",
+      "lat": 39.809302,
+      "lng": -77.236417,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508260",
+      "title": "14th VT Nicholls",
+      "lat": 39.808829,
+      "lng": -77.236532,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508261",
+      "title": "16th VT Veazey",
+      "lat": 39.809083,
+      "lng": -77.236513,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681508262",
+      "title": "124th NY “The Orange Blossoms” van Horne Ellis+ / Cummins",
+      "lat": 39.808676,
+      "lng": -77.235271,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681533892",
+      "title": "71st PA “California Regiment” Smith",
+      "lat": 39.813373,
+      "lng": -77.236296,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681533902",
+      "title": "3rd US Artillery Battery F & K Trunbull",
+      "lat": 39.814251,
+      "lng": -77.234649,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681533903",
+      "title": "10th NY “National Zouaves” Hopper",
+      "lat": 39.814267,
+      "lng": -77.234408,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681533904",
+      "title": "2nd PA Cavalry Price",
+      "lat": 39.814332,
+      "lng": -77.233659,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681534164",
+      "title": "1st MA Sharpshooters Plumer",
+      "lat": 39.816961,
+      "lng": -77.233865,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681534165",
+      "title": "8th US Inf Reg Read",
+      "lat": 39.814664,
+      "lng": -77.232594,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681534166",
+      "title": "Oneida NY Cavalry Mann",
+      "lat": 39.814673,
+      "lng": -77.232354,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681534167",
+      "title": "6th PA Cavalry “Rush’s Lancers” Co E & I Haseltine",
+      "lat": 39.814695,
+      "lng": -77.232176,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681534172",
+      "title": "93rd NY Butler",
+      "lat": 39.814682,
+      "lng": -77.232015,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681632939",
+      "title": "6th NY Artillery Battery Martin",
+      "lat": 39.815546,
+      "lng": -77.232231,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681632947",
+      "title": "12th MA \"Webster's Regiment\" Bates(w) / Allen",
+      "lat": 39.817207,
+      "lng": -77.233073,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681632952",
+      "title": "3rd NY Artillery Battery Harn",
+      "lat": 39.816708,
+      "lng": -77.232168,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681632961",
+      "title": "US HQ General George Meade",
+      "lat": 39.814489,
+      "lng": -77.232343,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681632962",
+      "title": "US HQ Artillery Reserve Tyler",
+      "lat": 39.807701,
+      "lng": -77.230543,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681632979",
+      "title": "88th PA Foust(w) / Mass(c) / Whiteside July 2nd 1863 pos marker",
+      "lat": 39.806523,
+      "lng": -77.235007,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681632980",
+      "title": "90th PA Lyle / Sellers",
+      "lat": 39.806307,
+      "lng": -77.234969,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681632981",
+      "title": "1st PA Light Artillery Battery B “Cooper’s Battery” Cooper",
+      "lat": 39.806165,
+      "lng": -77.234962,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681632982",
+      "title": "5th MA Artillery Battery Philips",
+      "lat": 39.805746,
+      "lng": -77.234908,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681632983",
+      "title": "148th PA McKeen / McFarlane",
+      "lat": 39.805491,
+      "lng": -77.234875,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681632984",
+      "title": "15th NY Light Artillery Battery Hart(w) / Knox(w)",
+      "lat": 39.805241,
+      "lng": -77.234843,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681645885",
+      "title": "2nd NJ Artillery “Clark’s Battery” Clark",
+      "lat": 39.804265,
+      "lng": -77.234717,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681645886",
+      "title": "US HQ Artillery Reserve 1st Brigade McGilvery",
+      "lat": 39.804016,
+      "lng": -77.234684,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681645887",
+      "title": "2nd CT Artillery “Sterling’s Battery” Sterling",
+      "lat": 39.803769,
+      "lng": -77.234653,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681645888",
+      "title": "6th ME Artillery “Dow’s Battery” Dow",
+      "lat": 39.803304,
+      "lng": -77.234593,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681645889",
+      "title": "1st NY Artillery Battery G “Ames’ Battery” Ames",
+      "lat": 39.802873,
+      "lng": -77.234537,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681645890",
+      "title": "4th PA Cavalry Doster",
+      "lat": 39.804757,
+      "lng": -77.234501,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681645891",
+      "title": "US Cavalry Corps 3rd PA Heavy Artillery Battery H Rank",
+      "lat": 39.804737,
+      "lng": -77.234778,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681645902",
+      "title": "Rev. William Corby",
+      "lat": 39.803455,
+      "lng": -77.234329,
+      "category": "monument",
+      "osmType": "memorial",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Father_William_Corby_Blessing_88th_New_York_Infantry_Irish_Brigade_%2810475693234%29.jpg/960px-Father_William_Corby_Blessing_88th_New_York_Infantry_Irish_Brigade_%2810475693234%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AFather_William_Corby_Blessing_88th_New_York_Infantry_Irish_Brigade_%2810475693234%29.jpg"
+    },
+    {
+      "id": "osm-node-6681645903",
+      "title": "US HQ 1-2nd Division Robinson",
+      "lat": 39.80546,
+      "lng": -77.234584,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681686179",
+      "title": "20th ME Chamberlain",
+      "lat": 39.789452,
+      "lng": -77.236141,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681736206",
+      "title": "20th ME Co B Morrill",
+      "lat": 39.78912,
+      "lng": -77.236006,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681736207",
+      "title": "9th PA Reserves \"38th PA Infantry Reg\" Snodgrass",
+      "lat": 39.789702,
+      "lng": -77.237167,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681736209",
+      "title": "US HQ 5-1-3rd Brigade Strong Vincent+ / Rice",
+      "lat": 39.790914,
+      "lng": -77.236583,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681736221",
+      "title": "16th MI Welch",
+      "lat": 39.791199,
+      "lng": -77.237681,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681736222",
+      "title": "1st and 2nd US Reg MI Sharpshooters Berdan / Stoughton",
+      "lat": 39.791331,
+      "lng": -77.238161,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681736224",
+      "title": "40th NY “Mozart Reg” Egan",
+      "lat": 39.792376,
+      "lng": -77.240433,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/40th_New_York_Infantry_Monument_%2810475665565%29.jpg/960px-40th_New_York_Infantry_Monument_%2810475665565%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A40th_New_York_Infantry_Monument_%2810475665565%29.jpg"
+    },
+    {
+      "id": "osm-node-6681736225",
+      "title": "4th ME Walker(w) / Whitcomb+ / Libby",
+      "lat": 39.791878,
+      "lng": -77.241415,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681736228",
+      "title": "CS Robertson's Brigade",
+      "lat": 39.792151,
+      "lng": -77.242797,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681736229",
+      "title": "CS Benning GA Brigade",
+      "lat": 39.791242,
+      "lng": -77.243499,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681736232",
+      "title": "86th NY Higgins(w) / Lansing",
+      "lat": 39.793572,
+      "lng": -77.2426,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681736233",
+      "title": "US HQ 3-1-2nd Brigade Hobart Ward(w) / Berdan",
+      "lat": 39.793135,
+      "lng": -77.242772,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791210",
+      "title": "5th US Artillery “Hazlett’s Battery D” Hazlett+/ Rittenhouse",
+      "lat": 39.7918,
+      "lng": -77.236639,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791212",
+      "title": "4th NY Artillery “Smith’s Battery” Smith",
+      "lat": 39.794348,
+      "lng": -77.239822,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791216",
+      "title": "14th US Giddings",
+      "lat": 39.79402,
+      "lng": -77.24075,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791219",
+      "title": "US HQ 5-3rd Division Crawford",
+      "lat": 39.795716,
+      "lng": -77.238812,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791223",
+      "title": "3rd MA Artillery Battery C Walcott",
+      "lat": 39.796717,
+      "lng": -77.238045,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791224",
+      "title": "139th PA Collier(w) / Moody",
+      "lat": 39.796605,
+      "lng": -77.237885,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791225",
+      "title": "96th PA Lessig",
+      "lat": 39.796357,
+      "lng": -77.237711,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791226",
+      "title": "95th PA “Gosline Zouaves” Carroll",
+      "lat": 39.79552,
+      "lng": -77.236501,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791227",
+      "title": "US HQ 6-3-3rd Brigade Wheaton / David Nevin",
+      "lat": 39.796741,
+      "lng": -77.237779,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791228",
+      "title": "93rd PA John Nevin",
+      "lat": 39.797008,
+      "lng": -77.237575,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791229",
+      "title": "62nd NY “Anderson’s Zouaves” David Nevin / Hamilton",
+      "lat": 39.797213,
+      "lng": -77.237397,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791230",
+      "title": "102nd PA Lyon",
+      "lat": 39.797451,
+      "lng": -77.237357,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791231",
+      "title": "98th PA Kohler",
+      "lat": 39.797607,
+      "lng": -77.237151,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791232",
+      "title": "6th PA Reserves \"35th PA Volunteer Infantry Regiment\" Lt. Col. Ent",
+      "lat": 39.797517,
+      "lng": -77.239888,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791233",
+      "title": "US HQ 6-1-2nd Brigade Bartlett",
+      "lat": 39.795456,
+      "lng": -77.23625,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791247",
+      "title": "5th ME Edwards",
+      "lat": 39.795323,
+      "lng": -77.234992,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791248",
+      "title": "1st NY Artillery Battery C Barnes",
+      "lat": 39.795968,
+      "lng": -77.234725,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791249",
+      "title": "2nd RI Rogers",
+      "lat": 39.795615,
+      "lng": -77.23409,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791250",
+      "title": "7th MA Harlow",
+      "lat": 39.795809,
+      "lng": -77.234106,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791251",
+      "title": "1st MA Cavalry Curtis",
+      "lat": 39.796007,
+      "lng": -77.23413,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6681791252",
+      "title": "10th MA Parsons",
+      "lat": 39.79637,
+      "lng": -77.234185,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212345",
+      "title": "Signal Corps U.S.A.",
+      "lat": 39.7926,
+      "lng": -77.236568,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6682212348",
+      "title": "US HQ 5-2-3rd Brigade Weed+ / Garrard",
+      "lat": 39.79229,
+      "lng": -77.236235,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212358",
+      "title": "155th PA Cain",
+      "lat": 39.792953,
+      "lng": -77.2365,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212361",
+      "title": "146th NY Garrard / Tuttle",
+      "lat": 39.792744,
+      "lng": -77.236658,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212362",
+      "title": "1st OH Artillery Battery L “Gibbs’ Battery” Gibbs",
+      "lat": 39.793597,
+      "lng": -77.23639,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212363",
+      "title": "98th PA Kohler",
+      "lat": 39.793766,
+      "lng": -77.235736,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212364",
+      "title": "6th NJ Gilkyson",
+      "lat": 39.793424,
+      "lng": -77.240767,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212365",
+      "title": "121th NY Upton",
+      "lat": 39.793646,
+      "lng": -77.235466,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212366",
+      "title": "147th PA Pardee",
+      "lat": 39.794663,
+      "lng": -77.234462,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212367",
+      "title": "5th OH Patrick marker",
+      "lat": 39.794512,
+      "lng": -77.234656,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212371",
+      "title": "US HQ 5th Corps Artillery Brigade Martin",
+      "lat": 39.793865,
+      "lng": -77.234764,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212372",
+      "title": "US HQ 5th Corps Sykes",
+      "lat": 39.793379,
+      "lng": -77.235223,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6682212373",
+      "title": "US Colonel George Ward 15th MA KIA",
+      "lat": 39.812292,
+      "lng": -77.23873,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6683542024",
+      "title": "120th NY Westbrook(w) / Tappen",
+      "lat": 39.804668,
+      "lng": -77.246054,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542025",
+      "title": "2nd NH Bailey",
+      "lat": 39.800512,
+      "lng": -77.250258,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542026",
+      "title": "68th PA “Scott Legion” Tippin / Davis",
+      "lat": 39.800619,
+      "lng": -77.250373,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542030",
+      "title": "US HQ 3rd Corps Artillery Brigade Randolph / Clark",
+      "lat": 39.801404,
+      "lng": -77.250099,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542031",
+      "title": "US HQ 3-2nd Division Humphreys",
+      "lat": 39.801547,
+      "lng": -77.25002,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542032",
+      "title": "US HQ 3-1st Division Birney / Ward",
+      "lat": 39.801535,
+      "lng": -77.24983,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542033",
+      "title": "US HQ 3rd Corp Sickles(w) / Birney",
+      "lat": 39.801471,
+      "lng": -77.24964,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542034",
+      "title": "PA Light Artillery Battery C Thompson",
+      "lat": 39.801406,
+      "lng": -77.24947,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542035",
+      "title": "PA Light Artillery Battery F Thompson",
+      "lat": 39.801318,
+      "lng": -77.249231,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542039",
+      "title": "CS Wofford's Brigade",
+      "lat": 39.800704,
+      "lng": -77.250647,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542040",
+      "title": "15th NY Artillery Battery Hart(w) / Knox(w)",
+      "lat": 39.80116,
+      "lng": -77.248179,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542089",
+      "title": "73rd NY “Fourth Excelsior” “2nd Fire Zouaves” Burns",
+      "lat": 39.802121,
+      "lng": -77.248142,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542090",
+      "title": "7th NJ Francine+ / Cooper",
+      "lat": 39.801506,
+      "lng": -77.246732,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542091",
+      "title": "1st NJ Light Artillery Battery B Clark",
+      "lat": 39.80135,
+      "lng": -77.247241,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542092",
+      "title": "US HQ 1st Brigade Artillery Res McGilvery",
+      "lat": 39.800933,
+      "lng": -77.247552,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683542109",
+      "title": "CS Longstreet",
+      "lat": 39.80579,
+      "lng": -77.256603,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6683895382",
+      "title": "Blount VA Artillery Battery",
+      "lat": 39.805891,
+      "lng": -77.256208,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683895383",
+      "title": "Richmond Fayette Artillery “Macon Battery”",
+      "lat": 39.805382,
+      "lng": -77.256066,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6683895384",
+      "title": "Patterson GA Battery Sumter Artillery Co B",
+      "lat": 39.806447,
+      "lng": -77.256351,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684167151",
+      "title": "1st MA Baldwin",
+      "lat": 39.808787,
+      "lng": -77.243693,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684167152",
+      "title": "CS Perry's Brigade",
+      "lat": 39.808902,
+      "lng": -77.243562,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684167153",
+      "title": "26th PA Bodine",
+      "lat": 39.808972,
+      "lng": -77.242979,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684167154",
+      "title": "2nd RI Rogers",
+      "lat": 39.810151,
+      "lng": -77.241865,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684167158",
+      "title": "1st MA Baldwin marker",
+      "lat": 39.810935,
+      "lng": -77.244983,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684167159",
+      "title": "WI Sharpshooters 1st Regt Co G Berdan / Trepp marker",
+      "lat": 39.810657,
+      "lng": -77.245096,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237370",
+      "title": "20th IN Wheeler+ / Taylor(w) / Gilbreath",
+      "lat": 39.794868,
+      "lng": -77.242763,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237372",
+      "title": "US HQ 5-2nd Division Ayres",
+      "lat": 39.795267,
+      "lng": -77.239781,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237373",
+      "title": "US Colonel Charles Frederick Taylor",
+      "lat": 39.795591,
+      "lng": -77.241228,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237374",
+      "title": "2nd US Infantry Arthur Lee",
+      "lat": 39.795441,
+      "lng": -77.241328,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237375",
+      "title": "13th PA Res Taylor",
+      "lat": 39.795133,
+      "lng": -77.241247,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237376",
+      "title": "US HQ 5-2-2nd Brigade Burbank",
+      "lat": 39.795132,
+      "lng": -77.241331,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237377",
+      "title": "US HQ 5-2-1st Brigade Day",
+      "lat": 39.794874,
+      "lng": -77.240931,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237378",
+      "title": "7th US Infantry Hancock",
+      "lat": 39.795237,
+      "lng": -77.241339,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237379",
+      "title": "17th US Green",
+      "lat": 39.79445,
+      "lng": -77.241452,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237380",
+      "title": "61st NY “Clinton Guards” Broady",
+      "lat": 39.796985,
+      "lng": -77.241944,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237381",
+      "title": "27th CT Merwin+ / Coburn",
+      "lat": 39.797089,
+      "lng": -77.241551,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237382",
+      "title": "81st PA McKeen / Stroh",
+      "lat": 39.796605,
+      "lng": -77.241968,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237383",
+      "title": "1st NY Winslow’s Battery D Winslow",
+      "lat": 39.797419,
+      "lng": -77.2428,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237384",
+      "title": "148th PA McKeen / McFarlane",
+      "lat": 39.795948,
+      "lng": -77.241962,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237685",
+      "title": "US HQ 2-1-1st Brigade Cross+ / McKeen",
+      "lat": 39.796092,
+      "lng": -77.241714,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237686",
+      "title": "US HQ 5-3-1st Brigade McCandless",
+      "lat": 39.796641,
+      "lng": -77.240616,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237687",
+      "title": "2nd PA Res \"31st PA Volunteer Infantry Regiment\" Woodward",
+      "lat": 39.796278,
+      "lng": -77.241197,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684237688",
+      "title": "1st PA Res \"30th PA Volunteer Infantry Regiment\" Talley",
+      "lat": 39.7965,
+      "lng": -77.240854,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462255",
+      "title": "US HQ 3-1-3rd Brigade De Trobriand",
+      "lat": 39.796523,
+      "lng": -77.244103,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462257",
+      "title": "US HQ 3-2-3rd Brigade Burling",
+      "lat": 39.796059,
+      "lng": -77.245294,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462258",
+      "title": "57th NY “Zook’s Voltigeurs” Chapman",
+      "lat": 39.797035,
+      "lng": -77.244536,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462267",
+      "title": "4th MI Jeffords+ / Lumbard",
+      "lat": 39.796197,
+      "lng": -77.24388,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462268",
+      "title": "62nd PA Hull",
+      "lat": 39.795902,
+      "lng": -77.244067,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462269",
+      "title": "17th ME Merrill",
+      "lat": 39.795766,
+      "lng": -77.24439,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462270",
+      "title": "115th PA Dunne",
+      "lat": 39.795882,
+      "lng": -77.244646,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462271",
+      "title": "US Captain Jedediah Chapman",
+      "lat": 39.795972,
+      "lng": -77.245024,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462272",
+      "title": "8th NJ Ramsey(w) / Langton",
+      "lat": 39.795991,
+      "lng": -77.245581,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462276",
+      "title": "US Captain Henry Fuller",
+      "lat": 39.795099,
+      "lng": -77.245443,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6684462288",
+      "title": "145th PA Brown(w) / J. Reynolds(w) / Oliver",
+      "lat": 39.795591,
+      "lng": -77.24719,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462290",
+      "title": "53rd PA McMichael",
+      "lat": 39.794975,
+      "lng": -77.246966,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462291",
+      "title": "64th NY Bingham(w) / Bradley",
+      "lat": 39.794456,
+      "lng": -77.247095,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462292",
+      "title": "2nd DE Baily(w) / Christman",
+      "lat": 39.794151,
+      "lng": -77.2472,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462293",
+      "title": "US HQ 2-1-4th Brigade Brooke",
+      "lat": 39.794745,
+      "lng": -77.246991,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462294",
+      "title": "CS HQ Semmes+ GA Brigade",
+      "lat": 39.79479,
+      "lng": -77.247582,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6684462295",
+      "title": "CS HQ Kershaw SC Brigade",
+      "lat": 39.795589,
+      "lng": -77.247706,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689567479",
+      "title": "The Angle",
+      "lat": 39.813423,
+      "lng": -77.236384,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6689567484",
+      "title": "1st NY Artillery “Cowan’s Battery” Cowan",
+      "lat": 39.81234,
+      "lng": -77.235628,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582485",
+      "title": "42nd NY “Tammany Regiment” Mallon",
+      "lat": 39.812018,
+      "lng": -77.2354,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Gettysburg_Tammany_Regiment%2C_42nd_New_York_%2810475757184%29.jpg/960px-Gettysburg_Tammany_Regiment%2C_42nd_New_York_%2810475757184%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AGettysburg_Tammany_Regiment%2C_42nd_New_York_%2810475757184%29.jpg"
+    },
+    {
+      "id": "osm-node-6689582486",
+      "title": "US HQ 2-2-3 Brigade Hall",
+      "lat": 39.811831,
+      "lng": -77.235388,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582487",
+      "title": "19th ME Heath(w) / Cunningham",
+      "lat": 39.811069,
+      "lng": -77.236106,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582489",
+      "title": "1st NY Light Artillery “Empire Battery B” Rorty+ / Sheldon(w) / Rogers",
+      "lat": 39.810844,
+      "lng": -77.23576,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582490",
+      "title": "US HQ 2-2-1st Brigade Harrow / Heath(w)",
+      "lat": 39.810736,
+      "lng": -77.235956,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582491",
+      "title": "US HQ 2-2nd Division Gibbon(w) / Harrow",
+      "lat": 39.810413,
+      "lng": -77.235655,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582508",
+      "title": "12th NJ Hill",
+      "lat": 39.815159,
+      "lng": -77.23543,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582510",
+      "title": "1st RI Light Artillery Battery A “Arnold’s Battery”",
+      "lat": 39.813552,
+      "lng": -77.235495,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582511",
+      "title": "1st MA Sharpshooters Co. Plumer",
+      "lat": 39.813771,
+      "lng": -77.23549,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582512",
+      "title": "14th CT Ellis",
+      "lat": 39.813941,
+      "lng": -77.23544,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582513",
+      "title": "1st DE Harris / Hizard(w) / Smith+ / Dent",
+      "lat": 39.8146,
+      "lng": -77.235452,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582514",
+      "title": "2nd DE Baily (w) / Christman",
+      "lat": 39.814788,
+      "lng": -77.235439,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582515",
+      "title": "125th NY Crandell",
+      "lat": 39.814745,
+      "lng": -77.23521,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582516",
+      "title": "39th NY “Garibaldi Guard” Hildebrandt(w)",
+      "lat": 39.814287,
+      "lng": -77.235195,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582517",
+      "title": "111th NY MacDougall / Lusk / Seeley",
+      "lat": 39.815398,
+      "lng": -77.235384,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582519",
+      "title": "US HQ 2-3rd Division Hays",
+      "lat": 39.8151,
+      "lng": -77.235178,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582520",
+      "title": "US HQ 2-3-3rd \"Willard’s Brigade\" Willard+ / Sherrill+ / MacDougall(w) / Bull",
+      "lat": 39.815361,
+      "lng": -77.235177,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582521",
+      "title": "107th PA McThomson(w) / Roath",
+      "lat": 39.815785,
+      "lng": -77.23533,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582522",
+      "title": "US Lt. Col. John Nicholson",
+      "lat": 39.814615,
+      "lng": -77.235206,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582523",
+      "title": "US HQ 2nd Corps Hancock(w) / Gibbon(w) / Hays",
+      "lat": 39.814502,
+      "lng": -77.2352,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582525",
+      "title": "US HQ 2-3-2nd Brigade Smyth(w) / Pierce",
+      "lat": 39.814103,
+      "lng": -77.235232,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582526",
+      "title": "4th US “Cushing’s Battery A” Cushing+ / Fuger",
+      "lat": 39.813293,
+      "lng": -77.235827,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582531",
+      "title": "US HQ Army of the Potomac. Meade",
+      "lat": 39.81324,
+      "lng": -77.235306,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582532",
+      "title": "1st NY Artillery Battery K “Fitzhugh’s Battery”",
+      "lat": 39.81376,
+      "lng": -77.235192,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582533",
+      "title": "11th NY Artillery “Havelock Battery” Fitzhugh",
+      "lat": 39.813922,
+      "lng": -77.235156,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582544",
+      "title": "US HQ 2-2-2nd Brigade Webb(w)",
+      "lat": 39.813087,
+      "lng": -77.23532,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582545",
+      "title": "1st PA Cavalry Taylor",
+      "lat": 39.812843,
+      "lng": -77.235345,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582546",
+      "title": "3rd ME Lakeman / Samuel Lee(w) / Morgan",
+      "lat": 39.812731,
+      "lng": -77.235294,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582547",
+      "title": "4th ME Walker(w) / Libby",
+      "lat": 39.812493,
+      "lng": -77.235302,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689582549",
+      "title": "RI Artillery “Brown’s Battery B” Brown(w) / Perrin",
+      "lat": 39.812308,
+      "lng": -77.235361,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689848546",
+      "title": "151st PA McFarland(w) / Owens",
+      "lat": 39.833724,
+      "lng": -77.25104,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689848547",
+      "title": "US General John F. Reynolds KIA",
+      "lat": 39.834385,
+      "lng": -77.250969,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689848548",
+      "title": "8th NY Cavalry Markell",
+      "lat": 39.83352,
+      "lng": -77.250552,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689848549",
+      "title": "US HQ Cavalry Corps 1st Division Buford",
+      "lat": 39.835132,
+      "lng": -77.249861,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689848550",
+      "title": "US HQ Cavalry Corps 1-1st Brigade Gamble",
+      "lat": 39.834955,
+      "lng": -77.249966,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689848555",
+      "title": "US 1st Corps Reynolds+ / Doubleday",
+      "lat": 39.836097,
+      "lng": -77.249211,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689848556",
+      "title": "US HQ 1st Corps Reynolds+ / Doubleday",
+      "lat": 39.835515,
+      "lng": -77.249597,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689848557",
+      "title": "8th IL Cavalry Beveridge",
+      "lat": 39.835809,
+      "lng": -77.249389,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689848558",
+      "title": "US General Abner Doubleday",
+      "lat": 39.832993,
+      "lng": -77.250669,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6689848563",
+      "title": "US John L. Burns volunteer 150th PA",
+      "lat": 39.835931,
+      "lng": -77.252727,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6689848576",
+      "title": "CS 26th NC Burgwyn+ / Albright",
+      "lat": 39.834548,
+      "lng": -77.254652,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689848577",
+      "title": "24th MI Morrow(w) / Flanigan (w) / Wight (w) / Edwards",
+      "lat": 39.83498,
+      "lng": -77.254299,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689858733",
+      "title": "3rd IN Cavalry Chapman",
+      "lat": 39.837899,
+      "lng": -77.247831,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689858734",
+      "title": "147th NY Miller(w) / Harney",
+      "lat": 39.838071,
+      "lng": -77.247783,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689858735",
+      "title": "US General James Wadsworth",
+      "lat": 39.838259,
+      "lng": -77.247661,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6689858737",
+      "title": "6th WI Dawes",
+      "lat": 39.837369,
+      "lng": -77.248203,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689858738",
+      "title": "95th NY \"Warren Rifles\" Biddle(w) / Pye",
+      "lat": 39.837419,
+      "lng": -77.248033,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689858740",
+      "title": "12th IL Cavalry Chapman",
+      "lat": 39.837068,
+      "lng": -77.248564,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689858741",
+      "title": "US HQ 1-1st Division Wadsworth",
+      "lat": 39.836818,
+      "lng": -77.248729,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689858742",
+      "title": "CS HQ Lee",
+      "lat": 39.834818,
+      "lng": -77.245521,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689858756",
+      "title": "CS HQ 2nd Corps Ewell",
+      "lat": 39.834014,
+      "lng": -77.244945,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859511",
+      "title": "142nd PA Cummins",
+      "lat": 39.832704,
+      "lng": -77.250766,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859512",
+      "title": "1st PA Artillery Battery B “Cooper’s Battery” Cooper",
+      "lat": 39.832329,
+      "lng": -77.250891,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859513",
+      "title": "2nd US Artillery Battery A “Calef’s Battery”",
+      "lat": 39.831947,
+      "lng": -77.251018,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859514",
+      "title": "US HQ 1-3-1st Brigade Chapman Biddle",
+      "lat": 39.831379,
+      "lng": -77.251208,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859516",
+      "title": "121st PA  Alexander Biddle / Chapman Biddle",
+      "lat": 39.828731,
+      "lng": -77.252092,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859517",
+      "title": "CS Imboden VA Brigade",
+      "lat": 39.827538,
+      "lng": -77.25289,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859518",
+      "title": "CS Robertson NC Cavalry Brigade",
+      "lat": 39.827328,
+      "lng": -77.252943,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859519",
+      "title": "CS Jones VA Cavalry Brigade",
+      "lat": 39.82706,
+      "lng": -77.252988,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859649",
+      "title": "143rd PA Dana / Musser(w)",
+      "lat": 39.836523,
+      "lng": -77.249182,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859727",
+      "title": "Major General John Buford",
+      "lat": 39.83792,
+      "lng": -77.251636,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6689859732",
+      "title": "2nd Maine Artillery 1-2-1st “Hall’s Battery”",
+      "lat": 39.837846,
+      "lng": -77.251541,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859733",
+      "title": "Army of the Potomac 1-3-2nd Brigade Colonel Roy Stone Colonel Lanchorne Wister",
+      "lat": 39.837505,
+      "lng": -77.25197,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859735",
+      "title": "2nd US Artillery Battery A “Calef’s Battery”",
+      "lat": 39.83762,
+      "lng": -77.251551,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859746",
+      "title": "2nd WI Fairchild(w) / Mansfield(w) / Otis",
+      "lat": 39.835528,
+      "lng": -77.253865,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859748",
+      "title": "US HQ 1-1-1st “The Iron Brigade” Meredith(w) / Robinson",
+      "lat": 39.835389,
+      "lng": -77.254181,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689859749",
+      "title": "CS HQ Archer Brigade",
+      "lat": 39.835019,
+      "lng": -77.254796,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689879017",
+      "title": "3rd Richmond VA Howitzers “Smith’s Battery”",
+      "lat": 39.830232,
+      "lng": -77.24431,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689879024",
+      "title": "Dance 1st VA Artillery Battalion",
+      "lat": 39.830014,
+      "lng": -77.244261,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689879025",
+      "title": "Powhatan VA Artillery “Cunningham’s Battery”",
+      "lat": 39.829776,
+      "lng": -77.24424,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689881063",
+      "title": "Abraham Lincoln",
+      "lat": 39.828708,
+      "lng": -77.230972,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6689887011",
+      "title": "76th NY “Courtland County Regiment” Glover+ / Cook",
+      "lat": 39.839904,
+      "lng": -77.246689,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689887012",
+      "title": "56th PA Hoffmann",
+      "lat": 39.83891,
+      "lng": -77.247266,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689887013",
+      "title": "CS HQ Davis Brigade",
+      "lat": 39.838361,
+      "lng": -77.24786,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6689887014",
+      "title": "US HQ 1-1-2nd Brigade Cutler",
+      "lat": 39.839163,
+      "lng": -77.247124,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691387477",
+      "title": "Unnamed monument",
+      "lat": 39.839154,
+      "lng": -77.24749,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691387478",
+      "title": "Unnamed monument",
+      "lat": 39.839016,
+      "lng": -77.247105,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429208",
+      "title": "19th IN Williams(w) / Dudley(w) / Lindley(w)",
+      "lat": 39.834172,
+      "lng": -77.254197,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429213",
+      "title": "3rd WV Cavalry Conger",
+      "lat": 39.843537,
+      "lng": -77.247942,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429214",
+      "title": "6th NY Cavalry “Ira Harris Guard” Beardsley",
+      "lat": 39.84453,
+      "lng": -77.247126,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429215",
+      "title": "9th NY Cavalry Sackett",
+      "lat": 39.845938,
+      "lng": -77.246035,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429216",
+      "title": "US HQ Cavalry Corps 1-2nd Brigade Devin",
+      "lat": 39.845107,
+      "lng": -77.246676,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429217",
+      "title": "17th PA Cavalry Kellogg",
+      "lat": 39.847298,
+      "lng": -77.24547,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/17th_Pennsylvania_Cavalry_Regiment_monument%2C_Gettysburg_National_Military_Park%2C_2007.jpg/960px-17th_Pennsylvania_Cavalry_Regiment_monument%2C_Gettysburg_National_Military_Park%2C_2007.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (DimiTalen; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A17th_Pennsylvania_Cavalry_Regiment_monument%2C_Gettysburg_National_Military_Park%2C_2007.jpg"
+    },
+    {
+      "id": "osm-node-6691429259",
+      "title": "CS HQ 2nd Corps Ewell",
+      "lat": 39.847785,
+      "lng": -77.24535,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429260",
+      "title": "CS HQ Ramseur NC Brigade",
+      "lat": 39.848373,
+      "lng": -77.244568,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429275",
+      "title": "CS HQ Iverson NC Brigade",
+      "lat": 39.847838,
+      "lng": -77.243152,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429277",
+      "title": "CS HQ Carter Artillery Battalion",
+      "lat": 39.847796,
+      "lng": -77.24294,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429278",
+      "title": "CS HQ Rodes Division",
+      "lat": 39.848362,
+      "lng": -77.243206,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429279",
+      "title": "CS King William VA Artillery",
+      "lat": 39.848587,
+      "lng": -77.243848,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429280",
+      "title": "CS Whitworth Rifle Artillery",
+      "lat": 39.848783,
+      "lng": -77.243921,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429281",
+      "title": "CS Hardaway AL Artillery “Hurt’s Battery”",
+      "lat": 39.848971,
+      "lng": -77.243606,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429282",
+      "title": "CS HQ Daniel NC Brigade",
+      "lat": 39.848741,
+      "lng": -77.243525,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429283",
+      "title": "CS Morris VA Artillery “Page’s Battery”",
+      "lat": 39.847274,
+      "lng": -77.242375,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429284",
+      "title": "Jeff Davis AL Artillery “Reese’s Battery”",
+      "lat": 39.847303,
+      "lng": -77.242105,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429285",
+      "title": "CS HQ O'Neil AL Brigade",
+      "lat": 39.846196,
+      "lng": -77.242382,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429287",
+      "title": "90th PA Lyle / Sellers",
+      "lat": 39.844243,
+      "lng": -77.241846,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/90th_Pennsylvania_Volunteer_Infantry_Monument_%28%22Eagle_Monument%22%29_%2810475682025%29.jpg/960px-90th_Pennsylvania_Volunteer_Infantry_Monument_%28%22Eagle_Monument%22%29_%2810475682025%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A90th_Pennsylvania_Volunteer_Infantry_Monument_%28%22Eagle_Monument%22%29_%2810475682025%29.jpg"
+    },
+    {
+      "id": "osm-node-6691429291",
+      "title": "US General John C. Robinson",
+      "lat": 39.843411,
+      "lng": -77.241827,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6691429314",
+      "title": "104th NY “Wadsworth Guards” Prey",
+      "lat": 39.843196,
+      "lng": -77.241475,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429316",
+      "title": "88th PA Foust(w) / Mass(c) / Whiteside",
+      "lat": 39.843501,
+      "lng": -77.242098,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429317",
+      "title": "83rd NY “9th Reg NYSM” Moesch",
+      "lat": 39.842965,
+      "lng": -77.24232,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429318",
+      "title": "US HQ 1-2-2nd Brigade Baxter",
+      "lat": 39.842783,
+      "lng": -77.242431,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429319",
+      "title": "97th NY “9th Reg NYSM Conkling Rifles” Wheelock(w) / Northrup",
+      "lat": 39.84254,
+      "lng": -77.242497,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429320",
+      "title": "11th PA Coulter / Haines(w) / Overmyer",
+      "lat": 39.842199,
+      "lng": -77.242641,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429321",
+      "title": "107th PA McThomson(w) / Roath",
+      "lat": 39.841933,
+      "lng": -77.242752,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429322",
+      "title": "16th ME Tilden(c) / Marston",
+      "lat": 39.841668,
+      "lng": -77.24287,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429323",
+      "title": "94th NY Root(w) / Moffett",
+      "lat": 39.841269,
+      "lng": -77.243022,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429324",
+      "title": "US HQ 1-2-1st Brigade  Paul(w) / Leonard(w) / Root(w) / Coulter(w) / Lyle",
+      "lat": 39.841522,
+      "lng": -77.242955,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429325",
+      "title": "US HQ 1-2nd Division Robinson",
+      "lat": 39.842522,
+      "lng": -77.241239,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429326",
+      "title": "13th MA Leonard(w) / Batchelder",
+      "lat": 39.842813,
+      "lng": -77.241211,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429327",
+      "title": "157th NY Brown(w) / Arrowsmith+",
+      "lat": 39.840123,
+      "lng": -77.236512,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429360",
+      "title": "US HQ 11-3-1st Brigade Schimmelfennig / von Amsberg",
+      "lat": 39.840765,
+      "lng": -77.234803,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429361",
+      "title": "45th NY “Fifth German Rifles” VonAmsberg / Dobke",
+      "lat": 39.840873,
+      "lng": -77.23449,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429362",
+      "title": "US HQ 11-3rd Division Schurz",
+      "lat": 39.841004,
+      "lng": -77.234238,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429363",
+      "title": "74th PA von Hartung(w) / von Mitze(c) / Krauseneck",
+      "lat": 39.841206,
+      "lng": -77.234139,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429364",
+      "title": "61st OH McGroarty",
+      "lat": 39.841532,
+      "lng": -77.234006,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429374",
+      "title": "1st OH Light Artillery Battery I “Dilger’s Battery” Dilger",
+      "lat": 39.841942,
+      "lng": -77.233782,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429384",
+      "title": "US HQ 11th Corps Artillery Brigade Osborn",
+      "lat": 39.842176,
+      "lng": -77.233666,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429385",
+      "title": "13th NY Artillery “Wheeler’s Battery” Wheeler",
+      "lat": 39.842579,
+      "lng": -77.232804,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429386",
+      "title": "82nd IL Salomon",
+      "lat": 39.842859,
+      "lng": -77.232024,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429388",
+      "title": "US HQ 11th Corps Howard",
+      "lat": 39.842926,
+      "lng": -77.231774,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691429389",
+      "title": "CS Dole's Brigade",
+      "lat": 39.843209,
+      "lng": -77.231763,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720097",
+      "title": "119th NY Lockman(w) / Lloyd",
+      "lat": 39.843111,
+      "lng": -77.230775,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720098",
+      "title": "82nd OH Robinson(w) / Thomson",
+      "lat": 39.843244,
+      "lng": -77.230021,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720099",
+      "title": "75th PA Mahler+ / Ledig",
+      "lat": 39.843316,
+      "lng": -77.229618,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720100",
+      "title": "26th WI Boebel(w) / Baetz(w) / Fuchs",
+      "lat": 39.843378,
+      "lng": -77.229285,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720101",
+      "title": "US HQ 11-3-2nd Brigade Krzyzanowski",
+      "lat": 39.84342,
+      "lng": -77.229028,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720102",
+      "title": "58th NY “Polish Legion” Otto(w) / Koenig",
+      "lat": 39.843709,
+      "lng": -77.228066,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720103",
+      "title": "107th OH Meyer(w) / Lutz",
+      "lat": 39.844591,
+      "lng": -77.227492,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720111",
+      "title": "US HQ 11-1st Division Barlow(w) / Ames",
+      "lat": 39.844792,
+      "lng": -77.226701,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720112",
+      "title": "US HQ 11-1-2nd Brigade Ames / Harris",
+      "lat": 39.845134,
+      "lng": -77.227169,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720116",
+      "title": "17th CT Fowler+ / Brady",
+      "lat": 39.845407,
+      "lng": -77.226143,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720117",
+      "title": "4th US Artillery Battery G Wilkinson+ / Bancroft",
+      "lat": 39.845577,
+      "lng": -77.226019,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720118",
+      "title": "153th PA Freuauff",
+      "lat": 39.845713,
+      "lng": -77.226147,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720119",
+      "title": "CS Gordon GA Brigade",
+      "lat": 39.845,
+      "lng": -77.226389,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6691720120",
+      "title": "54th NY “Hiram Barney Rifles” Kovacs+ / Both marker",
+      "lat": 39.845765,
+      "lng": -77.224543,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6693645972",
+      "title": "CS Jones Artillery Battalion",
+      "lat": 39.850686,
+      "lng": -77.217933,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6693645973",
+      "title": "Charlottesville VA Artillery “Carrington’s Battery”",
+      "lat": 39.850665,
+      "lng": -77.217103,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6696896949",
+      "title": "Charlotte NC Artillery Co C 1st NC Artillery Reg",
+      "lat": 39.818017,
+      "lng": -77.247876,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6696896950",
+      "title": "Wingfield GA Artillery",
+      "lat": 39.818325,
+      "lng": -77.247666,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6696896951",
+      "title": "CS Davis Brigade",
+      "lat": 39.818394,
+      "lng": -77.247934,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6696896952",
+      "title": "CS Heth(w) Division",
+      "lat": 39.818638,
+      "lng": -77.24774,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6696896953",
+      "title": "11th MS Green(w) / Reynolds(w)",
+      "lat": 39.818986,
+      "lng": -77.247543,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6696896954",
+      "title": "Scales NC Brigade",
+      "lat": 39.820459,
+      "lng": -77.246636,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6696896955",
+      "title": "Lane GA Artillery Battalion “The Sumter GA Artillery”",
+      "lat": 39.818687,
+      "lng": -77.247411,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6697528116",
+      "title": "CS HQ 3rd Corps A.P. Hill",
+      "lat": 39.819722,
+      "lng": -77.247135,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6697528117",
+      "title": "Brockenbrough VA Brigade",
+      "lat": 39.819481,
+      "lng": -77.247257,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6697528118",
+      "title": "Lanes NC Brigade",
+      "lat": 39.820855,
+      "lng": -77.246372,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6697528119",
+      "title": "Thomas GA Brigade",
+      "lat": 39.821253,
+      "lng": -77.2461,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6697528130",
+      "title": "Poague Artillery Battalion",
+      "lat": 39.816889,
+      "lng": -77.248614,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6697528131",
+      "title": "CS Archer(c) Brigade",
+      "lat": 39.816968,
+      "lng": -77.2489,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6697528132",
+      "title": "Mahone VA Brigade",
+      "lat": 39.816358,
+      "lng": -77.249298,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6697528133",
+      "title": "Pettigrew NC Brigade",
+      "lat": 39.817532,
+      "lng": -77.248526,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6698082958",
+      "title": "Purcell VA Artillery “McGraw Battery”",
+      "lat": 39.821228,
+      "lng": -77.245789,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6698082960",
+      "title": "CS Pender+ Division",
+      "lat": 39.821941,
+      "lng": -77.245731,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6698082961",
+      "title": "Perrin SC Brigade “McGowan Brigade”",
+      "lat": 39.822467,
+      "lng": -77.245535,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6698082963",
+      "title": "Norfolk VA Light Artillery Blues “Grandy Battery”",
+      "lat": 39.822396,
+      "lng": -77.245228,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6698082964",
+      "title": "Letcher VA Artillery “Brander Battery”",
+      "lat": 39.821917,
+      "lng": -77.245387,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6698082966",
+      "title": "Pee Dee SC Artillery “Zimmerman Battery”",
+      "lat": 39.820395,
+      "lng": -77.246353,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6698082967",
+      "title": "CS Pegram Artillery Battalion",
+      "lat": 39.820052,
+      "lng": -77.246571,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6698082968",
+      "title": "Crenshaw VA Artillery Battery",
+      "lat": 39.819685,
+      "lng": -77.246771,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6698082969",
+      "title": "Fredericksburg VA Artillery “Marye Battery”",
+      "lat": 39.818985,
+      "lng": -77.247197,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6698082970",
+      "title": "Ross GA Battery The Sumter Artillery, Co A",
+      "lat": 39.818841,
+      "lng": -77.247311,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6698082971",
+      "title": "Albemarle VA Artillery “Wyatt Battery”",
+      "lat": 39.817482,
+      "lng": -77.248218,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6699677720",
+      "title": "Donaldsonville LA Artillery “Maurin Battery”",
+      "lat": 39.826078,
+      "lng": -77.244815,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6699677722",
+      "title": "Salem VA Artillery “Griffiin Battery”",
+      "lat": 39.826409,
+      "lng": -77.244742,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6699677723",
+      "title": "CS Itinerary Tablets",
+      "lat": 39.827185,
+      "lng": -77.244905,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-6699677724",
+      "title": "Johnson VA Artillery",
+      "lat": 39.827014,
+      "lng": -77.244547,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6699677725",
+      "title": "2nd Richmond VA Howitzers “Watson Battery”",
+      "lat": 39.826821,
+      "lng": -77.244629,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6699677726",
+      "title": "Lewis VA Artillery",
+      "lat": 39.825401,
+      "lng": -77.244962,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6699677727",
+      "title": "CS Garnett Artillery Battalion",
+      "lat": 39.824296,
+      "lng": -77.24505,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-6699677728",
+      "title": "Huger VA Artillery “Moore Battery”",
+      "lat": 39.822842,
+      "lng": -77.245178,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128731206",
+      "title": "119th PA Ellemaker",
+      "lat": 39.787266,
+      "lng": -77.238852,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128731207",
+      "title": "20th ME Chamberlain",
+      "lat": 39.787067,
+      "lng": -77.240789,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128731208",
+      "title": "12th PA Reserves \"41st PA Vol Infantry Regt\" Hardin",
+      "lat": 39.78595,
+      "lng": -77.240798,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128731209",
+      "title": "5th PA Reserves \"34th PA Vol Infantry Regt\" Dare",
+      "lat": 39.786034,
+      "lng": -77.239975,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128731211",
+      "title": "118th PA “Corn Exchange Reg” Gwyn",
+      "lat": 39.787732,
+      "lng": -77.238829,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128731212",
+      "title": "10th PA Reserves \"39th PA Infantry Reg\" Warner",
+      "lat": 39.788716,
+      "lng": -77.237664,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128731213",
+      "title": "9th MA Guiney",
+      "lat": 39.788545,
+      "lng": -77.237847,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128731214",
+      "title": "US HQ 5-3-3rd Brigade Fisher",
+      "lat": 39.788476,
+      "lng": -77.237624,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128731222",
+      "title": "CS HQ Law AL Brigade",
+      "lat": 39.789655,
+      "lng": -77.237468,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128877974",
+      "title": "CS Hood(w) / Law Division",
+      "lat": 39.790137,
+      "lng": -77.254341,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128877976",
+      "title": "US 2nd Reg ME Sharpshooters Co D Stoughton",
+      "lat": 39.789564,
+      "lng": -77.248054,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128877990",
+      "title": "1st VT Cavalry Preston",
+      "lat": 39.786888,
+      "lng": -77.243769,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128878041",
+      "title": "4th US Artillery Battery E Elder",
+      "lat": 39.783728,
+      "lng": -77.245089,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128878042",
+      "title": "5th NY Cavalry Hammond",
+      "lat": 39.783168,
+      "lng": -77.245646,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128878043",
+      "title": "18th PA Cavalry Brinton",
+      "lat": 39.784514,
+      "lng": -77.249075,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128878049",
+      "title": "US HQ Cavalry Corps 3rd Division Kilpatrick \"kill cavalry\"",
+      "lat": 39.785071,
+      "lng": -77.249407,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128878061",
+      "title": "US HQ Cavalry Corps 3-1st Brigade Farnsworth+ / Richmond",
+      "lat": 39.785561,
+      "lng": -77.24865,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128878078",
+      "title": "Reilly Battery \"Rowan 1st NC Artillery Co D\" (Parrott section)",
+      "lat": 39.784235,
+      "lng": -77.252386,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128878088",
+      "title": "CS Right Flank Army of Nothern Virginia",
+      "lat": 39.784339,
+      "lng": -77.252003,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7128878102",
+      "title": "Reilly Battery \"Rowan 1st NC Artillery Co D\"",
+      "lat": 39.785331,
+      "lng": -77.254133,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128903636",
+      "title": "Law AL Brigade",
+      "lat": 39.787011,
+      "lng": -77.254166,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128903637",
+      "title": "Palmetto SC Light Artillery “Garden Battery”",
+      "lat": 39.786736,
+      "lng": -77.253954,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128903638",
+      "title": "CS Henry Artillery Battalion",
+      "lat": 39.78804,
+      "lng": -77.25387,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128903639",
+      "title": "Scruggs 4th AL",
+      "lat": 39.787226,
+      "lng": -77.254142,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128903640",
+      "title": "Benning GA Brigade",
+      "lat": 39.789254,
+      "lng": -77.254122,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128903641",
+      "title": "German SC Artillery “Bachman Battery”",
+      "lat": 39.789098,
+      "lng": -77.253826,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128936995",
+      "title": "CS Hood(w) / Law Texas Brigade",
+      "lat": 39.790282,
+      "lng": -77.254397,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128936996",
+      "title": "Robertson TX Brigade",
+      "lat": 39.790437,
+      "lng": -77.254393,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128936997",
+      "title": "Branch NC Artillery “Latham Battery”",
+      "lat": 39.790471,
+      "lng": -77.254158,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128972276",
+      "title": "1st NC Artillery “Manly Battery”",
+      "lat": 39.798253,
+      "lng": -77.255893,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128972277",
+      "title": "Anderson(w) / Luffman GA Brigade",
+      "lat": 39.792463,
+      "lng": -77.255026,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128972278",
+      "title": "Fraser+ / Furlong \"Pulaski GA Artillery\"",
+      "lat": 39.794146,
+      "lng": -77.254981,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128972279",
+      "title": "1st Richmond VA Howitzers “McCarthy Battery”",
+      "lat": 39.794943,
+      "lng": -77.255156,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128972280",
+      "title": "CS Cabell Artillery Battalion",
+      "lat": 39.795706,
+      "lng": -77.255282,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128972281",
+      "title": "Troup GA Artillery (2nd sec) “Carlton Battery”",
+      "lat": 39.797398,
+      "lng": -77.255814,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128972282",
+      "title": "CS Kershaw SC Brigade",
+      "lat": 39.798513,
+      "lng": -77.255914,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128972283",
+      "title": "CS Kershaw SC Brigade",
+      "lat": 39.798248,
+      "lng": -77.2517,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128972284",
+      "title": "CS McLaw Division",
+      "lat": 39.799309,
+      "lng": -77.256131,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128988325",
+      "title": "CS HQ 1st Corps Longstreet",
+      "lat": 39.801184,
+      "lng": -77.25646,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128988326",
+      "title": "CS Semmes+ GA Brigade",
+      "lat": 39.798732,
+      "lng": -77.255984,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128994185",
+      "title": "Ashland VA Artillery “Woolfolk Battery”",
+      "lat": 39.799748,
+      "lng": -77.255884,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128994186",
+      "title": "Jordan\"Bedford VA Artillery\"",
+      "lat": 39.800135,
+      "lng": -77.256163,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128994187",
+      "title": "Parker VA Artillery",
+      "lat": 39.800404,
+      "lng": -77.256187,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128994188",
+      "title": "CS Alexander Artillery Battalion",
+      "lat": 39.800722,
+      "lng": -77.256165,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7128994189",
+      "title": "Taylor VA Artillery",
+      "lat": 39.801154,
+      "lng": -77.25616,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129023413",
+      "title": "Brooks SC Artillery “Rhett Battery”",
+      "lat": 39.802301,
+      "lng": -77.256073,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129023414",
+      "title": "Madison LA Artillery “Moody Battery”",
+      "lat": 39.801891,
+      "lng": -77.256112,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129083803",
+      "title": "Miller LA Battery  “Washington Artillery Co C”",
+      "lat": 39.80268,
+      "lng": -77.255999,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129083804",
+      "title": "Squires LA Battery “Washington Artillery Co A”",
+      "lat": 39.80289,
+      "lng": -77.255953,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129083805",
+      "title": "Dearing Artillery Battalion",
+      "lat": 39.805016,
+      "lng": -77.256038,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129083806",
+      "title": "Hampden VA Artillery “Caskie Battery”",
+      "lat": 39.804759,
+      "lng": -77.25603,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129083807",
+      "title": "Fauquier VA Artillery “Stribling Battery”",
+      "lat": 39.804321,
+      "lng": -77.255966,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129083808",
+      "title": "Norcom LA  Battery “Washington Artillery Co D”",
+      "lat": 39.803998,
+      "lng": -77.255932,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129083809",
+      "title": "Richardson LA Battery “Washington Artillery Co B”",
+      "lat": 39.803673,
+      "lng": -77.255906,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129083810",
+      "title": "CS Eshleman Artillery Battalion “Washington Artillery”",
+      "lat": 39.803395,
+      "lng": -77.255899,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129083816",
+      "title": "Barksdale+ MS Brigade",
+      "lat": 39.80298,
+      "lng": -77.256195,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129083817",
+      "title": "CS Wofford GA Brigade",
+      "lat": 39.803275,
+      "lng": -77.256162,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129101362",
+      "title": "1st RI Light Artillery Battery E “Bucklyn’s Battery” Bucklyn(w) / Freeborn",
+      "lat": 39.802367,
+      "lng": -77.24939,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146428",
+      "title": "4th US Battery K Seely(w) / James",
+      "lat": 39.805625,
+      "lng": -77.246847,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146429",
+      "title": "11th NJ McAllister(w) / Martin+ / Loyd(w) / Schoonover(w) / Sleeper",
+      "lat": 39.805921,
+      "lng": -77.246613,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146430",
+      "title": "12th NH Langley(w) / Fernal / Barker",
+      "lat": 39.806526,
+      "lng": -77.245966,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146431",
+      "title": "16th MA Merriam(w) / Donovan",
+      "lat": 39.807055,
+      "lng": -77.245315,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146432",
+      "title": "5th NJ Sewell(w) / Woolsey",
+      "lat": 39.80751,
+      "lng": -77.245153,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146433",
+      "title": "3rd US Artillery Battery F & K Turnbull",
+      "lat": 39.807636,
+      "lng": -77.244591,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146434",
+      "title": "WI Sharpshooters 1st Regt Co G Berdan / Trepp",
+      "lat": 39.808142,
+      "lng": -77.244389,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146435",
+      "title": "11th MA Tripp",
+      "lat": 39.808134,
+      "lng": -77.243965,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146436",
+      "title": "US HQ 3-2-1st Brigade Carr",
+      "lat": 39.807681,
+      "lng": -77.244207,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146438",
+      "title": "US HQ 2-3-3rd Brigade Willard+ / Sherril+ / Bull marker",
+      "lat": 39.806673,
+      "lng": -77.244881,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146439",
+      "title": "CS Wilcox AL Brigade",
+      "lat": 39.805076,
+      "lng": -77.246061,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146440",
+      "title": "105th PA “The Wild Cat Regiment” Craig",
+      "lat": 39.804347,
+      "lng": -77.247815,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146441",
+      "title": "57th PA Sides(w) / Nelson",
+      "lat": 39.803837,
+      "lng": -77.248689,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146442",
+      "title": "114th PA “Collis’ Zouaves” Cavada(c) / Bowen",
+      "lat": 39.803663,
+      "lng": -77.24884,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146447",
+      "title": "US HQ 3-1-1st Brigade Graham(w) / Tippin",
+      "lat": 39.803744,
+      "lng": -77.248292,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146448",
+      "title": "US HQ 3rd Corps Artillery Brigade Randolph(w) / Clark",
+      "lat": 39.80285,
+      "lng": -77.246872,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129146449",
+      "title": "US HQ 3-2-2nd NY \"Excelsior Brigade\" Brewster",
+      "lat": 39.802546,
+      "lng": -77.24677,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129187261",
+      "title": "CS Barksdale's Brigade",
+      "lat": 39.80151,
+      "lng": -77.250281,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129189917",
+      "title": "US 1st Reg NY Sharpshooters Co A, B, D & H  Berdan / Trepp",
+      "lat": 39.808841,
+      "lng": -77.258665,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129189919",
+      "title": "US 1st Reg VT Sharpshooters Co F Berdan / Trepp",
+      "lat": 39.809294,
+      "lng": -77.257641,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129201375",
+      "title": "Troup GA Artillery (1st sec) “Carlton Battery”",
+      "lat": 39.799103,
+      "lng": -77.256041,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129250243",
+      "title": "CS Anderson(w) Division",
+      "lat": 39.809732,
+      "lng": -77.254429,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129250244",
+      "title": "Woolfolk VA Light Art",
+      "lat": 39.812911,
+      "lng": -77.248399,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287485",
+      "title": "Wilcox AL Brigade",
+      "lat": 39.808897,
+      "lng": -77.255155,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287491",
+      "title": "Madison MS Artillery “Ward’s Battery”",
+      "lat": 39.814477,
+      "lng": -77.250313,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287492",
+      "title": "Brooke VA Artillery",
+      "lat": 39.814622,
+      "lng": -77.250239,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287493",
+      "title": "Poague Artillery Battalion Howitzers",
+      "lat": 39.814713,
+      "lng": -77.250497,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287494",
+      "title": "Posey MS Brigade",
+      "lat": 39.814514,
+      "lng": -77.25065,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287495",
+      "title": "CS HQ Army of Northern Virginia",
+      "lat": 39.814302,
+      "lng": -77.250782,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287496",
+      "title": "Wright GA Brigade",
+      "lat": 39.814008,
+      "lng": -77.250978,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287497",
+      "title": "Garnett+ VA Brigade",
+      "lat": 39.813472,
+      "lng": -77.251405,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287498",
+      "title": "CS Pickett Division",
+      "lat": 39.813061,
+      "lng": -77.251795,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287499",
+      "title": "Armistead+ VA Brigade",
+      "lat": 39.812456,
+      "lng": -77.252318,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287500",
+      "title": "Kemper(w) VA Brigade",
+      "lat": 39.811863,
+      "lng": -77.252743,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129287501",
+      "title": "Lang \"Perry FL Brigade\"",
+      "lat": 39.811169,
+      "lng": -77.253253,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7129295699",
+      "title": "Danville VA Artillery",
+      "lat": 39.827599,
+      "lng": -77.244372,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933593",
+      "title": "126th NY Sherrill+ / Bull",
+      "lat": 39.816677,
+      "lng": -77.234421,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933594",
+      "title": "88th PA Whiteside",
+      "lat": 39.817062,
+      "lng": -77.234606,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933596",
+      "title": "55th OH Gambee",
+      "lat": 39.821441,
+      "lng": -77.232891,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933597",
+      "title": "73rd OH Long",
+      "lat": 39.82041,
+      "lng": -77.232692,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933645",
+      "title": "75th PA Mahler+ / Ledig",
+      "lat": 39.820926,
+      "lng": -77.231314,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933664",
+      "title": "1st OH Light Art Bat I “Dilger’s Battery” Dilger",
+      "lat": 39.821134,
+      "lng": -77.229934,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933704",
+      "title": "US General George Greene",
+      "lat": 39.819822,
+      "lng": -77.220177,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7244933705",
+      "title": "US 1st MD Eastern Shore Wallace",
+      "lat": 39.819261,
+      "lng": -77.219696,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933710",
+      "title": "150th NY \"The Dutchess County Regiment\" Ketcham",
+      "lat": 39.819079,
+      "lng": -77.219507,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933711",
+      "title": "7th IN Grover",
+      "lat": 39.820419,
+      "lng": -77.220855,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933713",
+      "title": "95th NY “Warren Rifles” Biddle(w) / Pye",
+      "lat": 39.820349,
+      "lng": -77.220107,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933714",
+      "title": "6th WI Dawes",
+      "lat": 39.820126,
+      "lng": -77.221807,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933716",
+      "title": "66th OH Powell",
+      "lat": 39.820106,
+      "lng": -77.219621,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933717",
+      "title": "PA Artillery “Knap’s Battery E” Atwell",
+      "lat": 39.820052,
+      "lng": -77.219912,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933718",
+      "title": "60th NY “Union Guards” Godard",
+      "lat": 39.819767,
+      "lng": -77.21994,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933719",
+      "title": "5th US Artillery Battery K Kinzie",
+      "lat": 39.82003,
+      "lng": -77.220318,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933720",
+      "title": "US HQ 12-1-2nd Brigade Lockwood",
+      "lat": 39.819564,
+      "lng": -77.220637,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933722",
+      "title": "US HQ 12-2-1st Brigade Candy",
+      "lat": 39.818606,
+      "lng": -77.219768,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933723",
+      "title": "78th & 102nd NY  VonHammerstein & Lane(w) / Stegman",
+      "lat": 39.818781,
+      "lng": -77.219435,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933724",
+      "title": "US HQ 12-2-3rd Brigade Greene",
+      "lat": 39.818425,
+      "lng": -77.219687,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933726",
+      "title": "149th NY Barnum / Randall / Grumbach",
+      "lat": 39.818427,
+      "lng": -77.21935,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244933728",
+      "title": "65th NY “1st U.S. Chasseurs” Hamblin",
+      "lat": 39.818243,
+      "lng": -77.219621,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958786",
+      "title": "82nd PA Bassett",
+      "lat": 39.818051,
+      "lng": -77.219573,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958787",
+      "title": "US HQ 6-3-1st Brigade Shaler",
+      "lat": 39.817909,
+      "lng": -77.219635,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958791",
+      "title": "67th NY “1st Long Island Volunteers” Cross",
+      "lat": 39.817763,
+      "lng": -77.219699,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958792",
+      "title": "23rd PA Glenn",
+      "lat": 39.817566,
+      "lng": -77.219804,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958793",
+      "title": "US HQ 12-2nd Division Geary",
+      "lat": 39.817476,
+      "lng": -77.219929,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958794",
+      "title": "7th OH Creighton",
+      "lat": 39.817168,
+      "lng": -77.219689,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958795",
+      "title": "137th NY Ireland",
+      "lat": 39.817324,
+      "lng": -77.219611,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958796",
+      "title": "29th OH Stevens(w) / Hayes",
+      "lat": 39.817463,
+      "lng": -77.219536,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958797",
+      "title": "122nd NY “Third Onondaga Regiment” Titus",
+      "lat": 39.817634,
+      "lng": -77.21942,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958800",
+      "title": "5th OH Patrick",
+      "lat": 39.816267,
+      "lng": -77.220313,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958802",
+      "title": "147th PA Pardee",
+      "lat": 39.815908,
+      "lng": -77.220439,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244958803",
+      "title": "Pardee Field Boulder",
+      "lat": 39.815736,
+      "lng": -77.219616,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244970015",
+      "title": "109th PA “Curtin Light Guards” Gimber",
+      "lat": 39.816918,
+      "lng": -77.219276,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244970017",
+      "title": "111st PA Walker",
+      "lat": 39.816757,
+      "lng": -77.218779,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244993062",
+      "title": "US HQ 12-2-2nd Brigade Huey",
+      "lat": 39.81676,
+      "lng": -77.219143,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244993063",
+      "title": "CS 2nd MD \"1st MD Infantry Battalion\"",
+      "lat": 39.816799,
+      "lng": -77.21818,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/2nd_Maryland_Infantry%2C_CSA_monument_-_Gettysburg.jpg/960px-2nd_Maryland_Infantry%2C_CSA_monument_-_Gettysburg.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Tom Fish · geo.fish · Fish Eye; Public domain)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A2nd_Maryland_Infantry%2C_CSA_monument_-_Gettysburg.jpg"
+    },
+    {
+      "id": "osm-node-7244993064",
+      "title": "123rd NY “Washington County Regiment” Rogers",
+      "lat": 39.816285,
+      "lng": -77.217955,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/123rd_New_York_Volunteer_Infantry_Regiment_monument_-_Gettysburg.jpg/960px-123rd_New_York_Volunteer_Infantry_Regiment_monument_-_Gettysburg.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Tom Fish · geo.fish · Fish Eye; Public domain)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A123rd_New_York_Volunteer_Infantry_Regiment_monument_-_Gettysburg.jpg"
+    },
+    {
+      "id": "osm-node-7244993065",
+      "title": "20th CT Wooster",
+      "lat": 39.815961,
+      "lng": -77.217843,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/20th_Connecticut_Infantry_monument_-_Gettysburg.jpg/960px-20th_Connecticut_Infantry_monument_-_Gettysburg.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Tom Fish · geo.fish · Fish Eye; Public domain)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A20th_Connecticut_Infantry_monument_-_Gettysburg.jpg"
+    },
+    {
+      "id": "osm-node-7244993066",
+      "title": "US HQ 12-1-1st Brigade McDougall",
+      "lat": 39.815859,
+      "lng": -77.217776,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244993067",
+      "title": "US 3rd MD Sudsburg",
+      "lat": 39.815701,
+      "lng": -77.217618,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/3rd_Regiment_Maryland_Volunteer_Infantry_monument_-_Gettysburg.jpg/960px-3rd_Regiment_Maryland_Volunteer_Infantry_monument_-_Gettysburg.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Tom Fish · geo.fish · Fish Eye; Public domain)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A3rd_Regiment_Maryland_Volunteer_Infantry_monument_-_Gettysburg.jpg"
+    },
+    {
+      "id": "osm-node-7244993068",
+      "title": "29th PA Rickards",
+      "lat": 39.81646,
+      "lng": -77.218401,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244993069",
+      "title": "US HQ 12-1st Division Williams",
+      "lat": 39.816182,
+      "lng": -77.218224,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244993070",
+      "title": "145th NY Price",
+      "lat": 39.815462,
+      "lng": -77.217266,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244993071",
+      "title": "46th PA Selfridge",
+      "lat": 39.815359,
+      "lng": -77.217096,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/46th_Pennsylvania_Monument_-_Gettysburg.jpg/960px-46th_Pennsylvania_Monument_-_Gettysburg.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Tom Fish · geo.fish · Fish Eye; Public domain)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A46th_Pennsylvania_Monument_-_Gettysburg.jpg"
+    },
+    {
+      "id": "osm-node-7244993072",
+      "title": "US HQ 12th Corps Slocum",
+      "lat": 39.816372,
+      "lng": -77.218854,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244993073",
+      "title": "107th NY Crane",
+      "lat": 39.814772,
+      "lng": -77.216625,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7244993078",
+      "title": "2nd MA Mudge / Morse",
+      "lat": 39.813426,
+      "lng": -77.216186,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246012068",
+      "title": "25th OH Williams(c) / Manning(w) / Maloney / White & 75th OH Harris / Fox",
+      "lat": 39.823209,
+      "lng": -77.228542,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246022642",
+      "title": "5th ME Artillery “Stevens’ Battery” Stevens(w) / Whittier",
+      "lat": 39.819374,
+      "lng": -77.224104,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246022647",
+      "title": "33rd MA Underwood",
+      "lat": 39.819894,
+      "lng": -77.226096,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246022649",
+      "title": "7th WI Robinson / Callis(w) / Finnicum(w)",
+      "lat": 39.819595,
+      "lng": -77.223006,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246022681",
+      "title": "41st NY “De Kalb Regiment” von Einsiedel",
+      "lat": 39.821306,
+      "lng": -77.227216,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246022682",
+      "title": "US HQ 11-1-1st  von Gilsa",
+      "lat": 39.82161,
+      "lng": -77.227427,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246022683",
+      "title": "68th NY “Cameron Rifles” von Boury d’Ivernois",
+      "lat": 39.821924,
+      "lng": -77.227621,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246028643",
+      "title": "US General Winfield S. Hancock",
+      "lat": 39.821313,
+      "lng": -77.228846,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246028644",
+      "title": "7th WV Lockwood",
+      "lat": 39.821695,
+      "lng": -77.228992,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246028645",
+      "title": "4th OH Carpenter",
+      "lat": 39.82099,
+      "lng": -77.228685,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246028646",
+      "title": "7th WV Lockwood",
+      "lat": 39.822063,
+      "lng": -77.227531,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7246034639",
+      "title": "153rd PA Freuauff",
+      "lat": 39.821466,
+      "lng": -77.227339,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248238345",
+      "title": "66th NY “Governor’s Guard” Morris(w) / Hammell(w) / Nelson",
+      "lat": 39.79739,
+      "lng": -77.24499,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248337789",
+      "title": "US HQ 6th Corps Artillery Brigade  Tompkins",
+      "lat": 39.802137,
+      "lng": -77.23414,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248337790",
+      "title": "US HQ 6-3rd Division Newton",
+      "lat": 39.800985,
+      "lng": -77.234218,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248337791",
+      "title": "US 6-1-1st “New Jersey Kearny Brigade” Torbert",
+      "lat": 39.800613,
+      "lng": -77.233347,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248337792",
+      "title": "US HQ 6-1-1st “New Jersey Kearny Brigade” Torbert",
+      "lat": 39.800654,
+      "lng": -77.23424,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248337793",
+      "title": "US HQ 6th Corps Sedgwick",
+      "lat": 39.800213,
+      "lng": -77.23427,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248455500",
+      "title": "37th MA Edwards",
+      "lat": 39.796961,
+      "lng": -77.234225,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248462616",
+      "title": "3rd US Artillery Battery C Fuller",
+      "lat": 39.804687,
+      "lng": -77.230183,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248539276",
+      "title": "US HQ 6-1st Division Wright",
+      "lat": 39.798787,
+      "lng": -77.234277,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/1st_Pennsylvania_Cavalry_Monument_%2810475849723%29.jpg/960px-1st_Pennsylvania_Cavalry_Monument_%2810475849723%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A1st_Pennsylvania_Cavalry_Monument_%2810475849723%29.jpg"
+    },
+    {
+      "id": "osm-node-7248539277",
+      "title": "US HQ 12-2-1st Brigade Candy",
+      "lat": 39.798591,
+      "lng": -77.234044,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248539278",
+      "title": "US HQ 12-2-1st Brigade Candy",
+      "lat": 39.79767,
+      "lng": -77.23461,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248539281",
+      "title": "1st PA Cavalry Co H Taylor",
+      "lat": 39.797463,
+      "lng": -77.234547,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248539282",
+      "title": "US HQ 6-3-2nd Brigade Eustis",
+      "lat": 39.796583,
+      "lng": -77.234215,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584205",
+      "title": "32nd MA Hospital",
+      "lat": 39.797293,
+      "lng": -77.24466,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584206",
+      "title": "US HQ 2-1-3rd Brigade Zook+ / Fraser",
+      "lat": 39.797467,
+      "lng": -77.245233,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584207",
+      "title": "52nd NY “German Rangers” “Sigel Rifles” Freudenberg(w) / Venuti+ / Scherrer",
+      "lat": 39.797439,
+      "lng": -77.245713,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584208",
+      "title": "28th MA Byrnes",
+      "lat": 39.797531,
+      "lng": -77.245586,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584209",
+      "title": "18th MA Hays",
+      "lat": 39.797417,
+      "lng": -77.246005,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584210",
+      "title": "HQ US 5-1-1st Brigade Tilton",
+      "lat": 39.797291,
+      "lng": -77.246232,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584211",
+      "title": "32nd MA Prescott",
+      "lat": 39.797053,
+      "lng": -77.245741,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584212",
+      "title": "2nd MA Sharpshooters Reg Berdan",
+      "lat": 39.796965,
+      "lng": -77.246112,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584213",
+      "title": "22nd MA “Henry Wilson’s Regt” Sherwin",
+      "lat": 39.79712,
+      "lng": -77.2465,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584214",
+      "title": "1st MI Abbott(w) / Throop(w)",
+      "lat": 39.797294,
+      "lng": -77.246547,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584215",
+      "title": "118th PA “Corn Exchange Regt” Gwyn",
+      "lat": 39.797643,
+      "lng": -77.246827,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584216",
+      "title": "140th PA Roberts+ / Fraser (main)",
+      "lat": 39.797762,
+      "lng": -77.246344,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584217",
+      "title": "140th PA Roberts+ / Fraser",
+      "lat": 39.797797,
+      "lng": -77.245416,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584218",
+      "title": "US HQ 5-1st Division Barnes",
+      "lat": 39.797989,
+      "lng": -77.245276,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248584219",
+      "title": "116th PA Mulholland",
+      "lat": 39.797621,
+      "lng": -77.245932,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248635511",
+      "title": "US HQ 2-1-2nd “Irish Brigade” Kelly",
+      "lat": 39.797668,
+      "lng": -77.24547,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248635512",
+      "title": "110th PA Jones(w) / Rodgers",
+      "lat": 39.796549,
+      "lng": -77.246066,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248635513",
+      "title": "US HQ 5-1-2nd Brigade Sweitzer",
+      "lat": 39.796056,
+      "lng": -77.243963,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248725609",
+      "title": "118th PA “Corn Exchange Regiment” Gwyn",
+      "lat": 39.799251,
+      "lng": -77.24369,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7248775343",
+      "title": "US General Samuel K. Zook",
+      "lat": 39.798491,
+      "lng": -77.242634,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7254079758",
+      "title": "14th CT Ellis",
+      "lat": 39.816437,
+      "lng": -77.242044,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7254079759",
+      "title": "12th NJ Hill",
+      "lat": 39.816597,
+      "lng": -77.241938,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7254079760",
+      "title": "Bliss Farm House Marker",
+      "lat": 39.817001,
+      "lng": -77.241629,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7258120723",
+      "title": "1st OH Artillery Battery K “Heckman’s Battery” Heckman",
+      "lat": 39.836853,
+      "lng": -77.231319,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265005772",
+      "title": "8th OH Sawyer",
+      "lat": 39.816089,
+      "lng": -77.237019,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265044575",
+      "title": "4th OH Carpenter",
+      "lat": 39.816783,
+      "lng": -77.236256,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265087779",
+      "title": "136th NY Wood",
+      "lat": 39.819137,
+      "lng": -77.232801,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265165390",
+      "title": "4th US Artillery Reserve Brigade Fitzhugh",
+      "lat": 39.813584,
+      "lng": -77.235213,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265165392",
+      "title": "1st US Artillery “Woodruff’s Battery I” Woodruff+ / McCrea",
+      "lat": 39.816393,
+      "lng": -77.234741,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265165399",
+      "title": "108th NY “Rochester Regiment”",
+      "lat": 39.816221,
+      "lng": -77.234593,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265193055",
+      "title": "2nd US Artillery Battery G Butler",
+      "lat": 39.816071,
+      "lng": -77.234391,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265193056",
+      "title": "5th US Artillery Battery F “Martin’s Battery” Martin",
+      "lat": 39.815882,
+      "lng": -77.234198,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265219340",
+      "title": "90th PA Lyle / Sellers",
+      "lat": 39.816953,
+      "lng": -77.234224,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265250548",
+      "title": "5th WI Allen",
+      "lat": 39.783132,
+      "lng": -77.227213,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265250549",
+      "title": "49th PA Hulings",
+      "lat": 39.783247,
+      "lng": -77.227666,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265250550",
+      "title": "US HQ 6-1-3rd Brigade Russell",
+      "lat": 39.783363,
+      "lng": -77.22813,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265250551",
+      "title": "6th ME Burnham",
+      "lat": 39.783426,
+      "lng": -77.228417,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265250552",
+      "title": "119th PA Ellemaker",
+      "lat": 39.783782,
+      "lng": -77.229341,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265250553",
+      "title": "1st NY Light Artillery Battery C Barnes",
+      "lat": 39.783628,
+      "lng": -77.228947,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265250554",
+      "title": "US HQ 6-2nd Division Howe",
+      "lat": 39.784017,
+      "lng": -77.229917,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265250555",
+      "title": "3rd MA Artillery Battery C Walcott",
+      "lat": 39.78496,
+      "lng": -77.231736,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7265250556",
+      "title": "US HQ 1-3-3rd Brigade \"2nd Vermont Brigade\" Stannard(w) / Randall",
+      "lat": 39.785426,
+      "lng": -77.232983,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7270923698",
+      "title": "3rd WI Hawley",
+      "lat": 39.812505,
+      "lng": -77.216004,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7270931135",
+      "title": "CS Smith “Extra Billy” Brigade",
+      "lat": 39.8152,
+      "lng": -77.215824,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7270937909",
+      "title": "CS Walker “Stonewall Brigade”",
+      "lat": 39.816337,
+      "lng": -77.215545,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7270937910",
+      "title": "CS Steuart’s Brigade",
+      "lat": 39.817242,
+      "lng": -77.215178,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7270951108",
+      "title": "CS Daniel NC Brigade",
+      "lat": 39.818927,
+      "lng": -77.215691,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7270951109",
+      "title": "CS O'Neal AL Brigade",
+      "lat": 39.819738,
+      "lng": -77.216688,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7270951110",
+      "title": "CS Nicholls LA Brigade",
+      "lat": 39.821349,
+      "lng": -77.217936,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7270960794",
+      "title": "CS Johnson’s Division",
+      "lat": 39.820537,
+      "lng": -77.21683,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7270988654",
+      "title": "27th IN Colgrove / Fesler marker",
+      "lat": 39.814321,
+      "lng": -77.215989,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271282920",
+      "title": "US HQ 2nd Brigade Artillery Res Taft",
+      "lat": 39.820483,
+      "lng": -77.22897,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271282921",
+      "title": "5th NY “First Excelsior Light Artillery” Taft section",
+      "lat": 39.820096,
+      "lng": -77.230117,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271282922",
+      "title": "US HQ 1st Corps Artillery Brigade Wainwright",
+      "lat": 39.82116,
+      "lng": -77.228863,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271282923",
+      "title": "4th US Artillery Battery B “Stewart’s Battery” Stewart",
+      "lat": 39.821179,
+      "lng": -77.229201,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271282924",
+      "title": "14th IN Coons",
+      "lat": 39.821463,
+      "lng": -77.228868,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271282925",
+      "title": "US HQ 2-3-1st Brigade Carroll",
+      "lat": 39.821543,
+      "lng": -77.228976,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271282926",
+      "title": "1st PA Artillery Battery B “Cooper’s Battery” Cooper",
+      "lat": 39.821383,
+      "lng": -77.22854,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271282927",
+      "title": "US HQ 11th Corps Howard",
+      "lat": 39.821503,
+      "lng": -77.228684,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271282928",
+      "title": "1st PA Artillery F & G “Rickett’s Battery” Rickett",
+      "lat": 39.82169,
+      "lng": -77.228654,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271295149",
+      "title": "1st NY Light Artillery Battery I “Wiedrich’s Battery” Wiedrich",
+      "lat": 39.822049,
+      "lng": -77.229074,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271295150",
+      "title": "73rd PA Kelly",
+      "lat": 39.821947,
+      "lng": -77.229264,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271295151",
+      "title": "134th NY Jackson",
+      "lat": 39.822097,
+      "lng": -77.229416,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271295152",
+      "title": "27th PA Cantador",
+      "lat": 39.822061,
+      "lng": -77.229707,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271295153",
+      "title": "106th PA Curry",
+      "lat": 39.822269,
+      "lng": -77.229454,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271295154",
+      "title": "US HQ 11-2nd Division Steinwehr",
+      "lat": 39.821882,
+      "lng": -77.229832,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271319132",
+      "title": "US Army of the Potomac Tablets",
+      "lat": 39.821437,
+      "lng": -77.229508,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271330792",
+      "title": "Lincoln Address maker",
+      "lat": 39.821559,
+      "lng": -77.229644,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271545574",
+      "title": "CS HQ 2nd Corps Ewell",
+      "lat": 39.829084,
+      "lng": -77.226485,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7271546595",
+      "title": "CS Jones VA Brigade",
+      "lat": 39.822371,
+      "lng": -77.219935,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7273173499",
+      "title": "US 21st PA Cavalry Co B Bingham",
+      "lat": 39.809222,
+      "lng": -77.21854,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7275995199",
+      "title": "CS Hoke NC Brigade",
+      "lat": 39.827948,
+      "lng": -77.225563,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7276035691",
+      "title": "CS Hays LA Brigade",
+      "lat": 39.828779,
+      "lng": -77.226267,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7276115554",
+      "title": "US HQ 3-2-2nd NY \"Excelsior Brigade\" Brewster",
+      "lat": 39.801821,
+      "lng": -77.247474,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7276115555",
+      "title": "139th PA Collier(w) / Moody",
+      "lat": 39.801136,
+      "lng": -77.246991,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7276120479",
+      "title": "US General Sickles wounded",
+      "lat": 39.802562,
+      "lng": -77.242755,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7276152204",
+      "title": "Unnamed monument",
+      "lat": 39.801677,
+      "lng": -77.242426,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7314112030",
+      "title": "4th US Artillery Battery B “Stewart’s Battery” Stewart",
+      "lat": 39.835663,
+      "lng": -77.245863,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7320452061",
+      "title": "29th PA left marker",
+      "lat": 39.81662,
+      "lng": -77.218467,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7320456052",
+      "title": "29th PA Rickards marker",
+      "lat": 39.816732,
+      "lng": -77.219526,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7320524818",
+      "title": "5th CT Packer",
+      "lat": 39.815601,
+      "lng": -77.217399,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7320762188",
+      "title": "US HQ 11-2-2 Smith",
+      "lat": 39.819944,
+      "lng": -77.232928,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7320774055",
+      "title": "Amos Humiston",
+      "lat": 39.820575,
+      "lng": -77.231381,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7320774056",
+      "title": "Eli Green",
+      "lat": 39.819925,
+      "lng": -77.232185,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7320774057",
+      "title": "Charles Collis",
+      "lat": 39.819835,
+      "lng": -77.231967,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7320774058",
+      "title": "1st MN Urn",
+      "lat": 39.819808,
+      "lng": -77.231722,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7320774063",
+      "title": "Corporal Jack Skelly",
+      "lat": 39.819177,
+      "lng": -77.230704,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7320774064",
+      "title": "Jennie Wade",
+      "lat": 39.819717,
+      "lng": -77.230394,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7320774065",
+      "title": "John Burns",
+      "lat": 39.819378,
+      "lng": -77.229483,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7320774067",
+      "title": "4th NY Artillery Battery G Bancroft+ / Wilkinson",
+      "lat": 39.820003,
+      "lng": -77.230673,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7320786794",
+      "title": "1st US Artillery Battery H Eakin(w) / Mason",
+      "lat": 39.819362,
+      "lng": -77.231248,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7320793829",
+      "title": "WV Art  “Pierpont Battery C” Hill",
+      "lat": 39.818761,
+      "lng": -77.231538,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7320793830",
+      "title": "US 3rd Brigade Artillery Res Huntington",
+      "lat": 39.818513,
+      "lng": -77.231503,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7320793831",
+      "title": "OH Artillery Battery H Norton",
+      "lat": 39.818214,
+      "lng": -77.231439,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7320793832",
+      "title": "1st NH Artillery Battery Edgell",
+      "lat": 39.818083,
+      "lng": -77.232114,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7320793833",
+      "title": "1st MA Artillery Battery McCartney",
+      "lat": 39.817734,
+      "lng": -77.231578,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7320793869",
+      "title": "2nd ME Artillery Battery Hall",
+      "lat": 39.81753,
+      "lng": -77.231561,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7320850793",
+      "title": "7th WV Lockwood",
+      "lat": 39.815861,
+      "lng": -77.232732,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7324425167",
+      "title": "2nd US Artillery Battery B & L Heaton",
+      "lat": 39.804763,
+      "lng": -77.222474,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7324504670",
+      "title": "4th NJ Ewing",
+      "lat": 39.804792,
+      "lng": -77.217979,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7324504671",
+      "title": "77th NY “Bemis Heights Battalion” French",
+      "lat": 39.805353,
+      "lng": -77.219224,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7324505499",
+      "title": "1st MD Artillery Battery A “Rigby’s Battery” Rigby",
+      "lat": 39.805853,
+      "lng": -77.219075,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7324505503",
+      "title": "US George Sandoe killed June 26th 1863 marker",
+      "lat": 39.808961,
+      "lng": -77.218298,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7324510258",
+      "title": "1st NY Light Artillery Battery M Woodbury",
+      "lat": 39.80668,
+      "lng": -77.219582,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7324567691",
+      "title": "2nd US Artillery Battery D Wiliston",
+      "lat": 39.798778,
+      "lng": -77.22947,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7324659810",
+      "title": "10th ME Beardsley",
+      "lat": 39.811618,
+      "lng": -77.220685,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7324675922",
+      "title": "4th US Artillery Battery F Rugg",
+      "lat": 39.813105,
+      "lng": -77.22378,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7400393616",
+      "title": "CS Fry \"Orange\" VA Artillery Battery",
+      "lat": 39.848115,
+      "lng": -77.24319,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7418266844",
+      "title": "NC Tablet United Daughters of the Confederacy",
+      "lat": 39.818473,
+      "lng": -77.247452,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7418562484",
+      "title": "84th NY “14th NYSM Brooklyn” “Red Legged Devils” Fowler",
+      "lat": 39.817115,
+      "lng": -77.219491,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7418689686",
+      "title": "US HQ 1-3rd Division Rowley",
+      "lat": 39.834016,
+      "lng": -77.250373,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7419064716",
+      "title": "US Stephen Weed+ & Charles Hazlett+",
+      "lat": 39.79214,
+      "lng": -77.236545,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7425496958",
+      "title": "US 11th Corps Spangler Farm Field Hospitals",
+      "lat": 39.80061,
+      "lng": -77.217791,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7425496959",
+      "title": "Armistead - Hancock marker",
+      "lat": 39.800236,
+      "lng": -77.217718,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7425762433",
+      "title": "US HQ Cavalry Corps 2nd Div 2nd Brigade Huey",
+      "lat": 39.808385,
+      "lng": -77.234629,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7425818228",
+      "title": "2nd Corps Artillery Brigade Hazard",
+      "lat": 39.813236,
+      "lng": -77.235556,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7428560238",
+      "title": "88th PA Foust(w) / Mass(c) / Whiteside July 1st 1863 pos marker",
+      "lat": 39.843574,
+      "lng": -77.242924,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7428567524",
+      "title": "157th NY Brown(w) marker",
+      "lat": 39.845608,
+      "lng": -77.231561,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7428690784",
+      "title": "5th NY “1st Excelsior Light Art” Taft",
+      "lat": 39.820959,
+      "lng": -77.229933,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7428701385",
+      "title": "5th NY “First Excelsior Light Artillery” Taft section",
+      "lat": 39.820365,
+      "lng": -77.228859,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7428701386",
+      "title": "1st NY Light Artillery Battery L “Reynolds’ Battery” Gilbert Reynolds(w) / Breck",
+      "lat": 39.83473,
+      "lng": -77.250109,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7428824539",
+      "title": "5th US Artillery Battery K Kinzie",
+      "lat": 39.81297,
+      "lng": -77.223634,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7428824540",
+      "title": "84th NY “14th NYSM Brooklyn” “Red Legged Devils” Fowler",
+      "lat": 39.837575,
+      "lng": -77.248574,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7428885562",
+      "title": "27th IN Colgrove / Fesler",
+      "lat": 39.81361,
+      "lng": -77.215917,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7428973624",
+      "title": "28th PA Flynn",
+      "lat": 39.818812,
+      "lng": -77.219815,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7428973625",
+      "title": "CS 2nd MD \"1st MD Infantry Battalion\" marker",
+      "lat": 39.816467,
+      "lng": -77.2194,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7429063058",
+      "title": "CS 11th MS Green(w) / Reynolds(w) marker",
+      "lat": 39.815303,
+      "lng": -77.235499,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7429200004",
+      "title": "80th NY “20th NYSM” \"Ulster Guard“ Gates",
+      "lat": 39.830446,
+      "lng": -77.251519,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7429200005",
+      "title": "124th NY “The Orange Blossoms” van Horne Ellis+ / Cummins",
+      "lat": 39.792732,
+      "lng": -77.242667,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7429200006",
+      "title": "84th NY “14th NYSM Brooklyn” “Red Legged Devils” Fowler marker",
+      "lat": 39.835751,
+      "lng": -77.25297,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7429200007",
+      "title": "24th MI Morrow(w) / Flanigan (w) / Wight (w) / Edwards marker",
+      "lat": 39.819647,
+      "lng": -77.223738,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7429200008",
+      "title": "CS 26th NC Burgwyn+ / Albright",
+      "lat": 39.813642,
+      "lng": -77.235684,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7429344980",
+      "title": "1st NY Light Artillery Battery E “Reynolds’ Battery” Gilbert Reynolds(w) / Breck",
+      "lat": 39.820661,
+      "lng": -77.228299,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7429401161",
+      "title": "2nd WI Fairchild / Mansfield / Otis",
+      "lat": 39.819894,
+      "lng": -77.222304,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7429417737",
+      "title": "7th WI Robinson / Callis(w) / Finnicum(w)",
+      "lat": 39.835794,
+      "lng": -77.253975,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7429439918",
+      "title": "US 149th PA “1st Reg Bucktail Brigade” Dwight(w) / Glenn",
+      "lat": 39.810138,
+      "lng": -77.235743,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7429651929",
+      "title": "CS Hays LA Brigade",
+      "lat": 39.828182,
+      "lng": -77.225754,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7430155595",
+      "title": "93rd PA John Nevin",
+      "lat": 39.796089,
+      "lng": -77.234615,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7430722455",
+      "title": "US HQ 3-2nd Division Humphreys",
+      "lat": 39.807268,
+      "lng": -77.244476,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7431816343",
+      "title": "US 2nd Reg VT Sharpshooters Co E & H Stoughton",
+      "lat": 39.789013,
+      "lng": -77.24694,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7431939886",
+      "title": "1st NY Artillery Battery G “Ames’ Battery” Ames",
+      "lat": 39.801202,
+      "lng": -77.250182,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7431961327",
+      "title": "12th MA \"Webster's Regiment\" Bates(w) / Allen",
+      "lat": 39.843719,
+      "lng": -77.242081,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7431961328",
+      "title": "12th MA \"Webster's Regt\" Bates(w) / Allen",
+      "lat": 39.806809,
+      "lng": -77.235181,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7432228911",
+      "title": "99th PA Moore(w) / Fritz",
+      "lat": 39.813534,
+      "lng": -77.235051,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7433438371",
+      "title": "106th PA Curry",
+      "lat": 39.811674,
+      "lng": -77.239929,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7433438372",
+      "title": "13th VT Randall marker",
+      "lat": 39.811515,
+      "lng": -77.236613,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7433438373",
+      "title": "CS Wright’s Brigade marker",
+      "lat": 39.811966,
+      "lng": -77.236768,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7433464196",
+      "title": "MA Regiments markers",
+      "lat": 39.812346,
+      "lng": -77.235866,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7433637315",
+      "title": "US 149th Pennsylvania “1st Reg Bucktail Brigade” Dwight(w) / Glenn",
+      "lat": 39.83755,
+      "lng": -77.251403,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7433637316",
+      "title": "US 149th PA Co D “1st Reg Bucktail Brigade” Dwight(w) / Glenn",
+      "lat": 39.829543,
+      "lng": -77.243993,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/149th_Pennsylvania_Infantry_Monument_Company_D.jpg/960px-149th_Pennsylvania_Infantry_Monument_Company_D.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (NPS photographer; Public domain)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3A149th_Pennsylvania_Infantry_Monument_Company_D.jpg"
+    },
+    {
+      "id": "osm-node-7433637317",
+      "title": "143rd PA Dana / Musser",
+      "lat": 39.809899,
+      "lng": -77.236089,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7433637318",
+      "title": "13th VT Randall marker",
+      "lat": 39.809729,
+      "lng": -77.236755,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7433637321",
+      "title": "US 150th PA “2nd Reg Bucktail Brigade” Wister / Huidekoper(w) / Jones",
+      "lat": 39.810689,
+      "lng": -77.235485,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7433667576",
+      "title": "150th Pennsylvania “2nd Reg Bucktail Brigade” Wister / Huidekoper(w) / Jones",
+      "lat": 39.836858,
+      "lng": -77.252204,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7433993607",
+      "title": "US HQ 5th Corps Sykes",
+      "lat": 39.797231,
+      "lng": -77.234302,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7433993608",
+      "title": "US HQ 5th Corps Sykes",
+      "lat": 39.797602,
+      "lng": -77.234306,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7434173231",
+      "title": "27th CT Merwin+ / Coburn",
+      "lat": 39.795325,
+      "lng": -77.246991,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7437186161",
+      "title": "PA Artillery “Knap’s Battery E” Atwell",
+      "lat": 39.806199,
+      "lng": -77.219369,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7437326457",
+      "title": "95th NY \"Warren Rifles\" Biddle(w) / Pye",
+      "lat": 39.834426,
+      "lng": -77.244672,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7437528151",
+      "title": "95th NY \"Warren Rifles\" Biddle(w) / Pye",
+      "lat": 39.836387,
+      "lng": -77.252428,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7437580945",
+      "title": "76th NY “Courtland County Regiment” Glover+ / Cook",
+      "lat": 39.820517,
+      "lng": -77.220482,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7437801394",
+      "title": "16th ME Tilden(c) / Marston July 1st 1863 pos marker",
+      "lat": 39.844499,
+      "lng": -77.24187,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7437967996",
+      "title": "157th NY Brown(w) / Arrowsmith+",
+      "lat": 39.843006,
+      "lng": -77.231367,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7438062291",
+      "title": "Jennie Wade Monument",
+      "lat": 39.823301,
+      "lng": -77.230865,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7438298613",
+      "title": "US 5th ME Artillery “Stevens’ Battery” Stevens(w) / Whittier",
+      "lat": 39.833732,
+      "lng": -77.244982,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7438298614",
+      "title": "25th OH Williams(c) / Manning(w) / Maloney(w) / White & 75th OH Harris / Fox",
+      "lat": 39.845305,
+      "lng": -77.226668,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7438493986",
+      "title": "54th NY “Hiram Barney Rifles” Kovacs+ / Both marker",
+      "lat": 39.822162,
+      "lng": -77.227817,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7438628583",
+      "title": "9th MA Artillery Battery Bigelow(w) / Milton",
+      "lat": 39.816003,
+      "lng": -77.234893,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7438686228",
+      "title": "9th MA Artillery Battery Bigelow(w) / Milton",
+      "lat": 39.80179,
+      "lng": -77.242565,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7438686229",
+      "title": "9th MA Artillery Battery Bigelow(w) / Milton",
+      "lat": 39.800077,
+      "lng": -77.245613,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7438708599",
+      "title": "26th PA Emergency Regt Jennings",
+      "lat": 39.830959,
+      "lng": -77.236959,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7438745106",
+      "title": "27th PA Cantador",
+      "lat": 39.835196,
+      "lng": -77.228046,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7438745115",
+      "title": "US HQ 11-2-1st Brigade Coster",
+      "lat": 39.835202,
+      "lng": -77.227808,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7441159583",
+      "title": "6th OH Cavalry Stedman",
+      "lat": 39.807985,
+      "lng": -77.230626,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7441291808",
+      "title": "5th US Artillery Watson's Battery I\"",
+      "lat": 39.802911,
+      "lng": -77.237906,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7441439166",
+      "title": "Unnamed monument",
+      "lat": 39.781669,
+      "lng": -77.259255,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-7509512545",
+      "title": "39th NY “Garibaldi Guard” Hildebrandt(w) marker",
+      "lat": 39.802909,
+      "lng": -77.237649,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7510651427",
+      "title": "US 2-3-3 Willard’s Brigade - Colonel George Willard  KIA",
+      "lat": 39.806407,
+      "lng": -77.239097,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-7510897100",
+      "title": "Unnamed monument",
+      "lat": 39.801747,
+      "lng": -77.232596,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-9360900118",
+      "title": "CS HQ Archer Brigade",
+      "lat": 39.794917,
+      "lng": -77.257691,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-9468420071",
+      "title": "US 3rd ME Vol Infantry Reg Lakeman / Samuel Lee(w) / Morgan",
+      "lat": 39.809447,
+      "lng": -77.258388,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-9468513134",
+      "title": "US 3rd ME Lakeman / Samuel Lee(w) / Morgan",
+      "lat": 39.800385,
+      "lng": -77.249852,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-9496806328",
+      "title": "114th PA “Collis’ Zouaves” Cavada(c) / Bowen",
+      "lat": 39.813533,
+      "lng": -77.234657,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-9507276649",
+      "title": "US HQ 12-1-3rd Brigade Ruger / Colgrove",
+      "lat": 39.813206,
+      "lng": -77.215348,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-9509874851",
+      "title": "CS Archer captured",
+      "lat": 39.836435,
+      "lng": -77.256247,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-9511068142",
+      "title": "2nd Rockbridge VA Artillery “Wallace Battery”",
+      "lat": 39.829094,
+      "lng": -77.244283,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-9511068143",
+      "title": "Hardaway AL Artillery “Hurt Battery”",
+      "lat": 39.828453,
+      "lng": -77.24445,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-9511068144",
+      "title": "McIntosh Artillery Battalion",
+      "lat": 39.827894,
+      "lng": -77.244654,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-node-9511125323",
+      "title": "Unnamed monument",
+      "lat": 39.827229,
+      "lng": -77.24489,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-9511125324",
+      "title": "Unnamed monument",
+      "lat": 39.827271,
+      "lng": -77.244876,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-9511125325",
+      "title": "Unnamed monument",
+      "lat": 39.827309,
+      "lng": -77.244864,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-9511125326",
+      "title": "Unnamed monument",
+      "lat": 39.827346,
+      "lng": -77.244851,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-9511125327",
+      "title": "Unnamed monument",
+      "lat": 39.827379,
+      "lng": -77.24484,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-9511125328",
+      "title": "Unnamed monument",
+      "lat": 39.827413,
+      "lng": -77.244829,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-9511125329",
+      "title": "Unnamed monument",
+      "lat": 39.827452,
+      "lng": -77.244816,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-9511125330",
+      "title": "Unnamed monument",
+      "lat": 39.82749,
+      "lng": -77.244803,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-9511125331",
+      "title": "Unnamed monument",
+      "lat": 39.827525,
+      "lng": -77.244792,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-9512238651",
+      "title": "Anderson(w) GA Brigade marker",
+      "lat": 39.793617,
+      "lng": -77.245538,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-12807072394",
+      "title": "Gettysburg Campaign",
+      "lat": 39.837703,
+      "lng": -77.251639,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-node-14095698040",
+      "title": "Unnamed monument",
+      "lat": 39.78498,
+      "lng": -77.23238,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-way-710677004",
+      "title": "United States Regulars",
+      "lat": 39.811222,
+      "lng": -77.235764,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-710677005",
+      "title": "High Water Mark of the Rebellion",
+      "lat": 39.812475,
+      "lng": -77.23574,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Monument_to_High_Water_Mark_of_Confederacy%2C_Point_of_Farthest_Advance_of_Pickett%27s_Charge%2C_July_3%2C_1863_%2810475720814%29.jpg/960px-Monument_to_High_Water_Mark_of_Confederacy%2C_Point_of_Farthest_Advance_of_Pickett%27s_Charge%2C_July_3%2C_1863_%2810475720814%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AMonument_to_High_Water_Mark_of_Confederacy%2C_Point_of_Farthest_Advance_of_Pickett%27s_Charge%2C_July_3%2C_1863_%2810475720814%29.jpg"
+    },
+    {
+      "id": "osm-way-710690078",
+      "title": "State of Delaware",
+      "lat": 39.816087,
+      "lng": -77.232468,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-710690079",
+      "title": "State of Maryland",
+      "lat": 39.816285,
+      "lng": -77.232412,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-710690088",
+      "title": "1st MN Colvill",
+      "lat": 39.806632,
+      "lng": -77.235019,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-710690089",
+      "title": "NY Auxiliary Monument",
+      "lat": 39.804286,
+      "lng": -77.234388,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-710698665",
+      "title": "83rd PA Woodward",
+      "lat": 39.790243,
+      "lng": -77.237041,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-710894169",
+      "title": "State of Mississippi",
+      "lat": 39.802417,
+      "lng": -77.255847,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Mississippi_State_Monument_%2810475663915%29.jpg/960px-Mississippi_State_Monument_%2810475663915%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AMississippi_State_Monument_%2810475663915%29.jpg"
+    },
+    {
+      "id": "osm-way-710973166",
+      "title": "State of Arkansas",
+      "lat": 39.79264,
+      "lng": -77.255082,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-710973179",
+      "title": "State of Virginia",
+      "lat": 39.814157,
+      "lng": -77.250308,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gettysburg_Virginia_Memorial_%2810475965133%29.jpg/960px-Gettysburg_Virginia_Memorial_%2810475965133%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AGettysburg_Virginia_Memorial_%2810475965133%29.jpg"
+    },
+    {
+      "id": "osm-way-710973186",
+      "title": "State of North Carolina",
+      "lat": 39.818319,
+      "lng": -77.247235,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/North_Carolina_State_Monument_Pickett%27s_Charge_%2810475673675%29.jpg/960px-North_Carolina_State_Monument_Pickett%27s_Charge_%2810475673675%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3ANorth_Carolina_State_Monument_Pickett%27s_Charge_%2810475673675%29.jpg"
+    },
+    {
+      "id": "osm-way-711545190",
+      "title": "Major General John Fulton Reynolds",
+      "lat": 39.837876,
+      "lng": -77.251291,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-way-711547747",
+      "title": "Martin Luther",
+      "lat": 39.832571,
+      "lng": -77.244484,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-way-711733733",
+      "title": "Eternal Light Peace Memorial",
+      "lat": 39.848436,
+      "lng": -77.243481,
+      "category": "monument",
+      "osmType": "memorial",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Gettysburg_Eternal_Light_Peace_Memorial_%2810475725084%29.jpg/960px-Gettysburg_Eternal_Light_Peace_Memorial_%2810475725084%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AGettysburg_Eternal_Light_Peace_Memorial_%2810475725084%29.jpg"
+    },
+    {
+      "id": "osm-way-711797353",
+      "title": "US General Francis C. Barlow",
+      "lat": 39.845436,
+      "lng": -77.226414,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-way-762926716",
+      "title": "State of Luisiana",
+      "lat": 39.802988,
+      "lng": -77.255832,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-762942498",
+      "title": "State of South Carolina",
+      "lat": 39.797867,
+      "lng": -77.255923,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-762942499",
+      "title": "State of Georgia",
+      "lat": 39.798892,
+      "lng": -77.255992,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-776492905",
+      "title": "Friend to Friend Masonic Memorial",
+      "lat": 39.820969,
+      "lng": -77.23178,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-776492907",
+      "title": "New York State",
+      "lat": 39.820817,
+      "lng": -77.23057,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-776492908",
+      "title": "US General John F. Reynolds",
+      "lat": 39.82132,
+      "lng": -77.230331,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-way-776496272",
+      "title": "US General John Geary",
+      "lat": 39.817315,
+      "lng": -77.219908,
+      "category": "monument",
+      "osmType": "memorial"
+    },
+    {
+      "id": "osm-way-776598305",
+      "title": "US General Henry W. Slocum",
+      "lat": 39.819115,
+      "lng": -77.224549,
+      "category": "monument",
+      "osmType": "memorial",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Major_General_Henry_W._Slocum_%2810475678296%29.jpg/960px-Major_General_Henry_W._Slocum_%2810475678296%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AMajor_General_Henry_W._Slocum_%2810475678296%29.jpg"
+    },
+    {
+      "id": "osm-way-776855860",
+      "title": "US General John Sedgwick",
+      "lat": 39.796244,
+      "lng": -77.233843,
+      "category": "monument",
+      "osmType": "memorial",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Major_General_John_Sedgwick_%2810475686924%29.jpg/960px-Major_General_John_Sedgwick_%2810475686924%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AMajor_General_John_Sedgwick_%2810475686924%29.jpg"
+    },
+    {
+      "id": "osm-way-777719740",
+      "title": "US General George Meade",
+      "lat": 39.813875,
+      "lng": -77.234784,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Union_Commander_General_George_Gordon_Meade_%2810475734415%29.jpg/960px-Union_Commander_General_George_Gordon_Meade_%2810475734415%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AUnion_Commander_General_George_Gordon_Meade_%2810475734415%29.jpg"
+    },
+    {
+      "id": "osm-way-778780987",
+      "title": "US General Oliver O. Howard",
+      "lat": 39.821931,
+      "lng": -77.228848,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-783772697",
+      "title": "Soldiers' National Monument",
+      "lat": 39.819779,
+      "lng": -77.231212,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-783774713",
+      "title": "Lincoln Address Memorial",
+      "lat": 39.817568,
+      "lng": -77.231843,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Site_of_Lincoln%27s_Gettysburg_Address_%2810475715824%29.jpg/960px-Site_of_Lincoln%27s_Gettysburg_Address_%2810475715824%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3ASite_of_Lincoln%27s_Gettysburg_Address_%2810475715824%29.jpg"
+    },
+    {
+      "id": "osm-way-792379073",
+      "title": "State of Vermont",
+      "lat": 39.809424,
+      "lng": -77.236358,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-792379075",
+      "title": "State of Pennsylvania Memorial",
+      "lat": 39.807629,
+      "lng": -77.235172,
+      "category": "monument",
+      "osmType": "monument",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Gettysburg_Pennsylvania_Monument_%2810475708726%29.jpg/960px-Gettysburg_Pennsylvania_Monument_%2810475708726%29.jpg",
+      "imageCredit": "Wikimedia Commons, public domain (Gary Todd from Xinzheng, China; CC0)",
+      "imagePage": "https://commons.wikimedia.org/wiki/File%3AGettysburg_Pennsylvania_Monument_%2810475708726%29.jpg"
+    },
+    {
+      "id": "osm-way-792392782",
+      "title": "State of Florida",
+      "lat": 39.810139,
+      "lng": -77.254027,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-792392806",
+      "title": "State of Tennessee",
+      "lat": 39.817713,
+      "lng": -77.247868,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-793317895",
+      "title": "State of Alabama",
+      "lat": 39.786568,
+      "lng": -77.254253,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-793345692",
+      "title": "State of Texas",
+      "lat": 39.790028,
+      "lng": -77.254298,
+      "category": "monument",
+      "osmType": "monument"
+    },
+    {
+      "id": "osm-way-794286202",
+      "title": "Indiana State",
+      "lat": 39.81416,
+      "lng": -77.216274,
+      "category": "monument",
+      "osmType": "monument"
+    }
+  ]
+}

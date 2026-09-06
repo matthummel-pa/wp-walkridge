@@ -1,0 +1,30 @@
+---
+description: Modern UI aesthetics — fluid layout, type scale, photo-overlay contrast for Hallowed Ground
+globs: resources/css/**/*.css,resources/views/**/*.blade.php
+alwaysApply: false
+---
+
+# Modern UI aesthetics and design tokens
+
+Implement these in `resources/css/hallowed-ground.css` (and Blade structure). Tokens stay slate + gold + parchment. Do not introduce purple-on-white, cream-serif terracotta, or broadsheet newspaper skins.
+
+## A. Layout and spacing
+
+**Fluid containers.** Main content width is capped and centered. Keep horizontal padding consistent on wraps / hero inners so pages stay aligned.
+
+**Cards.** Default: no cards in the hero. Elsewhere, prefer existing theme classes over one-off utility stacks. If removing a border, shadow, background, or radius does not hurt interaction, it should not be a card.
+
+**Typography.** Archivo Black for display / brand; Atkinson Hyperlegible for UI; IBM Plex Mono for labels. Modular scale; tracking tight on headings.
+
+## B. Image overlay and polish
+
+Type on photography **must** sit on a protective gradient / veil so contrast holds. Do not put light text directly on a raw `<img>`. Hero imagery uses self-hosted Gettysburg stills in `public/images/` (cannon, Wentz farm, downtown).
+
+Compass mark animation must respect `prefers-reduced-motion` (see `accessibility.mdc`).
+
+## Do not
+
+- Restyle the site with purple / indigo utility dumps
+- Drop the concept demo badge while fiction contact data remains
+- Put hero H1 on the photo with no veil
+- Use inset / rounded hero media cards on the landing first viewport unless Matt asks

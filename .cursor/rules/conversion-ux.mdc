@@ -1,0 +1,42 @@
+---
+description: High-conversion tour-booking UX — visible labels, input types, button states, aria-live
+globs: resources/css/**/*.css,resources/js/**/*.js,resources/views/**/*.blade.php
+alwaysApply: false
+---
+
+# High-conversion battlefield-tour UX
+
+Concept demo only (555 phones, `@hallowedground.test`). Forms still have to behave like a real tour-booking / lead flow.
+
+## A. Form and input design
+
+**Visible labels.** Never rely on `placeholder` alone. Every input / select / textarea needs a visible `<label for="id">`. Placeholder is an example (`(717) 555-0100`), not the label.
+
+**Input types and autocomplete.** Use context-aware attributes:
+
+| Field | Attributes |
+| --- | --- |
+| Phone | `type="tel"` `autocomplete="tel"` |
+| Email | `type="email"` `autocomplete="email"` |
+| Name | `type="text"` `autocomplete="name"` |
+| Party size | `type="number"` `min` / `inputmode="numeric"` |
+| Date | `type="date"` |
+| Tour notes | `textarea` |
+
+## B. Feedback and micro-interactions
+
+Interactive actions (Book a Tour, Add to cart, contact submit, map itinerary) MUST change visually:
+
+| State | Direction |
+| --- | --- |
+| Default | Gold primary / outline secondary |
+| Hover | Darker gold (`--gold-300` / `--gold-800` as existing CSS) — never indigo |
+| Loading | Spinner or “Sending…” + `disabled` + `aria-disabled="true"` |
+
+In-page results MUST use `role="status"` `aria-live="polite"` (or assertive only for blocking errors).
+
+## Do not
+
+- Placeholder-only fields
+- `hover:bg-indigo-700` / SaaS spinner kits
+- Silent DOM updates after booking / cart actions
