@@ -4,7 +4,7 @@
 
 WalkRidge is a custom WordPress theme for tour operators and historical sites. It ships a clean, responsive layout optimized for performance and SEO, with straightforward content tools so editors can publish walking tours, home tours, and other guided experiences without fighting the theme.
 
-##Features (drop under the intro)
+### Features (drop under the intro)
 
 - Built for walking tours, historical home tours, and similar guided-tour sites
 - Performance-first markup and assets for faster loads
