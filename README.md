@@ -1,5 +1,17 @@
 # Walkridge — WordPress Theme
 
+## About the WordPress Theme
+
+WalkRidge is a custom WordPress theme for tour operators and historical sites. It ships a clean, responsive layout optimized for performance and SEO, with straightforward content tools so editors can publish walking tours, home tours, and other guided experiences without fighting the theme.
+
+### Features (drop under the intro)
+
+- Built for walking tours, historical home tours, and similar guided-tour sites
+- Performance-first markup and assets for faster loads
+- Responsive layout across phone, tablet, and desktop
+- SEO-friendly structure (clean headings, semantic HTML)
+- Simple content management for non-technical editors
+
 **Battlefield tour website for licensed guides** — browse tours, meet guides, explore the area, and book from the WooCommerce shop, without a page builder.
 
 [![License: GPLv2](https://img.shields.io/badge/license-GPLv2-blue.svg)](LICENSE.md)
@@ -73,39 +85,6 @@ wp acorn optimize:clear --path="$HOME/wp" --allow-root                 # Full Ac
 > **Important:** You must run `npm run build` before any page will load. Vite outputs a `manifest.json` that the theme uses to resolve hashed asset filenames. Without it every page throws a "Vite manifest not found" error.
 
 ---
-
-## Architecture
-
-```mermaid
-graph TD
-    WP["WordPress Core"]            -->|theme hooks|        Acorn["Acorn (Laravel IoC)"]
-    Acorn                           -->|Blade engine|       Views["resources/views/"]
-    Acorn                           -->|service provider|   App["app/"]
-
-    App --> Setup["setup.php\nTheme support · menus · block editor · font preload"]
-    App --> Blocks["blocks.php\nDynamic block registration + render callbacks"]
-    App --> Forms["forms.php\nContact + newsletter handlers (no plugin)"]
-    App --> SEO["Support/Seo.php\nTitle · meta · canonical · OG · Twitter"]
-    App --> Identity["Support/Identity.php\nCustomizer theme_mod helpers"]
-    App --> Tours["Support/Tours.php\nTour catalog (title · price · category)"]
-    App --> Customizer["customizer.php\nAppearance → Customize → Identity"]
-
-    Views --> Layouts["layouts/app.blade.php\nOuter HTML shell"]
-    Views --> Sections["sections/header · footer"]
-    Views --> Pages["page-{slug}.blade.php\ntours · guides · area · contact"]
-    Views --> Partials["partials/\ntour-card · book-band · info-strip"]
-
-    Vite["Vite 8"]                  -->|npm run build|      Build["public/build/\nCSS + JS bundles · WOFF2 fonts"]
-    Build                           -->|manifest.json|       Setup
-
-    BlockJS["resources/js/blocks/index.js\nGutenberg edit controls\nURLInput · MediaUpload · InspectorControls"]  --> Editor["Block Editor"]
-    Blocks                          -->|PHP render|          Editor
-
-    WooCommerce["WooCommerce\n(optional)"] -->|if active|   Shop["woocommerce.blade.php\nShop wrapper"]
-```
-
----
-
 ## Theme structure
 
 ```
