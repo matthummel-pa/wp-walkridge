@@ -1,0 +1,228 @@
+.wr-settings {
+  --wr-ink: #0c1218;
+  --wr-slate: #17212c;
+  --wr-gold: #c4a35a;
+  --wr-paper: #f7f1e3;
+  --wr-mist: #e8e2d4;
+  max-width: 1120px;
+}
+
+.wr-settings__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin: 1.25rem 0 1.75rem;
+  padding: 1.75rem;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(196, 163, 90, 0.18), transparent 42%),
+    linear-gradient(160deg, #0c1218 0%, #17212c 70%, #111820 100%);
+  color: var(--wr-paper);
+}
+
+.wr-settings__kicker {
+  margin: 0 0 0.35rem;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--wr-gold);
+}
+
+.wr-settings__hero h1 {
+  margin: 0 0 0.5rem;
+  color: #fff;
+  font-size: 1.85rem;
+  line-height: 1.15;
+}
+
+.wr-settings__hero p {
+  max-width: 62ch;
+  color: #c5d4e0;
+}
+
+.wr-settings__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.wr-settings__preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.2rem;
+  padding: 1.1rem;
+  border: 1px solid rgba(224, 190, 114, 0.28);
+  border-radius: 12px;
+  background: rgba(7, 11, 16, 0.45);
+}
+
+.wr-settings__preview-badge {
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #1d2327;
+  color: #f0f0f0;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+}
+
+.wr-settings__preview-logo {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 0.5rem;
+  object-fit: contain;
+  background: var(--wr-paper);
+  border-radius: 8px;
+}
+
+.wr-settings__preview-mark {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--wr-gold);
+  border-radius: 50%;
+  color: var(--wr-gold);
+  font-size: 1.4rem;
+}
+
+.wr-settings__preview strong {
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.wr-settings__grid,
+.wr-settings__advanced-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.wr-card {
+  padding: 1.15rem 1.2rem 1.25rem;
+  border: 1px solid #d7d2c6;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(12, 18, 24, 0.04);
+}
+
+.wr-card h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.wr-card__help,
+.wr-card .description {
+  color: #5c6570;
+}
+
+.wr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  margin: 0.7rem 0;
+}
+
+.wr-field span {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.wr-field input,
+.wr-field textarea {
+  width: 100%;
+  max-width: none;
+}
+
+.wr-check {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.55rem 0;
+}
+
+.wr-logo-field {
+  margin-top: 0.85rem;
+}
+
+.wr-logo-field > span {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.wr-logo-field__preview img {
+  max-width: 140px;
+  height: auto;
+  padding: 0.4rem;
+  border: 1px dashed #c5c0b4;
+  border-radius: 8px;
+  background: var(--wr-paper);
+}
+
+.wr-settings__advanced {
+  margin: 1.25rem 0;
+  padding: 0.85rem 1rem 1rem;
+  border: 1px dashed #b9b3a4;
+  border-radius: 12px;
+  background: var(--wr-paper);
+}
+
+.wr-settings__advanced > summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.wr-settings__advanced[open] > summary {
+  margin-bottom: 1rem;
+}
+
+.wr-settings__deep {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.wr-settings__submit {
+  margin-top: 1rem;
+}
+
+.wr-update {
+  max-width: 960px;
+}
+
+.wr-update__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 1.4rem;
+}
+
+.wr-stat {
+  padding: 1rem 1.05rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #d7d2c6;
+}
+
+.wr-stat strong {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 1.05rem;
+}
+
+.wr-stat--ok { border-color: #46b450; }
+.wr-stat--warn { border-color: #dba617; }
+
+@media (max-width: 900px) {
+  .wr-settings__hero,
+  .wr-settings__grid,
+  .wr-settings__advanced-grid,
+  .wr-update__grid {
+    grid-template-columns: 1fr;
+  }
+}

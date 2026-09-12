@@ -126,7 +126,7 @@ class WR_Update_Info_Control extends WP_Customize_Control
         $theme   = wp_get_theme();
         $version = esc_html($theme->get('Version') ?: '1.0.0');
         $name    = esc_html($theme->get('Name'));
-        $status_url = esc_url(admin_url('themes.php?page=hg-update-theme'));
+        $status_url = esc_url(admin_url('themes.php?page=wr-update-theme'));
 
         echo '<style>
             .wr-update-info { font-size: 13px; line-height: 1.6; }
@@ -153,9 +153,9 @@ class WR_Update_Info_Control extends WP_Customize_Control
         echo '<div class="wr-update-info">';
         echo '<strong>' . $name . '</strong><br>';
         echo '<span class="wr-version-badge">v' . $version . '</span><br>';
-        echo '<span>' . esc_html__('Check build status, git commit, and asset manifest on the Theme Status screen.', 'walkridge') . '</span><br>';
+        echo '<span>' . esc_html__('Check build status, install a zip, or pull from GitHub on Update Theme.', 'walkridge') . '</span><br>';
         echo '<a href="' . $status_url . '" class="wr-status-link" target="_blank">';
-        echo esc_html__('Open Theme Status', 'walkridge') . ' &#8599;';
+        echo esc_html__('Open Update Theme', 'walkridge') . ' &#8599;';
         echo '</a>';
         echo '</div>';
     }
@@ -164,7 +164,7 @@ class WR_Update_Info_Control extends WP_Customize_Control
 add_action('customize_register', function (WP_Customize_Manager $wp_customize) {
     $wp_customize->add_section('wr_updates', [
         'title'       => __('Update Theme', 'walkridge'),
-        'description' => __('Theme version and build info. Update by deploying a new zip or running git pull + npm run build on the server.', 'walkridge'),
+        'description' => __('Theme version and a link to Appearance → Update Theme for zip or GitHub installs.', 'walkridge'),
         'priority'    => 200,
     ]);
 

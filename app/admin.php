@@ -1,19 +1,26 @@
 <?php
 
 /**
- * Walkridge — Appearance > Theme Status admin page.
+ * Walkridge — Appearance > Update Theme admin page.
  *
- * Shows version / build info and provides a dev-only GitHub updater.
+ * Version / build cards plus zip and GitHub installers.
  * Refund Policy custom fields remain here.
  */
 add_action('admin_menu', function () {
     add_theme_page(
-        __('Theme Status', 'walkridge'),
-        __('Theme Status', 'walkridge'),
+        __('Update Theme', 'walkridge'),
+        __('Update Theme', 'walkridge'),
         'manage_options',
-        'hg-update-theme',
+        'wr-update-theme',
         'wr_theme_update_page'
     );
+});
+
+add_action('admin_init', function (): void {
+    if (($GLOBALS['pagenow'] ?? '') === 'themes.php' && ($_GET['page'] ?? '') === 'hg-update-theme') {
+        wp_safe_redirect(admin_url('themes.php?page=wr-update-theme'));
+        exit;
+    }
 });
 
 /* ── Admin page HTML ─────────────────────────────────────────────────────── */
@@ -56,47 +63,39 @@ function wr_theme_update_page(): void
     $gh_repo       = (string) get_option('wr_github_repo', '');
     $gh_branch     = (string) get_option('wr_github_branch', 'main');
     $gh_configured = $gh_token !== '' && $gh_repo !== '';
+    $settings_url = admin_url('themes.php?page=wr-theme-settings');
     ?>
-    <div class="wrap">
-      <h1><?php esc_html_e('Theme Status', 'walkridge'); ?></h1>
+    <div class="wrap wr-update">
+      <h1><?php esc_html_e('Update Theme', 'walkridge'); ?></h1>
       <p class="description">
-        <?php esc_html_e('Production zips already include compiled assets. Rebuild on the command line after a git pull — never from the browser on shared hosting.', 'walkridge'); ?>
+        <?php esc_html_e('Install a production zip over the active theme, or pull from GitHub in development. Marketplace zips already include vendor and compiled assets — do not run npm on shared hosting.', 'walkridge'); ?>
+        <a href="<?php echo esc_url($settings_url); ?>"><?php esc_html_e('Theme Settings', 'walkridge'); ?></a>
       </p>
 
-      <table class="form-table" role="presentation" style="max-width:640px;">
-        <tr>
-          <th scope="row"><?php esc_html_e('Theme', 'walkridge'); ?></th>
-          <td><strong><?php echo esc_html(wp_get_theme()->get('Name')); ?></strong>
-              v<?php echo esc_html($theme_version); ?></td>
-        </tr>
-        <?php if (! empty($node_pkg['engines']['node'])) { ?>
-        <tr>
-          <th scope="row"><?php esc_html_e('Node requirement', 'walkridge'); ?></th>
-          <td><code><?php echo esc_html($node_pkg['engines']['node']); ?></code></td>
-        </tr>
-        <?php } ?>
-        <tr>
-          <th scope="row"><?php esc_html_e('Built assets', 'walkridge'); ?></th>
-          <td>
+      <div class="wr-update__grid">
+        <div class="wr-stat">
+          <span><?php esc_html_e('Theme', 'walkridge'); ?></span>
+          <strong><?php echo esc_html(wp_get_theme()->get('Name')); ?> v<?php echo esc_html($theme_version); ?></strong>
+        </div>
+        <div class="wr-stat <?php echo $manifest_data !== null ? 'wr-stat--ok' : 'wr-stat--warn'; ?>">
+          <span><?php esc_html_e('Built assets', 'walkridge'); ?></span>
+          <strong>
             <?php if ($manifest_data !== null) { ?>
-              <span style="color:#46b450;">&#10003; <?php esc_html_e('manifest.json present', 'walkridge'); ?></span>
-              (<?php echo count($manifest_data); ?> <?php esc_html_e('entries', 'walkridge'); ?>)
+              <?php esc_html_e('manifest.json present', 'walkridge'); ?>
+              (<?php echo count($manifest_data); ?>)
             <?php } else { ?>
-              <span style="color:#dc3232;">&#10007; <?php esc_html_e('manifest.json missing — run npm run build', 'walkridge'); ?></span>
+              <?php esc_html_e('Missing — run npm run build', 'walkridge'); ?>
             <?php } ?>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row"><?php esc_html_e('Last rebuild recorded', 'walkridge'); ?></th>
-          <td><?php echo esc_html($last_build_ts); ?></td>
-        </tr>
-        <?php if ($git_hash) { ?>
-        <tr>
-          <th scope="row"><?php esc_html_e('Git commit', 'walkridge'); ?></th>
-          <td><code><?php echo esc_html($git_hash); ?></code></td>
-        </tr>
-        <?php } ?>
-      </table>
+          </strong>
+        </div>
+        <div class="wr-stat">
+          <span><?php esc_html_e('Last rebuild', 'walkridge'); ?></span>
+          <strong><?php echo esc_html($last_build_ts); ?><?php echo $git_hash ? ' · '.$git_hash : ''; ?></strong>
+        </div>
+      </div>
+      <?php if (! empty($node_pkg['engines']['node'])) { ?>
+        <p class="description"><?php esc_html_e('Node requirement (source builds only):', 'walkridge'); ?> <code><?php echo esc_html($node_pkg['engines']['node']); ?></code></p>
+      <?php } ?>
 
       <hr>
       <h2 style="margin-top:1.5rem;"><?php esc_html_e('Rebuild from the CLI', 'walkridge'); ?></h2>
@@ -279,7 +278,7 @@ add_action('admin_post_wr_save_github_settings', function (): void {
     update_option('wr_github_repo',   sanitize_text_field(wp_unslash((string) ($_POST['wr_github_repo'] ?? ''))));
     update_option('wr_github_branch', sanitize_text_field(wp_unslash((string) ($_POST['wr_github_branch'] ?? 'main'))));
 
-    wp_safe_redirect(admin_url('themes.php?page=hg-update-theme&gh_updated=1'));
+    wp_safe_redirect(admin_url('themes.php?page=wr-update-theme&gh_updated=1'));
     exit;
 });
 

@@ -36,9 +36,9 @@ You receive a **pre-built zip** that includes compiled assets and a production `
 1. Unzip the outer `walkridge-*.zip` — do not upload that outer file.
 2. **Appearance → Themes → Add New → Upload Theme** → inner `walkridge.zip`. Activate. The folder must stay named **`walkridge`**.
 3. Install WooCommerce and add tour products. If the shop shows a "Coming soon" placeholder, turn that option off inside WooCommerce.
-4. **Appearance → Customize → Identity** — brand name, phone, email, address, hours, and social links. Logo lives under **Customize → Site Identity**.
+4. **Appearance → Theme Settings** — brand, phone, email, hours, logo, and Advanced controls. Customizer is optional live preview.
 5. Assign **Primary** and **Footer** nav menus. Publish pages with slugs `tours`, `guides`, `area`, and `contact`.
-6. **Tools → Walkridge Blocks** — seed page layouts when pages are blank.
+6. **Appearance → Theme Settings → Advanced** or **Tools → Walkridge Blocks** — seed Gutenberg layouts on those pages.
 
 Full buyer walkthrough: [`docs/marketplace/buyer-guide.html`](docs/marketplace/buyer-guide.html).
 
@@ -175,29 +175,36 @@ All blocks are **dynamic** (PHP render callbacks) using Block API v3. The block 
 | Book band | `book-band` | Shop URL, label |
 | Info strip | `info-strip` | Show/hide phone, address, and hours |
 | Custom block | `custom` | Block Generator field definitions |
+| Contact desk | `contact-desk` | NAP + contact form (Identity-driven) |
+| FAQ list | `faq-list` | Piped `Question \| Answer` lines |
+| Guide roster | `guide-roster` | Piped `Name \| Role \| Bio` lines |
+| Area facts | `area-facts` | Parking, meeting point, directions |
 
 To seed or migrate page layouts: **Tools → Walkridge Blocks**.
 
 ---
 
-## Identity (Customizer)
+## Theme Settings
 
-**Appearance → Customize → Identity** controls every office-specific detail:
+**Appearance → Theme Settings** is the graphical front door (same pattern as Acreline / Pressroot). It writes the same `theme_mod` keys as **Customize → Identity**. Customizer stays the live-preview engine. **Advanced settings** on that screen cover the demo badge, author credit, optional gold accent, block seeding, and Update Theme.
 
 | Setting | `theme_mod` key | Notes |
 |---|---|---|
 | Brand / office name | `wr_brand_name` | Falls back to site name |
-| Phone | `wr_phone` | Info strip and header rail |
-| Email | `wr_email` | Contact page link |
+| Phone | `wr_phone` | Info strip and contact desk |
+| Email | `wr_email` | Contact desk + form recipient |
 | Address | `wr_address` | Info strip |
 | Hours | `wr_hours` | Info strip |
-| Header CTA label | `wr_header_cta_label` | |
-| Header CTA URL | `wr_header_cta_url` | |
-| Twitter / X handle | `wr_social_twitter` | `@handle` — used in Twitter card meta |
-| Footer author credit | `wr_show_author_credit` | Toggle |
-| Concept demo badge | `wr_show_concept_badge` | Hides the "concept" watermark |
+| Header CTA label | `wr_cta_label` | |
+| Header CTA URL | `wr_cta_url` | Empty uses the WooCommerce shop |
+| Twitter / X handle | `wr_social_twitter` | `@handle` — Twitter card meta |
+| Footer author credit | `wr_show_credit` | Removable for marketplace installs |
+| Concept demo badge | `wr_show_demo_chrome` | Hide before a client walkthrough |
+| Gold accent override | `wr_accent_color` | Advanced — optional hex |
 
-Logo upload lives under **Customize → Site Identity**.
+Logo upload lives on Theme Settings and under **Customize → Site Identity**.
+
+**Appearance → Update Theme** installs a production zip or pulls from GitHub. Docs: [`docs/THEME-SETTINGS.md`](docs/THEME-SETTINGS.md), [`docs/UPDATE-THEME.md`](docs/UPDATE-THEME.md), [`docs/BLOCKS.md`](docs/BLOCKS.md).
 
 ---
 
@@ -232,7 +239,7 @@ wp theme install dist-theme/walkridge.zip --activate --allow-root
 
 | | |
 |---|---|
-| [SUPPORT.md](SUPPORT.md) | Full reference: stack, templates, local dev, packaging, troubleshooting |
+| [SUPPORT.md](SUPPORT.md) | Theme Settings, Update Theme, blocks, local Sage, packaging |
 | [GitHub Issues](https://github.com/matthummel-pa/wp-walkridge/issues) | Reproducible theme bugs |
 | [CHANGELOG.md](CHANGELOG.md) | Version history |
 | [BRAND.md](BRAND.md) | Brand kit: palette, typefaces, voice |

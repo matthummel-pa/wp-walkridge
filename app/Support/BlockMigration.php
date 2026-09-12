@@ -172,19 +172,22 @@ class BlockMigration
             'guides' => implode("\n\n", [
                 self::blockComment('walkridge/page-intro', $attrs),
                 '<!-- wp:walkridge/info-strip /-->',
+                '<!-- wp:walkridge/guide-roster /-->',
                 '<!-- wp:walkridge/about-split {"eyebrow":"Licensed Guides","heading":"The same exam the park uses.","primaryLabel":"Book a Tour","primaryUrl":"/shop/","secondaryLabel":"See Tours","secondaryUrl":"/tours/"} /-->',
                 '<!-- wp:walkridge/book-band /-->',
             ]),
             'area' => implode("\n\n", [
                 self::blockComment('walkridge/page-intro', $attrs),
                 '<!-- wp:walkridge/info-strip /-->',
+                '<!-- wp:walkridge/area-facts /-->',
                 '<!-- wp:walkridge/pathway-cards {"eyebrow":"On the Ground","heading":"Park, town, and meeting point.","text":"Use this page for area context — the battlefield, downtown, and how guests find the sample office."} /-->',
                 '<!-- wp:walkridge/cta-band {"eyebrow":"Plan the visit","heading":"Ready to walk the field?","text":"Pick a tour and a date. Sample checkout only.","buttonLabel":"Browse Tours"} /-->',
             ]),
             'contact' => implode("\n\n", [
                 self::blockComment('walkridge/page-intro', $attrs),
                 '<!-- wp:walkridge/info-strip /-->',
-                '<!-- wp:walkridge/cta-band {"eyebrow":"Call or write","heading":"We answer during sample office hours.","text":"Demo phones are 555 numbers. Demo email does not reach a real inbox."} /-->',
+                '<!-- wp:walkridge/contact-desk /-->',
+                '<!-- wp:walkridge/faq-list /-->',
             ]),
             'refund-policy' => implode("\n\n", [
                 self::blockComment('walkridge/page-intro', $attrs ?: [

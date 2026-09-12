@@ -141,6 +141,43 @@ function wr_register_blocks(): void
                 'values' => ['type' => 'object', 'default' => []],
             ],
         ],
+        'walkridge/contact-desk' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_contact_desk',
+            'attributes' => [
+                'eyebrow' => ['type' => 'string', 'default' => 'Reach Us'],
+                'heading' => ['type' => 'string', 'default' => 'Ticket office & guest services'],
+                'formEyebrow' => ['type' => 'string', 'default' => 'Send a Message'],
+                'formHeading' => ['type' => 'string', 'default' => 'Ask us anything'],
+                'showNap' => ['type' => 'boolean', 'default' => true],
+                'showForm' => ['type' => 'boolean', 'default' => true],
+            ],
+        ],
+        'walkridge/faq-list' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_faq_list',
+            'attributes' => [
+                'eyebrow' => ['type' => 'string', 'default' => 'FAQ'],
+                'heading' => ['type' => 'string', 'default' => 'Before you book'],
+                'items' => ['type' => 'string', 'default' => "Do I need a park ticket? | Park entrance rules change by season. Confirm current access before you arrive.\nAre tours ADA-accessible? | The bus loop is the accessible option. Walking tours cover uneven ground.\nCan I cancel? | See the Refund Policy page for the sample store window."],
+            ],
+        ],
+        'walkridge/guide-roster' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_guide_roster',
+            'attributes' => [
+                'eyebrow' => ['type' => 'string', 'default' => 'The Desk'],
+                'heading' => ['type' => 'string', 'default' => 'Licensed battlefield guides'],
+                'items' => ['type' => 'string', 'default' => "Eleanor Voss | Lead walking guide | Twenty years on the field. Primary sources first, then the landscape.\nJames Whitaker | Bus & accessibility | Former interpreter. Keeps the ADA loop paced for questions.\nMaya Trent | Evening lanterns | Civilian streets after dark, letters and the town square."],
+            ],
+        ],
+        'walkridge/area-facts' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_area_facts',
+            'attributes' => [
+                'eyebrow' => ['type' => 'string', 'default' => 'Find Us'],
+                'heading' => ['type' => 'string', 'default' => 'Meeting point, parking, and the ground'],
+                'parking' => ['type' => 'string', 'default' => 'Sample lot on the same block as the concept office. Do not treat this as a real park lot.'],
+                'meeting' => ['type' => 'string', 'default' => 'Meet at the marked sample office. Walking tours leave from the rail; bus tours load at the curb.'],
+                'directions' => ['type' => 'string', 'default' => 'From the town square, follow the posted sample street. Fiction address only.'],
+            ],
+        ],
     ];
 
     foreach ($blocks as $name => $args) {
@@ -195,6 +232,38 @@ add_action('init', function (): void {
             '<!-- wp:walkridge/pathway-cards /-->',
             '<!-- wp:walkridge/tour-grid {"limit":3,"showFilters":false,"showCompare":false} /-->',
             '<!-- wp:walkridge/book-band /-->',
+        ]),
+    ]);
+    register_block_pattern('walkridge/contact-pattern', [
+        'title' => __('Walkridge — Contact desk', 'walkridge'),
+        'categories' => ['walkridge'],
+        'content' => implode("\n", [
+            '<!-- wp:walkridge/page-intro /-->',
+            '<!-- wp:walkridge/info-strip /-->',
+            '<!-- wp:walkridge/contact-desk /-->',
+            '<!-- wp:walkridge/faq-list /-->',
+        ]),
+    ]);
+    register_block_pattern('walkridge/guides-pattern', [
+        'title' => __('Walkridge — Guides', 'walkridge'),
+        'categories' => ['walkridge'],
+        'content' => implode("\n", [
+            '<!-- wp:walkridge/page-intro /-->',
+            '<!-- wp:walkridge/info-strip /-->',
+            '<!-- wp:walkridge/guide-roster /-->',
+            '<!-- wp:walkridge/about-split /-->',
+            '<!-- wp:walkridge/book-band /-->',
+        ]),
+    ]);
+    register_block_pattern('walkridge/area-pattern', [
+        'title' => __('Walkridge — Area', 'walkridge'),
+        'categories' => ['walkridge'],
+        'content' => implode("\n", [
+            '<!-- wp:walkridge/page-intro /-->',
+            '<!-- wp:walkridge/info-strip /-->',
+            '<!-- wp:walkridge/area-facts /-->',
+            '<!-- wp:walkridge/pathway-cards /-->',
+            '<!-- wp:walkridge/cta-band /-->',
         ]),
     ]);
 });
@@ -533,6 +602,192 @@ function wr_render_cta_band(array $attrs): string
       </div>
     </section>
     <?php
+    return (string) ob_get_clean();
+}
+
+/**
+ * @return list<array{0: string, 1: string, 2?: string}>
+ */
+function wr_parse_piped_items(string $raw): array
+{
+    $rows = [];
+    foreach (preg_split('/\r\n|\r|\n/', $raw) ?: [] as $line) {
+        $line = trim($line);
+        if ($line === '') {
+            continue;
+        }
+        $parts = array_map('trim', explode('|', $line));
+        if ($parts[0] === '') {
+            continue;
+        }
+        $rows[] = $parts;
+    }
+
+    return $rows;
+}
+
+/** @param array<string, mixed> $attrs */
+function wr_render_contact_desk(array $attrs): string
+{
+    $eyebrow = esc_html((string) ($attrs['eyebrow'] ?? ''));
+    $heading = esc_html((string) ($attrs['heading'] ?? ''));
+    $formEyebrow = esc_html((string) ($attrs['formEyebrow'] ?? ''));
+    $formHeading = esc_html((string) ($attrs['formHeading'] ?? ''));
+    $showNap = ! empty($attrs['showNap']);
+    $showForm = ! empty($attrs['showForm']);
+    $note = '';
+    if (isset($_GET['wr_form'], $_GET['wr_msg'])) {
+        $note = sanitize_text_field(wp_unslash((string) $_GET['wr_msg']));
+    }
+
+    ob_start();
+    ?>
+    <section class="section">
+      <div class="wrap">
+        <div class="contact-grid reveal">
+          <?php if ($showNap) { ?>
+          <div>
+            <?php if ($eyebrow !== '') { ?><span class="eyebrow"><?php echo $eyebrow; ?></span><?php } ?>
+            <?php if ($heading !== '') { ?><h2 class="contact-section-heading"><?php echo $heading; ?></h2><?php } ?>
+            <div class="meet-card">
+              <p>
+                <a href="<?php echo esc_url(Identity::phoneHref()); ?>" class="nap-block nap-block--strong"><?php echo esc_html(Identity::phone()); ?></a><br>
+                <?php if (Identity::showDemoChrome()) { ?>
+                  <span class="nap-note"><?php esc_html_e('Fiction-range sample number — not a live line', 'walkridge'); ?></span><br>
+                <?php } ?>
+                <a href="<?php echo esc_url('mailto:'.Identity::email()); ?>" class="contact-email-link"><?php echo esc_html(Identity::email()); ?></a>
+              </p>
+              <p><?php echo Identity::hoursHtml(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+              <p><?php echo esc_html(Identity::addressLine()); ?></p>
+            </div>
+          </div>
+          <?php } ?>
+          <?php if ($showForm) { ?>
+          <form class="contact-form" id="contactForm" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" data-wr-contact novalidate>
+            <input type="hidden" name="action" value="wr_contact">
+            <?php wp_nonce_field('wr_contact', 'wr_contact_nonce'); ?>
+            <?php if ($formEyebrow !== '') { ?><span class="eyebrow"><?php echo $formEyebrow; ?></span><?php } ?>
+            <?php if ($formHeading !== '') { ?><h2 class="contact-section-heading"><?php echo $formHeading; ?></h2><?php } ?>
+            <div class="form-grid">
+              <div class="field full">
+                <label for="cName"><?php esc_html_e('Your name', 'walkridge'); ?></label>
+                <input type="text" id="cName" name="cName" autocomplete="name" required>
+              </div>
+              <div class="field full">
+                <label for="cPhone"><?php esc_html_e('Phone (optional)', 'walkridge'); ?></label>
+                <input type="tel" id="cPhone" name="cPhone" autocomplete="tel" placeholder="<?php esc_attr_e('(717) 555-0100', 'walkridge'); ?>">
+              </div>
+              <div class="field full">
+                <label for="cEmail"><?php esc_html_e('Email address', 'walkridge'); ?></label>
+                <input type="email" id="cEmail" name="cEmail" autocomplete="email" required>
+              </div>
+              <div class="field full">
+                <label for="cMsg"><?php esc_html_e('Message', 'walkridge'); ?></label>
+                <textarea id="cMsg" name="cMsg" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block"><?php esc_html_e('Send Message', 'walkridge'); ?></button>
+            <p id="contactNote" role="status" aria-live="polite" class="contact-form__note"><?php echo esc_html($note); ?></p>
+          </form>
+          <?php } ?>
+        </div>
+      </div>
+    </section>
+    <?php
+
+    return (string) ob_get_clean();
+}
+
+/** @param array<string, mixed> $attrs */
+function wr_render_faq_list(array $attrs): string
+{
+    $rows = wr_parse_piped_items((string) ($attrs['items'] ?? ''));
+    if ($rows === []) {
+        return '';
+    }
+    ob_start();
+    ?>
+    <section class="section section-alt">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <?php if (($attrs['eyebrow'] ?? '') !== '') { ?><span class="eyebrow"><?php echo esc_html((string) $attrs['eyebrow']); ?></span><?php } ?>
+          <?php if (($attrs['heading'] ?? '') !== '') { ?><h2><?php echo esc_html((string) $attrs['heading']); ?></h2><?php } ?>
+        </div>
+        <dl class="wr-faq reveal">
+          <?php foreach ($rows as $row) { ?>
+            <dt><?php echo esc_html($row[0]); ?></dt>
+            <dd><?php echo esc_html($row[1] ?? ''); ?></dd>
+          <?php } ?>
+        </dl>
+      </div>
+    </section>
+    <?php
+
+    return (string) ob_get_clean();
+}
+
+/** @param array<string, mixed> $attrs */
+function wr_render_guide_roster(array $attrs): string
+{
+    $rows = wr_parse_piped_items((string) ($attrs['items'] ?? ''));
+    if ($rows === []) {
+        return '';
+    }
+    ob_start();
+    ?>
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <?php if (($attrs['eyebrow'] ?? '') !== '') { ?><span class="eyebrow"><?php echo esc_html((string) $attrs['eyebrow']); ?></span><?php } ?>
+          <?php if (($attrs['heading'] ?? '') !== '') { ?><h2><?php echo esc_html((string) $attrs['heading']); ?></h2><?php } ?>
+        </div>
+        <div class="wr-roster reveal">
+          <?php foreach ($rows as $row) { ?>
+            <article class="wr-roster__card">
+              <h3><?php echo esc_html($row[0]); ?></h3>
+              <?php if (! empty($row[1])) { ?><p class="wr-roster__role"><?php echo esc_html($row[1]); ?></p><?php } ?>
+              <?php if (! empty($row[2])) { ?><p><?php echo esc_html($row[2]); ?></p><?php } ?>
+            </article>
+          <?php } ?>
+        </div>
+      </div>
+    </section>
+    <?php
+
+    return (string) ob_get_clean();
+}
+
+/** @param array<string, mixed> $attrs */
+function wr_render_area_facts(array $attrs): string
+{
+    $facts = [
+        __('Parking', 'walkridge') => (string) ($attrs['parking'] ?? ''),
+        __('Meeting point', 'walkridge') => (string) ($attrs['meeting'] ?? ''),
+        __('Directions', 'walkridge') => (string) ($attrs['directions'] ?? ''),
+    ];
+    ob_start();
+    ?>
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <?php if (($attrs['eyebrow'] ?? '') !== '') { ?><span class="eyebrow"><?php echo esc_html((string) $attrs['eyebrow']); ?></span><?php } ?>
+          <?php if (($attrs['heading'] ?? '') !== '') { ?><h2><?php echo esc_html((string) $attrs['heading']); ?></h2><?php } ?>
+        </div>
+        <div class="wr-facts reveal">
+          <?php foreach ($facts as $label => $text) {
+              if ($text === '') {
+                  continue;
+              } ?>
+            <article class="wr-facts__card">
+              <h3><?php echo esc_html($label); ?></h3>
+              <p><?php echo esc_html($text); ?></p>
+            </article>
+          <?php } ?>
+        </div>
+      </div>
+    </section>
+    <?php
+
     return (string) ob_get_clean();
 }
 

@@ -21,6 +21,11 @@ class PageFields
     public static function defaultsForSlug(string $slug): array
     {
         return match ($slug) {
+            'home', 'front-page' => [
+                'eyebrow' => '',
+                'heading' => '',
+                'intro' => '',
+            ],
             'tours' => [
                 'eyebrow' => __('Tours & Tickets', 'walkridge'),
                 'heading' => __('Battlefield tours & tickets', 'walkridge'),

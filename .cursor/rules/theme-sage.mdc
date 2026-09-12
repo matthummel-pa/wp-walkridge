@@ -40,4 +40,4 @@ Buyer-facing phone, email, brand, hours, concept badge: `App\Support\Identity` +
 
 ## Admin
 
-Prefer Customizer + normal page/product editing. Do not reintroduce Elementor or the site editor as the required editing path.
+**Appearance → Theme Settings** is the graphical front door (identity, logo, Advanced). Customizer writes the same theme_mods and is live preview only. **Appearance → Update Theme** installs zips / GitHub pulls. Marketing page copy lives in Walkridge Gutenberg blocks — do not hardcode page bodies in Blade. Do not reintroduce Elementor or the site editor as the required editing path.

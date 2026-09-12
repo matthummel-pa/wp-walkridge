@@ -853,3 +853,157 @@ registerBlockType('walkridge/custom', {
   },
   save: () => null,
 });
+
+registerBlockType('walkridge/contact-desk', {
+  title: __('Contact Desk', 'walkridge'),
+  category: 'walkridge',
+  icon: 'email',
+  supports: { html: false, multiple: false },
+  attributes: {
+    eyebrow: { type: 'string', default: 'Reach Us' },
+    heading: { type: 'string', default: 'Ticket office & guest services' },
+    formEyebrow: { type: 'string', default: 'Send a Message' },
+    formHeading: { type: 'string', default: 'Ask us anything' },
+    showNap: { type: 'boolean', default: true },
+    showForm: { type: 'boolean', default: true },
+  },
+  edit({ attributes: a, setAttributes: s }) {
+    return el(SsrEdit, {
+      name: 'walkridge/contact-desk',
+      attributes: a,
+      sidebar: () =>
+        el(
+          Fragment,
+          null,
+          textPanel(
+            __('Office copy', 'walkridge'),
+            [
+              ['eyebrow', __('Office eyebrow', 'walkridge'), false],
+              ['heading', __('Office heading', 'walkridge'), false],
+              ['formEyebrow', __('Form eyebrow', 'walkridge'), false],
+              ['formHeading', __('Form heading', 'walkridge'), false],
+            ],
+            a,
+            s,
+          ),
+          el(
+            PanelBody,
+            { title: __('Display', 'walkridge'), initialOpen: false },
+            el(ToggleControl, {
+              label: __('Show phone / email / hours', 'walkridge'),
+              checked: a.showNap !== false,
+              onChange: (v) => s({ showNap: v }),
+            }),
+            el(ToggleControl, {
+              label: __('Show contact form', 'walkridge'),
+              checked: a.showForm !== false,
+              onChange: (v) => s({ showForm: v }),
+            }),
+          ),
+        ),
+    })
+  },
+  save: () => null,
+})
+
+registerBlockType('walkridge/faq-list', {
+  title: __('FAQ List', 'walkridge'),
+  category: 'walkridge',
+  icon: 'editor-help',
+  supports: { html: false },
+  attributes: {
+    eyebrow: { type: 'string', default: 'FAQ' },
+    heading: { type: 'string', default: 'Before you book' },
+    items: {
+      type: 'string',
+      default:
+        'Do I need a park ticket? | Park entrance rules change by season. Confirm current access before you arrive.\nAre tours ADA-accessible? | The bus loop is the accessible option. Walking tours cover uneven ground.\nCan I cancel? | See the Refund Policy page for the sample store window.',
+    },
+  },
+  edit({ attributes: a, setAttributes: s }) {
+    return el(SsrEdit, {
+      name: 'walkridge/faq-list',
+      attributes: a,
+      sidebar: () =>
+        textPanel(
+          __('FAQ', 'walkridge'),
+          [
+            ['eyebrow', __('Eyebrow', 'walkridge'), false],
+            ['heading', __('Heading', 'walkridge'), false],
+            ['items', __('Items (one per line: Question | Answer)', 'walkridge'), true],
+          ],
+          a,
+          s,
+        ),
+    })
+  },
+  save: () => null,
+})
+
+registerBlockType('walkridge/guide-roster', {
+  title: __('Guide Roster', 'walkridge'),
+  category: 'walkridge',
+  icon: 'groups',
+  supports: { html: false },
+  attributes: {
+    eyebrow: { type: 'string', default: 'The Desk' },
+    heading: { type: 'string', default: 'Licensed battlefield guides' },
+    items: {
+      type: 'string',
+      default:
+        'Eleanor Voss | Lead walking guide | Twenty years on the field. Primary sources first, then the landscape.\nJames Whitaker | Bus & accessibility | Former interpreter. Keeps the ADA loop paced for questions.\nMaya Trent | Evening lanterns | Civilian streets after dark, letters and the town square.',
+    },
+  },
+  edit({ attributes: a, setAttributes: s }) {
+    return el(SsrEdit, {
+      name: 'walkridge/guide-roster',
+      attributes: a,
+      sidebar: () =>
+        textPanel(
+          __('Guides', 'walkridge'),
+          [
+            ['eyebrow', __('Eyebrow', 'walkridge'), false],
+            ['heading', __('Heading', 'walkridge'), false],
+            ['items', __('Guides (one per line: Name | Role | Bio)', 'walkridge'), true],
+          ],
+          a,
+          s,
+        ),
+    })
+  },
+  save: () => null,
+})
+
+registerBlockType('walkridge/area-facts', {
+  title: __('Area Facts', 'walkridge'),
+  category: 'walkridge',
+  icon: 'location',
+  supports: { html: false },
+  attributes: {
+    eyebrow: { type: 'string', default: 'Find Us' },
+    heading: { type: 'string', default: 'Meeting point, parking, and the ground' },
+    parking: { type: 'string', default: 'Sample lot on the same block as the concept office. Do not treat this as a real park lot.' },
+    meeting: { type: 'string', default: 'Meet at the marked sample office. Walking tours leave from the rail; bus tours load at the curb.' },
+    directions: { type: 'string', default: 'From the town square, follow the posted sample street. Fiction address only.' },
+  },
+  edit({ attributes: a, setAttributes: s }) {
+    return el(SsrEdit, {
+      name: 'walkridge/area-facts',
+      attributes: a,
+      sidebar: () =>
+        textPanel(
+          __('Area facts', 'walkridge'),
+          [
+            ['eyebrow', __('Eyebrow', 'walkridge'), false],
+            ['heading', __('Heading', 'walkridge'), false],
+            ['parking', __('Parking', 'walkridge'), true],
+            ['meeting', __('Meeting point', 'walkridge'), true],
+            ['directions', __('Directions', 'walkridge'), true],
+          ],
+          a,
+          s,
+        ),
+    })
+  },
+  save: () => null,
+})

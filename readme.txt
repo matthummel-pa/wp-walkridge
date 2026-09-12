@@ -3,7 +3,7 @@ Contributors: matthummel
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 8.3
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, translation-ready, one-column, threaded-comments
@@ -14,9 +14,9 @@ WooCommerce-ready WordPress theme for licensed-guide battlefield tours — booka
 
 Walkridge is a classic (non-block) Sage 11 WordPress theme for a licensed-guide battlefield tour company: bookable tours via WooCommerce, guide bios, area context, and a contact desk.
 
-Marketing pages use Walkridge Gutenberg blocks (Tools → Walkridge Blocks to seed). Buyers change brand, phone, email, hours, and the header button from **Appearance → Customize → Identity**. Upload a logo under Site Identity. Booking CTAs point at the WooCommerce shop. Optional companion plugins in the seller pack — **Walkridge Bookings** and **Walkridge Field Map** — are sold separately and are not required to run the theme chrome.
+Marketing pages are Walkridge Gutenberg blocks (Home, Tours, Guides, Area, Contact, Refund Policy). Seed them from **Appearance → Theme Settings → Advanced** or **Tools → Walkridge Blocks**. Buyers change brand, phone, email, hours, and the header button from **Appearance → Theme Settings**. Customizer → Identity is the live-preview twin. Upload a logo on Theme Settings or Site Identity. Booking CTAs point at the WooCommerce shop. Optional companion plugins in the seller pack — **Walkridge Bookings** and **Walkridge Field Map** — are sold separately and are not required to run the theme chrome.
 
-The sample office in the preview is named Walkridge — replace it under Customize → Identity. This is a concept theme. Sample phones are 555 numbers (office `(717) 555-0100`). Concept emails use `@walkridge.test`. It is not a live ticket desk, licensed park concession, or payment processor by itself.
+The sample office in the preview is named Walkridge — replace it under Theme Settings. This is a concept theme. Sample phones are 555 numbers (office `(717) 555-0100`). Concept emails use `@walkridge.test`. It is not a live ticket desk, licensed park concession, or payment processor by itself.
 
 Live concept: https://matthummel.com/projects/hallowed-ground/
 Support and ThemeForest docs: https://github.com/matthummel-pa/wp-walkridge/blob/main/SUPPORT.md
@@ -24,9 +24,11 @@ Support and ThemeForest docs: https://github.com/matthummel-pa/wp-walkridge/blob
 = Features =
 
 * WooCommerce shop for tour products (theme support + Blade wrapper)
-* Customizer Identity: brand, phone, email, address, hours, header button, social URLs, removable author credit, concept demo badge toggle
-* Custom logo under Site Identity (replaces the compass mark)
-* Slug-based Blade pages: Tours, Guides, Area, Contact (plus front page and shop)
+* Theme Settings: graphical identity, contact desk, header, footer, social, Advanced panel
+* Update Theme: zip install and optional GitHub pull
+* Customizer Identity remains the live-preview engine for the same theme_mods
+* Custom logo on Theme Settings or Site Identity (replaces the compass mark)
+* Gutenberg marketing pages: Home, Tours, Guides, Area, Contact, Refund Policy
 * WordPress menus (Primary + Footer) with a concept-page fallback
 * Self-hosted fonts (Archivo Black, Atkinson Hyperlegible, IBM Plex Mono — SIL OFL)
 * Self-hosted Wikimedia / public-domain Gettysburg imagery in `public/images/`
@@ -42,10 +44,11 @@ This theme ships compiled Vite assets and an Acorn/Sage vendor tree. The directo
 1. Upload `walkridge` to `/wp-content/themes/` (or use the zip from Appearance → Themes → Add New).
 2. Activate Walkridge. The folder name must stay `walkridge`.
 3. Optional — install and activate WooCommerce for the bookable tour shop. The marketing site, contact form, and blog run without it. If you activate WooCommerce, disable "Coming soon" mode if the shop shows a placeholder screen.
-4. Go to Appearance → Customize → Identity and Site Identity (logo).
+4. Go to Appearance → Theme Settings (identity, logo, Advanced). Customizer is optional.
 5. Appearance → Menus — assign Primary and Footer menus.
-6. Publish Pages with slugs that match the Blade templates: `tours`, `guides`, `area`, `contact` (plus a static front page).
-7. Optional: install the pack’s companion plugins (Bookings, Field Map) and/or the child theme.
+6. Publish Pages with slugs `tours`, `guides`, `area`, `contact` (plus a static front page) and seed Walkridge blocks.
+7. Appearance → Update Theme to install later zips.
+8. Optional: install the pack’s companion plugins (Bookings, Field Map) and/or the child theme.
 
 Store zips already include `public/build` and `vendor`. After a git clone run `npm run build` and `composer install --no-dev`. Full ThemeForest documentation: Documentation/index.html in the seller pack.
 
@@ -57,15 +60,19 @@ WooCommerce is optional — required only for the bookable tour shop (products, 
 
 = Where do I change copy without editing templates? =
 
-Customize → Identity for brand, phone, email, address, hours, CTA, social, and the concept badge. Page content lives in WordPress Pages. Layout stays in Blade.
+Appearance → Theme Settings for brand, phone, email, address, hours, CTA, social, and the concept badge. Page layouts are Walkridge Gutenberg blocks. Customize → Identity is live preview for the same settings.
 
 = Where do I change the phone number? =
 
-Appearance → Customize → Identity.
+Appearance → Theme Settings.
 
 = How do I hide the concept demo badge? =
 
-Customize → Identity → uncheck “Show concept demo badge.” Uncheck the credit box to drop the footer author line (WordPress.org expects the buyer’s copyright only).
+Theme Settings → Advanced → uncheck “Show concept demo badge.” Uncheck the credit box to drop the footer author line (WordPress.org expects the buyer’s copyright only).
+
+= How do I update the theme? =
+
+Appearance → Update Theme. Upload a production zip, or configure GitHub (dev). Marketplace zips already include vendor and compiled assets.
 
 = Are the Bookings and Field Map plugins included in the theme zip? =
 
@@ -107,6 +114,14 @@ Original compass mark (inline SVG in the header/footer; GPLv2 with the theme):
 See docs/marketplace/branding.html (Documentation/branding.html in the seller pack) and BRAND.md.
 
 == Changelog ==
+
+= 1.2.0 =
+* Appearance → Theme Settings graphical interface with Advanced panel (same theme_mods as Customizer)
+* Appearance → Update Theme replaces Theme Status; zip + GitHub installers stay
+* New Gutenberg blocks: Contact Desk, FAQ List, Guide Roster, Area Facts
+* Contact page is block content only (form no longer hardcoded in Blade)
+* Seeded layouts for Home, Tours, Guides, Area, Contact, Refund Policy
+* Documentation: SUPPORT.md, docs/THEME-SETTINGS.md, docs/UPDATE-THEME.md, docs/BLOCKS.md
 
 = 1.1.0 =
 * WooCommerce is now optional — marketing site, contact form, and blog run without it

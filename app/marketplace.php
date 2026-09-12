@@ -46,7 +46,9 @@ function wr_render_setup_page(): void
     $hasFooter = ! empty($menus['footer_navigation']);
     $customizer = admin_url('customize.php');
     $menusUrl = admin_url('nav-menus.php');
-    $identityUrl = add_query_arg('autofocus[section]', 'wr_identity', $customizer);
+    $identityUrl = admin_url('themes.php?page=wr-theme-settings');
+    $updateUrl = admin_url('themes.php?page=wr-update-theme');
+    $blocksUrl = admin_url('tools.php?page=wr-blocks');
     if (! function_exists('is_plugin_active')) {
         require_once ABSPATH.'wp-admin/includes/plugin.php';
     }
@@ -56,8 +58,10 @@ function wr_render_setup_page(): void
     echo '<h1>'.esc_html__('Walkridge Setup', 'walkridge').'</h1>';
     echo '<p style="max-width:70ch">'.esc_html__('Buyer checklist — walk these once after you activate the theme. No upsells.', 'walkridge').'</p>';
     echo '<ol style="max-width:70ch;line-height:1.7">';
-    echo '<li><a href="'.esc_url($identityUrl).'">'.esc_html__('Identity', 'walkridge').'</a> — '.esc_html__('Brand name, phone, email, address, hours, and header button.', 'walkridge').'</li>';
-    echo '<li><a href="'.esc_url($customizer).'">'.esc_html__('Site Identity / Logo', 'walkridge').'</a> — '.esc_html__('Upload a logo under Site Identity. Header falls back to the compass mark.', 'walkridge').'</li>';
+    echo '<li><a href="'.esc_url($identityUrl).'">'.esc_html__('Theme Settings', 'walkridge').'</a> — '.esc_html__('Graphical identity, contact desk, header, footer, and Advanced controls.', 'walkridge').'</li>';
+    echo '<li><a href="'.esc_url($customizer).'">'.esc_html__('Customizer (advanced)', 'walkridge').'</a> — '.esc_html__('Live preview for the same identity mods. Logo also lives under Site Identity.', 'walkridge').'</li>';
+    echo '<li><a href="'.esc_url($updateUrl).'">'.esc_html__('Update Theme', 'walkridge').'</a> — '.esc_html__('Install a production zip or pull from GitHub.', 'walkridge').'</li>';
+    echo '<li><a href="'.esc_url($blocksUrl).'">'.esc_html__('Walkridge Blocks', 'walkridge').'</a> — '.esc_html__('Seed Home, Tours, Guides, Area, Contact, and Refund Policy as Gutenberg layouts.', 'walkridge').'</li>';
     echo '<li><a href="'.esc_url($menusUrl).'">'.esc_html__('Menus', 'walkridge').'</a> — ';
     echo ($hasPrimary && $hasFooter)
         ? esc_html__('Primary and Footer menus are assigned.', 'walkridge')
@@ -69,7 +73,7 @@ function wr_render_setup_page(): void
         ? esc_html__('Walkridge Bookings is active.', 'walkridge')
         : esc_html__('Install Walkridge Bookings (and optional Field Map) from the marketplace pack for date/slot checkout and the interactive map.', 'walkridge');
     echo '</li>';
-    echo '<li>'.esc_html__('Pages', 'walkridge').' — '.esc_html__('Publish Pages with slugs tours, guides, area, contact, and refund-policy so the Blade templates attach.', 'walkridge').'</li>';
+    echo '<li>'.esc_html__('Pages', 'walkridge').' — '.esc_html__('Publish Pages with slugs tours, guides, area, contact, and refund-policy, then seed Walkridge Gutenberg blocks.', 'walkridge').'</li>';
     echo '</ol>';
     echo '<p class="description" style="max-width:70ch">'.esc_html__('Turn off the concept demo badge and author credit under Customize → Identity before you show this to a client.', 'walkridge').' ';
     echo esc_html__('Current brand:', 'walkridge').' <strong>'.esc_html(Identity::brandName()).'</strong></p>';
