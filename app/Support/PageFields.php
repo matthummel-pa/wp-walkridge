@@ -28,17 +28,17 @@ class PageFields
             ],
             'tours' => [
                 'eyebrow' => __('Tours & Tickets', 'walkridge'),
-                'heading' => __('Battlefield tours & tickets', 'walkridge'),
-                'intro' => __('Choose from licensed-guide experiences across the battlefield — a walking tour of the main ridges, a hike to the rocky high ground, an ADA-accessible bus loop, an evening lantern walk downtown, and a private sunrise tour.', 'walkridge'),
+                'heading' => __('Gettysburg battlefield tours & tickets', 'walkridge'),
+                'intro' => __('Choose from five licensed-guide experiences across Gettysburg National Military Park — a walking tour of Cemetery Ridge, a hike to Little Round Top and Devil’s Den, an ADA-accessible bus loop, an evening lantern walk downtown, and a private sunrise tour.', 'walkridge'),
             ],
             'guides' => [
                 'eyebrow' => __('Our Guides', 'walkridge'),
-                'heading' => __('Meet your licensed battlefield guides', 'walkridge'),
-                'intro' => __('Every walking and bus tour is led by a licensed battlefield guide who passed the same demanding certification the park uses. That means accurate history, no filler, and a guide who can answer the hard questions.', 'walkridge'),
+                'heading' => __('Meet your licensed Gettysburg battlefield guides', 'walkridge'),
+                'intro' => __('Every walking and bus tour is led by a guide certified through the Association of Licensed Battlefield Guides — the same demanding exam used by Gettysburg National Military Park. That means accurate history, no filler, and a guide who can answer the hard questions.', 'walkridge'),
             ],
             'area' => [
-                'eyebrow' => __('About the Area', 'walkridge'),
-                'heading' => __('The battlefield & how to find us', 'walkridge'),
+                'eyebrow' => __('About Gettysburg & the Area', 'walkridge'),
+                'heading' => __('Gettysburg, the battlefield & how to find us', 'walkridge'),
                 'intro' => sprintf(
                     /* translators: %s: street address line */
                     __('Everything you need to plan a visit — the park, the ground our tours cover, where to meet us on %s, parking, driving directions, and the towns we serve.', 'walkridge'),

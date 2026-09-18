@@ -42,7 +42,9 @@ Native title, description, canonical, Open Graph, and Twitter tags yield when Yo
 
 ## Local development (Sage 11)
 
-PHP 8.3+, Composer 2, Node 20+. `composer install`, `npm run build`. Folder name must stay `walkridge`. After Blade edits: `wp acorn view:clear`.
+PHP 8.3+, Composer 2, Node 20+. `bin/setup-wp.sh` then `wp server`. Folder name must stay `walkridge`. After Blade edits: `wp acorn view:clear`.
+
+**Preview the restored concept pages without PHP:** `bin/preview-static.sh` serves `dist/` at http://127.0.0.1:8080/ (home, tours, guides, area, contact).
 
 ## Packaging
 

@@ -1934,3 +1934,142 @@ select:focus-visible,
   .wr-roster,
   .wr-facts { grid-template-columns: 1fr; }
 }
+
+/* Restored Hallowed Ground sections (dark base; light overrides already exist). */
+.hero-paths{
+  display:grid;
+  gap:0.85rem;
+  margin:0 0 1.6rem;
+  max-width:42rem;
+}
+@media (min-width:720px){
+  .hero-paths{ grid-template-columns:1fr 1fr; }
+}
+.path-card{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  padding:0.95rem 1.05rem;
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-md);
+  background:rgba(7,17,28,0.45);
+}
+.path-card b{ display:block; margin-bottom:0.35rem; font-size:1.02rem; }
+.path-card span{ color:var(--color-ink-soft); font-size:0.88rem; }
+.hero-stats{ display:flex; flex-wrap:wrap; gap:1.6rem 2.2rem; margin-top:0.4rem; }
+.hero-stat{ display:flex; flex-direction:column; gap:0.2rem; }
+.hero-stat b{ font-family:var(--font-head); font-size:1.6rem; color:var(--parchment-50); }
+.hero-stat span{
+  color:rgba(247,241,227,0.68);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  font-size:0.74rem;
+  font-family:var(--font-mono);
+}
+.marquee{
+  border-block:1px solid var(--color-border);
+  color:var(--gold-300);
+  background:#080c11;
+  overflow:hidden;
+}
+.marquee-track{
+  width:max-content;
+  font-family:var(--font-mono);
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  gap:2.4rem;
+  padding:0.85rem 0;
+  font-size:0.72rem;
+  animation:42s linear infinite wr-marquee;
+  display:flex;
+}
+.marquee-track span{ white-space:nowrap; }
+@keyframes wr-marquee{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+.timeline{ display:grid; gap:0; position:relative; }
+.timeline::before{
+  content:"";
+  pointer-events:none;
+  border-top:2px dashed rgba(224,177,90,0.4);
+  height:0;
+  position:absolute;
+  top:18px;
+  left:0;
+  right:0;
+}
+@media (min-width:800px){
+  .timeline{ grid-template-columns:repeat(3,1fr); }
+}
+.tl-item{
+  border:1px solid var(--color-border);
+  background:var(--color-surface);
+  padding:1.4rem 1.3rem;
+  position:relative;
+}
+.tl-item:first-child{ border-radius:var(--radius-md) 0 0 var(--radius-md); }
+.tl-item:last-child{ border-radius:0 var(--radius-md) var(--radius-md) 0; }
+@media (max-width:799px){
+  .tl-item:first-child,
+  .tl-item:last-child{ border-radius:var(--radius-md); }
+}
+.tl-day{
+  font-family:var(--font-mono);
+  color:var(--gold-500);
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  font-size:0.72rem;
+}
+.tl-item h3{ margin:0.4rem 0 0.5rem; font-size:1.2rem; }
+.tl-item p{ color:var(--color-ink-soft); }
+.expect-grid{ display:grid; gap:1.2rem; }
+@media (min-width:640px){ .expect-grid{ grid-template-columns:1fr 1fr; } }
+@media (min-width:1000px){ .expect-grid{ grid-template-columns:repeat(4,1fr); } }
+.expect-card,
+.feature-tile{
+  background:var(--color-surface);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-card);
+  padding:1.35rem;
+}
+.expect-card h3,
+.feature-tile h3{ margin:0.4rem 0 0.5rem; font-size:1.05rem; }
+.expect-card p,
+.feature-tile p{ color:var(--color-ink-soft); font-size:0.9rem; }
+.feature-row{ display:grid; gap:1.1rem; }
+@media (min-width:800px){ .feature-row{ grid-template-columns:repeat(3,1fr); } }
+.feature-tile a{
+  color:var(--gold-300);
+  margin-top:0.7rem;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+}
+.reviews-grid{ display:grid; gap:1.3rem; }
+@media (min-width:720px){ .reviews-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1080px){ .reviews-grid{ grid-template-columns:repeat(3,1fr); } }
+.review-card{
+  background:var(--color-surface);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-card);
+  padding:1.5rem;
+}
+.review-card .stars{ color:var(--gold-500); letter-spacing:0.15em; margin-bottom:0.7rem; }
+.review-card blockquote{
+  font-family:var(--font-serif);
+  color:var(--parchment-50);
+  margin:0 0 1rem;
+  font-size:1.2rem;
+  font-style:italic;
+  font-weight:600;
+  line-height:1.35;
+}
+.review-author{ color:var(--color-ink-soft); font-size:0.88rem; margin:0; }
+.review-author span{ display:block; margin-top:0.2rem; font-size:0.8rem; }
+@media (prefers-reduced-motion:reduce){
+  .marquee-track{ animation:none; }
+}
+

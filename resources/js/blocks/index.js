@@ -202,6 +202,12 @@ registerBlockType('walkridge/home-hero', {
     secondaryUrl: { type: 'string', default: '' },
     imageKey: { type: 'string', default: 'cannon' },
     imageUrl: { type: 'string', default: '' },
+    stats: { type: 'string', default: '' },
+    marquee: { type: 'string', default: '' },
+    leftPathTitle: { type: 'string', default: '' },
+    leftPathText: { type: 'string', default: '' },
+    rightPathTitle: { type: 'string', default: '' },
+    rightPathText: { type: 'string', default: '' },
   },
   edit({ attributes: a, setAttributes: s }) {
     return el(SsrEdit, {
@@ -219,6 +225,12 @@ registerBlockType('walkridge/home-hero', {
               ['text', __('Lede paragraph', 'walkridge'), true],
               ['primaryLabel', __('Primary button label', 'walkridge'), false],
               ['secondaryLabel', __('Secondary button label', 'walkridge'), false],
+              ['leftPathTitle', __('Left path title', 'walkridge'), false],
+              ['leftPathText', __('Left path text', 'walkridge'), true],
+              ['rightPathTitle', __('Right path title', 'walkridge'), false],
+              ['rightPathText', __('Right path text', 'walkridge'), true],
+              ['stats', __('Stats (one per line: Value | Label)', 'walkridge'), true],
+              ['marquee', __('Marquee places (pipe or newline separated)', 'walkridge'), true],
             ],
             a,
             s,
@@ -1002,6 +1014,91 @@ registerBlockType('walkridge/area-facts', {
           ],
           a,
           s,
+        ),
+    })
+  },
+  save: () => null,
+})
+
+function registerPipedBlock(name, title, icon, extraFields = []) {
+  const attributes = {
+    eyebrow: { type: 'string', default: '' },
+    heading: { type: 'string', default: '' },
+    text: { type: 'string', default: '' },
+    items: { type: 'string', default: '' },
+  }
+  extraFields.forEach(([key, , , type]) => {
+    attributes[key] = { type: type || 'string', default: type === 'boolean' ? false : '' }
+  })
+  registerBlockType(name, {
+    title,
+    category: 'walkridge',
+    icon,
+    supports: { html: false },
+    attributes,
+    edit({ attributes: a, setAttributes: s }) {
+      const fields = [
+        ['eyebrow', __('Eyebrow', 'walkridge'), false],
+        ['heading', __('Heading', 'walkridge'), false],
+        ['text', __('Supporting text', 'walkridge'), true],
+        ...extraFields.map(([key, label, multiline]) => [key, label, !!multiline]),
+        ['items', __('Items (one per line, pipe-separated)', 'walkridge'), true],
+      ]
+      return el(SsrEdit, {
+        name,
+        attributes: a,
+        sidebar: () => textPanel(title, fields, a, s),
+      })
+    },
+    save: () => null,
+  })
+}
+
+registerPipedBlock('walkridge/timeline', __('Battle Timeline', 'walkridge'), 'backup')
+registerPipedBlock('walkridge/card-grid', __('Card Grid', 'walkridge'), 'screenoptions', [
+  ['variant', __('Variant (expect or feature)', 'walkridge'), false],
+])
+registerPipedBlock('walkridge/reviews', __('Guest Reviews', 'walkridge'), 'star-filled')
+registerPipedBlock('walkridge/journal-cards', __('Journal Cards', 'walkridge'), 'book-alt')
+registerPipedBlock('walkridge/town-grid', __('Town Grid', 'walkridge'), 'location-alt')
+registerBlockType('walkridge/copy-section', {
+  title: __('Copy Section', 'walkridge'),
+  category: 'walkridge',
+  icon: 'media-text',
+  supports: { html: false },
+  attributes: {
+    eyebrow: { type: 'string', default: '' },
+    heading: { type: 'string', default: '' },
+    text: { type: 'string', default: '' },
+    alt: { type: 'boolean', default: false },
+  },
+  edit({ attributes: a, setAttributes: s }) {
+    return el(SsrEdit, {
+      name: 'walkridge/copy-section',
+      attributes: a,
+      sidebar: () =>
+        el(
+          Fragment,
+          null,
+          textPanel(
+            __('Copy', 'walkridge'),
+            [
+              ['eyebrow', __('Eyebrow', 'walkridge'), false],
+              ['heading', __('Heading', 'walkridge'), false],
+              ['text', __('Body HTML', 'walkridge'), true],
+            ],
+            a,
+            s,
+          ),
+          el(
+            PanelBody,
+            { title: __('Style', 'walkridge'), initialOpen: false },
+            el(ToggleControl, {
+              label: __('Alternate background', 'walkridge'),
+              checked: !!a.alt,
+              onChange: (v) => s({ alt: v }),
+            }),
+          ),
         ),
     })
   },

@@ -201,8 +201,18 @@ class Identity
             'downtown' => 'downtown-gettysburg.jpg',
         ];
         $file = $map[$slug] ?? $map['cannon'];
+        $local = get_theme_file_path('public/images/'.$file);
+        if (is_string($local) && $local !== '' && file_exists($local)) {
+            return get_theme_file_uri('public/images/'.$file);
+        }
 
-        return get_theme_file_uri('public/images/'.$file);
+        $remote = [
+            'cannon' => 'https://commons.wikimedia.org/wiki/Special:FilePath/Pennsylvania_-_Gettysburg_-_NARA_-_68148252_(cropped).jpg?width=1600',
+            'wentz' => 'https://commons.wikimedia.org/wiki/Special:FilePath/Gettysburg,_Wentz_farm_bildings.jpg?width=1600',
+            'downtown' => 'https://commons.wikimedia.org/wiki/Special:FilePath/DowntownGettysburgPA.jpg?width=1600',
+        ];
+
+        return $remote[$slug] ?? $remote['cannon'];
     }
 
     /**

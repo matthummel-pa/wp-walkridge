@@ -67,7 +67,13 @@ bin/setup-wp.sh          # Idempotent — safe to re-run
 wp server --path="$HOME/wp" --host=0.0.0.0 --port=8080 --allow-root
 ```
 
-`bin/setup-wp.sh` installs theme dependencies, builds assets, stands up WordPress at `~/wp` using the SQLite Database Integration plugin (no MySQL needed), symlinks the theme, installs and activates WooCommerce, seeds three demo tour products, and activates the theme.
+`bin/setup-wp.sh` installs theme dependencies, builds assets, stands up WordPress at `~/wp` using the SQLite Database Integration plugin (no MySQL needed), symlinks the theme, installs and activates WooCommerce, and activates the theme.
+
+**Preview without WordPress:** the `dist/` folder is a static HTML snapshot of the restored concept pages.
+
+```bash
+bin/preview-static.sh          # http://127.0.0.1:8080/
+```
 
 **Admin:** `http://localhost:8080/wp-admin` → `admin` / `admin123`
 

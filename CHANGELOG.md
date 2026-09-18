@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.3.0 — 2026-09-18
+
+- Restored full Hallowed Ground marketing copy as Gutenberg layouts (home, tours, guides, area, contact)
+- New blocks: timeline, card grid, reviews, journal cards, town grid, copy section
+- Home hero again includes path cards, stats, and place-name marquee
+- Concept pages auto-seed when empty; one-time v2 reseed of demo layouts
+- Restore Sage toolchain files (`composer.json`, `package.json`, `vite.config.js`, `bin/`)
+- Static HTML preview: `bin/preview-static.sh` serves `dist/`
+- Local images fall back to public-domain Wikimedia stills when `public/images/` is missing
+- `theme.json` no longer requires a Vite build to exist
+
 ## 1.2.0 — 2026-09-12
 
 - Graphical **Appearance → Theme Settings** with Advanced panel; writes the same theme_mods as Customize → Identity

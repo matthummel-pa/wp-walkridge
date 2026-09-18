@@ -69,7 +69,7 @@ class BlockMigration
             }
         }
 
-        $content = self::buildContentForSlug($slug, [
+        $content = DemoLayouts::forSlug($slug, [
             'eyebrow' => $eyebrow,
             'heading' => $heading,
             'intro' => $intro,
@@ -116,11 +116,16 @@ class BlockMigration
         $updated = 0;
 
         $frontId = (int) get_option('page_on_front');
+        if ($frontId <= 0) {
+            $home = get_page_by_path('home');
+            if ($home instanceof \WP_Post) {
+                $frontId = (int) $home->ID;
+            }
+        }
         if ($frontId > 0) {
-            $defaults = PageFields::defaultsForSlug('home');
             wp_update_post([
                 'ID' => $frontId,
-                'post_content' => self::buildContentForSlug('home', $defaults),
+                'post_content' => DemoLayouts::forSlug('home'),
             ]);
             self::markMigrated($frontId);
             $updated++;
@@ -134,7 +139,7 @@ class BlockMigration
             $defaults = PageFields::defaultsForSlug($key);
             wp_update_post([
                 'ID' => $page->ID,
-                'post_content' => self::buildContentForSlug($key, $defaults),
+                'post_content' => DemoLayouts::forSlug($key, $defaults),
             ]);
             self::markMigrated((int) $page->ID);
             $updated++;
@@ -148,76 +153,6 @@ class BlockMigration
      */
     public static function buildContentForSlug(string $slug, array $intro): string
     {
-        $attrs = [
-            'eyebrow' => $intro['eyebrow'] ?? '',
-            'heading' => $intro['heading'] ?? '',
-            'intro' => $intro['intro'] ?? '',
-        ];
-
-        return match ($slug) {
-            'home', 'front-page' => implode("\n\n", [
-                '<!-- wp:walkridge/home-hero /-->',
-                '<!-- wp:walkridge/info-strip /-->',
-                '<!-- wp:walkridge/about-split /-->',
-                '<!-- wp:walkridge/pathway-cards /-->',
-                '<!-- wp:walkridge/tour-grid {"limit":3,"showFilters":false,"showCompare":false,"eyebrow":"Featured Tours","heading":"Start with these three.","text":"Bookable tour products from WooCommerce — edit copy in the block sidebar."} /-->',
-                '<!-- wp:walkridge/book-band /-->',
-            ]),
-            'tours' => implode("\n\n", [
-                self::blockComment('walkridge/page-intro', $attrs),
-                '<!-- wp:walkridge/info-strip /-->',
-                '<!-- wp:walkridge/tour-grid /-->',
-                '<!-- wp:walkridge/book-band /-->',
-            ]),
-            'guides' => implode("\n\n", [
-                self::blockComment('walkridge/page-intro', $attrs),
-                '<!-- wp:walkridge/info-strip /-->',
-                '<!-- wp:walkridge/guide-roster /-->',
-                '<!-- wp:walkridge/about-split {"eyebrow":"Licensed Guides","heading":"The same exam the park uses.","primaryLabel":"Book a Tour","primaryUrl":"/shop/","secondaryLabel":"See Tours","secondaryUrl":"/tours/"} /-->',
-                '<!-- wp:walkridge/book-band /-->',
-            ]),
-            'area' => implode("\n\n", [
-                self::blockComment('walkridge/page-intro', $attrs),
-                '<!-- wp:walkridge/info-strip /-->',
-                '<!-- wp:walkridge/area-facts /-->',
-                '<!-- wp:walkridge/pathway-cards {"eyebrow":"On the Ground","heading":"Park, town, and meeting point.","text":"Use this page for area context — the battlefield, downtown, and how guests find the sample office."} /-->',
-                '<!-- wp:walkridge/cta-band {"eyebrow":"Plan the visit","heading":"Ready to walk the field?","text":"Pick a tour and a date. Sample checkout only.","buttonLabel":"Browse Tours"} /-->',
-            ]),
-            'contact' => implode("\n\n", [
-                self::blockComment('walkridge/page-intro', $attrs),
-                '<!-- wp:walkridge/info-strip /-->',
-                '<!-- wp:walkridge/contact-desk /-->',
-                '<!-- wp:walkridge/faq-list /-->',
-            ]),
-            'refund-policy' => implode("\n\n", [
-                self::blockComment('walkridge/page-intro', $attrs ?: [
-                    'eyebrow' => 'Store Policy',
-                    'heading' => 'Refund Policy',
-                    'intro' => '',
-                ]),
-                '<!-- wp:paragraph --><p>Sample refund policy for the concept demo. Replace this block content with your real store policy before launch.</p><!-- /wp:paragraph -->',
-            ]),
-            default => ($attrs['heading'] !== '' || $attrs['intro'] !== '')
-                ? self::blockComment('walkridge/page-intro', $attrs)."\n\n<!-- wp:walkridge/info-strip /-->"
-                : '',
-        };
-    }
-
-    /**
-     * @param  array<string, mixed>  $attrs
-     */
-    private static function blockComment(string $name, array $attrs): string
-    {
-        $clean = array_filter(
-            $attrs,
-            static fn ($v) => $v !== '' && $v !== null
-        );
-        if ($clean === []) {
-            return "<!-- wp:{$name} /-->";
-        }
-
-        $json = wp_json_encode($clean, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-
-        return "<!-- wp:{$name} {$json} /-->";
+        return DemoLayouts::forSlug($slug, $intro);
     }
 }

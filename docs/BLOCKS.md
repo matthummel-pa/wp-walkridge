@@ -6,29 +6,37 @@ All marketing pages render `the_content()`. Seed from **Appearance → Theme Set
 
 | Block | Slug | Page role |
 |---|---|---|
-| Home Hero | `walkridge/home-hero` | Home |
+| Home Hero | `walkridge/home-hero` | Home — stats, path cards, marquee |
+| Page Intro | `walkridge/page-intro` | Inner pages |
 | Info Strip | `walkridge/info-strip` | All concept pages |
 | About Split | `walkridge/about-split` | Home, Guides |
-| Pathway Cards | `walkridge/pathway-cards` | Home, Area |
+| Pathway Cards | `walkridge/pathway-cards` | Home |
+| Timeline | `walkridge/timeline` | Home — three battle days |
 | Tour Grid | `walkridge/tour-grid` | Home, Tours |
-| Book Band | `walkridge/book-band` | Home, Tours, Guides |
-| Page Intro | `walkridge/page-intro` | Inner pages |
-| Section Heading | `walkridge/section-heading` | Any |
-| CTA Band | `walkridge/cta-band` | Area and CTAs |
-| Contact Desk | `walkridge/contact-desk` | Contact form + NAP |
+| Card Grid | `walkridge/card-grid` | Expect / offer cards |
+| Guest Reviews | `walkridge/reviews` | Home, Guides |
+| Journal Cards | `walkridge/journal-cards` | Home field notes |
+| Book Band | `walkridge/book-band` | Home, Tours, Guides, Contact |
+| Copy Section | `walkridge/copy-section` | Area narrative |
+| Area Facts | `walkridge/area-facts` | Area |
+| Town Grid | `walkridge/town-grid` | Area towns |
+| CTA Band | `walkridge/cta-band` | Area |
+| Contact Desk | `walkridge/contact-desk` | Contact |
 | FAQ List | `walkridge/faq-list` | Contact |
 | Guide Roster | `walkridge/guide-roster` | Guides |
-| Area Facts | `walkridge/area-facts` | Area |
-| Custom | `walkridge/custom` | Block Generator |
 
 ## Seeded layouts
 
-- **Home** — hero, info strip, about, pathways, featured tour grid, book band
-- **Tours** — intro, info strip, tour grid, book band
-- **Guides** — intro, info strip, roster, about split, book band
-- **Area** — intro, info strip, facts, pathways, CTA
-- **Contact** — intro, info strip, contact desk, FAQ
+- **Home** — hero (paths, stats, marquee), info strip, about, pathways, three-day timeline, featured tours, what to expect, groups/gifts/ADA, book band, reviews, field notes
+- **Tours** — intro, info strip, full tour grid + compare, expect cards, book band
+- **Guides** — intro, info strip, roster, about split, reviews, book band
+- **Area** — intro, info strip, battlefield copy, ridge cards, parking/meeting/directions, nearby towns, CTA
+- **Contact** — intro, info strip, gifts/groups, contact desk, full FAQ, book band
 - **Refund Policy** — intro + a core paragraph you replace
+
+Empty concept pages are filled automatically. **Tools → Walkridge Blocks → Seed demo block layouts** overwrites those pages with the full restored copy.
+
+FAQ, roster, timeline, cards, and reviews use one line per entry with `|` columns.
 
 FAQ and roster items use one line per entry: `Label | Detail` (guides add a third `| Bio` column).
 

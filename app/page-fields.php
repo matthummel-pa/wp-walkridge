@@ -6,6 +6,7 @@
 
 namespace App;
 
+use App\Support\BlockMigration;
 use App\Support\PageFields;
 
 /**
@@ -14,6 +15,7 @@ use App\Support\PageFields;
 function wr_ensure_concept_pages_and_menus(): void
 {
     $pages = [
+        'home' => __('Home', 'walkridge'),
         'tours' => __('Tours', 'walkridge'),
         'guides' => __('Our Guides', 'walkridge'),
         'area' => __('The Area', 'walkridge'),
@@ -72,6 +74,14 @@ function wr_ensure_concept_pages_and_menus(): void
         }
     }
 
+    if (! empty($ids['home'])) {
+        $frontId = (int) get_option('page_on_front');
+        if ($frontId <= 0) {
+            update_option('show_on_front', 'page');
+            update_option('page_on_front', $ids['home']);
+        }
+    }
+
     foreach ($ids as $slug => $id) {
         $defaults = PageFields::defaultsForSlug($slug);
         foreach (
@@ -87,6 +97,17 @@ function wr_ensure_concept_pages_and_menus(): void
             if (get_post_meta($id, $key, true) === '') {
                 update_post_meta($id, $key, $value);
             }
+        }
+
+        $post = get_post($id);
+        $content = is_string($post->post_content ?? null) ? trim((string) $post->post_content) : '';
+        if ($content === '' || ! str_contains($content, '<!-- wp:walkridge/')) {
+            $layoutSlug = $slug === 'home' ? 'home' : $slug;
+            wp_update_post([
+                'ID' => $id,
+                'post_content' => BlockMigration::buildContentForSlug($layoutSlug, $defaults),
+            ]);
+            BlockMigration::markMigrated($id);
         }
     }
 
@@ -163,9 +184,11 @@ function wr_ensure_nav_menu(string $menuName, string $location, array $items, ar
 
 add_action('after_switch_theme', 'App\\wr_ensure_concept_pages_and_menus');
 add_action('admin_init', function (): void {
-    if (get_option('wr_pages_menus_seeded') === '1') {
+    wr_ensure_concept_pages_and_menus();
+    if (get_option('wr_demo_layouts_v2') === '1') {
         return;
     }
-    wr_ensure_concept_pages_and_menus();
+    BlockMigration::seedDemoPages();
+    update_option('wr_demo_layouts_v2', '1', false);
     update_option('wr_pages_menus_seeded', '1', false);
 });

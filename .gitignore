@@ -1,0 +1,7 @@
+/node_modules
+/vendor
+/public/build
+.env
+npm-debug.log
+.phpunit.result.cache
+.DS_Store
