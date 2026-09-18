@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.1 — 2026-09-18
+
+- Local Sage setup matches Acreline: `bin/setup-wp.sh` then `wp server` on `~/wp:8080` (SQLite drop-in before install)
+- Vite 8 + laravel-vite-plugin 3 + Acorn 6; Gutenberg editor packages pinned like Acreline
+- Cloud/agent notes in `AGENTS.md`; developer loop in `DEVELOPMENT.md`
+- `bin/install-php-tools.sh` installs PHP 8.3, Composer, and WP-CLI when they are missing
+
 ## 1.3.0 — 2026-09-18
 
 - Restored full Hallowed Ground marketing copy as Gutenberg layouts (home, tours, guides, area, contact)

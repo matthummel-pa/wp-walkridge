@@ -1,12 +1,28 @@
 #!/usr/bin/env bash
-# Idempotent local WordPress + Walkridge theme bootstrap (SQLite, no MySQL).
+#
+# Bootstrap a local WordPress dev environment for the Walkridge theme (folder: walkridge).
+#
+# Same flow as Acreline: throwaway WordPress (SQLite, no MySQL) OUTSIDE the repo,
+# symlink this theme in, activate it, build Sage assets.
+#
+# Idempotent: re-running skips work that is already done.
+#
+# Usage:
+#   bin/setup-wp.sh
+#   WP_PATH=/custom/path SITE_URL=http://localhost:8082 bin/setup-wp.sh
+#
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+THEME_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+if ! command -v php >/dev/null 2>&1 || ! command -v composer >/dev/null 2>&1 || ! command -v wp >/dev/null 2>&1; then
+  "$THEME_DIR/bin/install-php-tools.sh"
+fi
+
 WP_PATH="${WP_PATH:-$HOME/wp}"
+SITE_URL="${SITE_URL:-http://localhost:8080}"
 THEME_SLUG="walkridge"
-PHP_BIN="${PHP_BIN:-php}"
-PORT="${PORT:-8080}"
+WP="wp --path=$WP_PATH --allow-root"
 
 need() {
   command -v "$1" >/dev/null 2>&1 || {
@@ -15,69 +31,79 @@ need() {
   }
 }
 
-need "$PHP_BIN"
+need php
 need composer
 need npm
 need wp
 
-cd "$ROOT"
-composer install --no-interaction
-npm install
-npm run build
+echo "==> Theme dir : $THEME_DIR"
+echo "==> WP path   : $WP_PATH"
+echo "==> Site URL  : $SITE_URL"
 
-mkdir -p "$WP_PATH"
-if [[ ! -f "$WP_PATH/wp-load.php" ]]; then
-  wp core download --path="$WP_PATH" --allow-root
+echo "==> Installing theme dependencies (composer + npm) and building assets"
+if [ -L "$THEME_DIR/vendor" ]; then
+  echo "==> vendor/ is a symlink — removing so Composer autoloads App\\ from this worktree"
+  rm "$THEME_DIR/vendor"
+fi
+( cd "$THEME_DIR" && composer install --no-interaction --no-progress )
+( cd "$THEME_DIR" && npm install && npm run build )
+
+if [ ! -f "$WP_PATH/wp-load.php" ]; then
+  echo "==> Downloading WordPress core"
+  mkdir -p "$WP_PATH"
+  $WP core download
+else
+  echo "==> WordPress core already present"
 fi
 
-# SQLite drop-in (no MySQL). Safe to re-run.
-if [[ ! -d "$WP_PATH/wp-content/plugins/sqlite-database-integration" ]]; then
-  wp plugin install sqlite-database-integration --activate --path="$WP_PATH" --allow-root || true
+if [ ! -f "$WP_PATH/wp-config.php" ]; then
+  echo "==> Creating wp-config.php"
+  $WP config create --dbname=wp --dbuser=root --dbpass=root --dbhost=localhost --skip-check
+  $WP config set WP_DEBUG true --raw --type=constant
 fi
 
-if [[ ! -f "$WP_PATH/wp-config.php" ]]; then
-  wp config create \
-    --dbname=walkridge \
-    --dbuser=root \
-    --dbpass="" \
-    --skip-check \
-    --path="$WP_PATH" \
-    --allow-root
-  # Prefer SQLite when the integration plugin is present.
-  if [[ -f "$WP_PATH/wp-content/plugins/sqlite-database-integration/db.copy" ]]; then
-    cp "$WP_PATH/wp-content/plugins/sqlite-database-integration/db.copy" "$WP_PATH/wp-content/db.php"
-  fi
+if [ ! -d "$WP_PATH/wp-content/plugins/sqlite-database-integration" ]; then
+  echo "==> Installing SQLite Database Integration plugin"
+  curl -sL -o /tmp/sqlite.zip https://downloads.wordpress.org/plugin/sqlite-database-integration.latest-stable.zip
+  unzip -q -o /tmp/sqlite.zip -d "$WP_PATH/wp-content/plugins"
+  rm -f /tmp/sqlite.zip
 fi
 
-if ! wp core is-installed --path="$WP_PATH" --allow-root 2>/dev/null; then
-  wp core install \
-    --url="http://127.0.0.1:${PORT}" \
+if [ ! -f "$WP_PATH/wp-content/db.php" ]; then
+  echo "==> Installing SQLite db.php drop-in"
+  cp "$WP_PATH/wp-content/plugins/sqlite-database-integration/db.copy" "$WP_PATH/wp-content/db.php"
+  sed -i "s|{SQLITE_IMPLEMENTATION_FOLDER_PATH}|/wp-content/plugins/sqlite-database-integration|g" "$WP_PATH/wp-content/db.php"
+  sed -i "s|{SQLITE_PLUGIN}|sqlite-database-integration/load.php|g" "$WP_PATH/wp-content/db.php"
+fi
+
+if ! $WP core is-installed 2>/dev/null; then
+  echo "==> Installing WordPress"
+  $WP core install \
+    --url="$SITE_URL" \
     --title="Walkridge Battlefield Tours" \
     --admin_user=admin \
     --admin_password=admin123 \
     --admin_email=admin@walkridge.test \
-    --skip-email \
-    --path="$WP_PATH" \
-    --allow-root
+    --skip-email
+  $WP rewrite structure '/%postname%/' --hard
 fi
 
-THEME_LINK="$WP_PATH/wp-content/themes/${THEME_SLUG}"
-rm -rf "$THEME_LINK"
-ln -sfn "$ROOT" "$THEME_LINK"
+ln -sfn "$THEME_DIR" "$WP_PATH/wp-content/themes/$THEME_SLUG"
+$WP theme activate "$THEME_SLUG"
 
-wp theme activate "$THEME_SLUG" --path="$WP_PATH" --allow-root || true
-
-if ! wp plugin is-installed woocommerce --path="$WP_PATH" --allow-root; then
-  wp plugin install woocommerce --activate --path="$WP_PATH" --allow-root
+if ! $WP plugin is-installed woocommerce; then
+  echo "==> Installing WooCommerce (optional for tour products)"
+  $WP plugin install woocommerce --activate
 else
-  wp plugin activate woocommerce --path="$WP_PATH" --allow-root || true
+  $WP plugin activate woocommerce || true
 fi
-wp option update woocommerce_coming_soon no --path="$WP_PATH" --allow-root || true
+$WP option update woocommerce_coming_soon no || true
 
-echo
-echo "Theme linked at $THEME_LINK"
-echo "Start WordPress:"
-echo "  wp server --path=\"$WP_PATH\" --host=0.0.0.0 --port=${PORT} --allow-root"
-echo "Admin: http://127.0.0.1:${PORT}/wp-admin  (admin / admin123)"
-echo "Static HTML preview (no PHP): bin/preview-static.sh"
-echo "After Blade edits: wp acorn view:clear --path=\"$WP_PATH\" --allow-root"
+$WP rewrite flush --hard >/dev/null || true
+$WP acorn optimize:clear >/dev/null 2>&1 || true
+
+echo ""
+echo "==> Done. Start the dev server with:"
+echo "    wp server --path=$WP_PATH --host=0.0.0.0 --port=8080 --allow-root"
+echo "    (admin: $SITE_URL/wp-admin  user: admin  pass: admin123)"
+echo "    Vite HMR (optional): npm run dev"

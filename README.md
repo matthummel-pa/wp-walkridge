@@ -58,24 +58,27 @@ Full buyer walkthrough: [`docs/marketplace/buyer-guide.html`](docs/marketplace/b
 
 ## Quick start — developer (git clone)
 
-**Prerequisites:** PHP 8.3+, Composer 2, WP-CLI, Node 20+.
+Same two-command loop as Acreline. Full notes: [`DEVELOPMENT.md`](DEVELOPMENT.md) · Cloud: [`AGENTS.md`](AGENTS.md).
 
 ```bash
 git clone https://github.com/matthummel-pa/wp-walkridge.git
 cd wp-walkridge
-bin/setup-wp.sh          # Idempotent — safe to re-run
+bin/setup-wp.sh
 wp server --path="$HOME/wp" --host=0.0.0.0 --port=8080 --allow-root
 ```
 
-`bin/setup-wp.sh` installs theme dependencies, builds assets, stands up WordPress at `~/wp` using the SQLite Database Integration plugin (no MySQL needed), symlinks the theme, installs and activates WooCommerce, and activates the theme.
-
-**Preview without WordPress:** the `dist/` folder is a static HTML snapshot of the restored concept pages.
-
-```bash
-bin/preview-static.sh          # http://127.0.0.1:8080/
-```
+`bin/setup-wp.sh` is idempotent. It installs PHP tools if they are missing, runs Composer and npm, builds Vite assets, stands up WordPress at `~/wp` on SQLite (no MySQL), symlinks the theme as **`walkridge`**, and activates WooCommerce.
 
 **Admin:** `http://localhost:8080/wp-admin` → `admin` / `admin123`
+
+If `~/wp` or port 8080 is already used by another product:
+
+```bash
+WP_PATH="$HOME/wp-walkridge-site" SITE_URL="http://localhost:8082" bin/setup-wp.sh
+wp server --path="$HOME/wp-walkridge-site" --host=0.0.0.0 --port=8082 --allow-root
+```
+
+**Preview without WordPress:** `bin/preview-static.sh` serves `dist/` (do not run it on the same port as `wp server`).
 
 ### Development commands
 
@@ -109,7 +112,9 @@ walkridge/
 │       ├── Seo.php             # Meta, Open Graph, and Twitter card output
 │       └── Tours.php           # Tour catalog data (three demo tours)
 ├── bin/
-│   ├── setup-wp.sh           # One-command local bootstrap (idempotent)
+│   ├── install-php-tools.sh  # PHP 8.3, Composer 2, WP-CLI if missing
+│   ├── setup-wp.sh           # Acreline-style Sage + SQLite WordPress bootstrap
+│   ├── dev-servers.sh        # wp server on :8080
 │   └── build-theme-zip.sh    # Build the distributable installable zip
 ├── resources/
 │   ├── css/
@@ -135,7 +140,8 @@ walkridge/
 ├── public/
 │   ├── build/                # Compiled assets (git-ignored — run npm run build or use prebuilt zip)
 │   └── images/               # Self-hosted public-domain Gettysburg photographs
-├── AGENTS.md                 # Cursor Cloud agent instructions
+├── AGENTS.md                 # Cursor Cloud install/start
+├── DEVELOPMENT.md            # Local Sage workflow
 ├── BRAND.md                  # Brand kit: name, palette, typefaces, voice
 ├── CHANGELOG.md              # Version history
 ├── CREDITS.md                # Third-party resource licenses

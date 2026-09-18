@@ -3,7 +3,7 @@ Contributors: matthummel
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 8.3
-Stable tag: 1.2.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, translation-ready, one-column, threaded-comments
@@ -114,6 +114,11 @@ Original compass mark (inline SVG in the header/footer; GPLv2 with the theme):
 See docs/marketplace/branding.html (Documentation/branding.html in the seller pack) and BRAND.md.
 
 == Changelog ==
+
+= 1.3.1 =
+* Local Sage setup matches Acreline: bin/setup-wp.sh then wp server on ~/wp port 8080
+* Vite 8, Acorn 6, DEVELOPMENT.md and AGENTS.md for clone and Cloud Agent boots
+* Customizer update-info control no longer fatals on the front end
 
 = 1.2.0 =
 * Appearance → Theme Settings graphical interface with Advanced panel (same theme_mods as Customizer)

@@ -12,6 +12,8 @@ Technical reference for buyers and developers. Product pitch lives in [README.md
 | Install a newer zip | **Appearance → Update Theme** |
 | Seed page layouts | Theme Settings → Advanced, or **Tools → Walkridge Blocks** |
 | Edit page copy | Gutenberg — Walkridge block category |
+| Local Sage / WordPress | [DEVELOPMENT.md](DEVELOPMENT.md) |
+| Cursor Cloud bootstrap | [AGENTS.md](AGENTS.md) |
 | ThemeForest docs hub | `docs/marketplace/` |
 
 ## Theme Settings vs Customizer vs Update Theme
@@ -36,15 +38,34 @@ Native title, description, canonical, Open Graph, and Twitter tags yield when Yo
 
 ## Plugins
 
-- **WooCommerce** — optional; required only to sell tour products.
+- **WooCommerce** — optional; required only to sell tour products. Local `bin/setup-wp.sh` installs it so the shop templates can be checked.
 - **Walkridge Bookings** / **Field Map** — companion plugins in the seller pack, not inside the theme zip.
 - Do not add a page builder.
 
 ## Local development (Sage 11)
 
-PHP 8.3+, Composer 2, Node 20+. `bin/setup-wp.sh` then `wp server`. Folder name must stay `walkridge`. After Blade edits: `wp acorn view:clear`.
+Same loop as Acreline:
 
-**Preview the restored concept pages without PHP:** `bin/preview-static.sh` serves `dist/` at http://127.0.0.1:8080/ (home, tours, guides, area, contact).
+```bash
+bin/setup-wp.sh
+wp server --path="$HOME/wp" --host=0.0.0.0 --port=8080 --allow-root
+```
+
+- PHP 8.3+, Composer 2, WP-CLI, Node 20+/22+. Missing PHP tools are installed by `bin/install-php-tools.sh`.
+- WordPress lives **outside** the repo at `~/wp` (SQLite, no MySQL). Theme folder must stay **`walkridge`**.
+- Admin: `http://localhost:8080/wp-admin` — `admin` / `admin123`.
+- After Blade edits: `wp acorn view:clear --path="$HOME/wp" --allow-root`.
+- Optional HMR: `npm run dev` in a second terminal.
+- Full file map and daily commands: [DEVELOPMENT.md](DEVELOPMENT.md).
+
+**Static concept HTML (no PHP):** `bin/preview-static.sh` serves `dist/`. Do not bind it to the same port as `wp server`.
+
+### Before you file an issue
+
+1. Confirm the theme folder is still `walkridge` and you ran `npm run build` (or installed a zip that already includes `public/build`).
+2. After Blade edits, clear Acorn views: `wp acorn view:clear --path="$HOME/wp" --allow-root`.
+3. Identity lives under **Appearance → Theme Settings** (or Customize → Identity).
+4. Include WordPress version, PHP version, theme version, and whether WooCommerce is active.
 
 ## Packaging
 
