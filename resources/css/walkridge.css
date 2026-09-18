@@ -2069,6 +2069,8 @@ select:focus-visible,
 }
 .review-author{ color:var(--color-ink-soft); font-size:0.88rem; margin:0; }
 .review-author span{ display:block; margin-top:0.2rem; font-size:0.8rem; }
+.wr-policy h3{ margin-top:1.6rem; }
+.wr-policy p{ color:var(--color-ink-soft); }
 @media (prefers-reduced-motion:reduce){
   .marquee-track{ animation:none; }
 }

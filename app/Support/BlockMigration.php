@@ -52,41 +52,69 @@ class BlockMigration
             return false;
         }
 
-        if (str_contains((string) $post->post_content, '<!-- wp:walkridge/')) {
-            return false;
-        }
-
         $slug = (string) $post->post_name;
+        $content = (string) $post->post_content;
         $defaults = PageFields::defaultsForSlug($slug);
         $eyebrow = PageFields::meta($postId, PageFields::EYEBROW, $defaults['eyebrow']);
         $heading = PageFields::meta($postId, PageFields::HEADING, $defaults['heading']);
         $intro = PageFields::meta($postId, PageFields::INTRO, $defaults['intro']);
+        $changed = false;
 
-        if ($eyebrow === '' && $heading === '' && $intro === '' && $slug !== 'front-page') {
-            // Still seed structured layout for known concept pages.
-            if (! in_array($slug, ['tours', 'guides', 'area', 'contact', 'refund-policy'], true)) {
-                return false;
+        if (! str_contains($content, '<!-- wp:walkridge/')) {
+            if ($eyebrow === '' && $heading === '' && $intro === '' && $slug !== 'front-page' && $slug !== 'home') {
+                if (! in_array($slug, ['tours', 'guides', 'area', 'contact', 'refund-policy'], true)) {
+                    self::deleteLegacyPageMeta($postId);
+
+                    return false;
+                }
             }
+            $content = DemoLayouts::forSlug($slug, [
+                'eyebrow' => $eyebrow,
+                'heading' => $heading,
+                'intro' => $intro,
+            ]);
+            $changed = $content !== '';
+        } elseif ($slug === 'refund-policy' && ! str_contains($content, 'walkridge/refund-policy')) {
+            $content = DemoLayouts::forSlug('refund-policy', [
+                'eyebrow' => $eyebrow,
+                'heading' => $heading,
+                'intro' => $intro,
+            ]);
+            $changed = true;
         }
 
-        $content = DemoLayouts::forSlug($slug, [
-            'eyebrow' => $eyebrow,
-            'heading' => $heading,
-            'intro' => $intro,
-        ]);
-
-        if ($content === '') {
-            return false;
+        if ($changed) {
+            wp_update_post([
+                'ID' => $postId,
+                'post_content' => $content,
+            ]);
+            self::markMigrated($postId);
         }
 
-        wp_update_post([
-            'ID' => $postId,
-            'post_content' => $content,
-        ]);
+        self::deleteLegacyPageMeta($postId);
 
-        self::markMigrated($postId);
+        return $changed;
+    }
 
-        return true;
+    public static function deleteLegacyPageMeta(int $postId): void
+    {
+        foreach ([
+            PageFields::EYEBROW,
+            PageFields::HEADING,
+            PageFields::INTRO,
+            'rp_effective_date',
+            'rp_store_name',
+            'rp_store_url',
+            'rp_contact_email',
+            'rp_refund_window_days',
+            'rp_resolution_days',
+            'rp_duplicate_days',
+            'rp_response_days',
+            'rp_payment_days_min',
+            'rp_payment_days_max',
+        ] as $key) {
+            delete_post_meta($postId, $key);
+        }
     }
 
     public static function markMigrated(int $postId): void
@@ -128,6 +156,7 @@ class BlockMigration
                 'post_content' => DemoLayouts::forSlug('home'),
             ]);
             self::markMigrated($frontId);
+            self::deleteLegacyPageMeta($frontId);
             $updated++;
         }
 
@@ -142,6 +171,7 @@ class BlockMigration
                 'post_content' => DemoLayouts::forSlug($key, $defaults),
             ]);
             self::markMigrated((int) $page->ID);
+            self::deleteLegacyPageMeta((int) $page->ID);
             $updated++;
         }
 

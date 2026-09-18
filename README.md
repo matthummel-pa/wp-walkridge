@@ -105,7 +105,7 @@ walkridge/
 │   └── Support/
 │       ├── BlockMigration.php  # Legacy field → block migration logic
 │       ├── Identity.php        # Customizer helper methods (brand, phone, email…)
-│       ├── PageFields.php      # Page content defaults keyed by slug
+│       ├── PageFields.php      # Seed copy for page-intro blocks (not post meta)
 │       ├── Seo.php             # Meta, Open Graph, and Twitter card output
 │       └── Tours.php           # Tour catalog data (three demo tours)
 ├── bin/

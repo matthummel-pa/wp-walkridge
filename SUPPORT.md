@@ -26,7 +26,7 @@ Details: [docs/THEME-SETTINGS.md](docs/THEME-SETTINGS.md), [docs/UPDATE-THEME.md
 
 ## Gutenberg pages
 
-Home, Tours, Guides, Area, Contact, and Refund Policy render `the_content()`. Seeded layouts use only Walkridge blocks (plus one core paragraph on Refund Policy). Contact form and NAP are the **Contact Desk** block — they are not hardcoded in Blade.
+Home, Tours, Guides, Area, Contact, and Refund Policy render `the_content()`. Seeded layouts use Walkridge Gutenberg blocks. Contact form and NAP are the **Contact Desk** block. Refund windows live on the **Refund Policy** block. Do not store page copy in custom fields.
 
 Block catalog: [docs/BLOCKS.md](docs/BLOCKS.md).
 

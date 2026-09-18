@@ -292,7 +292,7 @@ registerBlockType('walkridge/page-intro', {
               style: { margin: '8px 16px' },
             },
             __(
-              'Defaults are pulled from page-slug presets when fields are left empty.',
+              'This copy lives on the block. Empty fields use the theme’s demo text for this page slug — not custom fields.',
               'walkridge',
             ),
           ),
@@ -1097,6 +1097,99 @@ registerBlockType('walkridge/copy-section', {
               label: __('Alternate background', 'walkridge'),
               checked: !!a.alt,
               onChange: (v) => s({ alt: v }),
+            }),
+          ),
+        ),
+    })
+  },
+  save: () => null,
+})
+
+registerBlockType('walkridge/refund-policy', {
+  title: __('Refund Policy', 'walkridge'),
+  category: 'walkridge',
+  icon: 'clipboard',
+  supports: { html: false, multiple: false },
+  attributes: {
+    effectiveDate: { type: 'string', default: 'September 2, 2026' },
+    storeName: { type: 'string', default: '' },
+    storeUrl: { type: 'string', default: '' },
+    contactEmail: { type: 'string', default: '' },
+    refundWindowDays: { type: 'number', default: 30 },
+    resolutionDays: { type: 'number', default: 7 },
+    duplicateDays: { type: 'number', default: 7 },
+    responseDays: { type: 'number', default: 2 },
+    paymentDaysMin: { type: 'number', default: 5 },
+    paymentDaysMax: { type: 'number', default: 10 },
+  },
+  edit({ attributes: a, setAttributes: s }) {
+    return el(SsrEdit, {
+      name: 'walkridge/refund-policy',
+      attributes: a,
+      sidebar: () =>
+        el(
+          Fragment,
+          null,
+          el(
+            Notice,
+            { status: 'info', isDismissible: false, style: { margin: '8px 16px' } },
+            __('Edit the policy in this sidebar. Values are stored on the block, not as page custom fields.', 'walkridge'),
+          ),
+          textPanel(
+            __('Store', 'walkridge'),
+            [
+              ['effectiveDate', __('Effective date', 'walkridge'), false],
+              ['storeName', __('Store name', 'walkridge'), false],
+              ['storeUrl', __('Store URL', 'walkridge'), false],
+              ['contactEmail', __('Contact email', 'walkridge'), false],
+            ],
+            a,
+            s,
+          ),
+          el(
+            PanelBody,
+            { title: __('Windows (days)', 'walkridge'), initialOpen: true },
+            el(RangeControl, {
+              label: __('Refund window', 'walkridge'),
+              value: a.refundWindowDays || 30,
+              min: 1,
+              max: 90,
+              onChange: (v) => s({ refundWindowDays: v }),
+            }),
+            el(RangeControl, {
+              label: __('Bug resolution window', 'walkridge'),
+              value: a.resolutionDays || 7,
+              min: 1,
+              max: 30,
+              onChange: (v) => s({ resolutionDays: v }),
+            }),
+            el(RangeControl, {
+              label: __('Duplicate-purchase window', 'walkridge'),
+              value: a.duplicateDays || 7,
+              min: 1,
+              max: 30,
+              onChange: (v) => s({ duplicateDays: v }),
+            }),
+            el(RangeControl, {
+              label: __('Response time (business days)', 'walkridge'),
+              value: a.responseDays || 2,
+              min: 1,
+              max: 14,
+              onChange: (v) => s({ responseDays: v }),
+            }),
+            el(RangeControl, {
+              label: __('Min refund processing days', 'walkridge'),
+              value: a.paymentDaysMin || 5,
+              min: 1,
+              max: 30,
+              onChange: (v) => s({ paymentDaysMin: v }),
+            }),
+            el(RangeControl, {
+              label: __('Max refund processing days', 'walkridge'),
+              value: a.paymentDaysMax || 10,
+              min: 1,
+              max: 45,
+              onChange: (v) => s({ paymentDaysMax: v }),
             }),
           ),
         ),

@@ -6,6 +6,8 @@
 - New blocks: timeline, card grid, reviews, journal cards, town grid, copy section
 - Home hero again includes path cards, stats, and place-name marquee
 - Concept pages auto-seed when empty; one-time v2 reseed of demo layouts
+- Gutenberg `walkridge/refund-policy` block replaces the Refund Policy custom-field metabox
+- Page intro copy is no longer written to `wr_page_*` post meta
 - Restore Sage toolchain files (`composer.json`, `package.json`, `vite.config.js`, `bin/`)
 - Static HTML preview: `bin/preview-static.sh` serves `dist/`
 - Local images fall back to public-domain Wikimedia stills when `public/images/` is missing

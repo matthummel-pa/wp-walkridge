@@ -4,7 +4,6 @@
  * Walkridge — Appearance > Update Theme admin page.
  *
  * Version / build cards plus zip and GitHub installers.
- * Refund Policy custom fields remain here.
  */
 add_action('admin_menu', function () {
     add_theme_page(
@@ -378,94 +377,3 @@ function wr_install_theme_from_file(string $zip_path): bool|\WP_Error
 
     return true;
 }
-
-/* ── Refund Policy custom-fields meta box ──────────────────────────────────── */
-
-add_action('add_meta_boxes', function () {
-    add_meta_box(
-        'wr_refund_policy_fields',
-        __('Refund Policy Settings', 'walkridge'),
-        'wr_render_refund_policy_meta_box',
-        'page',
-        'normal',
-        'high'
-    );
-});
-
-function wr_render_refund_policy_meta_box(WP_Post $post): void
-{
-    if ($post->post_name !== 'refund-policy' && get_option('wr_refund_policy_page_id') != $post->ID) {
-        echo '<p style="color:#666;font-size:13px;">'.esc_html__('This meta box is only active on the Refund Policy page.', 'walkridge').'</p>';
-
-        return;
-    }
-
-    wp_nonce_field('wr_refund_policy_save', 'wr_refund_policy_nonce');
-
-    $fields = [
-        'rp_effective_date' => [__('Effective date', 'walkridge'), 'September 2, 2026', 'text'],
-        'rp_store_name' => [__('Store name', 'walkridge'), 'matthummel.com', 'text'],
-        'rp_store_url' => [__('Store URL', 'walkridge'), 'https://matthummel.com', 'url'],
-        'rp_contact_email' => [__('Contact email', 'walkridge'), 'hello@matthummel.com', 'email'],
-        'rp_refund_window_days' => [__('Refund window (days)', 'walkridge'), '30', 'number'],
-        'rp_resolution_days' => [__('Bug resolution window (days)', 'walkridge'), '7', 'number'],
-        'rp_duplicate_days' => [__('Duplicate-purchase window (days)', 'walkridge'), '7', 'number'],
-        'rp_response_days' => [__('Response time (business days)', 'walkridge'), '2', 'number'],
-        'rp_payment_days_min' => [__('Min refund processing days', 'walkridge'), '5', 'number'],
-        'rp_payment_days_max' => [__('Max refund processing days', 'walkridge'), '10', 'number'],
-    ];
-
-    echo '<table class="form-table" role="presentation">';
-    foreach ($fields as $key => [$label, $default, $type]) {
-        $value = get_post_meta($post->ID, $key, true);
-        $value = ($value !== '') ? esc_attr((string) $value) : esc_attr($default);
-        $step = $type === 'number' ? ' step="1" min="1"' : '';
-        printf(
-            '<tr><th scope="row"><label for="%s">%s</label></th>
-             <td><input type="%s" id="%s" name="%s" value="%s" class="regular-text"%s></td></tr>',
-            esc_attr($key),
-            esc_html($label),
-            esc_attr($type),
-            esc_attr($key),
-            esc_attr($key),
-            $value,
-            $step
-        );
-    }
-    echo '</table>';
-    echo '<p class="description" style="margin-top:8px;">'.esc_html__('Changes here update the live Refund Policy page immediately on save.', 'walkridge').'</p>';
-}
-
-add_action('save_post', function (int $post_id): void {
-    if (! isset($_POST['wr_refund_policy_nonce'])) {
-        return;
-    }
-    if (! wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['wr_refund_policy_nonce'])), 'wr_refund_policy_save')) {
-        return;
-    }
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-    if (! current_user_can('edit_post', $post_id)) {
-        return;
-    }
-
-    $map = [
-        'rp_effective_date' => 'sanitize_text_field',
-        'rp_store_name' => 'sanitize_text_field',
-        'rp_store_url' => 'esc_url_raw',
-        'rp_contact_email' => 'sanitize_email',
-        'rp_refund_window_days' => 'absint',
-        'rp_resolution_days' => 'absint',
-        'rp_duplicate_days' => 'absint',
-        'rp_response_days' => 'absint',
-        'rp_payment_days_min' => 'absint',
-        'rp_payment_days_max' => 'absint',
-    ];
-    foreach ($map as $key => $callback) {
-        if (isset($_POST[$key])) {
-            $raw = wp_unslash($_POST[$key]);
-            update_post_meta($post_id, $key, call_user_func($callback, $raw));
-        }
-    }
-});

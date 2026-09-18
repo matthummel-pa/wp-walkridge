@@ -187,6 +187,73 @@ function wr_render_copy_section(array $attrs): string
     return (string) ob_get_clean();
 }
 
+/** @param array<string, mixed> $attrs */
+function wr_render_refund_policy(array $attrs): string
+{
+    $store = trim((string) ($attrs['storeName'] ?? ''));
+    if ($store === '') {
+        $store = Identity::brandName();
+    }
+    $url = trim((string) ($attrs['storeUrl'] ?? ''));
+    if ($url === '') {
+        $url = home_url('/');
+    }
+    $email = sanitize_email((string) ($attrs['contactEmail'] ?? ''));
+    if ($email === '') {
+        $email = Identity::email();
+    }
+    $effective = trim((string) ($attrs['effectiveDate'] ?? '')) ?: 'September 2, 2026';
+    $window = max(1, (int) ($attrs['refundWindowDays'] ?? 30));
+    $resolution = max(1, (int) ($attrs['resolutionDays'] ?? 7));
+    $duplicate = max(1, (int) ($attrs['duplicateDays'] ?? 7));
+    $response = max(1, (int) ($attrs['responseDays'] ?? 2));
+    $payMin = max(1, (int) ($attrs['paymentDaysMin'] ?? 5));
+    $payMax = max($payMin, (int) ($attrs['paymentDaysMax'] ?? 10));
+
+    ob_start();
+    ?>
+    <div class="wr-policy prose reveal">
+      <p><?php echo esc_html(sprintf(
+          /* translators: 1: store name, 2: effective date */
+          __('This sample store policy applies to digital and ticketed purchases from %1$s, effective %2$s. Replace it with your live terms before launch.', 'walkridge'),
+          $store,
+          $effective
+      )); ?></p>
+      <h3><?php esc_html_e('Tour tickets', 'walkridge'); ?></h3>
+      <p><?php esc_html_e('Cancel or reschedule up to 24 hours before departure for a full refund. Cancellations inside 24 hours receive a credit toward a future tour. No-shows are non-refundable.', 'walkridge'); ?></p>
+      <h3><?php esc_html_e('Other purchases', 'walkridge'); ?></h3>
+      <p><?php echo esc_html(sprintf(
+          /* translators: 1: refund window days, 2: response days, 3: resolution days */
+          __('Request a refund within %1$d days of purchase. We respond within %2$d business days and resolve qualifying issues within %3$d days.', 'walkridge'),
+          $window,
+          $response,
+          $resolution
+      )); ?></p>
+      <h3><?php esc_html_e('Duplicates and processing', 'walkridge'); ?></h3>
+      <p><?php echo esc_html(sprintf(
+          /* translators: 1: duplicate window, 2: min days, 3: max days */
+          __('Duplicate charges reported within %1$d days are reversed. Approved refunds return to the original payment method in %2$d–%3$d business days.', 'walkridge'),
+          $duplicate,
+          $payMin,
+          $payMax
+      )); ?></p>
+      <p><?php echo wp_kses(
+          sprintf(
+              /* translators: 1: store url href, 2: store url label, 3: email href, 4: email label */
+              __('Questions: <a href="%1$s">%2$s</a> or <a href="mailto:%3$s">%4$s</a>.', 'walkridge'),
+              esc_url($url),
+              esc_html($url),
+              esc_attr($email),
+              esc_html($email)
+          ),
+          ['a' => ['href' => true]]
+      ); ?></p>
+    </div>
+    <?php
+
+    return (string) ob_get_clean();
+}
+
 /**
  * @param  array<string, mixed>  $attrs
  */

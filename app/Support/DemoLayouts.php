@@ -222,7 +222,18 @@ class DemoLayouts
                 'eyebrow' => 'Store Policy',
                 'heading' => 'Refund Policy',
             ]),
-            '<!-- wp:paragraph --><p>Cancel or reschedule up to 24 hours before your tour for a full refund. Cancellations inside 24 hours are eligible for a credit toward a future tour. No-shows are non-refundable. Replace this sample policy with your real store terms before launch.</p><!-- /wp:paragraph -->',
+            self::comment('walkridge/refund-policy', [
+                'effectiveDate' => 'September 2, 2026',
+                'storeName' => Identity::brandName(),
+                'storeUrl' => home_url('/'),
+                'contactEmail' => Identity::email(),
+                'refundWindowDays' => 30,
+                'resolutionDays' => 7,
+                'duplicateDays' => 7,
+                'responseDays' => 2,
+                'paymentDaysMin' => 5,
+                'paymentDaysMax' => 10,
+            ]),
         ]);
     }
 

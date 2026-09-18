@@ -18,6 +18,7 @@ All marketing pages render `the_content()`. Seed from **Appearance → Theme Set
 | Journal Cards | `walkridge/journal-cards` | Home field notes |
 | Book Band | `walkridge/book-band` | Home, Tours, Guides, Contact |
 | Copy Section | `walkridge/copy-section` | Area narrative |
+| Refund Policy | `walkridge/refund-policy` | Refund page — dates, windows, contact |
 | Area Facts | `walkridge/area-facts` | Area |
 | Town Grid | `walkridge/town-grid` | Area towns |
 | CTA Band | `walkridge/cta-band` | Area |
@@ -32,12 +33,12 @@ All marketing pages render `the_content()`. Seed from **Appearance → Theme Set
 - **Guides** — intro, info strip, roster, about split, reviews, book band
 - **Area** — intro, info strip, battlefield copy, ridge cards, parking/meeting/directions, nearby towns, CTA
 - **Contact** — intro, info strip, gifts/groups, contact desk, full FAQ, book band
-- **Refund Policy** — intro + a core paragraph you replace
+- **Refund Policy** — intro + Refund Policy block (windows and contact in the block sidebar)
 
 Empty concept pages are filled automatically. **Tools → Walkridge Blocks → Seed demo block layouts** overwrites those pages with the full restored copy.
 
 FAQ, roster, timeline, cards, and reviews use one line per entry with `|` columns.
 
-FAQ and roster items use one line per entry: `Label | Detail` (guides add a third `| Bio` column).
+Do not add page custom fields for marketing copy. Theme Settings / Customizer remain for office identity (phone, hours, logo).
 
 Blade templates only supply breadcrumbs and `the_content()`. Do not put page bodies back into `page-*.blade.php`.

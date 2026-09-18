@@ -3,7 +3,8 @@
 namespace App\Support;
 
 /**
- * Editable page intro copy stored as post meta (native custom fields).
+ * Demo intro copy used when seeding Gutenberg page-intro blocks.
+ * Not stored as post meta — edit live copy in the block sidebar.
  */
 class PageFields
 {
@@ -68,6 +69,9 @@ class PageFields
         };
     }
 
+    /**
+     * @deprecated 1.3.0 Read Gutenberg block attributes instead of post meta.
+     */
     public static function meta(int $postId, string $key, string $default = ''): string
     {
         if ($postId <= 0) {

@@ -2,6 +2,7 @@
 
 /**
  * Native custom fields for concept marketing pages (no ACF required).
+ * Page copy is seeded as Gutenberg blocks; this file only creates pages and menus.
  */
 
 namespace App;
@@ -54,24 +55,6 @@ function wr_ensure_concept_pages_and_menus(): void
         $refundId = $ids['refund-policy'];
         update_option('woocommerce_refunds_page_id', $refundId);
         update_option('wr_refund_policy_page_id', $refundId);
-
-        $refundDefaults = [
-            'rp_effective_date' => 'September 2, 2026',
-            'rp_store_name' => 'matthummel.com',
-            'rp_store_url' => 'https://matthummel.com',
-            'rp_contact_email' => 'hello@matthummel.com',
-            'rp_refund_window_days' => '30',
-            'rp_resolution_days' => '7',
-            'rp_duplicate_days' => '7',
-            'rp_response_days' => '2',
-            'rp_payment_days_min' => '5',
-            'rp_payment_days_max' => '10',
-        ];
-        foreach ($refundDefaults as $key => $value) {
-            if (get_post_meta($refundId, $key, true) === '') {
-                update_post_meta($refundId, $key, $value);
-            }
-        }
     }
 
     if (! empty($ids['home'])) {
@@ -84,21 +67,6 @@ function wr_ensure_concept_pages_and_menus(): void
 
     foreach ($ids as $slug => $id) {
         $defaults = PageFields::defaultsForSlug($slug);
-        foreach (
-            [
-                PageFields::EYEBROW => $defaults['eyebrow'],
-                PageFields::HEADING => $defaults['heading'],
-                PageFields::INTRO => $defaults['intro'],
-            ] as $key => $value
-        ) {
-            if ($value === '') {
-                continue;
-            }
-            if (get_post_meta($id, $key, true) === '') {
-                update_post_meta($id, $key, $value);
-            }
-        }
-
         $post = get_post($id);
         $content = is_string($post->post_content ?? null) ? trim((string) $post->post_content) : '';
         if ($content === '' || ! str_contains($content, '<!-- wp:walkridge/')) {
@@ -109,6 +77,7 @@ function wr_ensure_concept_pages_and_menus(): void
             ]);
             BlockMigration::markMigrated($id);
         }
+        BlockMigration::deleteLegacyPageMeta($id);
     }
 
     wr_ensure_nav_menu(
@@ -185,10 +154,11 @@ function wr_ensure_nav_menu(string $menuName, string $location, array $items, ar
 add_action('after_switch_theme', 'App\\wr_ensure_concept_pages_and_menus');
 add_action('admin_init', function (): void {
     wr_ensure_concept_pages_and_menus();
-    if (get_option('wr_demo_layouts_v2') === '1') {
+    if (get_option('wr_demo_layouts_v3') === '1') {
         return;
     }
     BlockMigration::seedDemoPages();
+    update_option('wr_demo_layouts_v3', '1', false);
     update_option('wr_demo_layouts_v2', '1', false);
     update_option('wr_pages_menus_seeded', '1', false);
 });

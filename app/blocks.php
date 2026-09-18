@@ -241,6 +241,21 @@ function wr_register_blocks(): void
                 'alt' => ['type' => 'boolean', 'default' => false],
             ],
         ],
+        'walkridge/refund-policy' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_refund_policy',
+            'attributes' => [
+                'effectiveDate' => ['type' => 'string', 'default' => 'September 2, 2026'],
+                'storeName' => ['type' => 'string', 'default' => ''],
+                'storeUrl' => ['type' => 'string', 'default' => ''],
+                'contactEmail' => ['type' => 'string', 'default' => ''],
+                'refundWindowDays' => ['type' => 'number', 'default' => 30],
+                'resolutionDays' => ['type' => 'number', 'default' => 7],
+                'duplicateDays' => ['type' => 'number', 'default' => 7],
+                'responseDays' => ['type' => 'number', 'default' => 2],
+                'paymentDaysMin' => ['type' => 'number', 'default' => 5],
+                'paymentDaysMax' => ['type' => 'number', 'default' => 10],
+            ],
+        ],
     ];
 
     foreach ($blocks as $name => $args) {
@@ -356,7 +371,7 @@ function wr_blocks_tools_page(): void
     if ($notice !== '') {
         echo '<div class="notice notice-success"><p>'.esc_html($notice).'</p></div>';
     }
-    echo '<p>'.esc_html__('Convert legacy page-intro custom fields into Walkridge Gutenberg blocks, or re-seed demo page layouts.', 'walkridge').'</p>';
+    echo '<p>'.esc_html__('Move leftover page meta into Walkridge Gutenberg blocks, or re-seed demo page layouts. Page copy is edited in the block editor — not custom fields.', 'walkridge').'</p>';
     echo '<form method="post" class="wr-tools-form">';
     wp_nonce_field('wr_blocks_tools', 'wr_blocks_nonce');
     echo '<button class="button button-primary" name="wr_blocks_action" value="migrate">'.esc_html__('Migrate page fields → blocks', 'walkridge').'</button>';
