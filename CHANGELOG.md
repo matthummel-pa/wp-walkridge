@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.1 — 2026-09-19
+
+- Escape, sanitize, and authorize theme and block output (WordPress.Security)
+- Stop `phpcs:ignore` comments after `?>` from rendering as homepage HTML
+- Appearance → Themes and Update Theme install the compiled zip from the GitHub Release (`walkridge.zip`)
+
 ## 1.4.0 — 2026-09-19
 
 - Gutenberg blocks packaged in theme `blocks/{slug}/` with `block.json` and a Walkridge inserter collection

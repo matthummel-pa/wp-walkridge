@@ -38,7 +38,7 @@ Application::configure()
 |--------------------------------------------------------------------------
 */
 
-collect(['setup', 'filters', 'admin', 'customizer', 'theme-settings', 'marketplace', 'forms', 'page-fields', 'block-options', 'blocks', 'blocks-content', 'block-generator', 'shop'])
+collect(['setup', 'filters', 'theme-updater', 'admin', 'customizer', 'theme-settings', 'marketplace', 'forms', 'page-fields', 'block-options', 'blocks', 'blocks-content', 'block-generator', 'shop'])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
