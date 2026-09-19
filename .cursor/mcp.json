@@ -1,5 +1,9 @@
 {
   "mcpServers": {
+    "WPVibe": {
+      "type": "streamable-http",
+      "url": "https://mcp.wpvibe.ai/mcp"
+    },
     "supabase": {
       "command": "/exec-daemon/npx",
       "args": [
