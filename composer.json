@@ -1,0 +1,48 @@
+{
+  "name": "matthummel-pa/wp-walkridge",
+  "type": "wordpress-theme",
+  "license": "GPL-2.0-or-later",
+  "description": "Walkridge — Sage 11 WordPress theme for licensed-guide battlefield tours",
+  "homepage": "https://walkridge.matthummel.com/",
+  "authors": [
+    {
+      "name": "Matt Hummel",
+      "homepage": "https://matthummel.com/"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://github.com/matthummel-pa/wp-walkridge/issues",
+    "source": "https://github.com/matthummel-pa/wp-walkridge",
+    "docs": "https://github.com/matthummel-pa/wp-walkridge/blob/main/SUPPORT.md"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {
+    "php": ">=8.3",
+    "roots/acorn": "^6.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.20"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "roots/acorn": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+    ]
+  }
+}

@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.3.1 — 2026-09-18
+
+- Live site is [walkridge.matthummel.com](https://walkridge.matthummel.com/)
+- Local Sage setup matches Acreline: `bin/setup-wp.sh` then `wp server` on `~/wp:8080` (SQLite drop-in before install)
+- Vite 8 + laravel-vite-plugin 3 + Acorn 6; Gutenberg editor packages pinned like Acreline
+- Cloud/agent notes in `AGENTS.md`; developer loop in `DEVELOPMENT.md`
+- `bin/install-php-tools.sh` installs PHP 8.3, Composer, and WP-CLI when they are missing
+
+## 1.3.0 — 2026-09-18
+
+- Restored full Hallowed Ground marketing copy as Gutenberg layouts (home, tours, guides, area, contact)
+- New blocks: timeline, card grid, reviews, journal cards, town grid, copy section
+- Home hero again includes path cards, stats, and place-name marquee
+- Concept pages auto-seed when empty; one-time v2 reseed of demo layouts
+- Gutenberg `walkridge/refund-policy` block replaces the Refund Policy custom-field metabox
+- Page intro copy is no longer written to `wr_page_*` post meta
+- Restore Sage toolchain files (`composer.json`, `package.json`, `vite.config.js`, `bin/`)
+- Static HTML preview: `bin/preview-static.sh` serves `dist/`
+- Local images fall back to public-domain Wikimedia stills when `public/images/` is missing
+- `theme.json` no longer requires a Vite build to exist
+
 ## 1.2.0 — 2026-09-12
 
 - Graphical **Appearance → Theme Settings** with Advanced panel; writes the same theme_mods as Customize → Identity

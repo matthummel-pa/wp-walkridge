@@ -23,7 +23,7 @@ msgstr ""
 
 #. Theme URI of the theme
 #: style.css
-msgid "https://matthummel.com/projects/hallowed-ground/"
+msgid "https://walkridge.matthummel.com/"
 msgstr ""
 
 #. Description of the theme

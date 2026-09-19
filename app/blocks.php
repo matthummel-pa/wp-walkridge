@@ -10,6 +10,7 @@
 namespace App;
 
 use App\Support\BlockMigration;
+use App\Support\DemoLayouts;
 use App\Support\Identity;
 use App\Support\PageFields;
 use App\Support\Tours;
@@ -43,6 +44,12 @@ function wr_register_blocks(): void
                 'secondaryUrl' => ['type' => 'string', 'default' => ''],
                 'imageKey' => ['type' => 'string', 'default' => 'cannon'],
                 'imageUrl' => ['type' => 'string', 'default' => ''],
+                'stats' => ['type' => 'string', 'default' => "14 | Years Guiding\n4.9★ | Average Rating\n15 | Max Group Size\n5 | Tour Experiences"],
+                'marquee' => ['type' => 'string', 'default' => 'Cemetery Ridge | McPherson Ridge | Little Round Top | Devil’s Den | High Water Mark | Lincoln Square | David Wills House | Baltimore Street | Seminary Ridge'],
+                'leftPathTitle' => ['type' => 'string', 'default' => 'Walk the field'],
+                'leftPathText' => ['type' => 'string', 'default' => 'Daylight tours on Cemetery Ridge, Little Round Top, and the High Water Mark.'],
+                'rightPathTitle' => ['type' => 'string', 'default' => 'Walk after dark'],
+                'rightPathText' => ['type' => 'string', 'default' => 'Lantern-lit downtown accounts. Real names, letters, and streets — not jump scares.'],
             ],
         ],
         'walkridge/page-intro' => [
@@ -157,7 +164,7 @@ function wr_register_blocks(): void
             'attributes' => [
                 'eyebrow' => ['type' => 'string', 'default' => 'FAQ'],
                 'heading' => ['type' => 'string', 'default' => 'Before you book'],
-                'items' => ['type' => 'string', 'default' => "Do I need a park ticket? | Park entrance rules change by season. Confirm current access before you arrive.\nAre tours ADA-accessible? | The bus loop is the accessible option. Walking tours cover uneven ground.\nCan I cancel? | See the Refund Policy page for the sample store window."],
+                'items' => ['type' => 'string', 'default' => "Where do tours meet? | Walking and bus tours meet at a sample ticket office at 100 Sample Street — not a live storefront. The lantern walk uses a sample downtown meet at the Lincoln Square flagpole.\nAre tours ADA-accessible? | The bus loop is the accessible option. Walking tours cover uneven ground.\nWhat is your cancellation policy? | Cancel up to 24 hours before departure for a full refund. See the Refund Policy page."],
             ],
         ],
         'walkridge/guide-roster' => [
@@ -172,10 +179,81 @@ function wr_register_blocks(): void
             'render_callback' => __NAMESPACE__.'\\wr_render_area_facts',
             'attributes' => [
                 'eyebrow' => ['type' => 'string', 'default' => 'Find Us'],
-                'heading' => ['type' => 'string', 'default' => 'Meeting point, parking, and the ground'],
-                'parking' => ['type' => 'string', 'default' => 'Sample lot on the same block as the concept office. Do not treat this as a real park lot.'],
-                'meeting' => ['type' => 'string', 'default' => 'Meet at the marked sample office. Walking tours leave from the rail; bus tours load at the curb.'],
-                'directions' => ['type' => 'string', 'default' => 'From the town square, follow the posted sample street. Fiction address only.'],
+                'heading' => ['type' => 'string', 'default' => 'Meeting points, parking, and office hours'],
+                'parking' => ['type' => 'string', 'default' => 'Sample ticket office at 100 Sample Street, Gettysburg, PA 17325 — not a live storefront. Use downtown public lots near Lincoln Square.'],
+                'meeting' => ['type' => 'string', 'default' => 'Walking and bus tours leave from the sample office. Evening lantern walks meet at the Lincoln Square flagpole — look for a lit lantern.'],
+                'directions' => ['type' => 'string', 'default' => 'US-15 to the Gettysburg exits, then Baltimore Street toward downtown. US-30 leads into Lincoln Square. Fiction address only.'],
+            ],
+        ],
+        'walkridge/timeline' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_timeline',
+            'attributes' => [
+                'eyebrow' => ['type' => 'string', 'default' => 'July 1–3, 1863'],
+                'heading' => ['type' => 'string', 'default' => 'Three days, walked in order.'],
+                'text' => ['type' => 'string', 'default' => 'Daytime tours stitch the battle to the ground — not a greatest-hits montage.'],
+                'items' => ['type' => 'string', 'default' => "Day One | McPherson Ridge | The opening fight west of town.\nDay Two | Little Round Top | The southern flank and the rocks of Devil’s Den.\nDay Three | High Water Mark | Cemetery Ridge and the final assault."],
+            ],
+        ],
+        'walkridge/card-grid' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_card_grid',
+            'attributes' => [
+                'variant' => ['type' => 'string', 'default' => 'expect'],
+                'alt' => ['type' => 'boolean', 'default' => false],
+                'eyebrow' => ['type' => 'string', 'default' => ''],
+                'heading' => ['type' => 'string', 'default' => ''],
+                'text' => ['type' => 'string', 'default' => ''],
+                'items' => ['type' => 'string', 'default' => ''],
+            ],
+        ],
+        'walkridge/reviews' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_reviews',
+            'attributes' => [
+                'eyebrow' => ['type' => 'string', 'default' => 'Guest Reviews'],
+                'heading' => ['type' => 'string', 'default' => 'What guests say after the walk.'],
+                'text' => ['type' => 'string', 'default' => 'Sample reviews shown for this concept design.'],
+                'items' => ['type' => 'string', 'default' => "Our guide made three days of history feel like one afternoon. | Karen D. | Ridge hike\nThe lantern walk was genuinely moving, not gimmicky. | Ray P. | Lantern walk\nBooked the bus tour for my in-laws who can't walk far. | Sandra M. | Bus tour"],
+            ],
+        ],
+        'walkridge/journal-cards' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_journal_cards',
+            'attributes' => [
+                'eyebrow' => ['type' => 'string', 'default' => 'Field Notes'],
+                'heading' => ['type' => 'string', 'default' => 'Read before you walk.'],
+                'text' => ['type' => 'string', 'default' => ''],
+                'items' => ['type' => 'string', 'default' => ''],
+            ],
+        ],
+        'walkridge/town-grid' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_town_grid',
+            'attributes' => [
+                'eyebrow' => ['type' => 'string', 'default' => 'Nearby Towns'],
+                'heading' => ['type' => 'string', 'default' => 'Adams County & beyond'],
+                'text' => ['type' => 'string', 'default' => ''],
+                'items' => ['type' => 'string', 'default' => "Biglerville | ~9 mi N\nLittlestown | ~10 mi SE\nNew Oxford | ~9 mi E\nHanover | ~15 mi SE"],
+            ],
+        ],
+        'walkridge/copy-section' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_copy_section',
+            'attributes' => [
+                'eyebrow' => ['type' => 'string', 'default' => ''],
+                'heading' => ['type' => 'string', 'default' => ''],
+                'text' => ['type' => 'string', 'default' => ''],
+                'alt' => ['type' => 'boolean', 'default' => false],
+            ],
+        ],
+        'walkridge/refund-policy' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_refund_policy',
+            'attributes' => [
+                'effectiveDate' => ['type' => 'string', 'default' => 'September 2, 2026'],
+                'storeName' => ['type' => 'string', 'default' => ''],
+                'storeUrl' => ['type' => 'string', 'default' => ''],
+                'contactEmail' => ['type' => 'string', 'default' => ''],
+                'refundWindowDays' => ['type' => 'number', 'default' => 30],
+                'resolutionDays' => ['type' => 'number', 'default' => 7],
+                'duplicateDays' => ['type' => 'number', 'default' => 7],
+                'responseDays' => ['type' => 'number', 'default' => 2],
+                'paymentDaysMin' => ['type' => 'number', 'default' => 5],
+                'paymentDaysMax' => ['type' => 'number', 'default' => 10],
             ],
         ],
     ];
@@ -225,46 +303,27 @@ add_action('init', function (): void {
     register_block_pattern('walkridge/home-pattern', [
         'title' => __('Walkridge — Home starter', 'walkridge'),
         'categories' => ['walkridge'],
-        'content' => implode("\n", [
-            '<!-- wp:walkridge/home-hero /-->',
-            '<!-- wp:walkridge/info-strip /-->',
-            '<!-- wp:walkridge/about-split /-->',
-            '<!-- wp:walkridge/pathway-cards /-->',
-            '<!-- wp:walkridge/tour-grid {"limit":3,"showFilters":false,"showCompare":false} /-->',
-            '<!-- wp:walkridge/book-band /-->',
-        ]),
+        'content' => DemoLayouts::forSlug('home'),
     ]);
     register_block_pattern('walkridge/contact-pattern', [
         'title' => __('Walkridge — Contact desk', 'walkridge'),
         'categories' => ['walkridge'],
-        'content' => implode("\n", [
-            '<!-- wp:walkridge/page-intro /-->',
-            '<!-- wp:walkridge/info-strip /-->',
-            '<!-- wp:walkridge/contact-desk /-->',
-            '<!-- wp:walkridge/faq-list /-->',
-        ]),
+        'content' => DemoLayouts::forSlug('contact'),
     ]);
     register_block_pattern('walkridge/guides-pattern', [
         'title' => __('Walkridge — Guides', 'walkridge'),
         'categories' => ['walkridge'],
-        'content' => implode("\n", [
-            '<!-- wp:walkridge/page-intro /-->',
-            '<!-- wp:walkridge/info-strip /-->',
-            '<!-- wp:walkridge/guide-roster /-->',
-            '<!-- wp:walkridge/about-split /-->',
-            '<!-- wp:walkridge/book-band /-->',
-        ]),
+        'content' => DemoLayouts::forSlug('guides'),
     ]);
     register_block_pattern('walkridge/area-pattern', [
         'title' => __('Walkridge — Area', 'walkridge'),
         'categories' => ['walkridge'],
-        'content' => implode("\n", [
-            '<!-- wp:walkridge/page-intro /-->',
-            '<!-- wp:walkridge/info-strip /-->',
-            '<!-- wp:walkridge/area-facts /-->',
-            '<!-- wp:walkridge/pathway-cards /-->',
-            '<!-- wp:walkridge/cta-band /-->',
-        ]),
+        'content' => DemoLayouts::forSlug('area'),
+    ]);
+    register_block_pattern('walkridge/tours-pattern', [
+        'title' => __('Walkridge — Tours', 'walkridge'),
+        'categories' => ['walkridge'],
+        'content' => DemoLayouts::forSlug('tours'),
     ]);
 });
 
@@ -312,7 +371,7 @@ function wr_blocks_tools_page(): void
     if ($notice !== '') {
         echo '<div class="notice notice-success"><p>'.esc_html($notice).'</p></div>';
     }
-    echo '<p>'.esc_html__('Convert legacy page-intro custom fields into Walkridge Gutenberg blocks, or re-seed demo page layouts.', 'walkridge').'</p>';
+    echo '<p>'.esc_html__('Move leftover page meta into Walkridge Gutenberg blocks, or re-seed demo page layouts. Page copy is edited in the block editor — not custom fields.', 'walkridge').'</p>';
     echo '<form method="post" class="wr-tools-form">';
     wp_nonce_field('wr_blocks_tools', 'wr_blocks_nonce');
     echo '<button class="button button-primary" name="wr_blocks_action" value="migrate">'.esc_html__('Migrate page fields → blocks', 'walkridge').'</button>';
@@ -335,6 +394,13 @@ function wr_render_home_hero(array $attrs): string
     $img = $customUrl !== '' ? esc_url($customUrl) : esc_url(Identity::image((string) ($attrs['imageKey'] ?? 'cannon')));
     $shop = (string) ($attrs['primaryUrl'] ?? '') !== '' ? esc_url((string) $attrs['primaryUrl']) : esc_url(Identity::shopUrl());
     $tours = (string) ($attrs['secondaryUrl'] ?? '') !== '' ? esc_url((string) $attrs['secondaryUrl']) : esc_url(home_url('/tours'));
+    $stats = wr_parse_piped_items((string) ($attrs['stats'] ?? ''));
+    $leftTitle = esc_html((string) ($attrs['leftPathTitle'] ?? ''));
+    $leftText = esc_html((string) ($attrs['leftPathText'] ?? ''));
+    $rightTitle = esc_html((string) ($attrs['rightPathTitle'] ?? ''));
+    $rightText = esc_html((string) ($attrs['rightPathText'] ?? ''));
+    $marqueeRaw = (string) ($attrs['marquee'] ?? '');
+    $marqueeParts = array_values(array_filter(array_map('trim', preg_split('/\||\n/', $marqueeRaw) ?: [])));
 
     ob_start();
     ?>
@@ -343,19 +409,48 @@ function wr_render_home_hero(array $attrs): string
         <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.1"/><path d="M20 4l3.4 16L20 36l-3.4-16z" fill="currentColor"/><path d="M4 20l16-3.4L36 20l-16 3.4z" fill="currentColor" opacity=".4"/><circle cx="20" cy="20" r="3.1" fill="currentColor"/></svg>
       </div>
       <div class="hero-media">
-        <img src="<?php echo $img; ?>" alt="" fetchpriority="high"> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
+        <img src="<?php echo $img; ?>" alt="<?php echo esc_attr__('Historic Gettysburg battlefield monument', 'walkridge'); ?>" fetchpriority="high">
       </div>
       <div class="wrap hero-content">
-        <p class="hero-brand"><?php echo $eyebrow; ?></p> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
-        <h1 class="hero-title"><?php echo $title; ?></h1> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
-        <?php if ($text !== '') { ?><p class="hero-lede"><?php echo $text; ?></p><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
-        <div class="hero-ctas">
-          <a href="<?php echo $shop; ?>" class="btn btn-primary"><?php echo $primary; ?></a> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
-          <a href="<?php echo $tours; ?>" class="btn btn-outline"><?php echo $secondary; ?></a> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
+        <p class="hero-badge"><?php echo $eyebrow; ?></p>
+        <h1 class="hero-title"><?php echo $title; ?></h1>
+        <?php if ($text !== '') { ?>
+          <p class="hero-lede"><?php echo $text; ?></p>
+        <?php } ?>
+        <?php if ($leftTitle !== '' || $rightTitle !== '') { ?>
+        <div class="hero-paths">
+          <a class="path-card" href="<?php echo $tours; ?>#historical">
+            <b><?php echo $leftTitle !== '' ? $leftTitle : esc_html__('Walk the field', 'walkridge'); ?></b>
+            <span><?php echo $leftText; ?></span>
+          </a>
+          <a class="path-card is-lantern" href="<?php echo $tours; ?>#after-dark">
+            <b><span class="flame" aria-hidden="true"></span><?php echo $rightTitle !== '' ? $rightTitle : esc_html__('Walk after dark', 'walkridge'); ?></b>
+            <span><?php echo $rightText; ?></span>
+          </a>
         </div>
+        <?php } ?>
+        <div class="hero-ctas">
+          <a href="<?php echo $shop; ?>" class="btn btn-primary"><?php echo $primary; ?></a>
+          <a href="<?php echo $tours; ?>" class="btn btn-outline"><?php echo $secondary; ?></a>
+        </div>
+        <?php if ($stats !== []) { ?>
+        <div class="hero-stats">
+          <?php foreach ($stats as $row) { ?>
+            <div class="hero-stat"><b><?php echo esc_html($row[0]); ?></b><span><?php echo esc_html($row[1] ?? ''); ?></span></div>
+          <?php } ?>
+        </div>
+        <?php } ?>
       </div>
     </section>
     <?php
+    if ($marqueeParts !== []) {
+        echo '<div class="marquee" aria-hidden="true"><div class="marquee-track">';
+        foreach (array_merge($marqueeParts, $marqueeParts) as $part) {
+            echo '<span>'.esc_html($part).'</span>';
+        }
+        echo '</div></div>';
+    }
+
     return (string) ob_get_clean();
 }
 

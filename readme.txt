@@ -3,7 +3,7 @@ Contributors: matthummel
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 8.3
-Stable tag: 1.2.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, translation-ready, one-column, threaded-comments
@@ -18,7 +18,7 @@ Marketing pages are Walkridge Gutenberg blocks (Home, Tours, Guides, Area, Conta
 
 The sample office in the preview is named Walkridge — replace it under Theme Settings. This is a concept theme. Sample phones are 555 numbers (office `(717) 555-0100`). Concept emails use `@walkridge.test`. It is not a live ticket desk, licensed park concession, or payment processor by itself.
 
-Live concept: https://matthummel.com/projects/hallowed-ground/
+Live site: https://walkridge.matthummel.com/
 Support and ThemeForest docs: https://github.com/matthummel-pa/wp-walkridge/blob/main/SUPPORT.md
 
 = Features =
@@ -92,7 +92,7 @@ Pull the branch, run `composer install --no-dev` if needed, then `npm run build`
 
 == Screenshots ==
 
-Desktop captures of the seeded concept demo (also used on https://matthummel.com/projects/hallowed-ground/ when published):
+Desktop captures of the seeded concept demo (also used on https://walkridge.matthummel.com/ when published):
 
 1. Homepage — compass mark, hero, and path to book a tour. (`docs/marketplace/screenshots/01-homepage.png`)
 2. Tours — sample walking / bus / lantern offerings. (`02-tours.png`)
@@ -114,6 +114,12 @@ Original compass mark (inline SVG in the header/footer; GPLv2 with the theme):
 See docs/marketplace/branding.html (Documentation/branding.html in the seller pack) and BRAND.md.
 
 == Changelog ==
+
+= 1.3.1 =
+* Live site: https://walkridge.matthummel.com/
+* Local Sage setup matches Acreline: bin/setup-wp.sh then wp server on ~/wp port 8080
+* Vite 8, Acorn 6, DEVELOPMENT.md and AGENTS.md for clone and Cloud Agent boots
+* Customizer update-info control no longer fatals on the front end
 
 = 1.2.0 =
 * Appearance → Theme Settings graphical interface with Advanced panel (same theme_mods as Customizer)
@@ -162,7 +168,7 @@ Source hub: `docs/marketplace/` (seller pack copies it to Documentation/):
 * screenshots/ — item images
 * assets/ — docs CSS
 
-GitHub: README.md, SUPPORT.md, docs/marketplace/. Product landing: https://matthummel.com/projects/hallowed-ground/
+GitHub: README.md, SUPPORT.md, docs/marketplace/. Live site: https://walkridge.matthummel.com/
 
 == Resources ==
 
