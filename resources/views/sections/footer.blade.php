@@ -21,7 +21,7 @@
         </p>
         <p data-newsletter-note class="footer-newsletter-note" aria-live="polite" aria-atomic="true">
           @if(isset($_GET['wr_form']) && isset($_GET['wr_msg']))
-            {{ sanitize_text_field(wp_unslash($_GET['wr_msg'])) }}
+            {{ sanitize_text_field(wp_unslash((string) $_GET['wr_msg'])) }}
           @endif
         </p>
       </div>
@@ -80,7 +80,7 @@
       <div>
         <h3>{{ __('Plan', 'walkridge') }}</h3>
         <ul>
-          <li><a href="{{ $shopUrl }}">{{ __('Book & Pay', 'walkridge') }}</a></li>
+          <li><a href="{{ esc_url($shopUrl) }}">{{ __('Book & Pay', 'walkridge') }}</a></li>
           <li><a href="{{ home_url('/contact') }}">{{ __('Contact & FAQ', 'walkridge') }}</a></li>
           <li><a href="{{ home_url('/contact') }}#gifts">{{ __('Gift certificates', 'walkridge') }}</a></li>
           <li><a href="{{ home_url('/contact') }}#groups">{{ __('Groups & schools', 'walkridge') }}</a></li>
@@ -90,15 +90,15 @@
       <div>
         <h3>{{ __('Hours', 'walkridge') }}</h3>
         <ul class="footer-hours">
-          <li>{!! Identity::hoursHtml() !!}</li>
+          <li>{!! wp_kses(Identity::hoursHtml(), ['br' => []]) !!}</li>
         </ul>
       </div>
       <div>
         <h3>{{ __('Contact', 'walkridge') }}</h3>
         <ul>
           <li>{{ Identity::brandName() }} {{ Identity::brandSub() }}</li>
-          <li>{!! Identity::addressHtml() !!}<br><span class="nap-note">{{ __('Concept address — replace under Customize → Identity', 'walkridge') }}</span></li>
-          <li><a href="{{ Identity::phoneHref() }}">{{ Identity::phone() }}</a><br><span class="nap-note">{{ __('Fiction-range sample number', 'walkridge') }}</span></li>
+          <li>{!! wp_kses(Identity::addressHtml(), ['br' => []]) !!}<br><span class="nap-note">{{ __('Concept address — replace under Customize → Identity', 'walkridge') }}</span></li>
+          <li><a href="{{ esc_url(Identity::phoneHref()) }}">{{ Identity::phone() }}</a><br><span class="nap-note">{{ __('Fiction-range sample number', 'walkridge') }}</span></li>
           <li><a href="mailto:{{ antispambot(Identity::email()) }}">{{ Identity::email() }}</a></li>
         </ul>
       </div>
@@ -144,6 +144,6 @@
   </div>
 </footer>
 <div class="sticky-book">
-  <a href="{{ Identity::phoneHref() }}" class="btn btn-outline btn-sm">{{ __('Call', 'walkridge') }}</a>
-  <a href="{{ $shopUrl }}" class="btn btn-primary btn-sm">{{ Identity::ctaLabel() }}</a>
+  <a href="{{ esc_url(Identity::phoneHref()) }}" class="btn btn-outline btn-sm">{{ __('Call', 'walkridge') }}</a>
+  <a href="{{ esc_url($shopUrl) }}" class="btn btn-primary btn-sm">{{ Identity::ctaLabel() }}</a>
 </div>

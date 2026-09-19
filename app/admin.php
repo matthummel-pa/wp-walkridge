@@ -16,7 +16,8 @@ add_action('admin_menu', function () {
 });
 
 add_action('admin_init', function (): void {
-    if (($GLOBALS['pagenow'] ?? '') === 'themes.php' && ($_GET['page'] ?? '') === 'hg-update-theme') {
+    $page = isset($_GET['page']) ? sanitize_key(wp_unslash((string) $_GET['page'])) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only redirect of a legacy menu slug
+    if (($GLOBALS['pagenow'] ?? '') === 'themes.php' && $page === 'hg-update-theme') {
         wp_safe_redirect(admin_url('themes.php?page=wr-update-theme'));
         exit;
     }
@@ -89,7 +90,7 @@ function wr_theme_update_page(): void
         </div>
         <div class="wr-stat">
           <span><?php esc_html_e('Last rebuild', 'walkridge'); ?></span>
-          <strong><?php echo esc_html($last_build_ts); ?><?php echo $git_hash ? ' · '.$git_hash : ''; ?></strong>
+          <strong><?php echo esc_html($last_build_ts); ?><?php echo $git_hash !== '' ? ' · '.esc_html($git_hash) : ''; ?></strong>
         </div>
       </div>
       <?php if (! empty($node_pkg['engines']['node'])) { ?>
@@ -111,7 +112,7 @@ wp acorn optimize:clear</pre>
         <span style="font-size:12px;font-weight:400;color:#888;margin-left:8px;"><?php esc_html_e('(dev only)', 'walkridge'); ?></span>
       </h2>
 
-      <?php if (isset($_GET['gh_updated'])) { ?>
+      <?php if (isset($_GET['gh_updated']) && sanitize_text_field(wp_unslash((string) $_GET['gh_updated'])) !== '') { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only saved-settings flag ?>
         <div class="notice notice-success is-dismissible"><p><?php esc_html_e('GitHub settings saved.', 'walkridge'); ?></p></div>
       <?php } ?>
 
@@ -269,7 +270,7 @@ wp acorn optimize:clear</pre>
 
 add_action('admin_post_wr_save_github_settings', function (): void {
     if (! current_user_can('manage_options')) {
-        wp_die('Unauthorized');
+        wp_die(esc_html__('You do not have permission to access this page.', 'walkridge'));
     }
     check_admin_referer('wr_github_settings', 'wr_github_nonce');
 
@@ -340,11 +341,12 @@ add_action('wp_ajax_wr_install_zip', function (): void {
         wp_send_json_error('Unauthorized');
     }
 
-    if (empty($_FILES['zip_file']['tmp_name'])) {
+    $tmp = isset($_FILES['zip_file']['tmp_name']) ? sanitize_text_field(wp_unslash((string) $_FILES['zip_file']['tmp_name'])) : '';
+    if ($tmp === '' || ! is_uploaded_file($tmp)) {
         wp_send_json_error('No file received.');
     }
 
-    $result = wr_install_theme_from_file((string) $_FILES['zip_file']['tmp_name']);
+    $result = wr_install_theme_from_file($tmp);
 
     if (is_wp_error($result)) {
         wp_send_json_error($result->get_error_message());

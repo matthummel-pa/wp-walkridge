@@ -11,5 +11,5 @@
 })
 
 <div {{ $attributes->merge(['class' => "px-2 py-1 {$class}"]) }}>
-  {!! $message ?? $slot !!}
+  {!! wp_kses_post((string) ($message ?? $slot)) !!}
 </div>

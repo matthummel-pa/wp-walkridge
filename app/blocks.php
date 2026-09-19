@@ -311,18 +311,18 @@ function wr_register_blocks(): void
 }
 
 add_action('enqueue_block_editor_assets', function (): void {
-    $data = wp_json_encode([
+    $payload = [
         'themeUri' => get_template_directory_uri(),
         'customBlocks' => wr_get_custom_block_definitions(),
         'shopUrl' => Identity::shopUrl(),
         'toursUrl' => home_url('/tours'),
         'guidesUrl' => home_url('/guides'),
         'areaUrl' => home_url('/area'),
-    ]);
+    ];
     // editor.js (Vite) imports the block registrations; expose config first.
     wp_add_inline_script(
         'wp-blocks',
-        'window.WALKRIDGE_BLOCKS = '.$data.';',
+        'window.WALKRIDGE_BLOCKS = '.wp_json_encode($payload).';',
         'before'
     );
 });
@@ -389,7 +389,8 @@ function wr_blocks_tools_page(): void
         wp_die(esc_html__('You do not have permission to access this page.', 'walkridge'));
     }
     $notice = '';
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['wr_blocks_nonce'])) {
+    $method = isset($_SERVER['REQUEST_METHOD']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_METHOD'])) : '';
+    if ($method === 'POST' && isset($_POST['wr_blocks_nonce'])) {
         if (! wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['wr_blocks_nonce'])), 'wr_blocks_tools')) {
             wp_die(esc_html__('Security check failed.', 'walkridge'));
         }
@@ -599,7 +600,7 @@ function wr_render_tour_grid(array $attrs): string
               echo '<p>'.esc_html__('No tours are published yet. Add WooCommerce products or run the setup seed.', 'walkridge').'</p>';
           } else {
               foreach ($tours as $tour) {
-                  echo view('partials.tour-card', ['tour' => $tour])->render();
+                  echo wp_kses_post(view('partials.tour-card', ['tour' => $tour])->render());
               }
           }
     ?>
@@ -784,16 +785,19 @@ function wr_parse_piped_items(string $raw): array
 /** @param array<string, mixed> $attrs */
 function wr_render_contact_desk(array $attrs): string
 {
-    $eyebrow = esc_html((string) ($attrs['eyebrow'] ?? ''));
-    $heading = esc_html((string) ($attrs['heading'] ?? ''));
-    $formEyebrow = esc_html((string) ($attrs['formEyebrow'] ?? ''));
-    $formHeading = esc_html((string) ($attrs['formHeading'] ?? ''));
+    $eyebrow = (string) ($attrs['eyebrow'] ?? '');
+    $heading = (string) ($attrs['heading'] ?? '');
+    $formEyebrow = (string) ($attrs['formEyebrow'] ?? '');
+    $formHeading = (string) ($attrs['formHeading'] ?? '');
     $showNap = ! empty($attrs['showNap']);
     $showForm = ! empty($attrs['showForm']);
     $note = '';
-    if (isset($_GET['wr_form'], $_GET['wr_msg'])) {
+    // phpcs:disable WordPress.Security.NonceVerification.Recommended -- public query-string form status, sanitized below
+    $formStatus = isset($_GET['wr_form']) ? sanitize_key(wp_unslash((string) $_GET['wr_form'])) : '';
+    if ($formStatus !== '' && isset($_GET['wr_msg'])) {
         $note = sanitize_text_field(wp_unslash((string) $_GET['wr_msg']));
     }
+    // phpcs:enable WordPress.Security.NonceVerification.Recommended
 
     $headTag = wr_heading_tag($attrs);
     ob_start();
@@ -803,8 +807,8 @@ function wr_render_contact_desk(array $attrs): string
         <div class="contact-grid reveal">
           <?php if ($showNap) { ?>
           <div class="<?php echo esc_attr(wr_head_class($attrs, '')); ?>">
-            <?php if ($eyebrow !== '') { ?><span class="eyebrow"><?php echo $eyebrow; ?></span><?php } ?>
-            <?php if ($heading !== '') { ?><<?php echo esc_attr($headTag); ?> class="contact-section-heading"><?php echo $heading; ?></<?php echo esc_attr($headTag); ?>><?php } ?>
+            <?php if ($eyebrow !== '') { ?><span class="eyebrow"><?php echo esc_html($eyebrow); ?></span><?php } ?>
+            <?php if ($heading !== '') { ?><<?php echo esc_attr($headTag); ?> class="contact-section-heading"><?php echo esc_html($heading); ?></<?php echo esc_attr($headTag); ?>><?php } ?>
             <div class="meet-card">
               <p>
                 <a href="<?php echo esc_url(Identity::phoneHref()); ?>" class="nap-block nap-block--strong"><?php echo esc_html(Identity::phone()); ?></a><br>
@@ -822,8 +826,8 @@ function wr_render_contact_desk(array $attrs): string
           <form class="contact-form" id="contactForm" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" data-wr-contact novalidate>
             <input type="hidden" name="action" value="wr_contact">
             <?php wp_nonce_field('wr_contact', 'wr_contact_nonce'); ?>
-            <?php if ($formEyebrow !== '') { ?><span class="eyebrow"><?php echo $formEyebrow; ?></span><?php } ?>
-            <?php if ($formHeading !== '') { ?><h2 class="contact-section-heading"><?php echo $formHeading; ?></h2><?php } ?>
+            <?php if ($formEyebrow !== '') { ?><span class="eyebrow"><?php echo esc_html($formEyebrow); ?></span><?php } ?>
+            <?php if ($formHeading !== '') { ?><h2 class="contact-section-heading"><?php echo esc_html($formHeading); ?></h2><?php } ?>
             <div class="form-grid">
               <div class="field full">
                 <label for="cName"><?php esc_html_e('Your name', 'walkridge'); ?></label>
@@ -988,7 +992,7 @@ function wr_render_custom_block(array $attrs): string
         } elseif ($type === 'url' && is_string($raw) && $raw !== '') {
             echo '<p><a href="'.esc_url($raw).'">'.esc_html($label).'</a></p>';
         } elseif ($type === 'textarea') {
-            echo '<p>'.nl2br(esc_html((string) $raw)).'</p>';
+            echo '<p>'.wp_kses(nl2br(esc_html((string) $raw), false), ['br' => []]).'</p>';
         } else {
             echo '<p><strong>'.esc_html($label).':</strong> '.esc_html((string) $raw).'</p>';
         }

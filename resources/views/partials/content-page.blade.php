@@ -2,6 +2,6 @@
 
 @if ($pagination())
   <nav class="page-nav" aria-label="{{ __('Page navigation', 'walkridge') }}">
-    {!! $pagination !!}
+    {!! wp_kses_post($pagination) !!}
   </nav>
 @endif

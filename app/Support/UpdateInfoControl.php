@@ -15,9 +15,9 @@ class UpdateInfoControl extends WP_Customize_Control
     public function render_content(): void
     {
         $theme = wp_get_theme();
-        $version = esc_html($theme->get('Version') ?: '1.0.0');
-        $name = esc_html($theme->get('Name'));
-        $status_url = esc_url(admin_url('themes.php?page=wr-update-theme'));
+        $version = (string) ($theme->get('Version') ?: '1.0.0');
+        $name = (string) $theme->get('Name');
+        $status_url = admin_url('themes.php?page=wr-update-theme');
 
         echo '<style>
             .wr-update-info { font-size: 13px; line-height: 1.6; }
@@ -42,10 +42,10 @@ class UpdateInfoControl extends WP_Customize_Control
         </style>';
 
         echo '<div class="wr-update-info">';
-        echo '<strong>'.$name.'</strong><br>';
-        echo '<span class="wr-version-badge">v'.$version.'</span><br>';
+        echo '<strong>'.esc_html($name).'</strong><br>';
+        echo '<span class="wr-version-badge">v'.esc_html($version).'</span><br>';
         echo '<span>'.esc_html__('Check build status, install a zip, or pull from GitHub on Update Theme.', 'walkridge').'</span><br>';
-        echo '<a href="'.$status_url.'" class="wr-status-link" target="_blank">';
+        echo '<a href="'.esc_url($status_url).'" class="wr-status-link" target="_blank">';
         echo esc_html__('Open Update Theme', 'walkridge').' &#8599;';
         echo '</a>';
         echo '</div>';

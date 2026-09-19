@@ -2,11 +2,11 @@
   <section id="comments" class="comments">
     @if ($responses())
       <h2>
-        {!! $title !!}
+        {!! wp_kses_post($title) !!}
       </h2>
 
       <ol class="comment-list">
-        {!! $responses !!}
+        {!! wp_kses_post($responses) !!}
       </ol>
 
       @if ($paginated())
@@ -14,13 +14,13 @@
           <ul class="pager">
             @if ($previous())
               <li class="previous">
-                {!! $previous !!}
+                {!! wp_kses_post($previous) !!}
               </li>
             @endif
 
             @if ($next())
               <li class="next">
-                {!! $next !!}
+                {!! wp_kses_post($next) !!}
               </li>
             @endif
           </ul>
