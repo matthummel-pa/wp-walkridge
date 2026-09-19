@@ -1,14 +1,17 @@
 <!doctype html>
-<html @php(language_attributes())>
+<html @php(language_attributes()) data-wr-default-theme="{{ \App\Support\Identity::colorScheme() }}" @if(\App\Support\Identity::colorScheme() === 'light') data-theme="light" @endif>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- Inline theme script — runs before first paint to prevent light-mode flash --}}
+    {{-- Inline theme script — apply saved toggle before paint. Site default is light. --}}
     <script>
       (function(){
-        var s = localStorage.getItem('wr-theme');
-        var p = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        if((s || p) === 'light') document.documentElement.setAttribute('data-theme','light');
+        var html = document.documentElement;
+        var site = html.getAttribute('data-wr-default-theme') || 'light';
+        var s = localStorage.getItem('wr-color-scheme');
+        var theme = (s === 'light' || s === 'dark') ? s : site;
+        if (theme === 'light') html.setAttribute('data-theme', 'light');
+        else html.removeAttribute('data-theme');
       })();
     </script>
     @php(do_action('get_header'))

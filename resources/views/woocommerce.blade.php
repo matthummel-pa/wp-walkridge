@@ -5,7 +5,7 @@
     @if(function_exists('woocommerce_content'))
       @php(woocommerce_content())
     @else
-      <p class="notice">{{ __('The shop is not available right now.', 'walkridge') }}</p>
+      @include('woocommerce.no-plugin')
     @endif
   </div>
 @endsection

@@ -216,6 +216,16 @@ class Identity
     }
 
     /**
+     * First-run colour scheme. Light is the marketplace default; dark stays optional.
+     */
+    public static function colorScheme(): string
+    {
+        $mod = strtolower(trim((string) get_theme_mod('wr_color_scheme', 'light')));
+
+        return $mod === 'dark' ? 'dark' : 'light';
+    }
+
+    /**
      * Resolve a WooCommerce product permalink by slug, falling back to the shop.
      */
     public static function productUrl(string $slug): string

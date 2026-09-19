@@ -21,7 +21,7 @@ Technical reference for buyers and developers. Product pitch lives in [README.md
 
 Walkridge follows the same split as Acreline / Pressroot:
 
-- **Theme Settings** — graphical cards for identity, contact, header, footer, social. **Advanced settings** stay collapsed (demo badge, credit, gold accent, block seed, Customizer deep links).
+- **Theme Settings** — graphical cards for identity, contact, header, footer, social. **Advanced settings** stay collapsed (default light/dark, demo badge, credit, gold accent, block seed, Customizer deep links).
 - **Customizer** — engine. Same `theme_mod` keys. Use it when you want a live canvas.
 - **Update Theme** — version cards, zip overwrite, optional GitHub pull. Not a design screen.
 

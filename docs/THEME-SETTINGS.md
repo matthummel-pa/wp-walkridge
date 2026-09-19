@@ -10,9 +10,13 @@ Customizer persists `theme_mod` values and offers live preview. Buyers should no
 - Contact desk (phone, email, address, hours)
 - Header & booking (CTA + rails)
 - Footer & social
-- **Advanced settings** (collapsed): demo badge, author credit, gold accent override, Customizer deep links, block seeding, Update Theme
+- **Advanced settings** (collapsed): **default colour theme (light parchment is first-run; dark is optional)**, demo badge, author credit, gold accent override, Customizer deep links, block seeding, Update Theme
 
 Saving here is the same as saving Identity in the Customizer. The two never fight.
+
+## Colour theme
+
+**Light parchment is the default.** Theme Settings → Advanced (or Customize → Identity) sets `wr_color_scheme` to `light` or `dark`. The header sun/moon control still lets each visitor switch; that choice is stored in the browser (`wr-color-scheme`) and does not change the site-wide default.
 
 ## Logo
 

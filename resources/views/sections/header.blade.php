@@ -61,7 +61,8 @@
       <a href="{{ esc_url(Identity::phoneHref()) }}" class="btn btn-ghost btn-sm header-phone">{{ Identity::phone() }}</a>
       <a href="{{ esc_url($shopUrl) }}" class="btn btn-primary btn-sm">{{ Identity::ctaLabel() }}</a>
       <button type="button" class="theme-toggle" id="themeToggle"
-              aria-label="{{ __('Toggle colour theme', 'walkridge') }}"
+              aria-pressed="false"
+              aria-label="{{ __('Switch to dark mode', 'walkridge') }}"
               data-label-light="{{ __('Switch to dark mode', 'walkridge') }}"
               data-label-dark="{{ __('Switch to light mode', 'walkridge') }}">
         <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">

@@ -9,14 +9,15 @@
   document.querySelectorAll("[data-year]").forEach(function(el){ el.textContent = yr; });
 
   /* ── Theme toggle ─────────────────────────────────────────
-     Reads prefers-color-scheme as the default, then defers to
-     localStorage('wr-theme') if the user has made a choice.  */
+     Site default is light (Theme Settings). localStorage wins
+     after the visitor uses the header toggle. Dark remains optional. */
   (function(){
-    var STORAGE_KEY = "wr-theme";
+    var STORAGE_KEY = "wr-color-scheme";
     var html = document.documentElement;
 
-    function getPreferred(){
-      return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    function siteDefault(){
+      var d = html.getAttribute("data-wr-default-theme");
+      return d === "dark" ? "dark" : "light";
     }
 
     function applyTheme(theme){
@@ -25,20 +26,21 @@
       } else {
         html.removeAttribute("data-theme");
       }
-      // Update toggle button aria-label & title
       document.querySelectorAll(".theme-toggle").forEach(function(btn){
         var next = theme === "light" ? "dark" : "light";
-        btn.setAttribute("aria-label","Switch to " + next + " mode");
-        btn.setAttribute("title","Switch to " + next + " mode");
+        var label = next === "dark"
+          ? (btn.getAttribute("data-label-light") || ("Switch to " + next + " mode"))
+          : (btn.getAttribute("data-label-dark") || ("Switch to " + next + " mode"));
+        btn.setAttribute("aria-label", label);
+        btn.setAttribute("title", label);
         btn.setAttribute("data-current-theme", theme);
+        btn.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
       });
     }
 
-    // Apply saved preference (or OS default) immediately — before paint
     var saved = localStorage.getItem(STORAGE_KEY);
-    applyTheme(saved || getPreferred());
+    applyTheme((saved === "light" || saved === "dark") ? saved : siteDefault());
 
-    // Wire toggle buttons (may not be in DOM yet — use delegation)
     document.addEventListener("click", function(e){
       var btn = e.target.closest(".theme-toggle");
       if(!btn) return;
@@ -46,13 +48,6 @@
       var next = current === "light" ? "dark" : "light";
       applyTheme(next);
       localStorage.setItem(STORAGE_KEY, next);
-    });
-
-    // Respond to OS preference changes (if no explicit user choice)
-    window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", function(e){
-      if(!localStorage.getItem(STORAGE_KEY)){
-        applyTheme(e.matches ? "light" : "dark");
-      }
     });
   })();
 
