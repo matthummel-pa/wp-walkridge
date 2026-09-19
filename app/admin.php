@@ -60,9 +60,13 @@ function wr_theme_update_page(): void
     }
 
     $gh_token      = (string) get_option('wr_github_token', '');
-    $gh_repo       = (string) get_option('wr_github_repo', '');
+    $gh_repo       = (string) get_option('wr_github_repo', WR_GITHUB_RELEASES_REPO);
+    if ($gh_repo === '') {
+        $gh_repo = WR_GITHUB_RELEASES_REPO;
+    }
     $gh_branch     = (string) get_option('wr_github_branch', 'main');
     $gh_configured = $gh_token !== '' && $gh_repo !== '';
+    $gh_release    = function_exists('wr_github_latest_release') ? wr_github_latest_release() : null;
     $settings_url = admin_url('themes.php?page=wr-theme-settings');
     ?>
     <div class="wrap wr-update">
@@ -105,11 +109,42 @@ npm run build
 wp acorn optimize:clear</pre>
       <p class="description"><?php esc_html_e('Store / ThemeForest zips already ship public/build and vendor — buyers do not need Node on the host.', 'walkridge'); ?></p>
 
+      <hr>
+      <h2 style="margin-top:1.5rem;"><?php esc_html_e('Install a production zip', 'walkridge'); ?></h2>
+      <p class="description"><?php esc_html_e('Use a compiled walkridge.zip (vendor + public/build). WordPress will also offer this package under Appearance → Themes when a newer GitHub Release exists.', 'walkridge'); ?></p>
+      <div style="margin-top:1rem;display:flex;gap:12px;flex-wrap:wrap;align-items:center;max-width:640px;">
+        <button type="button" id="wr-btn-update-release" class="button button-primary"
+                style="display:inline-flex;align-items:center;gap:6px;">
+          <span class="dashicons dashicons-update" style="margin-top:2px;"></span>
+          <?php esc_html_e('Install latest GitHub Release', 'walkridge'); ?>
+        </button>
+        <label class="button button-secondary" for="wr-zip-upload"
+               style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;">
+          <span class="dashicons dashicons-upload" style="margin-top:2px;"></span>
+          <?php esc_html_e('Upload ZIP', 'walkridge'); ?>
+        </label>
+        <input type="file" id="wr-zip-upload" accept=".zip" style="display:none;">
+        <span id="wr-spinner" class="spinner" style="display:none;float:none;margin:0;visibility:visible;"></span>
+      </div>
+      <?php if (is_array($gh_release)) { ?>
+        <p class="description" style="margin-top:8px;">
+          <?php printf(
+              esc_html__('Latest release: %s', 'walkridge'),
+              '<code>v' . esc_html($gh_release['version']) . '</code>'
+          ); ?>
+        </p>
+      <?php } ?>
+      <div id="wr-update-status" style="margin-top:12px;max-width:640px;display:none;">
+        <div id="wr-update-log"
+             style="background:#1d2327;color:#f0f0f0;padding:10px 14px;border-radius:4px;
+                    font-family:monospace;font-size:12px;line-height:1.7;white-space:pre-wrap;"></div>
+      </div>
+
       <?php /* ── GitHub Dev Updater ────────────────────────────────────── */ ?>
       <hr>
       <h2 style="margin-top:1.5rem;">
         <?php esc_html_e('GitHub Dev Updater', 'walkridge'); ?>
-        <span style="font-size:12px;font-weight:400;color:#888;margin-left:8px;"><?php esc_html_e('(dev only)', 'walkridge'); ?></span>
+        <span style="font-size:12px;font-weight:400;color:#888;margin-left:8px;"><?php esc_html_e('(source zipball — not a production zip)', 'walkridge'); ?></span>
       </h2>
 
       <?php if (isset($_GET['gh_updated']) && sanitize_text_field(wp_unslash((string) $_GET['gh_updated'])) !== '') { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only saved-settings flag ?>
@@ -150,34 +185,22 @@ wp acorn optimize:clear</pre>
 
       <?php if ($gh_configured) { ?>
       <div style="margin-top:1.5rem;display:flex;gap:12px;flex-wrap:wrap;align-items:center;max-width:640px;">
-        <button type="button" id="wr-btn-update-repo" class="button button-primary"
+        <button type="button" id="wr-btn-update-repo" class="button"
                 style="display:inline-flex;align-items:center;gap:6px;">
-          <span class="dashicons dashicons-update" style="margin-top:2px;"></span>
-          <?php esc_html_e('Update from Repo', 'walkridge'); ?>
+          <span class="dashicons dashicons-download" style="margin-top:2px;"></span>
+          <?php esc_html_e('Install source zipball', 'walkridge'); ?>
         </button>
-        <label class="button button-secondary" for="wr-zip-upload"
-               style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;">
-          <span class="dashicons dashicons-upload" style="margin-top:2px;"></span>
-          <?php esc_html_e('Rebuild &amp; Install from ZIP', 'walkridge'); ?>
-        </label>
-        <input type="file" id="wr-zip-upload" accept=".zip" style="display:none;">
-        <span id="wr-spinner" class="spinner" style="display:none;float:none;margin:0;visibility:visible;"></span>
       </div>
       <p class="description" style="margin-top:6px;">
         <?php printf(
-            esc_html__('Repo: %s — Branch: %s', 'walkridge'),
+            esc_html__('Repo: %s — Branch: %s. Source zipballs do not include vendor or Vite build.', 'walkridge'),
             '<code>' . esc_html($gh_repo) . '</code>',
             '<code>' . esc_html($gh_branch) . '</code>'
         ); ?>
       </p>
-      <div id="wr-update-status" style="margin-top:12px;max-width:640px;display:none;">
-        <div id="wr-update-log"
-             style="background:#1d2327;color:#f0f0f0;padding:10px 14px;border-radius:4px;
-                    font-family:monospace;font-size:12px;line-height:1.7;white-space:pre-wrap;"></div>
-      </div>
       <?php } else { ?>
       <p class="description" style="margin-top:8px;">
-        <?php esc_html_e('Save your GitHub token and repo above to unlock the update buttons.', 'walkridge'); ?>
+        <?php esc_html_e('Optional: save a GitHub token to pull a source zipball. Production updates use the public GitHub Release zip above.', 'walkridge'); ?>
       </p>
       <?php } ?>
 
@@ -196,35 +219,49 @@ wp acorn optimize:clear</pre>
           logEl.scrollTop = logEl.scrollHeight;
         }
         function setBusy(on) {
-          var repoBtn = document.getElementById('wr-btn-update-repo');
-          if (repoBtn) repoBtn.disabled = on;
+          ['wr-btn-update-repo', 'wr-btn-update-release'].forEach(function (id) {
+            var btn = document.getElementById(id);
+            if (btn) btn.disabled = on;
+          });
           if (spinner) spinner.style.display = on ? 'inline-block' : 'none';
+        }
+
+        function postUpdate(action, busyMsg) {
+          if (logEl) logEl.textContent = '';
+          setBusy(true);
+          log(busyMsg);
+          fetch(ajaxUrl, {
+            method: 'POST',
+            credentials: 'same-origin',
+            body: new URLSearchParams({ action: action, nonce: nonce }),
+          })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (data.success) {
+              log('\u2705 ' + (data.data || 'Updated successfully.'));
+              log('\u21ba Reloading\u2026');
+              setTimeout(function () { location.reload(); }, 1500);
+            } else {
+              log('\u274c ' + (data.data || 'Update failed.'));
+            }
+          })
+          .catch(function (err) { log('\u274c Network error: ' + err.message); })
+          .finally(function () { setBusy(false); });
+        }
+
+        var releaseBtn = document.getElementById('wr-btn-update-release');
+        if (releaseBtn) {
+          releaseBtn.addEventListener('click', function () {
+            if (!confirm('Install the latest GitHub Release zip?\nThe active theme will be overwritten in place.')) return;
+            postUpdate('wr_update_from_github_release', '\u23f3 Fetching walkridge.zip from GitHub Releases\u2026');
+          });
         }
 
         var repoBtn = document.getElementById('wr-btn-update-repo');
         if (repoBtn) {
           repoBtn.addEventListener('click', function () {
-            if (!confirm('Download and install the latest ZIP from GitHub?\nThe active theme will be overwritten in place.')) return;
-            if (logEl) logEl.textContent = '';
-            setBusy(true);
-            log('\u23f3 Fetching ZIP from GitHub\u2026');
-            fetch(ajaxUrl, {
-              method: 'POST',
-              credentials: 'same-origin',
-              body: new URLSearchParams({ action: 'wr_update_from_github', nonce: nonce }),
-            })
-            .then(function (r) { return r.json(); })
-            .then(function (data) {
-              if (data.success) {
-                log('\u2705 ' + (data.data || 'Updated successfully.'));
-                log('\u21ba Reloading\u2026');
-                setTimeout(function () { location.reload(); }, 1500);
-              } else {
-                log('\u274c ' + (data.data || 'Update failed.'));
-              }
-            })
-            .catch(function (err) { log('\u274c Network error: ' + err.message); })
-            .finally(function () { setBusy(false); });
+            if (!confirm('Download the GitHub source zipball?\nThis is not a production zip (no vendor/build).')) return;
+            postUpdate('wr_update_from_github', '\u23f3 Fetching source zipball from GitHub\u2026');
           });
         }
 
@@ -282,6 +319,28 @@ add_action('admin_post_wr_save_github_settings', function (): void {
     exit;
 });
 
+/* ── AJAX: Install compiled zip from GitHub Releases ─────────────────────── */
+
+add_action('wp_ajax_wr_update_from_github_release', function (): void {
+    check_ajax_referer('wr_github_update', 'nonce');
+    if (! current_user_can('manage_options')) {
+        wp_send_json_error('Unauthorized');
+    }
+
+    $release = wr_github_latest_release();
+    if ($release === null) {
+        wp_send_json_error('No GitHub Release with a walkridge.zip asset was found.');
+    }
+
+    $result = wr_install_theme_from_url($release['package']);
+    if (is_wp_error($result)) {
+        wp_send_json_error($result->get_error_message());
+    }
+
+    delete_transient('wr_github_latest_release');
+    wp_send_json_success('Installed GitHub Release v'.$release['version'].'.');
+});
+
 /* ── AJAX: Download latest ZIP from GitHub and install ───────────────────── */
 
 add_action('wp_ajax_wr_update_from_github', function (): void {
@@ -291,40 +350,22 @@ add_action('wp_ajax_wr_update_from_github', function (): void {
     }
 
     $token  = (string) get_option('wr_github_token');
-    $repo   = (string) get_option('wr_github_repo');
+    $repo   = (string) get_option('wr_github_repo', WR_GITHUB_RELEASES_REPO);
     $branch = (string) get_option('wr_github_branch', 'main');
-
-    if (! $token || ! $repo) {
-        wp_send_json_error('GitHub token or repo not configured.');
+    if ($repo === '') {
+        $repo = WR_GITHUB_RELEASES_REPO;
     }
 
-    $zip_url  = "https://api.github.com/repos/{$repo}/zipball/{$branch}";
-    $tmp_file = wp_tempnam('wr_gh_');
+    if (! $token) {
+        wp_send_json_error('GitHub token not configured (required for source zipballs).');
+    }
 
-    $response = wp_remote_get($zip_url, [
-        'headers'  => [
-            'Authorization' => 'Bearer ' . $token,
-            'Accept'        => 'application/vnd.github+json',
-            'User-Agent'    => 'WordPress/walkridge-updater',
-        ],
-        'timeout'  => 90,
-        'stream'   => true,
-        'filename' => $tmp_file,
+    $zip_url = "https://api.github.com/repos/{$repo}/zipball/{$branch}";
+    $result  = wr_install_theme_from_url($zip_url, [
+        'Authorization' => 'Bearer ' . $token,
+        'Accept'        => 'application/vnd.github+json',
+        'User-Agent'    => 'WordPress/walkridge-updater',
     ]);
-
-    if (is_wp_error($response)) {
-        @unlink($tmp_file);
-        wp_send_json_error($response->get_error_message());
-    }
-
-    $code = wp_remote_retrieve_response_code($response);
-    if ($code !== 200) {
-        @unlink($tmp_file);
-        wp_send_json_error("GitHub returned HTTP {$code} — verify your token and repo slug.");
-    }
-
-    $result = wr_install_theme_from_file($tmp_file);
-    @unlink($tmp_file);
 
     if (is_wp_error($result)) {
         wp_send_json_error($result->get_error_message());
@@ -356,6 +397,41 @@ add_action('wp_ajax_wr_install_zip', function (): void {
 });
 
 /* ── Shared: Install / overwrite the active theme from a local ZIP path ──── */
+
+function wr_install_theme_from_url(string $url, array $headers = []): bool|\WP_Error
+{
+    $tmp_file = wp_tempnam('wr_theme_');
+    $args     = [
+        'timeout'  => 120,
+        'stream'   => true,
+        'filename' => $tmp_file,
+        'headers'  => array_merge(
+            [
+                'User-Agent' => 'WordPress/walkridge-updater',
+            ],
+            $headers
+        ),
+    ];
+
+    $response = wp_remote_get($url, $args);
+    if (is_wp_error($response)) {
+        @unlink($tmp_file);
+
+        return $response;
+    }
+
+    $code = (int) wp_remote_retrieve_response_code($response);
+    if ($code !== 200) {
+        @unlink($tmp_file);
+
+        return new \WP_Error('http_error', "Download returned HTTP {$code}.");
+    }
+
+    $result = wr_install_theme_from_file($tmp_file);
+    @unlink($tmp_file);
+
+    return $result;
+}
 
 function wr_install_theme_from_file(string $zip_path): bool|\WP_Error
 {
