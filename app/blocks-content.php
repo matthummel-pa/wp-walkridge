@@ -175,10 +175,7 @@ function wr_render_copy_section(array $attrs): string
     }
     $class = ! empty($attrs['alt']) ? 'section section-alt' : 'section';
     ob_start();
-    wr_block_section_open([
-        'eyebrow' => $attrs['eyebrow'] ?? '',
-        'heading' => $attrs['heading'] ?? '',
-    ], $class);
+    wr_block_section_open($attrs, $class);
     if ($text !== '') {
         echo '<div class="prose reveal">'.$text.'</div>';
     }
@@ -211,6 +208,7 @@ function wr_render_refund_policy(array $attrs): string
     $payMax = max($payMin, (int) ($attrs['paymentDaysMax'] ?? 10));
 
     ob_start();
+    echo '<section class="'.esc_attr(wr_band_section_class($attrs, wr_head_class($attrs, 'section'))).'"><div class="wrap">';
     ?>
     <div class="wr-policy prose reveal">
       <p><?php echo esc_html(sprintf(
@@ -249,6 +247,7 @@ function wr_render_refund_policy(array $attrs): string
           ['a' => ['href' => true]]
       ); ?></p>
     </div>
+    </div></section>
     <?php
 
     return (string) ob_get_clean();
@@ -259,19 +258,20 @@ function wr_render_refund_policy(array $attrs): string
  */
 function wr_block_section_open(array $attrs, string $sectionClass): void
 {
-    echo '<section class="'.esc_attr($sectionClass).'"><div class="wrap">';
+    echo '<section class="'.esc_attr(wr_band_section_class($attrs, $sectionClass)).'"><div class="wrap">';
     $eyebrow = (string) ($attrs['eyebrow'] ?? '');
     $heading = (string) ($attrs['heading'] ?? '');
     $text = (string) ($attrs['text'] ?? '');
     if ($eyebrow === '' && $heading === '' && $text === '') {
         return;
     }
-    echo '<div class="section-head reveal">';
+    $headTag = wr_heading_tag($attrs);
+    echo '<div class="'.esc_attr(wr_head_class($attrs)).'">';
     if ($eyebrow !== '') {
         echo '<span class="eyebrow">'.esc_html($eyebrow).'</span>';
     }
     if ($heading !== '') {
-        echo '<h2>'.esc_html($heading).'</h2>';
+        echo '<'.$headTag.'>'.esc_html($heading).'</'.$headTag.'>';
     }
     if ($text !== '') {
         echo '<p>'.esc_html($text).'</p>';
@@ -295,4 +295,243 @@ function wr_block_url(string $raw): string
     }
 
     return esc_url($raw);
+}
+
+/**
+ * Location map used on the Area page (Hallowed Ground location-grid).
+ *
+ * @param  array<string, mixed>  $attrs
+ */
+function wr_render_area_map(array $attrs): string
+{
+    $variant = sanitize_key((string) ($attrs['variant'] ?? 'static'));
+    if (! in_array($variant, ['static', 'embed', 'field-map'], true)) {
+        $variant = 'static';
+    }
+    $layout = sanitize_key((string) ($attrs['layout'] ?? 'split'));
+    if (! in_array($layout, ['split', 'split-flip', 'stack'], true)) {
+        $layout = 'split';
+    }
+    $tone = sanitize_key((string) ($attrs['iconTone'] ?? 'gold'));
+    if (! in_array($tone, ['gold', 'lantern', 'parchment', 'brick'], true)) {
+        $tone = 'gold';
+    }
+    $height = max(240, min(900, (int) ($attrs['mapHeight'] ?? 420)));
+    $zoom = max(8, min(18, (int) ($attrs['mapZoom'] ?? 14)));
+    $point = wr_area_map_point($attrs);
+    $cards = wr_parse_piped_items((string) ($attrs['cards'] ?? ''));
+    $alt = (string) ($attrs['imageAlt'] ?? '');
+    if ($alt === '') {
+        $alt = __('Downtown Gettysburg near Lincoln Square', 'walkridge');
+    }
+    $gridClass = 'location-grid wr-area-map reveal wr-area-map--'.$layout.' wr-area-map--tone-'.$tone;
+
+    ob_start();
+    wr_block_section_open($attrs, 'section');
+    echo '<div class="'.esc_attr($gridClass).'">';
+
+    echo '<div class="wr-area-map__stage">';
+    if ($variant === 'field-map' && shortcode_exists('wr_field_map')) {
+        $shortcode = sprintf(
+            '[wr_field_map height="%spx" lat="%s" lng="%s" zoom="%s"]',
+            esc_attr((string) $height),
+            esc_attr((string) $point['lat']),
+            esc_attr((string) $point['lng']),
+            esc_attr((string) $zoom)
+        );
+        echo do_shortcode($shortcode);
+    } elseif ($variant === 'embed') {
+        $embed = wr_area_map_embed_url($attrs, $point, $zoom);
+        echo '<div class="wr-area-map__frame">';
+        echo '<iframe class="wr-area-map__embed" src="'.esc_url($embed).'" title="'.esc_attr($alt).'" height="'.esc_attr((string) $height).'" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        echo '</div>';
+        echo wr_area_map_open_link($point);
+    } else {
+        $img = wr_block_image_url($attrs, (string) ($attrs['imageKey'] ?? 'downtown'));
+        $pinX = max(0, min(100, (int) ($attrs['pinX'] ?? 50)));
+        $pinY = max(0, min(100, (int) ($attrs['pinY'] ?? 50)));
+        echo '<figure class="map-card">';
+        if ($img !== '') {
+            echo '<img src="'.esc_url($img).'" alt="'.esc_attr($alt).'">';
+        }
+        if (! empty($attrs['showPin'])) {
+            echo '<svg class="pin" width="40" height="52" viewBox="0 0 40 52" fill="none" aria-hidden="true" style="left:'.esc_attr((string) $pinX).'%;top:'.esc_attr((string) $pinY).'%"><path d="M20 0C9 0 0 9 0 20c0 15 20 32 20 32s20-17 20-32C40 9 31 0 20 0z" fill="currentColor"/><circle class="pin__core" cx="20" cy="19" r="7"/></svg>';
+        }
+        echo '</figure>';
+        echo wr_area_map_open_link($point);
+    }
+    echo '</div>';
+
+    if ($cards !== []) {
+        echo '<div class="wr-area-map__cards">';
+        foreach ($cards as $row) {
+            $icon = sanitize_key((string) ($row[2] ?? 'pin'));
+            echo '<div class="meet-card">';
+            echo '<h3>'.wr_area_map_icon($icon).esc_html($row[0]).'</h3>';
+            if (! empty($row[1])) {
+                echo '<p>'.esc_html($row[1]).'</p>';
+            }
+            echo '</div>';
+        }
+        echo '</div>';
+    }
+
+    echo '</div>';
+    wr_block_section_close();
+
+    return (string) ob_get_clean();
+}
+
+/**
+ * @param  array<string, mixed>  $attrs
+ * @return array{lat: float, lng: float, source: string, zip?: string}
+ */
+function wr_area_map_point(array $attrs): array
+{
+    $defaultLat = 39.83092;
+    $defaultLng = -77.23114;
+    $mode = sanitize_key((string) ($attrs['locationMode'] ?? 'coordinates'));
+
+    if ($mode === 'zipcode') {
+        $zip = trim((string) ($attrs['zipcode'] ?? ''));
+        if ($zip === '') {
+            $zip = '17325';
+        }
+        $geo = wr_geocode_zipcode($zip);
+        if ($geo !== null) {
+            $geo['source'] = 'zipcode';
+            $geo['zip'] = $zip;
+
+            return $geo;
+        }
+    }
+
+    $lat = (float) ($attrs['latitude'] ?? $defaultLat);
+    $lng = (float) ($attrs['longitude'] ?? $defaultLng);
+    if ($lat < -90 || $lat > 90) {
+        $lat = $defaultLat;
+    }
+    if ($lng < -180 || $lng > 180) {
+        $lng = $defaultLng;
+    }
+
+    return [
+        'lat' => $lat,
+        'lng' => $lng,
+        'source' => 'coordinates',
+    ];
+}
+
+/**
+ * @param  array<string, mixed>  $attrs
+ * @param  array{lat: float, lng: float}  $point
+ */
+function wr_area_map_embed_url(array $attrs, array $point, int $zoom): string
+{
+    $custom = trim((string) ($attrs['mapEmbedUrl'] ?? ''));
+    if ($custom !== '') {
+        return $custom;
+    }
+
+    $span = 360 / (2 ** $zoom);
+    $west = $point['lng'] - ($span * 0.55);
+    $east = $point['lng'] + ($span * 0.55);
+    $south = $point['lat'] - ($span * 0.32);
+    $north = $point['lat'] + ($span * 0.32);
+
+    return sprintf(
+        'https://www.openstreetmap.org/export/embed.html?bbox=%.5f,%.5f,%.5f,%.5f&layer=mapnik&marker=%.5f,%.5f',
+        $west,
+        $south,
+        $east,
+        $north,
+        $point['lat'],
+        $point['lng']
+    );
+}
+
+/**
+ * @param  array{lat: float, lng: float}  $point
+ */
+function wr_area_map_open_link(array $point): string
+{
+    $href = sprintf(
+        'https://www.openstreetmap.org/?mlat=%s&mlon=%s#map=15/%s/%s',
+        rawurlencode(sprintf('%.5f', $point['lat'])),
+        rawurlencode(sprintf('%.5f', $point['lng'])),
+        rawurlencode(sprintf('%.5f', $point['lat'])),
+        rawurlencode(sprintf('%.5f', $point['lng']))
+    );
+
+    return '<p class="wr-area-map__open"><a href="'.esc_url($href).'" rel="noopener noreferrer" target="_blank">'.esc_html__('Open this location on OpenStreetMap', 'walkridge').'</a></p>';
+}
+
+/**
+ * @return array{lat: float, lng: float}|null
+ */
+function wr_geocode_zipcode(string $zip): ?array
+{
+    $zip = strtoupper(trim($zip));
+    if ($zip === '' || strlen($zip) < 3 || strlen($zip) > 12) {
+        return null;
+    }
+    if (! preg_match('/^[A-Z0-9][A-Z0-9\s-]{2,10}$/', $zip)) {
+        return null;
+    }
+
+    $cacheKey = 'wr_geo_zip_'.md5($zip);
+    $cached = get_transient($cacheKey);
+    if (is_array($cached) && isset($cached['lat'], $cached['lng'])) {
+        return [
+            'lat' => (float) $cached['lat'],
+            'lng' => (float) $cached['lng'],
+        ];
+    }
+
+    $args = [
+        'format' => 'jsonv2',
+        'limit' => 1,
+    ];
+    if (preg_match('/^\d{5}(?:-\d{4})?$/', $zip)) {
+        $args['postalcode'] = substr($zip, 0, 5);
+        $args['countrycodes'] = 'us';
+    } else {
+        $args['q'] = $zip;
+        $args['postalcode'] = $zip;
+    }
+
+    $response = wp_remote_get(add_query_arg($args, 'https://nominatim.openstreetmap.org/search'), [
+        'timeout' => 8,
+        'headers' => [
+            'Accept' => 'application/json',
+            'User-Agent' => 'WalkridgeTheme/1.4 (https://walkridge.matthummel.com; map block geocode)',
+        ],
+    ]);
+    if (is_wp_error($response) || (int) wp_remote_retrieve_response_code($response) !== 200) {
+        return null;
+    }
+
+    $data = json_decode((string) wp_remote_retrieve_body($response), true);
+    if (! is_array($data) || $data === [] || ! isset($data[0]['lat'], $data[0]['lon'])) {
+        return null;
+    }
+
+    $point = [
+        'lat' => (float) $data[0]['lat'],
+        'lng' => (float) $data[0]['lon'],
+    ];
+    set_transient($cacheKey, $point, WEEK_IN_SECONDS);
+
+    return $point;
+}
+
+function wr_area_map_icon(string $icon): string
+{
+    $svgs = [
+        'pin' => '<svg class="wr-area-map__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7z"/><circle cx="12" cy="9.2" r="2.2"/></svg>',
+        'lantern' => '<svg class="wr-area-map__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5h6M10 5v2h4V5M8 7h8l-1 10H9L8 7z"/><path d="M10 11h4"/></svg>',
+        'clock' => '<svg class="wr-area-map__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 1.5"/></svg>',
+    ];
+
+    return $svgs[$icon] ?? $svgs['pin'];
 }

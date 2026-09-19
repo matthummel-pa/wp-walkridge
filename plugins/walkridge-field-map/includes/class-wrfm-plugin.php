@@ -39,6 +39,9 @@ final class WRFM_Plugin
         $atts = shortcode_atts([
             'height' => '620px',
             'class' => '',
+            'lat' => '',
+            'lng' => '',
+            'zoom' => '',
         ], $atts, 'wr_field_map');
 
         $this->enqueue_assets();

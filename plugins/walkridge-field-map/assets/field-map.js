@@ -7,13 +7,38 @@
   var STORAGE = "hg-area-map-v1";
   var MAPS_STORAGE = "hg-maps-config-v2";
   var ADMIN_GATE = "hg-area-admin"; /* WP: also gated by data-diorama-mode="admin" presence */
-  var PIN_COLOR = { ridge: "#e0be72", hill: "#7eb56a", hike: "#7eb56a", downtown: "#c9a06a", meet: "#d36a3a", monument: "#d4b56a", tour: "#d36a3a", building: "#c9a06a", area: "#7eb56a" };
+  function themePinColors() {
+    var cs = getComputedStyle(document.documentElement);
+    function token(name, fallback) {
+      var value = (cs.getPropertyValue(name) || "").trim();
+      return value || fallback;
+    }
+    var gold = token("--gold-500", "#e0be72");
+    var lantern = token("--lantern-500", "#c9a06a");
+    var brick = token("--brick", "#d36a3a");
+    var hill = token("--gold-300", "#f0d9a0");
+    return { ridge: gold, hill: hill, hike: lantern, downtown: gold, meet: brick, monument: gold, tour: brick, building: lantern, area: gold };
+  }
+  var PIN_COLOR = themePinColors();
   var ITIN_STORAGE = "hg-itinerary-v1";
   var DEFAULT_MAPS = {
     center: { lat: 39.812, lng: -77.236 },
     zoom: 13.4,
     rotation: -0.18
   };
+  (function applyBlockCenter() {
+    var host = document.querySelector(".hgfm-wrapper[data-map-lat][data-map-lng]");
+    if (!host) return;
+    var lat = parseFloat(host.getAttribute("data-map-lat"));
+    var lng = parseFloat(host.getAttribute("data-map-lng"));
+    var zoom = parseFloat(host.getAttribute("data-map-zoom"));
+    if (!isNaN(lat) && !isNaN(lng)) {
+      DEFAULT_MAPS.center = { lat: lat, lng: lng };
+    }
+    if (!isNaN(zoom)) {
+      DEFAULT_MAPS.zoom = zoom;
+    }
+  })();
 
   var DEFAULTS = {
     version: 1,

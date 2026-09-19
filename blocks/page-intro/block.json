@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/page-intro",
+  "title": "Page Intro",
+  "category": "walkridge",
+  "icon": "heading",
+  "description": "Inner-page title band with eyebrow, heading, and intro copy.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "intro",
+    "header",
+    "title"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}

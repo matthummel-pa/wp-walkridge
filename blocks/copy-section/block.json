@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/copy-section",
+  "title": "Copy Section",
+  "category": "walkridge",
+  "icon": "media-text",
+  "description": "Rich-text narrative section for the area page.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "copy",
+    "prose"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}

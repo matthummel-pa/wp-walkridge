@@ -31,6 +31,9 @@ add_action('init', function (): void {
 
 function wr_register_blocks(): void
 {
+    $shared = array_merge(wr_typo_attributes(), wr_band_attributes());
+    $heroShared = array_merge(wr_hero_attributes(), $shared);
+
     $blocks = [
         'walkridge/home-hero' => [
             'render_callback' => __NAMESPACE__.'\\wr_render_home_hero',
@@ -77,6 +80,7 @@ function wr_register_blocks(): void
                 'anchor' => ['type' => 'string', 'default' => ''],
                 'alt' => ['type' => 'boolean', 'default' => false],
                 'headingLevel' => ['type' => 'number', 'default' => 2],
+                'headingAlign' => ['type' => 'string', 'default' => 'center'],
                 'textAlign' => ['type' => 'string', 'default' => 'center'],
             ],
         ],
@@ -101,10 +105,14 @@ function wr_register_blocks(): void
                 'leftTitle' => ['type' => 'string', 'default' => 'Battlefield walking, bus, hike & private sunrise'],
                 'leftText' => ['type' => 'string', 'default' => 'The main ridges, the rocky high ground, and the farthest reach of the final assault.'],
                 'leftUrl' => ['type' => 'string', 'default' => ''],
+                'leftImageUrl' => ['type' => 'string', 'default' => ''],
+                'leftImageId' => ['type' => 'integer', 'default' => 0],
                 'rightEyebrow' => ['type' => 'string', 'default' => 'After Dark'],
                 'rightTitle' => ['type' => 'string', 'default' => 'Evening Lantern Walk'],
                 'rightText' => ['type' => 'string', 'default' => 'The historic downtown and the town square. Candlelit storytelling from the record.'],
                 'rightUrl' => ['type' => 'string', 'default' => ''],
+                'rightImageUrl' => ['type' => 'string', 'default' => ''],
+                'rightImageId' => ['type' => 'integer', 'default' => 0],
             ],
         ],
         'walkridge/about-split' => [
@@ -119,6 +127,8 @@ function wr_register_blocks(): void
                 'secondaryUrl' => ['type' => 'string', 'default' => ''],
                 'imageKey' => ['type' => 'string', 'default' => 'wentz'],
                 'imageUrl' => ['type' => 'string', 'default' => ''],
+                'imageId' => ['type' => 'integer', 'default' => 0],
+                'imagePosition' => ['type' => 'string', 'default' => 'center'],
                 'caption' => ['type' => 'string', 'default' => 'A farmstead along the tour route'],
                 'flip' => ['type' => 'boolean', 'default' => false],
             ],
@@ -256,12 +266,47 @@ function wr_register_blocks(): void
                 'paymentDaysMax' => ['type' => 'number', 'default' => 10],
             ],
         ],
+        'walkridge/area-map' => [
+            'render_callback' => __NAMESPACE__.'\\wr_render_area_map',
+            'attributes' => [
+                'eyebrow' => ['type' => 'string', 'default' => 'Find Us'],
+                'heading' => ['type' => 'string', 'default' => 'Meeting points & office hours.'],
+                'text' => ['type' => 'string', 'default' => ''],
+                'variant' => ['type' => 'string', 'default' => 'static'],
+                'imageKey' => ['type' => 'string', 'default' => 'downtown'],
+                'imageUrl' => ['type' => 'string', 'default' => ''],
+                'imageId' => ['type' => 'integer', 'default' => 0],
+                'imageAlt' => ['type' => 'string', 'default' => 'Downtown Gettysburg near Lincoln Square'],
+                'showPin' => ['type' => 'boolean', 'default' => true],
+                'pinX' => ['type' => 'number', 'default' => 50],
+                'pinY' => ['type' => 'number', 'default' => 50],
+                'locationMode' => ['type' => 'string', 'default' => 'coordinates'],
+                'latitude' => ['type' => 'number', 'default' => 39.83092],
+                'longitude' => ['type' => 'number', 'default' => -77.23114],
+                'zipcode' => ['type' => 'string', 'default' => '17325'],
+                'mapZoom' => ['type' => 'number', 'default' => 14],
+                'mapEmbedUrl' => ['type' => 'string', 'default' => ''],
+                'mapHeight' => ['type' => 'number', 'default' => 420],
+                'layout' => ['type' => 'string', 'default' => 'split'],
+                'iconTone' => ['type' => 'string', 'default' => 'gold'],
+                'cards' => ['type' => 'string', 'default' => "Ticket Office & Day Tour Meeting Point | 100 Sample Street, Gettysburg, PA 17325. Concept placeholder — not a live ticket office. Downtown public lots and metered parking sit near Lincoln Square. | pin\nEvening Lantern Walk Meeting Point | Sample downtown meet. Lincoln Square is tour geography, not a live business address. Look for your guide holding a lit lantern. | lantern\nOffice Hours | Mon–Sun, 8:00 AM – 6:00 PM (April–November). Thu–Sun, 9:00 AM – 4:00 PM (December–March). | clock"],
+            ],
+        ],
     ];
 
     foreach ($blocks as $name => $args) {
-        register_block_type($name, array_merge([
+        $slug = str_replace('walkridge/', '', $name);
+        $extra = $name === 'walkridge/home-hero' ? $heroShared : $shared;
+        $args['attributes'] = wr_merge_block_attributes($args['attributes'] ?? [], $extra);
+        $dir = get_template_directory().'/blocks/'.$slug;
+        $settings = array_merge([
             'api_version' => 3,
-        ], $args));
+        ], $args);
+        if (is_readable($dir.'/block.json')) {
+            register_block_type($dir, $settings);
+        } else {
+            register_block_type($name, $settings);
+        }
     }
 }
 
@@ -390,8 +435,7 @@ function wr_render_home_hero(array $attrs): string
     }
     $primary = esc_html((string) ($attrs['primaryLabel'] ?? '')) ?: esc_html(Identity::ctaLabel());
     $secondary = esc_html((string) ($attrs['secondaryLabel'] ?? '')) ?: esc_html__('See All Tours', 'walkridge');
-    $customUrl = (string) ($attrs['imageUrl'] ?? '');
-    $img = $customUrl !== '' ? esc_url($customUrl) : esc_url(Identity::image((string) ($attrs['imageKey'] ?? 'cannon')));
+    $img = wr_block_image_url($attrs, (string) ($attrs['imageKey'] ?? 'cannon'));
     $shop = (string) ($attrs['primaryUrl'] ?? '') !== '' ? esc_url((string) $attrs['primaryUrl']) : esc_url(Identity::shopUrl());
     $tours = (string) ($attrs['secondaryUrl'] ?? '') !== '' ? esc_url((string) $attrs['secondaryUrl']) : esc_url(home_url('/tours'));
     $stats = wr_parse_piped_items((string) ($attrs['stats'] ?? ''));
@@ -404,7 +448,7 @@ function wr_render_home_hero(array $attrs): string
 
     ob_start();
     ?>
-    <section class="hero" id="top">
+    <section class="<?php echo esc_attr(wr_hero_class($attrs)); ?>" id="top" style="<?php echo wr_overlay_style($attrs); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper ?>">
       <div class="hero-compass" aria-hidden="true">
         <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.1"/><path d="M20 4l3.4 16L20 36l-3.4-16z" fill="currentColor"/><path d="M4 20l16-3.4L36 20l-16 3.4z" fill="currentColor" opacity=".4"/><circle cx="20" cy="20" r="3.1" fill="currentColor"/></svg>
       </div>
@@ -467,7 +511,7 @@ function wr_render_page_intro(array $attrs): string
     }
     ob_start();
     ?>
-    <section class="page-intro">
+    <section class="<?php echo esc_attr(wr_band_section_class($attrs, wr_head_class($attrs, 'page-intro'))); ?>">
       <div class="wrap reveal">
         <?php if ($eyebrow !== '') { ?><span class="eyebrow"><?php echo $eyebrow; ?></span><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
         <?php if ($heading !== '') { ?><h1><?php echo $heading; ?></h1><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
@@ -481,7 +525,7 @@ function wr_render_page_intro(array $attrs): string
 /** @param array<string, mixed> $attrs */
 function wr_render_info_strip(array $attrs): string
 {
-    return view('partials.info-strip')->render();
+    return view('partials.info-strip', ['attrs' => $attrs])->render();
 }
 
 /** @param array<string, mixed> $attrs */
@@ -492,18 +536,14 @@ function wr_render_section_heading(array $attrs): string
     $text = wp_kses_post((string) ($attrs['text'] ?? ''));
     $anchor = sanitize_title((string) ($attrs['anchor'] ?? ''));
     $alt = ! empty($attrs['alt']);
-    $level = max(2, min(6, (int) ($attrs['headingLevel'] ?? 2)));
-    $textAlign = in_array($attrs['textAlign'] ?? 'center', ['left', 'center', 'right'], true)
-        ? (string) $attrs['textAlign']
-        : 'center';
-    $idAttr = $anchor !== '' ? ' id="'.esc_attr($anchor).'"' : '';
-    $sectionClass = $alt ? 'section section-alt' : 'section';
-    $headTag = 'h'.$level;
+    $idAttr = $anchor !== '' ? ' id="'.esc_attr($anchor).'"' : wr_section_id_attr($attrs);
+    $sectionClass = wr_band_section_class($attrs, $alt ? 'section section-alt' : 'section');
+    $headTag = wr_heading_tag($attrs, 'h2');
     ob_start();
     ?>
     <section class="<?php echo esc_attr($sectionClass); ?>"<?php echo $idAttr; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>>
       <div class="wrap">
-        <div class="section-head reveal section-head--<?php echo esc_attr($textAlign); ?>">
+        <div class="<?php echo esc_attr(wr_head_class($attrs)); ?>">
           <?php if ($eyebrow !== '') { ?><span class="eyebrow"><?php echo $eyebrow; ?></span><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
           <?php if ($heading !== '') { ?><<?php echo esc_attr($headTag); ?>><?php echo $heading; ?></<?php echo esc_attr($headTag); ?>><?php } // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
           <?php if ($text !== '') { ?><p><?php echo $text; ?></p><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
@@ -525,14 +565,15 @@ function wr_render_tour_grid(array $attrs): string
     $heading = esc_html((string) ($attrs['heading'] ?? ''));
     $text = esc_html((string) ($attrs['text'] ?? ''));
 
+    $headTag = wr_heading_tag($attrs);
     ob_start();
     ?>
-    <section class="section">
+    <section class="<?php echo esc_attr(wr_band_section_class($attrs)); ?>"<?php echo wr_section_id_attr($attrs, 'historical'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>>
       <div class="wrap">
         <?php if ($eyebrow || $heading || $text) { ?>
-        <div class="section-head reveal" id="historical">
+        <div class="<?php echo esc_attr(wr_head_class($attrs)); ?>" id="historical">
           <?php if ($eyebrow !== '') { ?><span class="eyebrow"><?php echo $eyebrow; ?></span><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
-          <?php if ($heading !== '') { ?><h2><?php echo $heading; ?></h2><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
+          <?php if ($heading !== '') { ?><<?php echo esc_attr($headTag); ?>><?php echo $heading; ?></<?php echo esc_attr($headTag); ?>><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
           <?php if ($text !== '') { ?><p><?php echo $text; ?></p><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
         </div>
         <?php } ?>
@@ -595,18 +636,21 @@ function wr_render_pathway_cards(array $attrs): string
 {
     $leftUrl = esc_url((string) (($attrs['leftUrl'] ?? '') !== '' ? $attrs['leftUrl'] : home_url('/tours#historical')));
     $rightUrl = esc_url((string) (($attrs['rightUrl'] ?? '') !== '' ? $attrs['rightUrl'] : home_url('/tours#after-dark')));
+    $leftImg = wr_block_image_url($attrs, 'cannon', 'leftImageUrl', 'leftImageId');
+    $rightImg = wr_block_image_url($attrs, 'downtown', 'rightImageUrl', 'rightImageId');
+    $headTag = wr_heading_tag($attrs);
     ob_start();
     ?>
-    <section class="section section-alt" id="pathways">
+    <section class="<?php echo esc_attr(wr_band_section_class($attrs, 'section section-alt')); ?>" id="pathways">
       <div class="wrap">
-        <div class="section-head reveal">
+        <div class="<?php echo esc_attr(wr_head_class($attrs)); ?>">
           <span class="eyebrow"><?php echo esc_html((string) ($attrs['eyebrow'] ?? '')); ?></span>
-          <h2><?php echo esc_html((string) ($attrs['heading'] ?? '')); ?></h2>
+          <<?php echo esc_attr($headTag); ?>><?php echo esc_html((string) ($attrs['heading'] ?? '')); ?></<?php echo esc_attr($headTag); ?>>
           <p><?php echo esc_html((string) ($attrs['text'] ?? '')); ?></p>
         </div>
         <div class="split-grid reveal">
           <a class="pathway" href="<?php echo $leftUrl; ?>"> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
-            <img src="<?php echo esc_url(Identity::image('cannon')); ?>" alt="">
+            <img src="<?php echo esc_url($leftImg); ?>" alt="">
             <div class="inner">
               <span class="eyebrow"><?php echo esc_html((string) ($attrs['leftEyebrow'] ?? '')); ?></span>
               <h3><?php echo esc_html((string) ($attrs['leftTitle'] ?? '')); ?></h3>
@@ -614,7 +658,7 @@ function wr_render_pathway_cards(array $attrs): string
             </div>
           </a>
           <a class="pathway lantern" href="<?php echo $rightUrl; ?>"> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
-            <img src="<?php echo esc_url(Identity::image('downtown')); ?>" alt="">
+            <img src="<?php echo esc_url($rightImg); ?>" alt="">
             <div class="inner">
               <span class="eyebrow"><?php echo esc_html((string) ($attrs['rightEyebrow'] ?? '')); ?></span>
               <h3><?php echo esc_html((string) ($attrs['rightTitle'] ?? '')); ?></h3>
@@ -638,24 +682,29 @@ function wr_render_about_split(array $attrs): string
     }
     $primaryUrl = esc_url((string) (($attrs['primaryUrl'] ?? '') !== '' ? $attrs['primaryUrl'] : home_url('/guides')));
     $secondaryUrl = esc_url((string) (($attrs['secondaryUrl'] ?? '') !== '' ? $attrs['secondaryUrl'] : home_url('/area')));
-    $customImageUrl = (string) ($attrs['imageUrl'] ?? '');
-    $imgSrc = $customImageUrl !== '' ? esc_url($customImageUrl) : esc_url(Identity::image((string) ($attrs['imageKey'] ?? 'wentz')));
+    $imgSrc = wr_block_image_url($attrs, (string) ($attrs['imageKey'] ?? 'wentz'));
     $flip = ! empty($attrs['flip']);
+    $headTag = wr_heading_tag($attrs);
+    $imgPos = sanitize_key((string) ($attrs['imagePosition'] ?? 'center'));
+    $mediaClass = 'about-media';
+    if (in_array($imgPos, ['top', 'bottom', 'left', 'right'], true)) {
+        $mediaClass .= ' wr-img-pos--'.$imgPos;
+    }
     ob_start();
     ?>
-    <section class="section">
+    <section class="<?php echo esc_attr(wr_band_section_class($attrs)); ?>">
       <div class="wrap">
         <div class="about-grid reveal<?php echo $flip ? ' is-flipped' : ''; ?>">
-          <div class="about-copy-col">
+          <div class="<?php echo esc_attr(wr_head_class($attrs, 'about-copy-col')); ?>">
             <span class="eyebrow"><?php echo esc_html((string) ($attrs['eyebrow'] ?? '')); ?></span>
-            <h2><?php echo esc_html((string) ($attrs['heading'] ?? '')); ?></h2>
+            <<?php echo esc_attr($headTag); ?>><?php echo esc_html((string) ($attrs['heading'] ?? '')); ?></<?php echo esc_attr($headTag); ?>>
             <div class="about-copy"><?php echo $text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?></div>
             <div class="about-ctas">
               <a href="<?php echo $primaryUrl; ?>" class="btn btn-outline-dark btn-sm"><?php echo esc_html((string) ($attrs['primaryLabel'] ?? '')); ?></a> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
               <a href="<?php echo $secondaryUrl; ?>" class="btn btn-ghost btn-sm"><?php echo esc_html((string) ($attrs['secondaryLabel'] ?? '')); ?></a> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
             </div>
           </div>
-          <figure class="about-media">
+          <figure class="<?php echo esc_attr($mediaClass); ?>">
             <img src="<?php echo $imgSrc; ?>" alt=""> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
             <figcaption><?php echo esc_html((string) ($attrs['caption'] ?? '')); ?></figcaption>
           </figure>
@@ -673,6 +722,7 @@ function wr_render_book_band(array $attrs): string
         'heading' => (string) ($attrs['heading'] ?? ''),
         'text' => (string) ($attrs['text'] ?? ''),
         'buttonLabel' => (string) ($attrs['buttonLabel'] ?? ''),
+        'attrs' => $attrs,
     ])->render();
 }
 
@@ -684,13 +734,14 @@ function wr_render_cta_band(array $attrs): string
     $eyebrow = esc_html((string) ($attrs['eyebrow'] ?? ''));
     $label = esc_html((string) (($attrs['buttonLabel'] ?? '') !== '' ? $attrs['buttonLabel'] : Identity::ctaLabel()));
     $url = esc_url((string) (($attrs['buttonUrl'] ?? '') !== '' ? $attrs['buttonUrl'] : Identity::shopUrl()));
+    $headTag = wr_heading_tag($attrs);
     ob_start();
     ?>
-    <section class="section">
+    <section class="<?php echo esc_attr(wr_band_section_class($attrs)); ?>">
       <div class="wrap">
-        <div class="section-head reveal">
+        <div class="<?php echo esc_attr(wr_head_class($attrs)); ?>">
           <?php if ($eyebrow !== '') { ?><span class="eyebrow"><?php echo $eyebrow; ?></span><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
-          <?php if ($heading !== '') { ?><h2><?php echo $heading; ?></h2><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
+          <?php if ($heading !== '') { ?><<?php echo esc_attr($headTag); ?>><?php echo $heading; ?></<?php echo esc_attr($headTag); ?>><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
           <?php if ($text !== '') { ?><p><?php echo $text; ?></p><?php } ?> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
           <p class="cta-band__action"><a class="btn btn-primary" href="<?php echo $url; ?>"><?php echo $label; ?></a></p> // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- pre-escaped on assignment
         </div>
@@ -735,15 +786,16 @@ function wr_render_contact_desk(array $attrs): string
         $note = sanitize_text_field(wp_unslash((string) $_GET['wr_msg']));
     }
 
+    $headTag = wr_heading_tag($attrs);
     ob_start();
     ?>
-    <section class="section">
+    <section class="<?php echo esc_attr(wr_band_section_class($attrs)); ?>">
       <div class="wrap">
         <div class="contact-grid reveal">
           <?php if ($showNap) { ?>
-          <div>
+          <div class="<?php echo esc_attr(wr_head_class($attrs, '')); ?>">
             <?php if ($eyebrow !== '') { ?><span class="eyebrow"><?php echo $eyebrow; ?></span><?php } ?>
-            <?php if ($heading !== '') { ?><h2 class="contact-section-heading"><?php echo $heading; ?></h2><?php } ?>
+            <?php if ($heading !== '') { ?><<?php echo esc_attr($headTag); ?> class="contact-section-heading"><?php echo $heading; ?></<?php echo esc_attr($headTag); ?>><?php } ?>
             <div class="meet-card">
               <p>
                 <a href="<?php echo esc_url(Identity::phoneHref()); ?>" class="nap-block nap-block--strong"><?php echo esc_html(Identity::phone()); ?></a><br>
@@ -800,13 +852,14 @@ function wr_render_faq_list(array $attrs): string
     if ($rows === []) {
         return '';
     }
+    $headTag = wr_heading_tag($attrs);
     ob_start();
     ?>
-    <section class="section section-alt">
+    <section class="<?php echo esc_attr(wr_band_section_class($attrs, 'section section-alt')); ?>">
       <div class="wrap">
-        <div class="section-head reveal">
+        <div class="<?php echo esc_attr(wr_head_class($attrs)); ?>">
           <?php if (($attrs['eyebrow'] ?? '') !== '') { ?><span class="eyebrow"><?php echo esc_html((string) $attrs['eyebrow']); ?></span><?php } ?>
-          <?php if (($attrs['heading'] ?? '') !== '') { ?><h2><?php echo esc_html((string) $attrs['heading']); ?></h2><?php } ?>
+          <?php if (($attrs['heading'] ?? '') !== '') { ?><<?php echo esc_attr($headTag); ?>><?php echo esc_html((string) $attrs['heading']); ?></<?php echo esc_attr($headTag); ?>><?php } ?>
         </div>
         <dl class="wr-faq reveal">
           <?php foreach ($rows as $row) { ?>
@@ -828,13 +881,14 @@ function wr_render_guide_roster(array $attrs): string
     if ($rows === []) {
         return '';
     }
+    $headTag = wr_heading_tag($attrs);
     ob_start();
     ?>
-    <section class="section">
+    <section class="<?php echo esc_attr(wr_band_section_class($attrs)); ?>">
       <div class="wrap">
-        <div class="section-head reveal">
+        <div class="<?php echo esc_attr(wr_head_class($attrs)); ?>">
           <?php if (($attrs['eyebrow'] ?? '') !== '') { ?><span class="eyebrow"><?php echo esc_html((string) $attrs['eyebrow']); ?></span><?php } ?>
-          <?php if (($attrs['heading'] ?? '') !== '') { ?><h2><?php echo esc_html((string) $attrs['heading']); ?></h2><?php } ?>
+          <?php if (($attrs['heading'] ?? '') !== '') { ?><<?php echo esc_attr($headTag); ?>><?php echo esc_html((string) $attrs['heading']); ?></<?php echo esc_attr($headTag); ?>><?php } ?>
         </div>
         <div class="wr-roster reveal">
           <?php foreach ($rows as $row) { ?>
@@ -860,13 +914,14 @@ function wr_render_area_facts(array $attrs): string
         __('Meeting point', 'walkridge') => (string) ($attrs['meeting'] ?? ''),
         __('Directions', 'walkridge') => (string) ($attrs['directions'] ?? ''),
     ];
+    $headTag = wr_heading_tag($attrs);
     ob_start();
     ?>
-    <section class="section">
+    <section class="<?php echo esc_attr(wr_band_section_class($attrs)); ?>">
       <div class="wrap">
-        <div class="section-head reveal">
+        <div class="<?php echo esc_attr(wr_head_class($attrs)); ?>">
           <?php if (($attrs['eyebrow'] ?? '') !== '') { ?><span class="eyebrow"><?php echo esc_html((string) $attrs['eyebrow']); ?></span><?php } ?>
-          <?php if (($attrs['heading'] ?? '') !== '') { ?><h2><?php echo esc_html((string) $attrs['heading']); ?></h2><?php } ?>
+          <?php if (($attrs['heading'] ?? '') !== '') { ?><<?php echo esc_attr($headTag); ?>><?php echo esc_html((string) $attrs['heading']); ?></<?php echo esc_attr($headTag); ?>><?php } ?>
         </div>
         <div class="wr-facts reveal">
           <?php foreach ($facts as $label => $text) {
@@ -905,7 +960,7 @@ function wr_render_custom_block(array $attrs): string
     $def = $defs[$id];
     $values = is_array($attrs['values'] ?? null) ? $attrs['values'] : [];
     ob_start();
-    echo '<section class="section"><div class="wrap reveal">';
+    echo '<section class="'.esc_attr(wr_band_section_class($attrs, wr_head_class($attrs, 'section'))).'"><div class="wrap reveal">';
     echo '<span class="eyebrow">'.esc_html((string) ($def['title'] ?? $id)).'</span>';
     foreach ((array) ($def['fields'] ?? []) as $field) {
         $name = sanitize_key((string) ($field['name'] ?? ''));

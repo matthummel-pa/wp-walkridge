@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/timeline",
+  "title": "Battle Timeline",
+  "category": "walkridge",
+  "icon": "backup",
+  "description": "Three-day battle timeline. One line per day: Day | Place | Note.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "timeline",
+    "history"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}

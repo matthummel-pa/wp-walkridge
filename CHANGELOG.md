@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.0 — 2026-09-19
+
+- Gutenberg blocks packaged in theme `blocks/{slug}/` with `block.json` and a Walkridge inserter collection
+- New `walkridge/area-map` block (Hallowed Ground location grid: static pin, embed, or Field Map plugin)
+- Area Map location can be set by coordinates or ZIP code; map icons and layout follow Walkridge gold / lantern / parchment / brick tokens
+- SOP for every block in `docs/blocks/` with screenshots
+- Area page seed uses the area map block
+
 ## 1.3.1 — 2026-09-18
 
 - Live site is [walkridge.matthummel.com](https://walkridge.matthummel.com/)

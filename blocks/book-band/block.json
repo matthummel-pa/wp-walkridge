@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/book-band",
+  "title": "Book Band",
+  "category": "walkridge",
+  "icon": "cart",
+  "description": "Page-level booking call-to-action with trust marks.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "book",
+    "cta",
+    "checkout"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}

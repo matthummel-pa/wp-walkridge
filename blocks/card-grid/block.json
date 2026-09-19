@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/card-grid",
+  "title": "Card Grid",
+  "category": "walkridge",
+  "icon": "screenoptions",
+  "description": "Expect or feature cards. Pipe-separated rows.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "cards",
+    "grid"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}

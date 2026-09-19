@@ -19,7 +19,8 @@ All marketing pages render `the_content()`. Seed from **Appearance → Theme Set
 | Book Band | `walkridge/book-band` | Home, Tours, Guides, Contact |
 | Copy Section | `walkridge/copy-section` | Area narrative |
 | Refund Policy | `walkridge/refund-policy` | Refund page — dates, windows, contact |
-| Area Facts | `walkridge/area-facts` | Area |
+| Area Map | `walkridge/area-map` | Area — photo pin, embed, or Field Map |
+| Area Facts | `walkridge/area-facts` | Area (text-only facts) |
 | Town Grid | `walkridge/town-grid` | Area towns |
 | CTA Band | `walkridge/cta-band` | Area |
 | Contact Desk | `walkridge/contact-desk` | Contact |
@@ -31,7 +32,7 @@ All marketing pages render `the_content()`. Seed from **Appearance → Theme Set
 - **Home** — hero (paths, stats, marquee), info strip, about, pathways, three-day timeline, featured tours, what to expect, groups/gifts/ADA, book band, reviews, field notes
 - **Tours** — intro, info strip, full tour grid + compare, expect cards, book band
 - **Guides** — intro, info strip, roster, about split, reviews, book band
-- **Area** — intro, info strip, battlefield copy, ridge cards, parking/meeting/directions, nearby towns, CTA
+- **Area** — intro, info strip, battlefield copy, ridge cards, area map (meeting cards + pin), nearby towns, CTA
 - **Contact** — intro, info strip, gifts/groups, contact desk, full FAQ, book band
 - **Refund Policy** — intro + Refund Policy block (windows and contact in the block sidebar)
 

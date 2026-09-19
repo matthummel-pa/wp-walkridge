@@ -4,13 +4,18 @@
  *
  * Variables in scope (set by WRFM_Plugin::render_shortcode):
  *   $atts['height']  CSS height for the map stage (default: 620px)
- *   $atts['class']   Extra CSS classes on the wrapper
+ *   $atts['lat']     Optional map center latitude (from Area Map block)
+ *   $atts['lng']     Optional map center longitude
+ *   $atts['zoom']    Optional OpenLayers zoom
  */
 defined('ABSPATH') || exit;
 $height = esc_attr($atts['height']);
 $extra_cls = esc_attr($atts['class']);
+$lat = isset($atts['lat']) ? esc_attr((string) $atts['lat']) : '';
+$lng = isset($atts['lng']) ? esc_attr((string) $atts['lng']) : '';
+$zoom = isset($atts['zoom']) ? esc_attr((string) $atts['zoom']) : '';
 ?>
-<div class="hgfm-wrapper <?php echo $extra_cls; ?>">
+<div class="hgfm-wrapper <?php echo $extra_cls; ?>"<?php echo $lat !== '' ? ' data-map-lat="'.$lat.'"' : ''; ?><?php echo $lng !== '' ? ' data-map-lng="'.$lng.'"' : ''; ?><?php echo $zoom !== '' ? ' data-map-zoom="'.$zoom.'"' : ''; ?>>
 
   <section class="section" id="the-ground">
     <div class="wrap">

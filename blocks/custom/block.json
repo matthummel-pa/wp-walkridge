@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/custom",
+  "title": "Custom (Generator)",
+  "category": "walkridge",
+  "icon": "admin-generic",
+  "description": "Renders a generated custom-block definition from Tools \u2192 Walkridge Blocks.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "custom",
+    "generator"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}
