@@ -1,6 +1,6 @@
 # Walkridge — Developer reference
 
-Local Sage 11 workflow. Same shape as Acreline: one command to bootstrap, one command to serve. Cloud bootstrap notes: [`AGENTS.md`](AGENTS.md). Product copy: [`README.md`](README.md). Support: [`SUPPORT.md`](SUPPORT.md).
+Local Sage 11 workflow. Same shape as Acreline: one command to bootstrap, one command to serve. Live site: [walkridge.matthummel.com](https://walkridge.matthummel.com/). Cloud bootstrap notes: [`AGENTS.md`](AGENTS.md). Product copy: [`README.md`](README.md). Support: [`SUPPORT.md`](SUPPORT.md).
 
 ## Stack
 

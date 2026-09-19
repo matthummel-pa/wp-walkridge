@@ -2,6 +2,7 @@
 
 ## 1.3.1 — 2026-09-18
 
+- Live site is [walkridge.matthummel.com](https://walkridge.matthummel.com/)
 - Local Sage setup matches Acreline: `bin/setup-wp.sh` then `wp server` on `~/wp:8080` (SQLite drop-in before install)
 - Vite 8 + laravel-vite-plugin 3 + Acorn 6; Gutenberg editor packages pinned like Acreline
 - Cloud/agent notes in `AGENTS.md`; developer loop in `DEVELOPMENT.md`

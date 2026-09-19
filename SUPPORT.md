@@ -6,6 +6,7 @@ Technical reference for buyers and developers. Product pitch lives in [README.md
 
 | Need | Go here |
 |---|---|
+| Live site | [walkridge.matthummel.com](https://walkridge.matthummel.com/) |
 | Install a store zip | README → Quick start — buyer |
 | Change brand, phone, hours, logo | **Appearance → Theme Settings** |
 | Live-preview the same settings | **Appearance → Customize → Identity** |

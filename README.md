@@ -21,7 +21,7 @@ WalkRidge is a custom WordPress theme for tour operators and historical sites. I
 
 | | |
 |---|---|
-| **Live concept** | [matthummel.com/projects/hallowed-ground/](https://matthummel.com/projects/hallowed-ground/) |
+| **Live site** | [walkridge.matthummel.com](https://walkridge.matthummel.com/) |
 | **Author** | [Matt Hummel](https://matthummel.com/) |
 | **Install folder** | **`walkridge`** (keep this exact name) |
 | **Support** | [SUPPORT.md](SUPPORT.md) · [GitHub Issues](https://github.com/matthummel-pa/wp-walkridge/issues) |

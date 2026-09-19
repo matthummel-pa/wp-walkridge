@@ -1,6 +1,6 @@
 # Walkridge — WordPress Theme
 
-A [Roots Sage 11](https://roots.io/sage/) theme (Blade + Tailwind CSS v4 + Vite 8, powered by Acorn) for **licensed-guide battlefield tours**. GitHub repo: [`matthummel-pa/wp-walkridge`](https://github.com/matthummel-pa/wp-walkridge).
+A [Roots Sage 11](https://roots.io/sage/) theme (Blade + Tailwind CSS v4 + Vite 8, powered by Acorn) for **licensed-guide battlefield tours**. Live site: [walkridge.matthummel.com](https://walkridge.matthummel.com/). GitHub repo: [`matthummel-pa/wp-walkridge`](https://github.com/matthummel-pa/wp-walkridge).
 
 ## Cursor Cloud
 
