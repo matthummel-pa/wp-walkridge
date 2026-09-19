@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.1 — 2026-09-19
+
+WooCommerce tour catalog seed for new installs.
+
+- `Tours::ensureProducts()` creates five published simple products (USD demo prices) in a Tours category when WooCommerce is active
+- Tours Gutenberg layout adds a `[products]` shop grid so bookings go to product permalinks / add-to-cart, not static cards only
+- Fallback tour cards show concept prices when Woo is off
+
 ## 1.6.0 — 2026-09-19
 
 Light default, WCAG 2.2 contrast, denser demo pages, Woo empty states.

@@ -3,7 +3,7 @@ Contributors: matthummel
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 8.3
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, translation-ready, one-column, threaded-comments
@@ -114,6 +114,10 @@ Original compass mark (inline SVG in the header/footer; GPLv2 with the theme):
 See docs/marketplace/branding.html (Documentation/branding.html in the seller pack) and BRAND.md.
 
 == Changelog ==
+
+= 1.6.1 =
+* Seed five WooCommerce tour products (Tours category) when WooCommerce is active
+* Tours layout includes a WooCommerce product shortcode alongside the tour-grid
 
 = 1.6.0 =
 * Light parchment is the default colour theme; dark slate remains a header toggle and Theme Settings option

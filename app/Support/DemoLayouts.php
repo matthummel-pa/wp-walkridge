@@ -105,7 +105,21 @@ class DemoLayouts
         return implode("\n\n", [
             self::comment('walkridge/page-intro', self::introAttrs($intro, $defaults)),
             '<!-- wp:walkridge/info-strip /-->',
-            '<!-- wp:walkridge/tour-grid {"eyebrow":"Choose Your Tour","heading":"Five ways to walk the field.","text":"Every tour is led by an Association-licensed guide and capped at a small group size. Prices are per person; children are ages 6–12 and seniors are 65+."} /-->',
+            '<!-- wp:walkridge/tour-grid {"eyebrow":"Choose Your Tour","heading":"Five ways to walk the field.","text":"Every tour is a catalog product led by an Association-licensed guide and capped at a small group size. Prices are per person in USD; children are ages 6–12 and seniors are 65+. Book This Tour opens the product page."} /-->',
+            '<!-- wp:heading {"textAlign":"center"} -->
+<h2 class="wp-block-heading has-text-align-center">Shop the tour catalog</h2>
+<!-- /wp:heading -->',
+            '<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center">Each offering is a published WooCommerce product. Add to cart from this grid or open a product page to check out. Sample desk: (717) 555-0100 · tours@walkridge.test.</p>
+<!-- /wp:paragraph -->',
+            '<!-- wp:shortcode -->
+[products category="tours" columns="3" limit="12" orderby="menu_order" order="ASC"]
+<!-- /wp:shortcode -->',
+            '<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/shop/">View all products</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->',
             self::comment('walkridge/timeline', [
                 'eyebrow' => 'July 1–3, 1863',
                 'heading' => 'Match a tour to the ground.',

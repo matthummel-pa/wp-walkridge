@@ -9,6 +9,7 @@ namespace App;
 
 use App\Support\BlockMigration;
 use App\Support\PageFields;
+use App\Support\Tours;
 
 /**
  * Ensure concept pages + nav menus exist (idempotent).
@@ -79,6 +80,8 @@ function wr_ensure_concept_pages_and_menus(): void
         }
         BlockMigration::deleteLegacyPageMeta($id);
     }
+
+    Tours::ensureProducts();
 
     wr_ensure_nav_menu(
         'Walkridge Primary',

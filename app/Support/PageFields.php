@@ -30,7 +30,7 @@ class PageFields
             'tours' => [
                 'eyebrow' => __('Tours & Tickets', 'walkridge'),
                 'heading' => __('Gettysburg battlefield tours & tickets', 'walkridge'),
-                'intro' => __('Choose from five licensed-guide experiences across Gettysburg National Military Park — a walking tour of Cemetery Ridge, a hike to Little Round Top and Devil’s Den, an ADA-accessible bus loop, an evening lantern walk downtown, and a private sunrise tour.', 'walkridge'),
+                'intro' => __('Choose from five licensed-guide experiences — each one is a published WooCommerce product you can add to cart. Walking, hike, ADA bus, evening lantern, and private sunrise. Sample checkout only.', 'walkridge'),
             ],
             'guides' => [
                 'eyebrow' => __('Our Guides', 'walkridge'),
