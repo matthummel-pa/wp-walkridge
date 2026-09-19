@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.5.0 — 2026-09-19
+
+Cumulative production zip of all recent Walkridge work:
+
+- Restored Hallowed Ground marketing copy as Gutenberg layouts (home, tours, guides, area, contact, refund policy)
+- Walkridge block collection in `blocks/{slug}/` with inspector settings (size, typography, color, images)
+- Area Map block: coordinates or ZIP, OSM embed, theme-colored icons, split/stack layouts
+- Block SOP docs and screenshots in `docs/blocks/`
+- Escape, sanitize, and authorize theme/block output; phpcs:ignore comments no longer render as HTML
+- Appearance → Themes and Update Theme install `walkridge.zip` from the GitHub Release
+- Sage local loop: `bin/setup-wp.sh` then `wp server` on `~/wp:8080`
+- Live site [walkridge.matthummel.com](https://walkridge.matthummel.com/)
+
 ## 1.4.1 — 2026-09-19
 
 - Escape, sanitize, and authorize theme and block output (WordPress.Security)

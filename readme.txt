@@ -3,7 +3,7 @@ Contributors: matthummel
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 8.3
-Stable tag: 1.4.1
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, translation-ready, one-column, threaded-comments
@@ -114,6 +114,15 @@ Original compass mark (inline SVG in the header/footer; GPLv2 with the theme):
 See docs/marketplace/branding.html (Documentation/branding.html in the seller pack) and BRAND.md.
 
 == Changelog ==
+
+= 1.5.0 =
+* Cumulative production release of restored marketing pages, Walkridge Gutenberg blocks, Area Map, output escaping, and GitHub Release updates
+* Home, Tours, Guides, Area, Contact, and Refund Policy layouts as Gutenberg blocks (not Blade/page meta)
+* Walkridge block collection in theme blocks/ with inspector options (size, type, color, images)
+* Area Map: coordinates or ZIP, OSM/Nominatim, theme icon colors and layouts
+* Security: escaped/sanitized/authorized theme output; phpcs:ignore comments no longer print as HTML
+* Appearance → Themes / Update Theme install compiled walkridge.zip from the GitHub Release
+* Live site: https://walkridge.matthummel.com/
 
 = 1.4.1 =
 * Security: escape, sanitize, and authorize block and Blade output
