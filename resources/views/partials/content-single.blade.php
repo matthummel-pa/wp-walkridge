@@ -1,7 +1,7 @@
 <article @php(post_class('h-entry'))>
   <header>
     <h1 class="p-name">
-      {!! $title !!}
+      {!! wp_kses_post($title) !!}
     </h1>
 
     @include('partials.entry-meta')
@@ -14,7 +14,7 @@
   @if ($pagination())
     <footer>
       <nav class="page-nav" aria-label="{{ __('Post navigation', 'walkridge') }}">
-        {!! $pagination !!}
+        {!! wp_kses_post($pagination) !!}
       </nav>
     </footer>
   @endif

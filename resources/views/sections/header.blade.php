@@ -58,8 +58,8 @@
       @endif
     </nav>
     <div class="header-actions">
-      <a href="{{ Identity::phoneHref() }}" class="btn btn-ghost btn-sm header-phone">{{ Identity::phone() }}</a>
-      <a href="{{ $shopUrl }}" class="btn btn-primary btn-sm">{{ Identity::ctaLabel() }}</a>
+      <a href="{{ esc_url(Identity::phoneHref()) }}" class="btn btn-ghost btn-sm header-phone">{{ Identity::phone() }}</a>
+      <a href="{{ esc_url($shopUrl) }}" class="btn btn-primary btn-sm">{{ Identity::ctaLabel() }}</a>
       <button type="button" class="theme-toggle" id="themeToggle"
               aria-label="{{ __('Toggle colour theme', 'walkridge') }}"
               data-label-light="{{ __('Switch to dark mode', 'walkridge') }}"
@@ -88,9 +88,9 @@
     <li><a href="{{ home_url('/guides') }}" @if($isGuides) class="is-active" aria-current="page" @endif>{{ __('Our Guides', 'walkridge') }}</a></li>
     <li><a href="{{ home_url('/area') }}" @if($isArea) class="is-active" aria-current="page" @endif>{{ __('The Area', 'walkridge') }}</a></li>
     <li><a href="{{ home_url('/contact') }}" @if($isContact) class="is-active" aria-current="page" @endif>{{ __('Contact', 'walkridge') }}</a></li>
-    <li><a href="{{ $shopUrl }}">{{ __('Book & Pay', 'walkridge') }}</a></li>
+    <li><a href="{{ esc_url($shopUrl) }}">{{ __('Book & Pay', 'walkridge') }}</a></li>
   </ul>
   <?php /* translators: %s: office phone number */ ?>
-  <a href="{{ Identity::phoneHref() }}" class="btn btn-outline btn-block">{{ sprintf(__('Call %s', 'walkridge'), Identity::phone()) }}</a>
-  <a href="{{ $shopUrl }}" class="btn btn-primary btn-block">{{ Identity::ctaLabel() }}</a>
+  <a href="{{ esc_url(Identity::phoneHref()) }}" class="btn btn-outline btn-block">{{ sprintf(__('Call %s', 'walkridge'), Identity::phone()) }}</a>
+  <a href="{{ esc_url($shopUrl) }}" class="btn btn-primary btn-block">{{ Identity::ctaLabel() }}</a>
 </nav>

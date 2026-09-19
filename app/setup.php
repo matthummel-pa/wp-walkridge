@@ -81,6 +81,7 @@ add_action('admin_head', function () {
             }
         }
     }
+    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Vite emits escaped script/link tags
     echo Vite::withEntryPoints([
         'resources/js/editor.js',
     ])->toHtml();

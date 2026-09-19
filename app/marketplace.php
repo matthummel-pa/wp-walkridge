@@ -30,9 +30,17 @@ add_action('admin_menu', function (): void {
         __('Walkridge Setup', 'walkridge'),
         __('Theme Setup', 'walkridge'),
         'edit_theme_options',
-        'hg-setup',
+        'wr-setup',
         __NAMESPACE__.'\\wr_render_setup_page'
     );
+});
+
+add_action('admin_init', function (): void {
+    $page = isset($_GET['page']) ? sanitize_key(wp_unslash((string) $_GET['page'])) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only redirect of a legacy menu slug
+    if (($GLOBALS['pagenow'] ?? '') === 'themes.php' && $page === 'hg-setup') {
+        wp_safe_redirect(admin_url('themes.php?page=wr-setup'));
+        exit;
+    }
 });
 
 function wr_render_setup_page(): void

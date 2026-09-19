@@ -29,23 +29,24 @@ function wr_block_generator_page(): void
     $saved = false;
     $errors = [];
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['wr_block_gen_nonce'])) {
+    $method = isset($_SERVER['REQUEST_METHOD']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_METHOD'])) : '';
+    if ($method === 'POST' && isset($_POST['wr_block_gen_nonce'])) {
         if (! wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['wr_block_gen_nonce'])), 'wr_block_gen')) {
             wp_die(esc_html__('Security check failed.', 'walkridge'));
         }
 
-        $action = sanitize_key((string) ($_POST['wr_action'] ?? ''));
+        $action = sanitize_key(wp_unslash((string) ($_POST['wr_action'] ?? '')));
 
         if ($action === 'delete' && isset($_POST['wr_delete_id'])) {
-            $delId = sanitize_key((string) $_POST['wr_delete_id']);
+            $delId = sanitize_key(wp_unslash((string) $_POST['wr_delete_id']));
             unset($defs[$delId]);
             update_option('wr_custom_blocks', $defs, false);
             $saved = true;
         } elseif ($action === 'save') {
-            $id = sanitize_key((string) ($_POST['wr_block_id'] ?? ''));
-            $title = sanitize_text_field((string) ($_POST['wr_block_title'] ?? ''));
-            $desc = sanitize_text_field((string) ($_POST['wr_block_description'] ?? ''));
-            $icon = sanitize_key((string) ($_POST['wr_block_icon'] ?? 'star-filled'));
+            $id = sanitize_key(wp_unslash((string) ($_POST['wr_block_id'] ?? '')));
+            $title = sanitize_text_field(wp_unslash((string) ($_POST['wr_block_title'] ?? '')));
+            $desc = sanitize_text_field(wp_unslash((string) ($_POST['wr_block_description'] ?? '')));
+            $icon = sanitize_key(wp_unslash((string) ($_POST['wr_block_icon'] ?? 'star-filled')));
 
             if ($id === '') {
                 $errors[] = __('Block ID is required.', 'walkridge');
@@ -58,10 +59,10 @@ function wr_block_generator_page(): void
             }
 
             if ($errors === []) {
-                $fieldNames = array_map('sanitize_key', (array) ($_POST['wr_field_name'] ?? []));
-                $fieldLabels = array_map('sanitize_text_field', (array) ($_POST['wr_field_label'] ?? []));
-                $fieldTypes = (array) ($_POST['wr_field_type'] ?? []);
-                $fieldDefaults = array_map('sanitize_text_field', (array) ($_POST['wr_field_default'] ?? []));
+                $fieldNames = array_map('sanitize_key', wp_unslash((array) ($_POST['wr_field_name'] ?? [])));
+                $fieldLabels = array_map('sanitize_text_field', wp_unslash((array) ($_POST['wr_field_label'] ?? [])));
+                $fieldTypes = array_map('sanitize_key', wp_unslash((array) ($_POST['wr_field_type'] ?? [])));
+                $fieldDefaults = array_map('sanitize_text_field', wp_unslash((array) ($_POST['wr_field_default'] ?? [])));
 
                 $fields = [];
                 foreach ($fieldNames as $i => $fname) {

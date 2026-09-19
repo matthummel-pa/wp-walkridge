@@ -25,7 +25,7 @@
     <div class="tour-price-row">
       <span class="tour-price price">
         @if(!empty($tour['price_html']))
-          {!! $tour['price_html'] !!}<small> {{ __(' /adult', 'walkridge') }}</small>
+          {!! wp_kses_post($tour['price_html']) !!}<small> {{ __(' /adult', 'walkridge') }}</small>
         @elseif(!empty($tour['price']))
           ${{ number_format((float) $tour['price'], 0) }}<small> {{ __(' /adult', 'walkridge') }}</small>
         @endif

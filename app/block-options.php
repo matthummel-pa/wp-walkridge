@@ -143,7 +143,10 @@ function wr_band_section_class(array $attrs, string $base = 'section'): string
 
     $extra = trim((string) ($attrs['className'] ?? ''));
     if ($extra !== '') {
-        $cls .= ' '.$extra;
+        $safeExtra = implode(' ', array_filter(array_map('sanitize_html_class', preg_split('/\s+/', $extra) ?: [])));
+        if ($safeExtra !== '') {
+            $cls .= ' '.$safeExtra;
+        }
     }
 
     return trim($cls);
@@ -228,7 +231,7 @@ function wr_block_image_url(array $attrs, string $fallbackKey = '', string $urlK
     if ($id > 0) {
         $fromId = wp_get_attachment_image_url($id, 'full');
         if (is_string($fromId) && $fromId !== '') {
-            return $fromId;
+            return esc_url($fromId);
         }
     }
 

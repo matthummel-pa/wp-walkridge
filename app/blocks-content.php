@@ -63,7 +63,7 @@ function wr_render_card_grid(array $attrs): string
             echo '<h3>'.esc_html($row[0]).'</h3>';
             echo '<p>'.esc_html($row[1] ?? '').'</p>';
             if ($url !== '') {
-                echo '<a href="'.$url.'">'.esc_html__('Learn more', 'walkridge').'</a>';
+                echo '<a href="'.esc_url($url).'">'.esc_html__('Learn more', 'walkridge').'</a>';
             }
             echo '</article>';
         }
@@ -125,7 +125,7 @@ function wr_render_journal_cards(array $attrs): string
             $url = esc_url(home_url('/'));
         }
         $imageKey = ! empty($row[4]) ? (string) $row[4] : 'cannon';
-        echo '<a class="journal-card" href="'.$url.'">';
+        echo '<a class="journal-card" href="'.esc_url($url).'">';
         echo '<img src="'.esc_url(Identity::image($imageKey)).'" alt="">';
         echo '<div class="pad">';
         if (! empty($row[0])) {
@@ -177,7 +177,7 @@ function wr_render_copy_section(array $attrs): string
     ob_start();
     wr_block_section_open($attrs, $class);
     if ($text !== '') {
-        echo '<div class="prose reveal">'.$text.'</div>';
+        echo '<div class="prose reveal">'.wp_kses_post($text).'</div>';
     }
     wr_block_section_close();
 
@@ -271,7 +271,7 @@ function wr_block_section_open(array $attrs, string $sectionClass): void
         echo '<span class="eyebrow">'.esc_html($eyebrow).'</span>';
     }
     if ($heading !== '') {
-        echo '<'.$headTag.'>'.esc_html($heading).'</'.$headTag.'>';
+        echo '<'.esc_html($headTag).'>'.esc_html($heading).'</'.esc_html($headTag).'>';
     }
     if ($text !== '') {
         echo '<p>'.esc_html($text).'</p>';
@@ -339,13 +339,13 @@ function wr_render_area_map(array $attrs): string
             esc_attr((string) $point['lng']),
             esc_attr((string) $zoom)
         );
-        echo do_shortcode($shortcode);
+        echo wp_kses_post(do_shortcode($shortcode));
     } elseif ($variant === 'embed') {
         $embed = wr_area_map_embed_url($attrs, $point, $zoom);
         echo '<div class="wr-area-map__frame">';
         echo '<iframe class="wr-area-map__embed" src="'.esc_url($embed).'" title="'.esc_attr($alt).'" height="'.esc_attr((string) $height).'" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
         echo '</div>';
-        echo wr_area_map_open_link($point);
+        echo wp_kses_post(wr_area_map_open_link($point));
     } else {
         $img = wr_block_image_url($attrs, (string) ($attrs['imageKey'] ?? 'downtown'));
         $pinX = max(0, min(100, (int) ($attrs['pinX'] ?? 50)));
@@ -358,7 +358,7 @@ function wr_render_area_map(array $attrs): string
             echo '<svg class="pin" width="40" height="52" viewBox="0 0 40 52" fill="none" aria-hidden="true" style="left:'.esc_attr((string) $pinX).'%;top:'.esc_attr((string) $pinY).'%"><path d="M20 0C9 0 0 9 0 20c0 15 20 32 20 32s20-17 20-32C40 9 31 0 20 0z" fill="currentColor"/><circle class="pin__core" cx="20" cy="19" r="7"/></svg>';
         }
         echo '</figure>';
-        echo wr_area_map_open_link($point);
+        echo wp_kses_post(wr_area_map_open_link($point));
     }
     echo '</div>';
 
@@ -367,7 +367,7 @@ function wr_render_area_map(array $attrs): string
         foreach ($cards as $row) {
             $icon = sanitize_key((string) ($row[2] ?? 'pin'));
             echo '<div class="meet-card">';
-            echo '<h3>'.wr_area_map_icon($icon).esc_html($row[0]).'</h3>';
+            echo '<h3>'.wp_kses(wr_area_map_icon($icon), wr_area_map_icon_allowed_html()).esc_html($row[0]).'</h3>';
             if (! empty($row[1])) {
                 echo '<p>'.esc_html($row[1]).'</p>';
             }
@@ -428,7 +428,7 @@ function wr_area_map_point(array $attrs): array
  */
 function wr_area_map_embed_url(array $attrs, array $point, int $zoom): string
 {
-    $custom = trim((string) ($attrs['mapEmbedUrl'] ?? ''));
+    $custom = esc_url_raw(trim((string) ($attrs['mapEmbedUrl'] ?? '')));
     if ($custom !== '') {
         return $custom;
     }
@@ -523,6 +523,29 @@ function wr_geocode_zipcode(string $zip): ?array
     set_transient($cacheKey, $point, WEEK_IN_SECONDS);
 
     return $point;
+}
+
+/**
+ * @return array<string, array<string, bool>>
+ */
+function wr_area_map_icon_allowed_html(): array
+{
+    $svgAttr = [
+        'class' => true,
+        'width' => true,
+        'height' => true,
+        'viewbox' => true,
+        'fill' => true,
+        'stroke' => true,
+        'stroke-width' => true,
+        'aria-hidden' => true,
+    ];
+
+    return [
+        'svg' => $svgAttr,
+        'path' => ['d' => true],
+        'circle' => ['cx' => true, 'cy' => true, 'r' => true],
+    ];
 }
 
 function wr_area_map_icon(string $icon): string

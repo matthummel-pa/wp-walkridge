@@ -9,4 +9,4 @@
  * app layout and calls woocommerce_content()) to keep shop, product, cart,
  * and checkout pages inside the theme layout.
  */
-echo \Roots\view('woocommerce')->render();
+echo \Roots\view('woocommerce')->render(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sage document; Blade templates escape at the echo site

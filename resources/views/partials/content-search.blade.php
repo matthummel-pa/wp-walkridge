@@ -2,7 +2,7 @@
   <header>
     <h2 class="entry-title">
       <a href="{{ get_permalink() }}">
-        {!! $title !!}
+        {!! wp_kses_post($title) !!}
       </a>
     </h2>
 

@@ -16,12 +16,12 @@
     : 'h2';
 @endphp
 
-<section class="{{ $sectionClass }}">
+<section class="{{ esc_attr($sectionClass) }}">
   <div class="wrap">
-    <div class="book-band reveal {{ $headClass }}">
+    <div class="book-band reveal {{ esc_attr($headClass) }}">
       <div>
         <span class="eyebrow eyebrow--light">{{ __('Ready When You Are', 'walkridge') }}</span>
-        <{{ $headTag }}>{{ $heading }}</{{ $headTag }}>
+        <{{ esc_attr($headTag) }}>{{ $heading }}</{{ esc_attr($headTag) }}>
         <p>{{ $text }}</p>
         <div class="trust-strip">
           <div class="trust-item">
@@ -40,7 +40,7 @@
           </div>
         </div>
       </div>
-      <a href="{{ $shopUrl }}" class="btn btn-primary book-band__cta">{{ $buttonLabel }}</a>
+      <a href="{{ esc_url($shopUrl) }}" class="btn btn-primary book-band__cta">{{ $buttonLabel }}</a>
     </div>
   </div>
 </section>

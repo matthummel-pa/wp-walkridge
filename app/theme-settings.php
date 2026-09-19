@@ -72,8 +72,14 @@ add_action('admin_post_wr_save_theme_settings', function (): void {
         if (! isset($_POST[$key])) {
             continue;
         }
-        $raw = wp_unslash((string) $_POST[$key]);
-        set_theme_mod($key, $callback($raw));
+        $raw = sanitize_text_field(wp_unslash((string) $_POST[$key]));
+        $value = match ($callback) {
+            'sanitize_email' => sanitize_email($raw),
+            'esc_url_raw' => esc_url_raw($raw),
+            'sanitize_hex_color' => (string) (sanitize_hex_color($raw) ?: ''),
+            default => $raw,
+        };
+        set_theme_mod($key, $value);
     }
 
     foreach (['wr_address', 'wr_hours', 'wr_footer_blurb'] as $key) {
@@ -102,7 +108,7 @@ add_action('admin_post_wr_save_theme_settings', function (): void {
     }
 
     $redirect = ['page' => 'wr-theme-settings', 'wr_saved' => '1'];
-    $seed = sanitize_key((string) ($_POST['wr_after_save'] ?? ''));
+    $seed = sanitize_key(wp_unslash((string) ($_POST['wr_after_save'] ?? '')));
     if ($seed === 'seed_blocks' && current_user_can('manage_options')) {
         wr_ensure_concept_pages_and_menus();
         $result = BlockMigration::seedDemoPages();
@@ -138,14 +144,18 @@ function wr_render_theme_settings_page(): void
     $siteUrl = home_url('/');
 
     echo '<div class="wrap wr-settings">';
-    if (isset($_GET['wr_saved'])) {
+    // phpcs:disable WordPress.Security.NonceVerification.Recommended -- read-only admin query flags after capability check
+    $saved = isset($_GET['wr_saved']) ? sanitize_text_field(wp_unslash((string) $_GET['wr_saved'])) : '';
+    $seeded = isset($_GET['wr_seeded']) ? absint(wp_unslash((string) $_GET['wr_seeded'])) : 0;
+    // phpcs:enable WordPress.Security.NonceVerification.Recommended
+    if ($saved !== '') {
         echo '<div class="notice notice-success is-dismissible"><p>'.esc_html__('Theme settings saved. Identity, header, and footer now use these values.', 'walkridge').'</p></div>';
     }
-    if (isset($_GET['wr_seeded'])) {
+    if ($seeded > 0) {
         echo '<div class="notice notice-success is-dismissible"><p>'.esc_html(sprintf(
             /* translators: %d: pages updated */
             __('Seeded Gutenberg layouts on %d page(s).', 'walkridge'),
-            absint($_GET['wr_seeded'])
+            $seeded
         )).'</p></div>';
     }
 
