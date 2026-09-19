@@ -12,7 +12,7 @@
  *  – RangeControl, ToggleControl, SelectControl for display options
  */
 
-import { registerBlockType, getCategories, setCategories } from '@wordpress/blocks';
+import { registerBlockType, getCategories, setCategories, registerBlockCollection } from '@wordpress/blocks';
 import {
   InspectorControls,
   BlockControls,
@@ -39,12 +39,30 @@ import { createElement as el, Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import ServerSideRender from '@wordpress/server-side-render';
 
-// ── Register the Walkridge block category ─────────────────────────
+const walkridgeIcon = el(
+  'svg',
+  { viewBox: '0 0 24 24', xmlns: 'http://www.w3.org/2000/svg', width: 24, height: 24 },
+  el('circle', { cx: 12, cy: 12, r: 10, fill: 'none', stroke: 'currentColor', strokeWidth: 1.5 }),
+  el('path', { d: 'M12 4l2.2 8L12 20l-2.2-8z', fill: 'currentColor' }),
+  el('path', { d: 'M4 12l8-2.2L20 12l-8 2.2z', fill: 'currentColor', opacity: 0.4 }),
+);
+
 if (!getCategories().find((c) => c.slug === 'walkridge')) {
   setCategories([
+    { slug: 'walkridge', title: 'Walkridge', icon: walkridgeIcon },
     ...getCategories(),
-    { slug: 'walkridge', title: 'Walkridge', icon: null },
   ]);
+} else {
+  setCategories(
+    getCategories().map((c) => (c.slug === 'walkridge' ? { ...c, icon: walkridgeIcon, title: 'Walkridge' } : c)),
+  );
+}
+
+if (typeof registerBlockCollection === 'function') {
+  registerBlockCollection('walkridge', {
+    title: __('Walkridge', 'walkridge'),
+    icon: walkridgeIcon,
+  });
 }
 
 const cfg = window.WALKRIDGE_BLOCKS || {};
@@ -1197,3 +1215,213 @@ registerBlockType('walkridge/refund-policy', {
   },
   save: () => null,
 })
+
+registerBlockType('walkridge/area-map', {
+  title: __('Area Map', 'walkridge'),
+  category: 'walkridge',
+  icon: 'location-alt',
+  description: __('Gettysburg location map with pin, meeting cards, or the Field Map plugin.', 'walkridge'),
+  keywords: ['walkridge', 'map', 'area', 'gettysburg', 'location'],
+  supports: { html: false },
+  attributes: {
+    eyebrow: { type: 'string', default: 'Find Us' },
+    heading: { type: 'string', default: 'Meeting points & office hours.' },
+    text: { type: 'string', default: '' },
+    variant: { type: 'string', default: 'static' },
+    imageKey: { type: 'string', default: 'downtown' },
+    imageUrl: { type: 'string', default: '' },
+    imageId: { type: 'number', default: 0 },
+    imageAlt: { type: 'string', default: 'Downtown Gettysburg near Lincoln Square' },
+    showPin: { type: 'boolean', default: true },
+    pinX: { type: 'number', default: 50 },
+    pinY: { type: 'number', default: 50 },
+    locationMode: { type: 'string', default: 'coordinates' },
+    latitude: { type: 'number', default: 39.83092 },
+    longitude: { type: 'number', default: -77.23114 },
+    zipcode: { type: 'string', default: '17325' },
+    mapZoom: { type: 'number', default: 14 },
+    mapEmbedUrl: { type: 'string', default: '' },
+    mapHeight: { type: 'number', default: 420 },
+    layout: { type: 'string', default: 'split' },
+    iconTone: { type: 'string', default: 'gold' },
+    cards: {
+      type: 'string',
+      default:
+        'Ticket Office & Day Tour Meeting Point | 100 Sample Street, Gettysburg, PA 17325. Concept placeholder — not a live ticket office. Downtown public lots and metered parking sit near Lincoln Square. | pin\nEvening Lantern Walk Meeting Point | Sample downtown meet. Lincoln Square is tour geography, not a live business address. Look for your guide holding a lit lantern. | lantern\nOffice Hours | Mon–Sun, 8:00 AM – 6:00 PM (April–November). Thu–Sun, 9:00 AM – 4:00 PM (December–March). | clock',
+    },
+  },
+  edit({ attributes: a, setAttributes: s }) {
+    return el(SsrEdit, {
+      name: 'walkridge/area-map',
+      attributes: a,
+      sidebar: () =>
+        el(
+          Fragment,
+          null,
+          textPanel(
+            __('Section copy', 'walkridge'),
+            [
+              ['eyebrow', __('Eyebrow', 'walkridge'), false],
+              ['heading', __('Heading', 'walkridge'), false],
+              ['text', __('Supporting text', 'walkridge'), true],
+            ],
+            a,
+            s,
+          ),
+          el(
+            PanelBody,
+            { title: __('Map type', 'walkridge'), initialOpen: true },
+            el(SelectControl, {
+              label: __('Display', 'walkridge'),
+              value: a.variant || 'static',
+              options: [
+                { label: __('Static photo + pin (Hallowed Ground)', 'walkridge'), value: 'static' },
+                { label: __('Embedded map (OSM / Google iframe URL)', 'walkridge'), value: 'embed' },
+                { label: __('Interactive Field Map plugin', 'walkridge'), value: 'field-map' },
+              ],
+              onChange: (v) => s({ variant: v }),
+              help: __('Embed builds OpenStreetMap from Location (coordinates or ZIP). A custom iframe URL overrides that. Field Map needs the Walkridge Field Map plugin.', 'walkridge'),
+            }),
+            el(RangeControl, {
+              label: __('Map height (px)', 'walkridge'),
+              value: a.mapHeight || 420,
+              min: 240,
+              max: 800,
+              step: 20,
+              onChange: (v) => s({ mapHeight: v }),
+            }),
+            el(SelectControl, {
+              label: __('Layout', 'walkridge'),
+              value: a.layout || 'split',
+              options: [
+                { label: __('Map left, cards right', 'walkridge'), value: 'split' },
+                { label: __('Cards left, map right', 'walkridge'), value: 'split-flip' },
+                { label: __('Stacked (map above cards)', 'walkridge'), value: 'stack' },
+              ],
+              onChange: (v) => s({ layout: v }),
+            }),
+            el(SelectControl, {
+              label: __('Icon color', 'walkridge'),
+              value: a.iconTone || 'gold',
+              options: [
+                { label: __('Gold (theme accent)', 'walkridge'), value: 'gold' },
+                { label: __('Lantern', 'walkridge'), value: 'lantern' },
+                { label: __('Parchment', 'walkridge'), value: 'parchment' },
+                { label: __('Brick', 'walkridge'), value: 'brick' },
+              ],
+              onChange: (v) => s({ iconTone: v }),
+              help: __('Uses Walkridge theme tokens so light and dark modes stay in sync.', 'walkridge'),
+            }),
+          ),
+          el(
+            PanelBody,
+            { title: __('Location', 'walkridge'), initialOpen: true },
+            el(SelectControl, {
+              label: __('Place the map by', 'walkridge'),
+              value: a.locationMode || 'coordinates',
+              options: [
+                { label: __('Latitude & longitude', 'walkridge'), value: 'coordinates' },
+                { label: __('ZIP / postal code', 'walkridge'), value: 'zipcode' },
+              ],
+              onChange: (v) => s({ locationMode: v }),
+              help: __('Used for the OpenStreetMap embed and the “open this location” link. ZIP codes are looked up through OpenStreetMap Nominatim.', 'walkridge'),
+            }),
+            (a.locationMode || 'coordinates') === 'zipcode'
+              ? el(TextControl, {
+                  label: __('ZIP / postal code', 'walkridge'),
+                  value: a.zipcode || '',
+                  onChange: (v) => s({ zipcode: v }),
+                  help: __('US 5-digit or other postal codes. Default 17325 (Gettysburg).', 'walkridge'),
+                })
+              : el(
+                  Fragment,
+                  null,
+                  el(TextControl, {
+                    label: __('Latitude', 'walkridge'),
+                    type: 'number',
+                    value: a.latitude ?? 39.83092,
+                    onChange: (v) => s({ latitude: v === '' ? 39.83092 : parseFloat(v) }),
+                  }),
+                  el(TextControl, {
+                    label: __('Longitude', 'walkridge'),
+                    type: 'number',
+                    value: a.longitude ?? -77.23114,
+                    onChange: (v) => s({ longitude: v === '' ? -77.23114 : parseFloat(v) }),
+                  }),
+                ),
+            el(RangeControl, {
+              label: __('Zoom (embed)', 'walkridge'),
+              value: a.mapZoom || 14,
+              min: 8,
+              max: 18,
+              onChange: (v) => s({ mapZoom: v }),
+            }),
+          ),
+          (a.variant || 'static') === 'static' &&
+            el(
+              Fragment,
+              null,
+              el(
+                PanelBody,
+                { title: __('Map image', 'walkridge'), initialOpen: false },
+                el(SelectControl, {
+                  label: __('Preset image', 'walkridge'),
+                  value: a.imageKey || 'downtown',
+                  options: [
+                    { label: __('Downtown Gettysburg', 'walkridge'), value: 'downtown' },
+                    { label: __('Cannon / field', 'walkridge'), value: 'cannon' },
+                    { label: __('Wentz farmstead', 'walkridge'), value: 'wentz' },
+                  ],
+                  onChange: (v) => s({ imageKey: v }),
+                }),
+                el(TextControl, {
+                  label: __('Image alt text', 'walkridge'),
+                  value: a.imageAlt || '',
+                  onChange: (v) => s({ imageAlt: v }),
+                }),
+                el(ToggleControl, {
+                  label: __('Show location pin', 'walkridge'),
+                  checked: a.showPin !== false,
+                  onChange: (v) => s({ showPin: v }),
+                }),
+                a.showPin !== false &&
+                  el(RangeControl, {
+                    label: __('Pin left (%)', 'walkridge'),
+                    value: a.pinX ?? 50,
+                    min: 0,
+                    max: 100,
+                    onChange: (v) => s({ pinX: v }),
+                  }),
+                a.showPin !== false &&
+                  el(RangeControl, {
+                    label: __('Pin top (%)', 'walkridge'),
+                    value: a.pinY ?? 50,
+                    min: 0,
+                    max: 100,
+                    onChange: (v) => s({ pinY: v }),
+                  }),
+              ),
+              mediaUploadField(__('Custom map photo', 'walkridge'), 'imageUrl', a, s),
+            ),
+          (a.variant || 'static') === 'embed' &&
+            el(
+              PanelBody,
+              { title: __('Embed URL', 'walkridge'), initialOpen: true },
+              urlField(__('Optional custom iframe URL (overrides coordinates / ZIP)', 'walkridge'), 'mapEmbedUrl', a, s),
+            ),
+          el(
+            PanelBody,
+            { title: __('Meeting cards', 'walkridge'), initialOpen: false },
+            el(TextareaControl, {
+              label: __('Cards (one per line: Title | Text | pin, lantern, or clock)', 'walkridge'),
+              value: a.cards || '',
+              onChange: (v) => s({ cards: v }),
+              rows: 8,
+            }),
+          ),
+        ),
+    });
+  },
+  save: () => null,
+});
+

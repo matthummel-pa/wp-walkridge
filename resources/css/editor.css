@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./block-options.css";
 
 /*
  * Editor stylesheet — Walkridge Gutenberg block editor.

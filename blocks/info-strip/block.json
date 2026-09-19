@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/info-strip",
+  "title": "Info Strip",
+  "category": "walkridge",
+  "icon": "info",
+  "description": "Compact NAP strip for phone, address, and tour-day hours.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "phone",
+    "hours",
+    "address"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}

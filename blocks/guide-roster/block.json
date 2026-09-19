@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/guide-roster",
+  "title": "Guide Roster",
+  "category": "walkridge",
+  "icon": "groups",
+  "description": "Licensed-guide cards. One line per guide: Name | Role | Bio.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "guides",
+    "team"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}

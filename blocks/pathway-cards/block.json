@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/pathway-cards",
+  "title": "Pathway Cards",
+  "category": "walkridge",
+  "icon": "table-col-after",
+  "description": "Two large pathway cards: daylight field and after-dark town.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "tours",
+    "cards"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}

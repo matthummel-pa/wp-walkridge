@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/journal-cards",
+  "title": "Journal Cards",
+  "category": "walkridge",
+  "icon": "book-alt",
+  "description": "Field-note cards with optional image key in the last column.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "journal",
+    "blog"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}

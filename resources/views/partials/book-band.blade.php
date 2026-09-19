@@ -1,16 +1,28 @@
 @php
   use App\Support\Identity;
-  $heading = $heading ?? __('Reserve your spot in three minutes.', 'walkridge');
+  $attrs = is_array($attrs ?? null) ? $attrs : [];
+  $heading = $heading ?: __('Reserve your spot in three minutes.', 'walkridge');
+  $text = $text ?: __('Pick a tour, choose a date, and check out securely. You will get a confirmation with your ticket number by email.', 'walkridge');
+  $buttonLabel = $buttonLabel ?: __('Start Booking', 'walkridge');
   $shopUrl = Identity::shopUrl();
+  $sectionClass = function_exists('App\\wr_band_section_class')
+    ? \App\wr_band_section_class($attrs, 'section')
+    : 'section';
+  $headClass = function_exists('App\\wr_head_class')
+    ? \App\wr_head_class($attrs, '')
+    : '';
+  $headTag = function_exists('App\\wr_heading_tag')
+    ? \App\wr_heading_tag($attrs)
+    : 'h2';
 @endphp
 
-<section class="section">
+<section class="{{ $sectionClass }}">
   <div class="wrap">
-    <div class="book-band reveal">
+    <div class="book-band reveal {{ $headClass }}">
       <div>
         <span class="eyebrow eyebrow--light">{{ __('Ready When You Are', 'walkridge') }}</span>
-        <h2>{{ $heading }}</h2>
-        <p>{{ __('Pick a tour, choose a date, and check out securely. You will get a confirmation with your ticket number by email.', 'walkridge') }}</p>
+        <{{ $headTag }}>{{ $heading }}</{{ $headTag }}>
+        <p>{{ $text }}</p>
         <div class="trust-strip">
           <div class="trust-item">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
@@ -28,7 +40,7 @@
           </div>
         </div>
       </div>
-      <a href="{{ $shopUrl }}" class="btn btn-primary book-band__cta">{{ __('Start Booking', 'walkridge') }}</a>
+      <a href="{{ $shopUrl }}" class="btn btn-primary book-band__cta">{{ $buttonLabel }}</a>
     </div>
   </div>
 </section>

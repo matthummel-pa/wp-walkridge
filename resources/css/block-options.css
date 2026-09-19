@@ -1,0 +1,196 @@
+/* Walkridge block inspector modifiers — classes from wr_head_class / wr_hero_class / wr_band_section_class. */
+
+.wr-hero--compact {
+  min-height: min(70svh, 640px);
+}
+.wr-hero--tall {
+  min-height: min(100svh, 1100px);
+}
+
+.wr-hero--center .hero-content {
+  text-align: center;
+}
+.wr-hero--center .hero-lede {
+  margin-inline: auto;
+}
+.wr-hero--center .hero-ctas,
+.wr-hero--center .hero-paths,
+.wr-hero--center .hero-stats {
+  justify-content: center;
+}
+
+.wr-hero--right .hero-content {
+  text-align: right;
+}
+.wr-hero--right .hero-lede {
+  margin-left: auto;
+}
+.wr-hero--right .hero-ctas,
+.wr-hero--right .hero-paths,
+.wr-hero--right .hero-stats {
+  justify-content: flex-end;
+}
+
+.hero {
+  --wr-overlay-opacity: 1;
+}
+.hero-media::after {
+  opacity: var(--wr-overlay-opacity);
+}
+
+.wr-overlay--light .hero-media::after {
+  background:
+    linear-gradient(90deg, rgba(7, 17, 28, 0.55) 0%, rgba(7, 17, 28, 0.18) 55%, rgba(7, 17, 28, 0.35) 100%),
+    linear-gradient(0deg, rgba(7, 17, 28, 0.5) 0%, rgba(7, 17, 28, 0.08) 48%, rgba(7, 17, 28, 0.22) 100%);
+}
+.wr-overlay--dark .hero-media::after {
+  background:
+    linear-gradient(90deg, rgba(7, 17, 28, 0.97) 0%, rgba(7, 17, 28, 0.72) 55%, rgba(7, 17, 28, 0.88) 100%),
+    linear-gradient(0deg, rgba(7, 17, 28, 0.98) 0%, rgba(7, 17, 28, 0.45) 48%, rgba(7, 17, 28, 0.7) 100%);
+}
+
+.wr-img-pos--top .hero-media img,
+.wr-img-pos--top .about-media img {
+  object-position: center 20%;
+}
+.wr-img-pos--bottom .hero-media img,
+.wr-img-pos--bottom .about-media img {
+  object-position: center 80%;
+}
+.wr-img-pos--left .hero-media img,
+.wr-img-pos--left .about-media img {
+  object-position: 20% center;
+}
+.wr-img-pos--right .hero-media img,
+.wr-img-pos--right .about-media img {
+  object-position: 80% center;
+}
+
+.wr-head--center {
+  text-align: center;
+  margin-inline: auto;
+}
+.wr-head--right {
+  text-align: right;
+  margin-left: auto;
+}
+
+.wr-head--size-sm h1,
+.wr-head--size-sm h2,
+.wr-head--size-sm h3,
+.wr-head--size-sm h4,
+.wr-head--size-sm .hero-title {
+  font-size: clamp(1.15rem, 2vw, 1.65rem) !important;
+}
+.wr-head--size-lg h1,
+.wr-head--size-lg h2,
+.wr-head--size-lg h3,
+.wr-head--size-lg h4,
+.wr-head--size-lg .hero-title {
+  font-size: clamp(2.4rem, 5.5vw, 4rem) !important;
+}
+.wr-head--size-xl h1,
+.wr-head--size-xl h2,
+.wr-head--size-xl h3,
+.wr-head--size-xl h4,
+.wr-head--size-xl .hero-title {
+  font-size: clamp(2.9rem, 7vw, 5.6rem) !important;
+}
+
+.wr-head--weight-medium h1,
+.wr-head--weight-medium h2,
+.wr-head--weight-medium h3,
+.wr-head--weight-medium h4,
+.wr-head--weight-medium .hero-title {
+  font-weight: 500 !important;
+}
+.wr-head--weight-semibold h1,
+.wr-head--weight-semibold h2,
+.wr-head--weight-semibold h3,
+.wr-head--weight-semibold h4,
+.wr-head--weight-semibold .hero-title {
+  font-weight: 600 !important;
+}
+.wr-head--weight-bold h1,
+.wr-head--weight-bold h2,
+.wr-head--weight-bold h3,
+.wr-head--weight-bold h4,
+.wr-head--weight-bold .hero-title {
+  font-weight: 800 !important;
+}
+
+.wr-body--sm p,
+.wr-body--sm li,
+.wr-body--sm .hero-lede {
+  font-size: 0.9rem;
+}
+.wr-body--lg p,
+.wr-body--lg li,
+.wr-body--lg .hero-lede {
+  font-size: 1.18rem;
+}
+
+.wr-tone-heading-gold h1,
+.wr-tone-heading-gold h2,
+.wr-tone-heading-gold h3,
+.wr-tone-heading-gold h4,
+.wr-tone-heading-gold .hero-title {
+  color: var(--gold-500);
+}
+.wr-tone-heading-parchment h1,
+.wr-tone-heading-parchment h2,
+.wr-tone-heading-parchment h3,
+.wr-tone-heading-parchment h4,
+.wr-tone-heading-parchment .hero-title {
+  color: var(--parchment-50);
+}
+.wr-tone-heading-muted h1,
+.wr-tone-heading-muted h2,
+.wr-tone-heading-muted h3,
+.wr-tone-heading-muted h4,
+.wr-tone-heading-muted .hero-title {
+  color: var(--color-ink-soft);
+}
+.wr-tone-heading-brick h1,
+.wr-tone-heading-brick h2,
+.wr-tone-heading-brick h3,
+.wr-tone-heading-brick h4,
+.wr-tone-heading-brick .hero-title {
+  color: var(--brick-soft, #c47a62);
+}
+
+.wr-tone-body-gold p,
+.wr-tone-body-gold .hero-lede {
+  color: var(--gold-300);
+}
+.wr-tone-body-parchment p,
+.wr-tone-body-parchment .hero-lede {
+  color: var(--parchment-50);
+}
+.wr-tone-body-muted p,
+.wr-tone-body-muted .hero-lede {
+  color: var(--color-ink-soft);
+}
+.wr-tone-body-brick p,
+.wr-tone-body-brick .hero-lede {
+  color: var(--brick-soft, #c47a62);
+}
+
+.wr-section--gold {
+  background: color-mix(in srgb, var(--gold-800) 35%, var(--slate-900));
+  color: var(--parchment-50);
+}
+
+.wr-pad--compact {
+  padding-block: clamp(1.6rem, 4vw, 2.8rem) !important;
+}
+.wr-pad--tall {
+  padding-block: clamp(5rem, 12vw, 9rem) !important;
+}
+
+.info-strip.wr-section--gold,
+.info-strip.section-alt,
+.info-strip.section-dark,
+.info-strip.section-lantern {
+  border-bottom-color: transparent;
+}

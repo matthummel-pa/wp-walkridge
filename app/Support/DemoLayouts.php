@@ -162,12 +162,15 @@ class DemoLayouts
                 'text' => 'The same licensed historians walk daylight ridges and civilian streets after dark.',
                 'items' => "Seminary & Cemetery Ridge | Two long parallel ridges shaped the battle. The Highlights Walking Tour crosses Cemetery Ridge and McPherson Ridge to connect all three days into a single, walkable story.\nLittle Round Top & Devil’s Den | At the southern end of the field, the high ground of July 2 and the boulders below it. The ridge hike climbs this rugged terrain with time among the rocks.\nDowntown & the Wills House | Lincoln Square is the civic heart of town. The evening lantern walk winds these streets after dark, pairing wartime accounts with the buildings where they happened.",
             ]),
-            self::comment('walkridge/area-facts', [
+            self::comment('walkridge/area-map', [
                 'eyebrow' => 'Find Us',
-                'heading' => 'Meeting points, parking, and office hours',
-                'parking' => 'This concept uses a sample ticket office at 100 Sample Street, Gettysburg, PA 17325 — not a live storefront. Use downtown public lots and metered street parking near Lincoln Square.',
-                'meeting' => 'Walking and bus tours in this demo start from the sample office. Evening lantern walks use a sample downtown meet at the Lincoln Square flagpole — look for your guide holding a lit lantern.',
-                'directions' => 'From the north or south, take US-15 to the Gettysburg exits, then follow Baltimore Street toward downtown. From the east or west, US-30 leads into Lincoln Square. Most guests arriving from Harrisburg, York, Hanover, or the Maryland line reach downtown in well under an hour.',
+                'heading' => 'Meeting points & office hours.',
+                'locationMode' => 'zipcode',
+                'zipcode' => '17325',
+                'latitude' => 39.83092,
+                'longitude' => -77.23114,
+                'layout' => 'split',
+                'iconTone' => 'gold',
             ]),
             self::comment('walkridge/town-grid', [
                 'eyebrow' => 'Nearby Towns We Serve',

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/contact-desk",
+  "title": "Contact Desk",
+  "category": "walkridge",
+  "icon": "email",
+  "description": "Office NAP card plus guest-services contact form.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "contact",
+    "form"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false,
+    "multiple": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "walkridge/area-facts",
+  "title": "Area Facts",
+  "category": "walkridge",
+  "icon": "location",
+  "description": "Parking, meeting point, and directions cards.",
+  "keywords": [
+    "walkridge",
+    "gettysburg",
+    "tours",
+    "area",
+    "parking"
+  ],
+  "textdomain": "walkridge",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": false
+  },
+  "example": {
+    "attributes": {}
+  }
+}
