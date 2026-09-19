@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.7.0 — 2026-09-19
+
+Navbar, WooCommerce, and light-default follow-up on 1.6.x.
+
+- First paint stays light (`data-theme="light"`). Stale `wr-theme` and `wr-color-scheme` dark values are ignored; only a new header toggle writes `wr-theme-pref`. Dark remains optional.
+- Sticky frosted header: logo + name, primary nav + Shop, Book CTA, Woo cart count, theme toggle. Skip link `z-index` sits above the bar.
+- Mobile menu: Close control, 44px targets, cart link, theme toggle, existing focus trap + `aria-expanded`.
+- Woo shop / product / cart / checkout / account: visible field labels, quantity label, related tours heading, account nav, 44px buttons.
+- Light navbar contrast: ink on parchment, gold-800 brand subtitle.
+
 ## 1.6.1 — 2026-09-19
 
 WooCommerce tour catalog seed for new installs.

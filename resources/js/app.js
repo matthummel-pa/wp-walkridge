@@ -9,10 +9,11 @@
   document.querySelectorAll("[data-year]").forEach(function(el){ el.textContent = yr; });
 
   /* ── Theme toggle ─────────────────────────────────────────
-     Site default is light (Theme Settings). localStorage wins
-     after the visitor uses the header toggle. Dark remains optional. */
+     Site default is light. Ignore stale 1.5.x `wr-theme` (often dark)
+     and 1.6.x `wr-color-scheme` so returning visitors land on parchment.
+     Only `wr-theme-pref` (set by this toggle) persists dark. */
   (function(){
-    var STORAGE_KEY = "wr-color-scheme";
+    var STORAGE_KEY = "wr-theme-pref";
     var html = document.documentElement;
 
     function siteDefault(){
@@ -26,6 +27,7 @@
       } else {
         html.removeAttribute("data-theme");
       }
+      html.style.colorScheme = theme === "dark" ? "dark" : "light";
       document.querySelectorAll(".theme-toggle").forEach(function(btn){
         var next = theme === "light" ? "dark" : "light";
         var label = next === "dark"
@@ -38,7 +40,11 @@
       });
     }
 
-    var saved = localStorage.getItem(STORAGE_KEY);
+    try {
+      localStorage.removeItem("wr-theme");
+    } catch (e) {}
+    var saved = null;
+    try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
     applyTheme((saved === "light" || saved === "dark") ? saved : siteDefault());
 
     document.addEventListener("click", function(e){
@@ -47,7 +53,7 @@
       var current = html.getAttribute("data-theme") || "dark";
       var next = current === "light" ? "dark" : "light";
       applyTheme(next);
-      localStorage.setItem(STORAGE_KEY, next);
+      try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
     });
   })();
 
@@ -105,12 +111,18 @@
         hamburgerBtn.setAttribute("aria-label","Close menu");
         document.body.classList.add("modal-locked");
         document.addEventListener("keydown", trapFocus, true);
-        var firstLink = mobileNav.querySelector("a");
-        if(firstLink) firstLink.focus();
+        var closeBtn = document.getElementById("mobileNavClose");
+        if(closeBtn) closeBtn.focus();
+        else {
+          var firstLink = mobileNav.querySelector("a, button");
+          if(firstLink) firstLink.focus();
+        }
       } else {
         closeMobileNav();
       }
     });
+    var mobileClose = document.getElementById("mobileNavClose");
+    if(mobileClose) mobileClose.addEventListener("click", closeMobileNav);
     mobileNav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMobileNav); });
     document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeMobileNav(); });
   }

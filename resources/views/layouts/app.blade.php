@@ -3,15 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- Inline theme script — apply saved toggle before paint. Site default is light. --}}
+    {{-- First paint is light unless Theme Settings is dark or the visitor used the 1.7+ toggle. --}}
     <script>
       (function(){
         var html = document.documentElement;
         var site = html.getAttribute('data-wr-default-theme') || 'light';
-        var s = localStorage.getItem('wr-color-scheme');
+        var s = '';
+        try {
+          localStorage.removeItem('wr-theme');
+          s = localStorage.getItem('wr-theme-pref') || '';
+        } catch (e) {}
         var theme = (s === 'light' || s === 'dark') ? s : site;
         if (theme === 'light') html.setAttribute('data-theme', 'light');
         else html.removeAttribute('data-theme');
+        html.style.colorScheme = theme === 'dark' ? 'dark' : 'light';
       })();
     </script>
     @php(do_action('get_header'))
