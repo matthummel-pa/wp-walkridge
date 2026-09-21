@@ -72,10 +72,7 @@ function wr_ensure_concept_pages_and_menus(): void
         $content = is_string($post->post_content ?? null) ? trim((string) $post->post_content) : '';
         if ($content === '' || ! str_contains($content, '<!-- wp:walkridge/')) {
             $layoutSlug = $slug === 'home' ? 'home' : $slug;
-            wp_update_post([
-                'ID' => $id,
-                'post_content' => BlockMigration::buildContentForSlug($layoutSlug, $defaults),
-            ]);
+            BlockMigration::updatePostContent($id, BlockMigration::buildContentForSlug($layoutSlug, $defaults));
             BlockMigration::markMigrated($id);
         }
         BlockMigration::deleteLegacyPageMeta($id);

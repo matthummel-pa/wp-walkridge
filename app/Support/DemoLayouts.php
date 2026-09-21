@@ -345,6 +345,9 @@ class DemoLayouts
     }
 
     /**
+     * ASCII `<!-- wp:` delimiters. HEX_TAG / HEX_AMP keep `<p>` / `<em>` in JSON
+     * from making wp_kses_post encode the whole comment as visible page text.
+     *
      * @param  array<string, mixed>  $attrs
      */
     public static function comment(string $name, array $attrs): string
@@ -353,11 +356,25 @@ class DemoLayouts
             $attrs,
             static fn ($v) => $v !== '' && $v !== null
         );
+
+        if (function_exists('serialize_block')) {
+            return serialize_block([
+                'blockName' => $name,
+                'attrs' => $clean,
+                'innerBlocks' => [],
+                'innerHTML' => '',
+                'innerContent' => [],
+            ]);
+        }
+
         if ($clean === []) {
             return "<!-- wp:{$name} /-->";
         }
 
-        $json = wp_json_encode($clean, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        $json = wp_json_encode(
+            $clean,
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP
+        );
 
         return "<!-- wp:{$name} {$json} /-->";
     }

@@ -766,6 +766,9 @@ function wr_render_cta_band(array $attrs): string
  */
 function wr_parse_piped_items(string $raw): array
 {
+    $raw = preg_replace('/(?<=[.!?])n(?=[A-Z])/', "\n", $raw) ?? $raw;
+    $raw = preg_replace('/(?<=[A-Z]{2})n(?=[A-Z][a-z])/', "\n", $raw) ?? $raw;
+
     $rows = [];
     foreach (preg_split('/\r\n|\r|\n/', $raw) ?: [] as $line) {
         $line = trim($line);

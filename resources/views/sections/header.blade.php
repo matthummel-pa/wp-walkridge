@@ -106,7 +106,8 @@
     </div>
   </div>
 </header>
-<nav class="mobile-nav" id="mobileNav" aria-label="{{ __('Mobile navigation', 'walkridge') }}" role="dialog" aria-modal="true" hidden>
+<nav class="mobile-nav" id="mobileNav" aria-labelledby="mobileNavTitle" role="dialog" aria-modal="true" hidden>
+  <h2 id="mobileNavTitle" class="visually-hidden">{{ __('Site menu', 'walkridge') }}</h2>
   <button type="button" class="mobile-nav__close" id="mobileNavClose">{{ __('Close menu', 'walkridge') }}</button>
   <ul>
     <li><a href="{{ home_url('/') }}" @if($isHome) class="is-active" aria-current="page" @endif>{{ __('Home', 'walkridge') }}</a></li>

@@ -111,12 +111,14 @@
         <ul class="footer-pay-icons" aria-labelledby="footer-pay-label">
           <li>
             <svg width="46" height="30" viewBox="0 0 46 30" role="img" aria-label="{{ __('Visa', 'walkridge') }}" focusable="false">
+              <title>{{ __('Visa', 'walkridge') }}</title>
               <rect x="0.5" y="0.5" width="45" height="29" rx="4" fill="#ffffff" stroke="#1a3b6d"/>
               <text x="23" y="20" font-family="Arial, sans-serif" font-size="11" fill="#1a3b6d" text-anchor="middle" font-weight="700">VISA</text>
             </svg>
           </li>
           <li>
             <svg width="46" height="30" viewBox="0 0 46 30" role="img" aria-label="{{ __('Mastercard', 'walkridge') }}" focusable="false">
+              <title>{{ __('Mastercard', 'walkridge') }}</title>
               <rect x="0.5" y="0.5" width="45" height="29" rx="4" fill="#ffffff" stroke="#6b521f"/>
               <circle cx="19" cy="15" r="7.5" fill="#eb001b"/>
               <circle cx="27" cy="15" r="7.5" fill="#f79e1b"/>
@@ -125,12 +127,14 @@
           </li>
           <li>
             <svg width="46" height="30" viewBox="0 0 46 30" role="img" aria-label="{{ __('American Express', 'walkridge') }}" focusable="false">
+              <title>{{ __('American Express', 'walkridge') }}</title>
               <rect x="0.5" y="0.5" width="45" height="29" rx="4" fill="#2e77bc" stroke="#163a5c"/>
               <text x="23" y="20" font-family="Arial, sans-serif" font-size="8" fill="#ffffff" text-anchor="middle" font-weight="700">AMEX</text>
             </svg>
           </li>
           <li>
             <svg width="46" height="30" viewBox="0 0 46 30" role="img" aria-label="{{ __('Discover', 'walkridge') }}" focusable="false">
+              <title>{{ __('Discover', 'walkridge') }}</title>
               <rect x="0.5" y="0.5" width="45" height="29" rx="4" fill="#ffffff" stroke="#a3341f"/>
               <text x="18" y="20" font-family="Arial, sans-serif" font-size="8" fill="#a3341f" text-anchor="middle" font-weight="700">DISC</text>
               <circle cx="36" cy="15" r="6.5" fill="#e67630"/>

@@ -84,10 +84,7 @@ class BlockMigration
         }
 
         if ($changed) {
-            wp_update_post([
-                'ID' => $postId,
-                'post_content' => $content,
-            ]);
+            self::updatePostContent($postId, $content);
             self::markMigrated($postId);
         }
 
@@ -151,10 +148,7 @@ class BlockMigration
             }
         }
         if ($frontId > 0) {
-            wp_update_post([
-                'ID' => $frontId,
-                'post_content' => DemoLayouts::forSlug('home'),
-            ]);
+            self::updatePostContent($frontId, DemoLayouts::forSlug('home'));
             self::markMigrated($frontId);
             self::deleteLegacyPageMeta($frontId);
             $updated++;
@@ -166,16 +160,35 @@ class BlockMigration
                 continue;
             }
             $defaults = PageFields::defaultsForSlug($key);
-            wp_update_post([
-                'ID' => $page->ID,
-                'post_content' => DemoLayouts::forSlug($key, $defaults),
-            ]);
+            self::updatePostContent((int) $page->ID, DemoLayouts::forSlug($key, $defaults));
             self::markMigrated((int) $page->ID);
             self::deleteLegacyPageMeta((int) $page->ID);
             $updated++;
         }
 
         return ['updated' => $updated];
+    }
+
+    /**
+     * Persist Gutenberg markup without kses encoding comments, and wp_slash
+     * so JSON `\n` / `\u003c` survive wp_unslash on save.
+     */
+    public static function updatePostContent(int $postId, string $content): void
+    {
+        $removed = false;
+        if (function_exists('kses_remove_filters')) {
+            kses_remove_filters();
+            $removed = true;
+        }
+
+        wp_update_post([
+            'ID' => $postId,
+            'post_content' => wp_slash($content),
+        ]);
+
+        if ($removed && function_exists('kses_init_filters')) {
+            kses_init_filters();
+        }
     }
 
     /**

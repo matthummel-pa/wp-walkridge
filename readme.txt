@@ -3,7 +3,7 @@ Contributors: matthummel
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 8.3
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, translation-ready, one-column, threaded-comments
@@ -114,6 +114,13 @@ Original compass mark (inline SVG in the header/footer; GPLv2 with the theme):
 See docs/marketplace/branding.html (Documentation/branding.html in the seller pack) and BRAND.md.
 
 == Changelog ==
+
+= 1.7.2 =
+* Light-theme WCAG 2.2: gold-800 focus rings, placeholder contrast, denser sections, skip link above the sticky bar
+* Navbar: later phone CTA, ellipsis on long brand names, hamburger until 1180px so the bar does not overflow
+* WooCommerce cart/checkout blocks inherit parchment tokens; footer pay marks include SVG titles
+* Demo layout comments use HEX-encoded tags so new seeds do not leak `wp:walkridge` as page text
+* Front page keeps an H1 when the home hero block is missing or encoded
 
 = 1.7.1 =
 * Short primary-nav labels when WordPress copied long page titles into the menu

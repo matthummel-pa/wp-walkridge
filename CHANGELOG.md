@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.7.2 — 2026-09-21
+
+Live WCAG 2.2 + light-theme UX pass (local theme only).
+
+- Navbar: brand name ellipsis, phone from 1280px, desktop nav at 1180px, auto header height so actions do not clip
+- Skip link stays `position: fixed` on focus; light `:focus-visible` uses gold-800 on parchment
+- Denser `.section` padding; mobile sticky-book no longer covers footer; Woo cart/checkout block tokens on light
+- Reviews expose a text star rating; footer pay SVGs have `<title>` plus `aria-label`
+- Seeders: `serialize_block` / `JSON_HEX_TAG` comments, `wp_slash` on save; piped FAQ/review rows recover stripped `\n`
+- Front page fallback H1 if home-hero is missing; `the_content` hides `&lt;!-- wp:` text
+
 ## 1.7.1 — 2026-09-21
 
 Live error hunt after 1.7.0.
