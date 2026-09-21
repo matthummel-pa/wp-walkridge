@@ -87,6 +87,11 @@ class DemoLayouts
                 'text' => 'Concept journal cards — parking, licensing, and why the lantern walk is not a haunted house.',
                 'items' => "The Area | Where to stand on Cemetery Ridge | Parking, meeting points, and the ridges our walking tours actually cross. | /area/ | cannon\nGuides | What a licensed battlefield guide is | The same exam used at the national military park. | /guides/ | wentz\nAfter dark | Why the lantern walk is not a haunted house | Letters, diaries, and downtown streets. Sample meet at the town square flagpole. | /tours/#after-dark | downtown",
             ]),
+            self::comment('walkridge/faq-list', [
+                'eyebrow' => 'Before You Book',
+                'heading' => 'The questions the desk answers first.',
+                'items' => self::faqItems(),
+            ]),
         ]);
     }
 
@@ -100,13 +105,39 @@ class DemoLayouts
         return implode("\n\n", [
             self::comment('walkridge/page-intro', self::introAttrs($intro, $defaults)),
             '<!-- wp:walkridge/info-strip /-->',
-            '<!-- wp:walkridge/tour-grid {"eyebrow":"Choose Your Tour","heading":"Five ways to walk the field.","text":"Every tour is led by an Association-licensed guide and capped at a small group size. Prices are per person; children are ages 6–12 and seniors are 65+."} /-->',
+            '<!-- wp:walkridge/tour-grid {"eyebrow":"Choose Your Tour","heading":"Five ways to walk the field.","text":"Every tour is a catalog product led by an Association-licensed guide and capped at a small group size. Prices are per person in USD; children are ages 6–12 and seniors are 65+. Book This Tour opens the product page."} /-->',
+            '<!-- wp:heading {"textAlign":"center"} -->
+<h2 class="wp-block-heading has-text-align-center">Shop the tour catalog</h2>
+<!-- /wp:heading -->',
+            '<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center">Each offering is a published WooCommerce product. Add to cart from this grid or open a product page to check out. Sample desk: (717) 555-0100 · tours@walkridge.test.</p>
+<!-- /wp:paragraph -->',
+            '<!-- wp:shortcode -->
+[products category="tours" columns="3" limit="12" orderby="menu_order" order="ASC"]
+<!-- /wp:shortcode -->',
+            '<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/shop/">View all products</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->',
+            self::comment('walkridge/timeline', [
+                'eyebrow' => 'July 1–3, 1863',
+                'heading' => 'Match a tour to the ground.',
+                'text' => 'Daylight walks follow the three days in order. The lantern walk is downtown after dark — civilian streets, not the ridges.',
+                'items' => "Day One | McPherson Ridge | Opening fight west of town. Highlights walk and the deluxe bus both cover this approach.\nDay Two | Little Round Top | Southern flank and Devil’s Den. The ridge hike is built for this terrain.\nDay Three | High Water Mark | Cemetery Ridge and Pickett’s Charge — paced on the Highlights walk and the bus loop.",
+            ]),
             self::comment('walkridge/card-grid', [
                 'variant' => 'expect',
                 'eyebrow' => 'Before You Go',
                 'heading' => 'What to expect on tour.',
                 'text' => 'A little preparation goes a long way on the battlefield.',
                 'items' => "Dress for the field | Closed-toe walking shoes, sun protection, and a water bottle. Walking tours cover uneven, sometimes rocky terrain.\nRain or shine | Tours run in light rain and most weather. We’ll call or email you directly if conditions require a reschedule.\nSmall groups | Most tours cap at 12–24 guests. You’ll always be close enough to hear your guide without a headset.\nArrive 15 minutes early | Check in at the sample ticket office, or the posted evening meeting point, before departure time.",
+            ]),
+            self::reviewsBlock(),
+            self::comment('walkridge/faq-list', [
+                'eyebrow' => 'Tour Desk',
+                'heading' => 'Booking questions, answered.',
+                'items' => self::faqItems(),
             ]),
             '<!-- wp:walkridge/book-band {"heading":"Ready to pick your date?"} /-->',
         ]);
@@ -136,6 +167,17 @@ class DemoLayouts
                 'flip' => true,
             ]),
             self::reviewsBlock(),
+            self::comment('walkridge/journal-cards', [
+                'eyebrow' => 'How We Work',
+                'heading' => 'Licensing, pace, and after dark.',
+                'text' => 'Concept notes — replace with your own guide bios and training story.',
+                'items' => "Licensing | The same exam the park uses | Sample specialties only. Every departure is written as a licensed-guide walk. | /guides/ | wentz\nPace | Why groups stay small | Fifteen is the concept cap so you can ask a question without a headset. | /tours/ | cannon\nLanterns | Not a haunted house | Downtown letters and the Wills House streets after dark. | /tours/#after-dark | downtown",
+            ]),
+            self::comment('walkridge/faq-list', [
+                'eyebrow' => 'Guides',
+                'heading' => 'Who is on the ground with you?',
+                'items' => "Are these real named historians? | Roles above are sample specialties for this concept — not live credentials. Your office replaces names under Gutenberg.\nWhat does licensed mean here? | Walking and bus tours are written as if a guide passed the same battlefield-guide exam used at the national military park.\nCan we request a guide? | Use the contact form or call (717) 555-0100. This is a sample desk, not a live scheduling line.\nDo lantern walks use the same guides? | Maya Trent is the sample after-dark specialist. Daylight walking, bus, and hike specialties are listed on this page.",
+            ]),
             '<!-- wp:walkridge/book-band {"heading":"Tour with a licensed guide."} /-->',
         ]);
     }
@@ -178,6 +220,13 @@ class DemoLayouts
                 'text' => 'Approximate distances to the sample 100 Sample Street meeting point.',
                 'items' => "Biglerville | ~9 mi N · US-15 & PA-34\nLittlestown | ~10 mi SE · PA-97\nNew Oxford | ~9 mi E · US-30\nMcSherrystown | ~13 mi E\nFairfield | ~8 mi W · PA-116\nCashtown | ~8 mi NW · US-30\nHanover | ~15 mi SE · PA-116",
             ]),
+            '<!-- wp:walkridge/area-facts /-->',
+            self::reviewsBlock(),
+            self::comment('walkridge/faq-list', [
+                'eyebrow' => 'The Area',
+                'heading' => 'Parking, access, and weather.',
+                'items' => self::faqItems(),
+            ]),
             self::comment('walkridge/cta-band', [
                 'eyebrow' => 'Plan the visit',
                 'heading' => 'Ready to walk the field?',
@@ -209,6 +258,7 @@ class DemoLayouts
                 'heading' => 'Frequently asked questions.',
                 'items' => self::faqItems(),
             ]),
+            self::reviewsBlock(),
             '<!-- wp:walkridge/book-band {"heading":"Ready to book?"} /-->',
         ]);
     }
@@ -237,6 +287,12 @@ class DemoLayouts
                 'paymentDaysMin' => 5,
                 'paymentDaysMax' => 10,
             ]),
+            self::comment('walkridge/faq-list', [
+                'eyebrow' => 'Store Policy',
+                'heading' => 'Refund questions in plain language.',
+                'items' => "When can I cancel for a full refund? | Cancel or reschedule up to 24 hours before your tour for a full refund. This is sample store copy — replace the window on the Refund Policy block.\nWhat if weather cancels the walk? | In severe weather the sample desk contacts you at least two hours before departure to reschedule or refund. Light rain still goes.\nHow do I reach guest services? | Email tours@walkridge.test or call (717) 555-0100. Fiction-range sample number — not a live line.\nWhere is checkout handled? | WooCommerce (when active) processes payments. Walkridge is not a payment processor by itself.",
+            ]),
+            '<!-- wp:walkridge/book-band {"heading":"Questions about a booking?"} /-->',
         ]);
     }
 

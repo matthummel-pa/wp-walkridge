@@ -28,8 +28,8 @@
       <form class="newsletter" data-newsletter method="post" action="{{ esc_url(admin_url('admin-post.php')) }}" data-wr-newsletter>
         <input type="hidden" name="action" value="wr_newsletter">
         {!! wp_nonce_field('wr_newsletter', 'wr_newsletter_nonce', true, false) !!}
-        <label class="visually-hidden" for="nlEmail">{{ __('Email address for field notes list', 'walkridge') }}</label>
-        <input id="nlEmail" name="EMAIL" type="email" autocomplete="email" placeholder="{{ esc_attr__('you@email.com', 'walkridge') }}" required>
+        <label class="newsletter-label" for="nlEmail">{{ __('Email address', 'walkridge') }}</label>
+        <input id="nlEmail" name="EMAIL" type="email" autocomplete="email" placeholder="{{ esc_attr__('you@walkridge.test', 'walkridge') }}" required>
         <button class="btn btn-primary" type="submit">{{ __('Join the list', 'walkridge') }}</button>
       </form>
     </div>
@@ -107,13 +107,36 @@
 
     <div class="footer-trust-bar">
       <div class="footer-pay-group">
-        <span class="footer-pay-label">{{ __('Checkout ready for', 'walkridge') }}</span>
-        <div class="footer-pay-icons" aria-hidden="true">
-          <svg width="42" height="27" viewBox="0 0 42 27" aria-hidden="true" focusable="false"><rect width="42" height="27" rx="4" fill="#1a3b6d"/><text x="21" y="18" font-family="Arial" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">VISA</text></svg>
-          <svg width="42" height="27" viewBox="0 0 42 27" aria-hidden="true" focusable="false"><rect width="42" height="27" rx="4" fill="#2b2523"/><circle cx="17" cy="13.5" r="7.5" fill="#eb001b"/><circle cx="25" cy="13.5" r="7.5" fill="#f79e1b" opacity=".9"/></svg>
-          <svg width="42" height="27" viewBox="0 0 42 27" aria-hidden="true" focusable="false"><rect width="42" height="27" rx="4" fill="#2e77bc"/><text x="21" y="18" font-family="Arial" font-size="8" fill="#fff" text-anchor="middle" font-weight="bold">AMEX</text></svg>
-          <svg width="42" height="27" viewBox="0 0 42 27" aria-hidden="true" focusable="false"><rect width="42" height="27" rx="4" fill="#f4f0e6"/><text x="18" y="18" font-family="Arial" font-size="7.5" fill="#a3341f" text-anchor="middle" font-weight="bold">DISC</text><circle cx="33" cy="13.5" r="7" fill="#e67630" opacity=".9"/></svg>
-        </div>
+        <span class="footer-pay-label" id="footer-pay-label">{{ __('Checkout ready for', 'walkridge') }}</span>
+        <ul class="footer-pay-icons" aria-labelledby="footer-pay-label">
+          <li>
+            <svg width="46" height="30" viewBox="0 0 46 30" role="img" aria-label="{{ __('Visa', 'walkridge') }}" focusable="false">
+              <rect x="0.5" y="0.5" width="45" height="29" rx="4" fill="#ffffff" stroke="#1a3b6d"/>
+              <text x="23" y="20" font-family="Arial, sans-serif" font-size="11" fill="#1a3b6d" text-anchor="middle" font-weight="700">VISA</text>
+            </svg>
+          </li>
+          <li>
+            <svg width="46" height="30" viewBox="0 0 46 30" role="img" aria-label="{{ __('Mastercard', 'walkridge') }}" focusable="false">
+              <rect x="0.5" y="0.5" width="45" height="29" rx="4" fill="#ffffff" stroke="#6b521f"/>
+              <circle cx="19" cy="15" r="7.5" fill="#eb001b"/>
+              <circle cx="27" cy="15" r="7.5" fill="#f79e1b"/>
+              <path d="M23 9.8a7.5 7.5 0 000 10.4 7.5 7.5 0 000-10.4z" fill="#ff5f00"/>
+            </svg>
+          </li>
+          <li>
+            <svg width="46" height="30" viewBox="0 0 46 30" role="img" aria-label="{{ __('American Express', 'walkridge') }}" focusable="false">
+              <rect x="0.5" y="0.5" width="45" height="29" rx="4" fill="#2e77bc" stroke="#163a5c"/>
+              <text x="23" y="20" font-family="Arial, sans-serif" font-size="8" fill="#ffffff" text-anchor="middle" font-weight="700">AMEX</text>
+            </svg>
+          </li>
+          <li>
+            <svg width="46" height="30" viewBox="0 0 46 30" role="img" aria-label="{{ __('Discover', 'walkridge') }}" focusable="false">
+              <rect x="0.5" y="0.5" width="45" height="29" rx="4" fill="#ffffff" stroke="#a3341f"/>
+              <text x="18" y="20" font-family="Arial, sans-serif" font-size="8" fill="#a3341f" text-anchor="middle" font-weight="700">DISC</text>
+              <circle cx="36" cy="15" r="6.5" fill="#e67630"/>
+            </svg>
+          </li>
+        </ul>
       </div>
       <div class="footer-trust-badges">
         <span class="footer-trust-badge">

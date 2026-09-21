@@ -9,6 +9,7 @@ namespace App;
 
 use App\Support\BlockMigration;
 use App\Support\PageFields;
+use App\Support\Tours;
 
 /**
  * Ensure concept pages + nav menus exist (idempotent).
@@ -79,6 +80,8 @@ function wr_ensure_concept_pages_and_menus(): void
         }
         BlockMigration::deleteLegacyPageMeta($id);
     }
+
+    Tours::ensureProducts();
 
     wr_ensure_nav_menu(
         'Walkridge Primary',
@@ -154,10 +157,11 @@ function wr_ensure_nav_menu(string $menuName, string $location, array $items, ar
 add_action('after_switch_theme', 'App\\wr_ensure_concept_pages_and_menus');
 add_action('admin_init', function (): void {
     wr_ensure_concept_pages_and_menus();
-    if (get_option('wr_demo_layouts_v3') === '1') {
+    if (get_option('wr_demo_layouts_v4') === '1') {
         return;
     }
     BlockMigration::seedDemoPages();
+    update_option('wr_demo_layouts_v4', '1', false);
     update_option('wr_demo_layouts_v3', '1', false);
     update_option('wr_demo_layouts_v2', '1', false);
     update_option('wr_pages_menus_seeded', '1', false);

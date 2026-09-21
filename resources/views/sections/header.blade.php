@@ -8,6 +8,18 @@
   $isGuides = str_starts_with($req, 'guides');
   $isArea = str_starts_with($req, 'area');
   $isContact = str_starts_with($req, 'contact');
+  $isShop = function_exists('is_shop') && is_shop();
+  $isCart = function_exists('is_cart') && is_cart();
+  $isCheckout = function_exists('is_checkout') && is_checkout();
+  $cartUrl = function_exists('wc_get_cart_url') ? wc_get_cart_url() : '';
+  $cartCount = 0;
+  if (function_exists('WC')) {
+    $wc = WC();
+    if ($wc && $wc->cart) {
+      $cartCount = (int) $wc->cart->get_cart_contents_count();
+    }
+  }
+  $showCart = $cartUrl !== '';
 @endphp
 
 <header class="site-header" role="banner">
@@ -54,14 +66,29 @@
           <li><a href="{{ home_url('/guides') }}" @if($isGuides) class="is-active" aria-current="page" @endif>{{ __('Guides', 'walkridge') }}</a></li>
           <li><a href="{{ home_url('/area') }}" @if($isArea) class="is-active" aria-current="page" @endif>{{ __('The Area', 'walkridge') }}</a></li>
           <li><a href="{{ home_url('/contact') }}" @if($isContact) class="is-active" aria-current="page" @endif>{{ __('Contact', 'walkridge') }}</a></li>
+          <li><a href="{{ esc_url($shopUrl) }}" @if($isShop) class="is-active" aria-current="page" @endif>{{ __('Shop', 'walkridge') }}</a></li>
         </ul>
       @endif
     </nav>
     <div class="header-actions">
       <a href="{{ esc_url(Identity::phoneHref()) }}" class="btn btn-ghost btn-sm header-phone">{{ Identity::phone() }}</a>
-      <a href="{{ esc_url($shopUrl) }}" class="btn btn-primary btn-sm">{{ Identity::ctaLabel() }}</a>
+      <a href="{{ esc_url($shopUrl) }}" class="btn btn-primary btn-sm header-cta">{{ Identity::ctaLabel() }}</a>
+      @if($showCart)
+        <a href="{{ esc_url($cartUrl) }}" class="header-cart" id="wr-header-cart" @if($isCart) aria-current="page" @endif>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M3 4h2l2.4 11.2a2 2 0 002 1.6h8.4a2 2 0 002-1.5L21 8H7"/></svg>
+          <span class="header-cart__count" data-wr-cart-count>{{ $cartCount }}</span>
+          <span class="visually-hidden">
+            @if($cartCount === 1)
+              {{ __('Cart, 1 item', 'walkridge') }}
+            @else
+              {{ sprintf(/* translators: %d: number of cart items */ __('Cart, %d items', 'walkridge'), $cartCount) }}
+            @endif
+          </span>
+        </a>
+      @endif
       <button type="button" class="theme-toggle" id="themeToggle"
-              aria-label="{{ __('Toggle colour theme', 'walkridge') }}"
+              aria-pressed="false"
+              aria-label="{{ __('Switch to dark mode', 'walkridge') }}"
               data-label-light="{{ __('Switch to dark mode', 'walkridge') }}"
               data-label-dark="{{ __('Switch to light mode', 'walkridge') }}">
         <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -80,6 +107,7 @@
   </div>
 </header>
 <nav class="mobile-nav" id="mobileNav" aria-label="{{ __('Mobile navigation', 'walkridge') }}" role="dialog" aria-modal="true" hidden>
+  <button type="button" class="mobile-nav__close" id="mobileNavClose">{{ __('Close menu', 'walkridge') }}</button>
   <ul>
     <li><a href="{{ home_url('/') }}" @if($isHome) class="is-active" aria-current="page" @endif>{{ __('Home', 'walkridge') }}</a></li>
     <li><a href="{{ home_url('/tours') }}" @if($isTours) class="is-active" aria-current="page" @endif>{{ __('All Tours', 'walkridge') }}</a></li>
@@ -88,9 +116,30 @@
     <li><a href="{{ home_url('/guides') }}" @if($isGuides) class="is-active" aria-current="page" @endif>{{ __('Our Guides', 'walkridge') }}</a></li>
     <li><a href="{{ home_url('/area') }}" @if($isArea) class="is-active" aria-current="page" @endif>{{ __('The Area', 'walkridge') }}</a></li>
     <li><a href="{{ home_url('/contact') }}" @if($isContact) class="is-active" aria-current="page" @endif>{{ __('Contact', 'walkridge') }}</a></li>
-    <li><a href="{{ esc_url($shopUrl) }}">{{ __('Book & Pay', 'walkridge') }}</a></li>
+    <li><a href="{{ esc_url($shopUrl) }}" @if($isShop) class="is-active" aria-current="page" @endif>{{ __('Book & Pay', 'walkridge') }}</a></li>
+    @if($showCart)
+      <li>
+        <a href="{{ esc_url($cartUrl) }}" @if($isCart || $isCheckout) class="is-active" aria-current="page" @endif>
+          {{ sprintf(/* translators: %d: cart item count */ __('Cart (%d)', 'walkridge'), $cartCount) }}
+        </a>
+      </li>
+    @endif
   </ul>
   <?php /* translators: %s: office phone number */ ?>
   <a href="{{ esc_url(Identity::phoneHref()) }}" class="btn btn-outline btn-block">{{ sprintf(__('Call %s', 'walkridge'), Identity::phone()) }}</a>
   <a href="{{ esc_url($shopUrl) }}" class="btn btn-primary btn-block">{{ Identity::ctaLabel() }}</a>
+  <button type="button" class="theme-toggle theme-toggle--block" id="themeToggleMobile"
+          aria-pressed="false"
+          aria-label="{{ __('Switch to dark mode', 'walkridge') }}"
+          data-label-light="{{ __('Switch to dark mode', 'walkridge') }}"
+          data-label-dark="{{ __('Switch to light mode', 'walkridge') }}">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="5"/>
+      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+    </svg>
+    <span>{{ __('Colour theme', 'walkridge') }}</span>
+  </button>
 </nav>

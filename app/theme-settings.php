@@ -66,6 +66,7 @@ add_action('admin_post_wr_save_theme_settings', function (): void {
         'wr_social_tripadvisor' => 'esc_url_raw',
         'wr_social_twitter' => 'sanitize_text_field',
         'wr_accent_color' => 'sanitize_hex_color',
+        'wr_color_scheme' => 'sanitize_key',
     ];
 
     foreach ($text as $key => $callback) {
@@ -77,6 +78,9 @@ add_action('admin_post_wr_save_theme_settings', function (): void {
             'sanitize_email' => sanitize_email($raw),
             'esc_url_raw' => esc_url_raw($raw),
             'sanitize_hex_color' => (string) (sanitize_hex_color($raw) ?: ''),
+            'sanitize_key' => $key === 'wr_color_scheme'
+                ? (sanitize_key($raw) === 'dark' ? 'dark' : 'light')
+                : sanitize_key($raw),
             default => $raw,
         };
         set_theme_mod($key, $value);
@@ -250,6 +254,12 @@ function wr_render_theme_settings_page(): void
 
     echo '<section class="wr-card">';
     echo '<h2>'.esc_html__('Chrome & accent', 'walkridge').'</h2>';
+    $scheme = Identity::colorScheme();
+    echo '<fieldset class="wr-field"><legend>'.esc_html__('Default colour theme', 'walkridge').'</legend>';
+    echo '<p class="description">'.esc_html__('First visit and new installs use this. Guests can still switch in the header; their choice is stored in the browser.', 'walkridge').'</p>';
+    echo '<label class="wr-check"><input type="radio" name="wr_color_scheme" value="light"'.checked($scheme, 'light', false).'> '.esc_html__('Light (parchment) — default', 'walkridge').'</label>';
+    echo '<label class="wr-check"><input type="radio" name="wr_color_scheme" value="dark"'.checked($scheme, 'dark', false).'> '.esc_html__('Dark (slate battlefield)', 'walkridge').'</label>';
+    echo '</fieldset>';
     echo '<label class="wr-check"><input type="checkbox" name="wr_show_demo_chrome" value="1"'.checked(Identity::showDemoChrome(), true, false).'> '.esc_html__('Show concept demo badge', 'walkridge').'</label>';
     echo '<label class="wr-check"><input type="checkbox" name="wr_show_credit" value="1"'.checked(Identity::showCredit(), true, false).'> '.esc_html__('Show removable author credit', 'walkridge').'</label>';
     echo '<label class="wr-field"><span>'.esc_html__('Gold accent override', 'walkridge').'</span>';

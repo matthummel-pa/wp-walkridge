@@ -1,5 +1,44 @@
 # Changelog
 
+## 1.7.0 — 2026-09-19
+
+Navbar, WooCommerce, and light-default follow-up on 1.6.x.
+
+- First paint stays light (`data-theme="light"`). Stale `wr-theme` and `wr-color-scheme` dark values are ignored; only a new header toggle writes `wr-theme-pref`. Dark remains optional.
+- Sticky frosted header: logo + name, primary nav + Shop, Book CTA, Woo cart count, theme toggle. Skip link `z-index` sits above the bar.
+- Mobile menu: Close control, 44px targets, cart link, theme toggle, existing focus trap + `aria-expanded`.
+- Woo shop / product / cart / checkout / account: visible field labels, quantity label, related tours heading, account nav, 44px buttons.
+- Light navbar contrast: ink on parchment, gold-800 brand subtitle.
+
+## 1.6.1 — 2026-09-19
+
+WooCommerce tour catalog seed for new installs.
+
+- `Tours::ensureProducts()` creates five published simple products (USD demo prices) in a Tours category when WooCommerce is active
+- Tours Gutenberg layout adds a `[products]` shop grid so bookings go to product permalinks / add-to-cart, not static cards only
+- Fallback tour cards show concept prices when Woo is off
+
+## 1.6.0 — 2026-09-19
+
+Light default, WCAG 2.2 contrast, denser demo pages, Woo empty states.
+
+### Checked (WCAG 2.2)
+
+- Contrast of body, links, buttons, footer, map chrome, and Woo notices on **light** (default) and dark
+- Keyboard: skip link, `:focus` / `:focus-visible` gold ring, mobile nav trap (existing)
+- Names: payment SVG `aria-label`s, theme toggle pressed state, form labels
+- Target size: header toggle, hamburger, primary buttons ≥44×44
+- Landmarks: banner / main / contentinfo (existing); heading colour on light headings
+
+### Fixed
+
+- Light is first-run (`data-theme="light"`, Theme Settings + Customizer `wr_color_scheme`, default `light`). Dark stays optional. Header toggle stores `wr-color-scheme` in the browser.
+- Light `--color-ink-soft` darkened to `#3c2d1c` (~7:1 on `#f7f1e3`). Gold-on-parchment body/links use `--gold-800` (`#6b521f`) instead of `--gold-300`/`--gold-500`.
+- Footer pay marks sit on white wells with strokes (Visa/Mastercard/Amex/Discover readable on light and dark).
+- Newsletter has a visible label; skip link shows on `:focus` as well as `:focus-visible`.
+- Woo notices, empty shop, empty cart, and “Woo off” shop wrapper use Walkridge tokens and point guests to `/tours`.
+- Concept pages reseed (`wr_demo_layouts_v4`) with extra FAQ / reviews / area-facts / journal blocks. 555 phones and `@walkridge.test` unchanged.
+
 ## 1.5.0 — 2026-09-19
 
 Cumulative production zip of all recent Walkridge work:

@@ -45,7 +45,11 @@ if (str_contains($diff_lower, 'easy')) {
   <div class="wr-card__thumb">
     <?php if ($product->get_image_id()) : ?>
       <a href="<?php echo esc_url(get_permalink($product->get_id())); ?>" tabindex="-1" aria-hidden="true">
-        <?php echo wp_kses_post($product->get_image('medium', ['class' => 'wr-card__img', 'loading' => 'lazy', 'alt' => ''])); ?>
+        <?php echo wp_kses_post($product->get_image('medium', [
+            'class' => 'wr-card__img',
+            'loading' => 'lazy',
+            'alt' => $product->get_name(),
+        ])); ?>
       </a>
     <?php else : ?>
       <div class="wr-card__img-placeholder" aria-hidden="true">

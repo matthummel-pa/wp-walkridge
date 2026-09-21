@@ -145,6 +145,16 @@
   margin: 0.55rem 0;
 }
 
+.wr-field legend {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.wr-field.wr-field {
+  border: 0;
+  padding: 0;
+}
+
 .wr-logo-field {
   margin-top: 0.85rem;
 }

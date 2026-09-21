@@ -9,14 +9,16 @@
   document.querySelectorAll("[data-year]").forEach(function(el){ el.textContent = yr; });
 
   /* ── Theme toggle ─────────────────────────────────────────
-     Reads prefers-color-scheme as the default, then defers to
-     localStorage('wr-theme') if the user has made a choice.  */
+     Site default is light. Ignore stale 1.5.x `wr-theme` (often dark)
+     and 1.6.x `wr-color-scheme` so returning visitors land on parchment.
+     Only `wr-theme-pref` (set by this toggle) persists dark. */
   (function(){
-    var STORAGE_KEY = "wr-theme";
+    var STORAGE_KEY = "wr-theme-pref";
     var html = document.documentElement;
 
-    function getPreferred(){
-      return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    function siteDefault(){
+      var d = html.getAttribute("data-wr-default-theme");
+      return d === "dark" ? "dark" : "light";
     }
 
     function applyTheme(theme){
@@ -25,34 +27,33 @@
       } else {
         html.removeAttribute("data-theme");
       }
-      // Update toggle button aria-label & title
+      html.style.colorScheme = theme === "dark" ? "dark" : "light";
       document.querySelectorAll(".theme-toggle").forEach(function(btn){
         var next = theme === "light" ? "dark" : "light";
-        btn.setAttribute("aria-label","Switch to " + next + " mode");
-        btn.setAttribute("title","Switch to " + next + " mode");
+        var label = next === "dark"
+          ? (btn.getAttribute("data-label-light") || ("Switch to " + next + " mode"))
+          : (btn.getAttribute("data-label-dark") || ("Switch to " + next + " mode"));
+        btn.setAttribute("aria-label", label);
+        btn.setAttribute("title", label);
         btn.setAttribute("data-current-theme", theme);
+        btn.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
       });
     }
 
-    // Apply saved preference (or OS default) immediately — before paint
-    var saved = localStorage.getItem(STORAGE_KEY);
-    applyTheme(saved || getPreferred());
+    try {
+      localStorage.removeItem("wr-theme");
+    } catch (e) {}
+    var saved = null;
+    try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+    applyTheme((saved === "light" || saved === "dark") ? saved : siteDefault());
 
-    // Wire toggle buttons (may not be in DOM yet — use delegation)
     document.addEventListener("click", function(e){
       var btn = e.target.closest(".theme-toggle");
       if(!btn) return;
       var current = html.getAttribute("data-theme") || "dark";
       var next = current === "light" ? "dark" : "light";
       applyTheme(next);
-      localStorage.setItem(STORAGE_KEY, next);
-    });
-
-    // Respond to OS preference changes (if no explicit user choice)
-    window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", function(e){
-      if(!localStorage.getItem(STORAGE_KEY)){
-        applyTheme(e.matches ? "light" : "dark");
-      }
+      try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
     });
   })();
 
@@ -110,12 +111,18 @@
         hamburgerBtn.setAttribute("aria-label","Close menu");
         document.body.classList.add("modal-locked");
         document.addEventListener("keydown", trapFocus, true);
-        var firstLink = mobileNav.querySelector("a");
-        if(firstLink) firstLink.focus();
+        var closeBtn = document.getElementById("mobileNavClose");
+        if(closeBtn) closeBtn.focus();
+        else {
+          var firstLink = mobileNav.querySelector("a, button");
+          if(firstLink) firstLink.focus();
+        }
       } else {
         closeMobileNav();
       }
     });
+    var mobileClose = document.getElementById("mobileNavClose");
+    if(mobileClose) mobileClose.addEventListener("click", closeMobileNav);
     mobileNav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMobileNav); });
     document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeMobileNav(); });
   }

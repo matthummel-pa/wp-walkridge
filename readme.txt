@@ -3,7 +3,7 @@ Contributors: matthummel
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 8.3
-Stable tag: 1.5.0
+Stable tag: 1.7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, translation-ready, one-column, threaded-comments
@@ -114,6 +114,23 @@ Original compass mark (inline SVG in the header/footer; GPLv2 with the theme):
 See docs/marketplace/branding.html (Documentation/branding.html in the seller pack) and BRAND.md.
 
 == Changelog ==
+
+= 1.7.0 =
+* Light parchment is first paint; stale `wr-theme` dark localStorage is ignored
+* Sticky frosted header with cart count, shop link, 44px mobile menu, close control, and focus trap
+* WooCommerce shop, product, cart, checkout, and account polish (visible labels, quantity, related tours)
+* Header skip link stays above the sticky bar
+
+= 1.6.1 =
+* Seed five WooCommerce tour products (Tours category) when WooCommerce is active
+* Tours layout includes a WooCommerce product shortcode alongside the tour-grid
+
+= 1.6.0 =
+* Light parchment is the default colour theme; dark slate remains a header toggle and Theme Settings option
+* WCAG 2.2 contrast pass on light surfaces (body, footer links, Woo notices, gold-on-parchment text)
+* Skip link, 44px targets, named payment icons, visible newsletter label
+* Denser Gutenberg demo layouts (FAQ, reviews, area facts) on concept pages
+* WooCommerce empty shop/cart templates that sell booking a tour
 
 = 1.5.0 =
 * Cumulative production release of restored marketing pages, Walkridge Gutenberg blocks, Area Map, output escaping, and GitHub Release updates

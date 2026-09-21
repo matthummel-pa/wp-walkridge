@@ -81,6 +81,24 @@ add_action('customize_register', function (WP_Customize_Manager $wp_customize) {
         'type' => 'textarea',
     ]);
 
+    $wp_customize->add_setting('wr_color_scheme', [
+        'default' => 'light',
+        'sanitize_callback' => static function ($value): string {
+            return sanitize_key((string) $value) === 'dark' ? 'dark' : 'light';
+        },
+        'transport' => 'refresh',
+    ]);
+    $wp_customize->add_control('wr_color_scheme', [
+        'label' => __('Default colour theme', 'walkridge'),
+        'description' => __('Light parchment is the first-run look. Dark slate remains available in the header toggle.', 'walkridge'),
+        'section' => 'wr_identity',
+        'type' => 'radio',
+        'choices' => [
+            'light' => __('Light (parchment) — default', 'walkridge'),
+            'dark' => __('Dark (slate battlefield)', 'walkridge'),
+        ],
+    ]);
+
     $wp_customize->add_setting('wr_show_demo_chrome', [
         'default' => true,
         'sanitize_callback' => __NAMESPACE__.'\\wr_sanitize_checkbox',
