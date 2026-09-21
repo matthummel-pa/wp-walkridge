@@ -96,6 +96,7 @@ function wr_render_reviews(array $attrs): string
     foreach ($rows as $row) {
         echo '<article class="review-card">';
         echo '<div class="stars" aria-hidden="true">★★★★★</div>';
+        echo '<p class="visually-hidden">'.esc_html__('Rated 5 out of 5 stars', 'walkridge').'</p>';
         echo '<blockquote>'.esc_html($row[0]).'</blockquote>';
         echo '<p class="review-author">'.esc_html($row[1] ?? '');
         if (! empty($row[2])) {
