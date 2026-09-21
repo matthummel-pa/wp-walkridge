@@ -37,7 +37,7 @@ class DemoLayouts
                 'rightPathTitle' => 'Walk after dark',
                 'rightPathText' => 'Lantern-lit downtown accounts. Real names, letters, and streets — not jump scares.',
             ]),
-            '<!-- wp:walkridge/info-strip /-->',
+            self::comment('walkridge/info-strip', []),
             self::comment('walkridge/about-split', [
                 'eyebrow' => 'About Us',
                 'heading' => 'Guided by licensed historians, not a script.',
@@ -63,7 +63,14 @@ class DemoLayouts
                 'text' => 'Our daytime tours stitch the battle to the ground — not a greatest-hits montage.',
                 'items' => "Day One | McPherson Ridge | The opening fight west of town. How the first day pulled the armies onto the ridges that still hold the line.\nDay Two | Little Round Top | The southern flank, the rocks of Devil’s Den, and the high ground Union troops fought to keep.\nDay Three | High Water Mark | Cemetery Ridge and Pickett’s Charge — the assault you can still pace from the copse of trees.",
             ]),
-            '<!-- wp:walkridge/tour-grid {"limit":3,"showFilters":true,"showCompare":false,"eyebrow":"Choose Your Tour","heading":"Five ways to walk the field.","text":"From an easy narrated bus loop to a lantern-lit evening walk through town, each tour is capped at a small group size so you can actually hear your guide — and ask questions."} /-->',
+            self::comment('walkridge/tour-grid', [
+                'limit' => 3,
+                'showFilters' => true,
+                'showCompare' => false,
+                'eyebrow' => 'Choose Your Tour',
+                'heading' => 'Five ways to walk the field.',
+                'text' => 'From an easy narrated bus loop to a lantern-lit evening walk through town, each tour is capped at a small group size so you can actually hear your guide — and ask questions.',
+            ]),
             self::comment('walkridge/card-grid', [
                 'variant' => 'expect',
                 'eyebrow' => 'Before You Go',
@@ -79,7 +86,10 @@ class DemoLayouts
                 'text' => 'Features most tour operators forget until the phone rings.',
                 'items' => "Gift certificates | Give a licensed-guide tour instead of a souvenir. Guest services issues certificates mapped to a simple product. | WooCommerce | /contact/\nPrivate groups | The Sunrise Private Battlefield Experience is capped at six. Larger families, schools, and corporate groups: call the sample desk. | Schools & reunions | /contact/\nADA bus loop | The deluxe bus tour is seated and ADA accessible. Walking tours use uneven ground and are not wheelchair accessible. | Access | /contact/",
             ]),
-            '<!-- wp:walkridge/book-band {"heading":"Reserve your spot in three minutes.","text":"Pick a tour, choose a date, and check out securely. You’ll get a confirmation with your ticket number by email."} /-->',
+            self::comment('walkridge/book-band', [
+                'heading' => 'Reserve your spot in three minutes.',
+                'text' => 'Pick a tour, choose a date, and check out securely. You’ll get a confirmation with your ticket number by email.',
+            ]),
             self::reviewsBlock(),
             self::comment('walkridge/journal-cards', [
                 'eyebrow' => 'Field Notes',
@@ -104,8 +114,12 @@ class DemoLayouts
 
         return implode("\n\n", [
             self::comment('walkridge/page-intro', self::introAttrs($intro, $defaults)),
-            '<!-- wp:walkridge/info-strip /-->',
-            '<!-- wp:walkridge/tour-grid {"eyebrow":"Choose Your Tour","heading":"Five ways to walk the field.","text":"Every tour is a catalog product led by an Association-licensed guide and capped at a small group size. Prices are per person in USD; children are ages 6–12 and seniors are 65+. Book This Tour opens the product page."} /-->',
+            self::comment('walkridge/info-strip', []),
+            self::comment('walkridge/tour-grid', [
+                'eyebrow' => 'Choose Your Tour',
+                'heading' => 'Five ways to walk the field.',
+                'text' => 'Every tour is a catalog product led by an Association-licensed guide and capped at a small group size. Prices are per person in USD; children are ages 6–12 and seniors are 65+. Book This Tour opens the product page.',
+            ]),
             '<!-- wp:heading {"textAlign":"center"} -->
 <h2 class="wp-block-heading has-text-align-center">Shop the tour catalog</h2>
 <!-- /wp:heading -->',
@@ -139,7 +153,9 @@ class DemoLayouts
                 'heading' => 'Booking questions, answered.',
                 'items' => self::faqItems(),
             ]),
-            '<!-- wp:walkridge/book-band {"heading":"Ready to pick your date?"} /-->',
+            self::comment('walkridge/book-band', [
+                'heading' => 'Ready to pick your date?',
+            ]),
         ]);
     }
 
@@ -152,7 +168,7 @@ class DemoLayouts
 
         return implode("\n\n", [
             self::comment('walkridge/page-intro', self::introAttrs($intro, $defaults)),
-            '<!-- wp:walkridge/info-strip /-->',
+            self::comment('walkridge/info-strip', []),
             self::comment('walkridge/guide-roster', [
                 'eyebrow' => 'The Team',
                 'heading' => 'Historians who live the ground they walk.',
@@ -178,7 +194,9 @@ class DemoLayouts
                 'heading' => 'Who is on the ground with you?',
                 'items' => "Are these real named historians? | Roles above are sample specialties for this concept — not live credentials. Your office replaces names under Gutenberg.\nWhat does licensed mean here? | Walking and bus tours are written as if a guide passed the same battlefield-guide exam used at the national military park.\nCan we request a guide? | Use the contact form or call (717) 555-0100. This is a sample desk, not a live scheduling line.\nDo lantern walks use the same guides? | Maya Trent is the sample after-dark specialist. Daylight walking, bus, and hike specialties are listed on this page.",
             ]),
-            '<!-- wp:walkridge/book-band {"heading":"Tour with a licensed guide."} /-->',
+            self::comment('walkridge/book-band', [
+                'heading' => 'Tour with a licensed guide.',
+            ]),
         ]);
     }
 
@@ -191,7 +209,7 @@ class DemoLayouts
 
         return implode("\n\n", [
             self::comment('walkridge/page-intro', self::introAttrs($intro, $defaults)),
-            '<!-- wp:walkridge/info-strip /-->',
+            self::comment('walkridge/info-strip', []),
             self::comment('walkridge/copy-section', [
                 'eyebrow' => 'The Battlefield',
                 'heading' => 'Where the Battle of Gettysburg was fought',
@@ -220,7 +238,7 @@ class DemoLayouts
                 'text' => 'Approximate distances to the sample 100 Sample Street meeting point.',
                 'items' => "Biglerville | ~9 mi N · US-15 & PA-34\nLittlestown | ~10 mi SE · PA-97\nNew Oxford | ~9 mi E · US-30\nMcSherrystown | ~13 mi E\nFairfield | ~8 mi W · PA-116\nCashtown | ~8 mi NW · US-30\nHanover | ~15 mi SE · PA-116",
             ]),
-            '<!-- wp:walkridge/area-facts /-->',
+            self::comment('walkridge/area-facts', []),
             self::reviewsBlock(),
             self::comment('walkridge/faq-list', [
                 'eyebrow' => 'The Area',
@@ -245,21 +263,23 @@ class DemoLayouts
 
         return implode("\n\n", [
             self::comment('walkridge/page-intro', self::introAttrs($intro, $defaults)),
-            '<!-- wp:walkridge/info-strip /-->',
+            self::comment('walkridge/info-strip', []),
             self::comment('walkridge/card-grid', [
                 'variant' => 'feature',
                 'eyebrow' => 'Plan Ahead',
                 'heading' => 'Gifts, groups, and an easier way in.',
                 'items' => "Gift certificates | Ask guest services to issue a certificate toward any of the five tours. In Sage this becomes a WooCommerce simple product. | Give the walk | #\nPrivate groups | The Sunrise Private Battlefield Experience is built for up to six guests. Families, reunions, schools, and corporate groups: use the form. | Groups & schools | #",
             ]),
-            '<!-- wp:walkridge/contact-desk /-->',
+            self::comment('walkridge/contact-desk', []),
             self::comment('walkridge/faq-list', [
                 'eyebrow' => 'Good to Know',
                 'heading' => 'Frequently asked questions.',
                 'items' => self::faqItems(),
             ]),
             self::reviewsBlock(),
-            '<!-- wp:walkridge/book-band {"heading":"Ready to book?"} /-->',
+            self::comment('walkridge/book-band', [
+                'heading' => 'Ready to book?',
+            ]),
         ]);
     }
 
@@ -292,7 +312,9 @@ class DemoLayouts
                 'heading' => 'Refund questions in plain language.',
                 'items' => "When can I cancel for a full refund? | Cancel or reschedule up to 24 hours before your tour for a full refund. This is sample store copy — replace the window on the Refund Policy block.\nWhat if weather cancels the walk? | In severe weather the sample desk contacts you at least two hours before departure to reschedule or refund. Light rain still goes.\nHow do I reach guest services? | Email tours@walkridge.test or call (717) 555-0100. Fiction-range sample number — not a live line.\nWhere is checkout handled? | WooCommerce (when active) processes payments. Walkridge is not a payment processor by itself.",
             ]),
-            '<!-- wp:walkridge/book-band {"heading":"Questions about a booking?"} /-->',
+            self::comment('walkridge/book-band', [
+                'heading' => 'Questions about a booking?',
+            ]),
         ]);
     }
 
@@ -331,7 +353,7 @@ class DemoLayouts
             return '';
         }
 
-        return self::comment('walkridge/page-intro', $intro)."\n\n<!-- wp:walkridge/info-strip /-->";
+        return self::comment('walkridge/page-intro', $intro)."\n\n".self::comment('walkridge/info-strip', []);
     }
 
     private static function reviewsBlock(): string
@@ -345,6 +367,11 @@ class DemoLayouts
     }
 
     /**
+     * Gutenberg comment with ASCII `<!-- wp:` delimiters.
+     * JSON_HEX_TAG / JSON_HEX_AMP match serialize_block_attributes() so raw
+     * `<p>` / `<em>` inside attrs cannot make wp_kses_post encode the comment
+     * (`&lt;!-- wp:…`) and leak markup on the front end.
+     *
      * @param  array<string, mixed>  $attrs
      */
     public static function comment(string $name, array $attrs): string
@@ -353,11 +380,25 @@ class DemoLayouts
             $attrs,
             static fn ($v) => $v !== '' && $v !== null
         );
+
+        if (function_exists('serialize_block')) {
+            return serialize_block([
+                'blockName' => $name,
+                'attrs' => $clean,
+                'innerBlocks' => [],
+                'innerHTML' => '',
+                'innerContent' => [],
+            ]);
+        }
+
         if ($clean === []) {
             return "<!-- wp:{$name} /-->";
         }
 
-        $json = wp_json_encode($clean, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        $json = wp_json_encode(
+            $clean,
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP
+        );
 
         return "<!-- wp:{$name} {$json} /-->";
     }

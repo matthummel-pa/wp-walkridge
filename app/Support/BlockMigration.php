@@ -84,10 +84,7 @@ class BlockMigration
         }
 
         if ($changed) {
-            wp_update_post([
-                'ID' => $postId,
-                'post_content' => $content,
-            ]);
+            self::updatePostContent($postId, $content);
             self::markMigrated($postId);
         }
 
@@ -151,10 +148,7 @@ class BlockMigration
             }
         }
         if ($frontId > 0) {
-            wp_update_post([
-                'ID' => $frontId,
-                'post_content' => DemoLayouts::forSlug('home'),
-            ]);
+            self::updatePostContent($frontId, DemoLayouts::forSlug('home'));
             self::markMigrated($frontId);
             self::deleteLegacyPageMeta($frontId);
             $updated++;
@@ -166,16 +160,142 @@ class BlockMigration
                 continue;
             }
             $defaults = PageFields::defaultsForSlug($key);
-            wp_update_post([
-                'ID' => $page->ID,
-                'post_content' => DemoLayouts::forSlug($key, $defaults),
-            ]);
+            self::updatePostContent((int) $page->ID, DemoLayouts::forSlug($key, $defaults));
             self::markMigrated((int) $page->ID);
             self::deleteLegacyPageMeta((int) $page->ID);
             $updated++;
         }
 
         return ['updated' => $updated];
+    }
+
+    /**
+     * Restore Gutenberg comments that wp_kses encoded as visible `&lt;!-- wp:` text,
+     * and re-serialize so HTML inside JSON is `\u003c` (kses-safe).
+     *
+     * @return array{repaired: int, reseeded: int}
+     */
+    public static function repairEscapedBlockComments(): array
+    {
+        $pages = get_posts([
+            'post_type' => ['page', 'post', 'product'],
+            'post_status' => 'any',
+            'posts_per_page' => -1,
+        ]);
+        $repaired = 0;
+        $reseeded = 0;
+        $concept = ['home', 'tours', 'guides', 'area', 'contact', 'refund-policy'];
+
+        foreach ($pages as $post) {
+            if (! $post instanceof \WP_Post) {
+                continue;
+            }
+            $content = (string) $post->post_content;
+            if (! self::contentNeedsBlockRepair($content)) {
+                continue;
+            }
+
+            $slug = (string) $post->post_name;
+            $frontId = (int) get_option('page_on_front');
+            $isHome = ((int) $post->ID === $frontId) || $slug === 'home';
+            $normalized = self::normalizeBlockMarkup($content);
+            $stillBroken = self::contentNeedsBlockRepair($normalized)
+                || ! str_contains($normalized, '<!-- wp:');
+
+            if ($stillBroken && ($isHome || in_array($slug, $concept, true))) {
+                $layout = $isHome ? 'home' : $slug;
+                $defaults = PageFields::defaultsForSlug($layout);
+                self::updatePostContent((int) $post->ID, DemoLayouts::forSlug($layout, $defaults));
+                self::markMigrated((int) $post->ID);
+                $reseeded++;
+
+                continue;
+            }
+
+            if ($normalized !== $content) {
+                self::updatePostContent((int) $post->ID, $normalized);
+                $repaired++;
+            }
+        }
+
+        return ['repaired' => $repaired, 'reseeded' => $reseeded];
+    }
+
+    public static function contentNeedsBlockRepair(string $content): bool
+    {
+        if ($content === '') {
+            return false;
+        }
+
+        $enDash = "\u{2013}";
+        $emDash = "\u{2014}";
+
+        return str_contains($content, '&lt;!-- wp:')
+            || str_contains($content, '&lt;!-- /wp:')
+            || str_contains($content, '<!'.$enDash)
+            || str_contains($content, $enDash.'>')
+            || str_contains($content, '<!'.$emDash)
+            || str_contains($content, $emDash.'>')
+            || (bool) preg_match('/<!-- wp:[^>]*<(?:p|em|strong|br|span|div)/i', $content);
+    }
+
+    public static function unescapeBlockComments(string $content): string
+    {
+        return self::normalizeBlockMarkup($content);
+    }
+
+    /**
+     * ASCII comment delimiters + HEX-encoded tags inside block JSON.
+     */
+    public static function normalizeBlockMarkup(string $content): string
+    {
+        $enDash = "\u{2013}";
+        $emDash = "\u{2014}";
+        $content = str_replace(
+            ['<!'.$enDash, $enDash.'>', '<!'.$emDash, $emDash.'>'],
+            ['<!--', '-->', '<!--', '-->'],
+            $content
+        );
+
+        if (
+            str_contains($content, '&lt;!-- wp:')
+            || str_contains($content, '&lt;!-- /wp:')
+            || str_contains($content, '/--&gt;')
+        ) {
+            $content = html_entity_decode($content, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        }
+
+        if (! function_exists('parse_blocks') || ! function_exists('serialize_blocks')) {
+            return $content;
+        }
+
+        if (! str_contains($content, '<!-- wp:')) {
+            return $content;
+        }
+
+        return serialize_blocks(parse_blocks($content));
+    }
+
+    /**
+     * Persist Gutenberg markup without kses encoding `<!-- wp:` comments,
+     * and wp_slash so JSON `\n` / `\u003c` survive wp_unslash on save.
+     */
+    public static function updatePostContent(int $postId, string $content): void
+    {
+        $removed = false;
+        if (function_exists('kses_remove_filters')) {
+            kses_remove_filters();
+            $removed = true;
+        }
+
+        wp_update_post([
+            'ID' => $postId,
+            'post_content' => wp_slash($content),
+        ]);
+
+        if ($removed && function_exists('kses_init_filters')) {
+            kses_init_filters();
+        }
     }
 
     /**

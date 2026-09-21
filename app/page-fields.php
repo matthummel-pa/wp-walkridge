@@ -70,12 +70,10 @@ function wr_ensure_concept_pages_and_menus(): void
         $defaults = PageFields::defaultsForSlug($slug);
         $post = get_post($id);
         $content = is_string($post->post_content ?? null) ? trim((string) $post->post_content) : '';
-        if ($content === '' || ! str_contains($content, '<!-- wp:walkridge/')) {
+        $hasBlocks = str_contains($content, '<!-- wp:walkridge/');
+        if ($content === '' || ! $hasBlocks || BlockMigration::contentNeedsBlockRepair($content)) {
             $layoutSlug = $slug === 'home' ? 'home' : $slug;
-            wp_update_post([
-                'ID' => $id,
-                'post_content' => BlockMigration::buildContentForSlug($layoutSlug, $defaults),
-            ]);
+            BlockMigration::updatePostContent($id, BlockMigration::buildContentForSlug($layoutSlug, $defaults));
             BlockMigration::markMigrated($id);
         }
         BlockMigration::deleteLegacyPageMeta($id);
@@ -187,12 +185,22 @@ function wr_ensure_nav_menu(string $menuName, string $location, array $items, ar
 add_action('after_switch_theme', 'App\\wr_ensure_concept_pages_and_menus');
 add_action('admin_init', function (): void {
     wr_ensure_concept_pages_and_menus();
-    if (get_option('wr_demo_layouts_v4') === '1') {
+    if (get_option('wr_demo_layouts_v5') === '1') {
         return;
     }
+    BlockMigration::repairEscapedBlockComments();
     BlockMigration::seedDemoPages();
+    update_option('wr_demo_layouts_v5', '1', false);
     update_option('wr_demo_layouts_v4', '1', false);
     update_option('wr_demo_layouts_v3', '1', false);
     update_option('wr_demo_layouts_v2', '1', false);
     update_option('wr_pages_menus_seeded', '1', false);
 });
+
+add_action('init', function (): void {
+    if (get_option('wr_escaped_block_comments_v1') === '1') {
+        return;
+    }
+    BlockMigration::repairEscapedBlockComments();
+    update_option('wr_escaped_block_comments_v1', '1', false);
+}, 20);
