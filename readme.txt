@@ -3,7 +3,7 @@ Contributors: matthummel
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 8.3
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, translation-ready, one-column, threaded-comments
@@ -114,6 +114,11 @@ Original compass mark (inline SVG in the header/footer; GPLv2 with the theme):
 See docs/marketplace/branding.html (Documentation/branding.html in the seller pack) and BRAND.md.
 
 == Changelog ==
+
+= 1.7.1 =
+* Short primary-nav labels when WordPress copied long page titles into the menu
+* Woo notice templates no longer put phpcs comments next to `?>`; Customizer update control loads its parent class safely
+* Light empty-cart block titles and a later hamburger breakpoint so the sticky header does not overflow
 
 = 1.7.0 =
 * Light parchment is first paint; stale `wr-theme` dark localStorage is ignored

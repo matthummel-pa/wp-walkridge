@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.7.1 — 2026-09-21
+
+Live error hunt after 1.7.0.
+
+- Primary nav: if a menu item still uses the page title (`Gettysburg Battlefield Tours`, etc.), show the short label (`Tours`). Custom titles stay.
+- `UpdateInfoControl` requires `WP_Customize_Control` before extending it so a stray autoload cannot fatal the front end.
+- Woo notice overrides: phpcs ignores stay above echo (never after `?>`); string or array notice payloads both kses.
+- Sticky header: desktop nav at 1120px; empty Woo cart block titles follow light/dark ink.
+
 ## 1.7.0 — 2026-09-19
 
 Navbar, WooCommerce, and light-default follow-up on 1.6.x.

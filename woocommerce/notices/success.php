@@ -10,12 +10,14 @@ defined('ABSPATH') || exit;
 if (! $notices) {
     return;
 }
-?>
-<div class="wr-wc-notices" role="status">
-  <?php foreach ($notices as $notice) { ?>
-    <?php $data_attr = function_exists('wc_get_notice_data_attr') ? wc_get_notice_data_attr($notice) : ''; ?>
-    <div class="woocommerce-message wr-wc-notice wr-wc-notice--success"<?php echo $data_attr; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Woo helper ?>>
-      <?php echo wc_kses_notice($notice['notice']); ?>
-    </div>
-  <?php } ?>
-</div>
+
+echo '<div class="wr-wc-notices" role="status">';
+foreach ($notices as $notice) {
+    $data_attr = function_exists('wc_get_notice_data_attr') ? wc_get_notice_data_attr($notice) : '';
+    $text = is_array($notice) ? (string) ($notice['notice'] ?? '') : (string) $notice;
+    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Woo helper for data attrs; notice body is kses'd
+    echo '<div class="woocommerce-message wr-wc-notice wr-wc-notice--success"'.$data_attr.'>';
+    echo wc_kses_notice($text);
+    echo '</div>';
+}
+echo '</div>';

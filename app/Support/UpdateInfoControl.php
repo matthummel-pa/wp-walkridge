@@ -2,13 +2,17 @@
 
 namespace App\Support;
 
-use WP_Customize_Control;
-
 /**
  * Read-only Customizer control: theme version and a link to Update Theme.
- * Loaded only from customize_register so WP_Customize_Control exists.
+ *
+ * Instantiated from customize_register. If Composer autoloads this file
+ * without the Customizer bootstrap, load the parent class so PHP does not fatal.
  */
-class UpdateInfoControl extends WP_Customize_Control
+if (! class_exists('WP_Customize_Control')) {
+    require_once ABSPATH.'wp-includes/class-wp-customize-control.php';
+}
+
+class UpdateInfoControl extends \WP_Customize_Control
 {
     public $type = 'wr_update_info';
 

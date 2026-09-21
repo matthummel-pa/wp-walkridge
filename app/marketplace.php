@@ -25,6 +25,40 @@ add_filter('nav_menu_link_attributes', function (array $atts, $item): array {
     return $atts;
 }, 10, 2);
 
+/**
+ * Keep the sticky header labels short when WordPress filled them from long page titles.
+ */
+add_filter('nav_menu_item_title', function (string $title, $item, $args): string {
+    if (($args->theme_location ?? '') !== 'primary_navigation') {
+        return $title;
+    }
+    if (($item->object ?? '') !== 'page' || empty($item->object_id)) {
+        return $title;
+    }
+    $slug = (string) get_post_field('post_name', (int) $item->object_id);
+    $short = [
+        'tours' => __('Tours', 'walkridge'),
+        'guides' => __('Guides', 'walkridge'),
+        'area' => __('The Area', 'walkridge'),
+        'contact' => __('Contact', 'walkridge'),
+        'shop' => __('Shop', 'walkridge'),
+    ];
+    if (! isset($short[$slug])) {
+        return $title;
+    }
+    $pageTitle = get_the_title((int) $item->object_id);
+    $decode = static fn (string $value): string => html_entity_decode(
+        wp_strip_all_tags($value),
+        ENT_QUOTES | ENT_HTML5,
+        'UTF-8'
+    );
+    if ($decode($title) === $decode((string) $pageTitle)) {
+        return $short[$slug];
+    }
+
+    return $title;
+}, 10, 3);
+
 add_action('admin_menu', function (): void {
     add_theme_page(
         __('Walkridge Setup', 'walkridge'),

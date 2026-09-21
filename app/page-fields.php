@@ -142,6 +142,36 @@ function wr_ensure_nav_menu(string $menuName, string $location, array $items, ar
                 'menu-item-position' => $position++,
             ]);
         }
+    } else {
+        $wantedBySlug = [];
+        foreach ($items as $item) {
+            $wantedBySlug[$item['slug']] = $item['title'];
+        }
+        foreach ($existing as $menuItem) {
+            if (($menuItem->object ?? '') !== 'page' || empty($menuItem->object_id)) {
+                continue;
+            }
+            $objectId = (int) $menuItem->object_id;
+            $slug = (string) get_post_field('post_name', $objectId);
+            if ($slug === '' || ! isset($wantedBySlug[$slug])) {
+                continue;
+            }
+            $wanted = $wantedBySlug[$slug];
+            $pageTitle = get_the_title($objectId);
+            $current = (string) ($menuItem->title !== '' ? $menuItem->title : $pageTitle);
+            $decode = static fn (string $value): string => html_entity_decode(
+                wp_strip_all_tags($value),
+                ENT_QUOTES | ENT_HTML5,
+                'UTF-8'
+            );
+            // Only replace WP's default (page title) labels — keep custom nav titles.
+            if ($decode($current) === $decode((string) $pageTitle) && $decode($current) !== $decode($wanted)) {
+                wp_update_post([
+                    'ID' => (int) $menuItem->ID,
+                    'post_title' => $wanted,
+                ]);
+            }
+        }
     }
 
     $locations = get_theme_mod('nav_menu_locations', []);

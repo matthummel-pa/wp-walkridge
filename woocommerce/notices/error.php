@@ -10,13 +10,15 @@ defined('ABSPATH') || exit;
 if (! $notices) {
     return;
 }
-?>
-<div class="wr-wc-notices" role="alert">
-  <?php foreach ($notices as $notice) { ?>
-    <?php $data_attr = function_exists('wc_get_notice_data_attr') ? wc_get_notice_data_attr($notice) : ''; ?>
-    <div class="woocommerce-error wr-wc-notice wr-wc-notice--error"<?php echo $data_attr; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Woo helper ?>>
-      <span class="wr-wc-notice__mark" aria-hidden="true">!</span>
-      <?php echo wc_kses_notice($notice['notice']); ?>
-    </div>
-  <?php } ?>
-</div>
+
+echo '<div class="wr-wc-notices" role="alert">';
+foreach ($notices as $notice) {
+    $data_attr = function_exists('wc_get_notice_data_attr') ? wc_get_notice_data_attr($notice) : '';
+    $text = is_array($notice) ? (string) ($notice['notice'] ?? '') : (string) $notice;
+    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Woo helper for data attrs; notice body is kses'd
+    echo '<div class="woocommerce-error wr-wc-notice wr-wc-notice--error"'.$data_attr.'>';
+    echo '<span class="wr-wc-notice__mark" aria-hidden="true">!</span>';
+    echo wc_kses_notice($text);
+    echo '</div>';
+}
+echo '</div>';
