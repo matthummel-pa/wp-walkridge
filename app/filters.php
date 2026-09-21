@@ -6,6 +6,8 @@
 
 namespace App;
 
+use App\Support\BlockMigration;
+
 /**
  * Add "… Continued" to the excerpt.
  *
