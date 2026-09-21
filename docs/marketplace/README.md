@@ -16,7 +16,7 @@ Do not put `SELLING.md` or this developer hub inside the **inner** theme zip. Do
 
 ## Screenshots
 
-Captured from https://walkridge.matthummel.com/ (host `style.css` **1.7.0** at capture time; git `main` is **1.7.2**). LiteSpeed combined CSS 404s in some headless clients; shots use the live Vite `app-*.css` plus live HTML.
+Captured from https://walkridge.matthummel.com/ (theme **1.7.2**). LiteSpeed combined CSS 404s in some headless clients; shots use the live Vite `app-*.css` plus live HTML. Portfolio write-up: [matthummel.com/projects/walkridge](https://matthummel.com/projects/walkridge/).
 
 | File | Viewport | Route |
 |---|---|---|

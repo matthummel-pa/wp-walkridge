@@ -17,9 +17,9 @@ Browse tours, meet the guides, learn the ground, and book from a WooCommerce sho
 
 | | |
 |---|---|
+| **Theme version** | **1.7.2** (`style.css`) |
 | **Live concept** | [walkridge.matthummel.com](https://walkridge.matthummel.com/) |
-| **This repo** | Theme **1.7.2** on `main` |
-| **Live `style.css`** | Currently **1.7.0** until the Hostinger zip is refreshed — screenshots below are the live site |
+| **Portfolio** | [matthummel.com/projects/walkridge](https://matthummel.com/projects/walkridge/) |
 | **Install folder** | **`walkridge`** (keep this exact name) |
 | **Author** | [Matt Hummel](https://matthummel.com/) |
 | **Support** | [SUPPORT.md](SUPPORT.md) · [GitHub Issues](https://github.com/matthummel-pa/wp-walkridge/issues) |
@@ -58,7 +58,7 @@ Skip it if you want Elementor, a newspaper homepage, or a generic Woo fashion st
 
 ## Screenshots
 
-Captured from the live concept at [walkridge.matthummel.com](https://walkridge.matthummel.com/) (theme 1.7.0 on the host). Store-ready 1200×900 crops and extra routes live in [`docs/marketplace/screenshots/`](docs/marketplace/screenshots/).
+Captured from the live concept at [walkridge.matthummel.com](https://walkridge.matthummel.com/) (theme **1.7.2**). The same shots are on the [Walkridge project](https://matthummel.com/projects/walkridge/) on matthummel.com — that site is a portfolio, not a theme cart. Extra crops live in [`docs/marketplace/screenshots/`](docs/marketplace/screenshots/).
 
 **Desktop (~1440)**
 
@@ -104,7 +104,7 @@ Optional pack plugins (**Walkridge Bookings**, **Walkridge Field Map**) are sold
 
 ---
 
-## Quick start — buyer (zip)
+## Quick start — zip install
 
 1. Unzip the outer pack. Upload the inner **`walkridge.zip`** via **Appearance → Themes → Add New**.
 2. The folder must stay named **`walkridge`**.

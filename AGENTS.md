@@ -2,7 +2,7 @@
 
 A [Roots Sage 11](https://roots.io/sage/) theme (Blade + Tailwind CSS v4 + Vite 8, powered by Acorn) for **licensed-guide battlefield tours**. Live site: [walkridge.matthummel.com](https://walkridge.matthummel.com/). GitHub repo: [`matthummel-pa/wp-walkridge`](https://github.com/matthummel-pa/wp-walkridge).
 
-Buyer-facing pitch: [`README.md`](README.md). Support (install, Theme Settings, Woo, troubleshooting): [`SUPPORT.md`](SUPPORT.md). Theme version in this tree: **1.7.2**. The live Hostinger `style.css` may still report **1.7.0** until Update Theme runs. Demo phones are `555`; demo email is `@walkridge.test`.
+Buyer-facing pitch: [`README.md`](README.md). Support (install, Theme Settings, Woo, troubleshooting): [`SUPPORT.md`](SUPPORT.md). Theme version: **1.7.2**. Demo phones are `555`; demo email is `@walkridge.test`. Portfolio (not a theme shop): [matthummel.com/projects/walkridge](https://matthummel.com/projects/walkridge/).
 
 ## Cursor Cloud
 
