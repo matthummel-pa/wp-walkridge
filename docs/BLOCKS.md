@@ -1,6 +1,8 @@
 # Walkridge Gutenberg blocks
 
-All marketing pages render `the_content()`. Seed from **Appearance → Theme Settings → Advanced** or **Tools → Walkridge Blocks**.
+All marketing pages render `the_content()`. Seed from **Appearance → Theme Settings → Advanced** or **Tools → Walkridge Blocks**. Support index: [SUPPORT.md](../SUPPORT.md).
+
+If visitors see raw `<!-- wp:walkridge/...` comments, update to **1.7.2** and re-seed (`wr_demo_layouts_v5`). See SUPPORT → Troubleshooting.
 
 ## Category `walkridge`
 

@@ -2,6 +2,8 @@
 
 A [Roots Sage 11](https://roots.io/sage/) theme (Blade + Tailwind CSS v4 + Vite 8, powered by Acorn) for **licensed-guide battlefield tours**. Live site: [walkridge.matthummel.com](https://walkridge.matthummel.com/). GitHub repo: [`matthummel-pa/wp-walkridge`](https://github.com/matthummel-pa/wp-walkridge).
 
+Buyer-facing pitch: [`README.md`](README.md). Support (install, Theme Settings, Woo, troubleshooting): [`SUPPORT.md`](SUPPORT.md). Theme version in this tree: **1.7.2**. The live Hostinger `style.css` may still report **1.7.0** until Update Theme runs. Demo phones are `555`; demo email is `@walkridge.test`.
+
 ## Cursor Cloud
 
 This repository is only the **theme** (`wp-content/themes/walkridge`). WordPress core is not in the repo.
@@ -65,4 +67,5 @@ npm run dev
 
 ### Packaging
 
-- Theme zip: `bin/build-theme-zip.sh` → `dist-theme/walkridge.zip`
+- Theme zip: `bin/build-theme-zip.sh` → `dist-theme/walkridge.zip` (gitignored; ship via GitHub Releases, not `main`)
+- Marketplace screenshots: `docs/marketplace/screenshots/`

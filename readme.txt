@@ -18,8 +18,9 @@ Marketing pages are Walkridge Gutenberg blocks (Home, Tours, Guides, Area, Conta
 
 The sample office in the preview is named Walkridge — replace it under Theme Settings. This is a concept theme. Sample phones are 555 numbers (office `(717) 555-0100`). Concept emails use `@walkridge.test`. It is not a live ticket desk, licensed park concession, or payment processor by itself.
 
-Live site: https://walkridge.matthummel.com/
-Support and ThemeForest docs: https://github.com/matthummel-pa/wp-walkridge/blob/main/SUPPORT.md
+Live concept: https://walkridge.matthummel.com/ (host version may lag git 1.7.2)
+Support: https://github.com/matthummel-pa/wp-walkridge/blob/main/SUPPORT.md
+Screenshots: docs/marketplace/screenshots/ in the git repo. Fiction: 555 phones, @walkridge.test.
 
 = Features =
 
@@ -92,26 +93,25 @@ Pull the branch, run `composer install --no-dev` if needed, then `npm run build`
 
 == Screenshots ==
 
-Desktop captures of the seeded concept demo (also used on https://walkridge.matthummel.com/ when published):
+Desktop and mobile captures of the live concept (https://walkridge.matthummel.com/):
 
-1. Homepage — compass mark, hero, and path to book a tour. (`docs/marketplace/screenshots/01-homepage.png`)
-2. Tours — sample walking / bus / lantern offerings. (`02-tours.png`)
-3. Shop — WooCommerce tour products. (`03-shop.png`)
-4. Guides — licensed-guide concept bios. (`04-guides.png`)
-5. Area — area context and field notes. (`05-area.png`)
-6. Contact — phone and address from Customize → Identity. (`06-contact.png`)
-7. Book band / CTA — shop-linked booking call to action. (`07-book.png`)
+1. Homepage — compass mark, hero, Book a Tour. (`docs/marketplace/screenshots/home-desktop.png`, `home-mobile.png`, `home-store-1200x900.png`)
+2. Tours — licensed-guide catalog intro. (`tours-desktop.png`)
+3. Shop — WooCommerce tour products. (`shop-desktop.png`)
+4. Product — walking tour add to cart. (`product-desktop.png`)
+5. Guides — licensed-guide concept bios. (`guides-desktop.png`)
+6. Area — battlefield context. (`area-desktop.png`)
+7. Contact — Theme Settings NAP and FAQ intro. (`contact-desktop.png`)
+8. Cart — empty Woo cart (optional). (`cart-desktop.png`)
 
-Theme thumbnail: screenshot.png (1200×900). Extra captures: docs/marketplace/screenshots/ (copied into Documentation/screenshots/ in the seller pack).
+Theme thumbnail: screenshot.png (1200×900, from the live home crop). README gallery: docs/readme/.
 
 == Branding ==
 
-Original compass mark (inline SVG in the header/footer; GPLv2 with the theme):
+Original compass mark (header/footer SVG; also `docs/brand/walkridge-mark.svg`):
 
-* Replace with your logo under Customize → Site Identity
+* Replace with your logo under Appearance → Theme Settings or Customize → Site Identity
 * Palette sample: slate `#0c1218` / `#17212c`, gold `#e0be72`, parchment `#f7f1e3`
-
-See docs/marketplace/branding.html (Documentation/branding.html in the seller pack) and BRAND.md.
 
 == Changelog ==
 
@@ -207,14 +207,7 @@ Do not rename the install folder (Vite `base` depends on `walkridge`). Version i
 
 == Documentation ==
 
-Source hub: `docs/marketplace/` (seller pack copies it to Documentation/):
-
-* index.html — contents and screenshots (start here on ThemeForest)
-* buyer-guide.html — install, WooCommerce, Customizer, menus, pages, child theme, updates, FAQ
-* branding.html — compass mark, slate/gold/parchment palette
-* customizer.html, faq.html, requirements.html, support.html, sources.html, changelog.html
-* screenshots/ — item images
-* assets/ — docs CSS
+Source hub: `docs/marketplace/` plus GitHub `README.md` and `SUPPORT.md`. Seller packs should copy those into `Documentation/` rather than a second HTML tree.
 
 GitHub: README.md, SUPPORT.md, docs/marketplace/. Live site: https://walkridge.matthummel.com/
 

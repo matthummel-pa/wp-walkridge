@@ -1,6 +1,6 @@
 # Theme Settings
 
-**Appearance → Theme Settings** is the graphical front door for Walkridge identity.
+**Appearance → Theme Settings** is the graphical front door for Walkridge identity. Buyer summary: [SUPPORT.md](../SUPPORT.md) · marketing: [README.md](../README.md).
 
 ## Why it exists
 

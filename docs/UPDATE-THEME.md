@@ -1,6 +1,8 @@
 # Update Theme
 
-**Appearance → Update Theme** is the install screen (Acreline-style). It is not Theme Settings.
+**Appearance → Update Theme** is the install screen (Acreline-style). It is not Theme Settings. Buyer steps also live in [SUPPORT.md](../SUPPORT.md).
+
+This repository is **1.7.2**. GitHub Releases should attach `walkridge.zip` from `bin/build-theme-zip.sh`. Do not commit that zip to `main`. The live demo at [walkridge.matthummel.com](https://walkridge.matthummel.com/) reports whatever `style.css` is on the host (it may lag `main`).
 
 ## What you see
 

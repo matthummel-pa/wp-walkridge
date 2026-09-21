@@ -1,6 +1,13 @@
 # Walkridge — Developer reference
 
-Local Sage 11 workflow. Same shape as Acreline: one command to bootstrap, one command to serve. Live site: [walkridge.matthummel.com](https://walkridge.matthummel.com/). Cloud bootstrap notes: [`AGENTS.md`](AGENTS.md). Product copy: [`README.md`](README.md). Support: [`SUPPORT.md`](SUPPORT.md).
+Local Sage 11 workflow. Same shape as Acreline: one command to bootstrap, one command to serve.
+
+- Live concept: [walkridge.matthummel.com](https://walkridge.matthummel.com/) (host `style.css` may lag git; **1.7.2** is this repo)
+- Marketing README: [`README.md`](README.md)
+- Buyer/developer support: [`SUPPORT.md`](SUPPORT.md)
+- Cloud bootstrap: [`AGENTS.md`](AGENTS.md)
+
+Do not commit `dist-theme/walkridge.zip` or other 20MB theme zips to `main`.
 
 ## Stack
 
@@ -65,5 +72,9 @@ wp acorn view:clear --path="$HOME/wp" --allow-root   # after Blade edits
 ## Packaging
 
 ```bash
-bin/build-theme-zip.sh   # → dist-theme/walkridge.zip
+bin/build-theme-zip.sh   # → dist-theme/walkridge.zip (gitignored; attach to a GitHub Release)
 ```
+
+Install that zip with **Appearance → Update Theme** or `wp theme install dist-theme/walkridge.zip --activate`.
+
+Troubleshooting (Vite manifest, Acorn views, LiteSpeed, Gutenberg comment leak): [SUPPORT.md](SUPPORT.md).

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Marketing README, SUPPORT, compass mark, and live screenshots for GitHub / ThemeForest (no theme zip on `main`)
+
 ## 1.7.2 — 2026-09-21
 
 Live WCAG 2.2 + light-theme UX pass (local theme only).
