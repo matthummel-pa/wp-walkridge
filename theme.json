@@ -16,7 +16,14 @@
       "defaultDuotone": false,
       "defaultGradients": false,
       "defaultPalette": false,
-      "duotone": []
+      "duotone": [],
+      "palette": [
+        { "slug": "slate-950", "color": "#070b10", "name": "Slate 950" },
+        { "slug": "ink", "color": "#161310", "name": "Ink" },
+        { "slug": "parchment", "color": "#f7f1e3", "name": "Parchment" },
+        { "slug": "gold-800", "color": "#6b521f", "name": "Gold 800" },
+        { "slug": "gold-500", "color": "#e0be72", "name": "Gold 500" }
+      ]
     },
     "custom": {
       "spacing": {},
