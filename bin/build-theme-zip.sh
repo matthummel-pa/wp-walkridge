@@ -14,7 +14,21 @@ rsync -a --delete \
   --exclude 'dist-theme' \
   --exclude 'plugins' \
   --exclude '.cursor' \
+  --exclude '.claude' \
+  --exclude '.github' \
+  --exclude '.mcp.json' \
+  --exclude '.wp-env.json' \
+  --exclude '.pa11yci.json' \
+  --exclude '.wp-review-allow' \
+  --exclude '.gitignore' \
+  --exclude '.env*' \
+  --exclude 'CLAUDE.md' \
+  --exclude 'AGENTS.md' \
+  --exclude 'phpcs.xml.dist' \
+  --exclude 'phpstan*.neon*' \
+  --exclude 'lighthouse-report*' \
   "$ROOT/" "$STAGE/walkridge/"
+# Dev and AI tooling (kit files, CI, local QA configs) stays out of the buyer zip too.
 # Buyer zip should not include companion plugins or static HTML snapshots.
 (cd "$STAGE" && zip -qr "$ROOT/dist-theme/walkridge.zip" walkridge)
 rm -rf "$STAGE"

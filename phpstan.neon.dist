@@ -1,0 +1,28 @@
+# phpstan/extension-installer loads szepeviktor/phpstan-wordpress automatically.
+# https://phpstan.org/ · https://github.com/szepeviktor/phpstan-wordpress
+# Setup:
+#   composer config allow-plugins.phpstan/extension-installer true
+#   composer require --dev phpstan/phpstan szepeviktor/phpstan-wordpress phpstan/extension-installer
+#   composer config scripts.analyse "phpstan analyse --memory-limit=3G"
+#   composer analyse -- --generate-baseline   # then uncomment the include below
+parameters:
+    level: 5
+    # The WordPress 7.x stubs are large: a worker needs ~2-3G. One process keeps
+    # peak memory predictable on an 8 GB Mac; the result cache makes reruns fast.
+    parallel:
+        maximumNumberOfProcesses: 1
+    paths:
+        - app
+        - functions.php
+        - plugins
+    # WooCommerce / WP-CLI aren't in the WordPress stubs. If the code uses them:
+    #   composer require --dev php-stubs/woocommerce-stubs php-stubs/wp-cli-stubs
+    # (wp-cli-stubs needs dev-master while its last tag only supports wordpress-stubs 6.x)
+    # scanFiles:
+    #     - vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
+    #     - vendor/php-stubs/wp-cli-stubs/wp-cli-stubs.php
+    excludePaths:
+        - vendor (?)
+        - node_modules (?)
+# includes:
+#     - phpstan-baseline.neon
