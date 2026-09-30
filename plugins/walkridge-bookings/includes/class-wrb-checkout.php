@@ -25,8 +25,10 @@ final class WRB_Checkout
 
     private function hooks(): void
     {
-        // Create booking records once WC order is created.
+        // Create booking records once WC order is created: classic checkout, then block checkout (Store API),
+        // which doesn't fire woocommerce_checkout_order_created.
         add_action('woocommerce_checkout_order_created', [$this, 'create_bookings_for_order']);
+        add_action('woocommerce_store_api_checkout_order_processed', [$this, 'create_bookings_for_order']);
         // Mirror order status → booking status.
         add_action('woocommerce_order_status_changed', [$this, 'sync_order_status'], 10, 4);
         // Confirm pending bookings when payment completes.
@@ -45,10 +47,24 @@ final class WRB_Checkout
     {
         $engine = wrb_engine();
 
+        // A payment retry rebuilds the order's line items (classic resume; possibly the Store API draft too).
+        // Release bookings whose line item is gone, so the retry doesn't double-book and hold the seats twice.
+        $live_items = array_map('intval', array_keys($order->get_items()));
+        foreach ($engine->get_bookings(['order_id' => $order->get_id()]) as $old) {
+            if (! in_array((int) $old->order_item_id, $live_items, true)
+                && in_array($old->status, ['pending', 'confirmed'], true)) {
+                $engine->update_booking_status((int) $old->id, 'cancelled');
+            }
+        }
+
         foreach ($order->get_items() as $item_id => $item) {
             /** @var WC_Order_Item_Product $item */
             $product_id = (int) $item->get_product_id();
             if (! WRB_Product_Meta::is_bookable($product_id)) {
+                continue;
+            }
+            // Idempotent: never book (or take seats) twice for the same line if both checkout hooks fire.
+            if ((int) $item->get_meta('_wrb_booking_id', true) > 0) {
                 continue;
             }
 
