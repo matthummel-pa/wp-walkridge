@@ -16,3 +16,9 @@ Thumbs.db
 /dist-theme
 /dist-marketplace
 /dist-install
+
+# Claude Code personal settings
+.claude/settings.local.json
+
+# Local QA reports (Lighthouse)
+lighthouse-report*
