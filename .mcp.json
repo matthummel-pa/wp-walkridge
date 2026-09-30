@@ -1,17 +1,6 @@
 {
   "mcpServers": {
     "WPVibe": {
-      "type": "streamable-http",
-      "url": "https://mcp.wpvibe.ai/mcp"
-    },
-    "supabase": {
-      "command": "/exec-daemon/npx",
-      "args": [
-        "-y",
-        "@supabase/mcp-server-postgrest"
-      ]
-    },
-    "wpvibe": {
       "type": "http",
       "url": "https://mcp.wpvibe.ai/mcp"
     },
