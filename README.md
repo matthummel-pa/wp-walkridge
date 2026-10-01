@@ -17,7 +17,7 @@ Browse tours, meet the guides, learn the ground, and book from a WooCommerce sho
 
 | | |
 |---|---|
-| **Theme version** | **1.7.2** (`style.css`) |
+| **Theme version** | **1.7.3** (`style.css`) |
 | **Live concept** | [walkridge.matthummel.com](https://walkridge.matthummel.com/) |
 | **Portfolio** | [matthummel.com/projects/walkridge](https://matthummel.com/projects/walkridge/) |
 | **Install folder** | **`walkridge`** (keep this exact name) |
@@ -58,7 +58,7 @@ Skip it if you want Elementor, a newspaper homepage, or a generic Woo fashion st
 
 ## Screenshots
 
-Captured from the live concept at [walkridge.matthummel.com](https://walkridge.matthummel.com/) (theme **1.7.2**). The same shots are on the [Walkridge project](https://matthummel.com/projects/walkridge/) on matthummel.com — that site is a portfolio, not a theme cart. Extra crops live in [`docs/marketplace/screenshots/`](docs/marketplace/screenshots/).
+Captured from the live concept at [walkridge.matthummel.com](https://walkridge.matthummel.com/) (theme **1.7.3**). The same shots are on the [Walkridge project](https://matthummel.com/projects/walkridge/) on matthummel.com — that site is a portfolio, not a theme cart. Extra crops live in [`docs/marketplace/screenshots/`](docs/marketplace/screenshots/).
 
 **Desktop (~1440)**
 

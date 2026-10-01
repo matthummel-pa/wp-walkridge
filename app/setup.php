@@ -12,6 +12,33 @@ use Illuminate\Support\Facades\Vite;
 Seo::boot();
 
 /**
+ * Rewrite stored http:// home/siteurl to https when this request is TLS.
+ *
+ * Hostinger may keep option `siteurl` as http:// while visitors use https://.
+ *
+ * @param  mixed  $url
+ * @return mixed
+ */
+function force_https_option_url($url)
+{
+    if (! is_string($url) || $url === '') {
+        return $url;
+    }
+
+    $https = (! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || strtolower(sanitize_text_field(wp_unslash((string) ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '')))) === 'https';
+
+    if ($https && str_starts_with($url, 'http://')) {
+        return 'https://'.substr($url, 7);
+    }
+
+    return $url;
+}
+
+add_filter('option_home', __NAMESPACE__.'\\force_https_option_url');
+add_filter('option_siteurl', __NAMESPACE__.'\\force_https_option_url');
+
+/**
  * Preload the two critical WOFF2 fonts (display + body) from the Vite manifest
  * so the browser fetches them before the CSS @font-face swap fires.
  */

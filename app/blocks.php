@@ -460,7 +460,7 @@ function wr_render_home_hero(array $attrs): string
         <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.1"/><path d="M20 4l3.4 16L20 36l-3.4-16z" fill="currentColor"/><path d="M4 20l16-3.4L36 20l-16 3.4z" fill="currentColor" opacity=".4"/><circle cx="20" cy="20" r="3.1" fill="currentColor"/></svg>
       </div>
       <div class="hero-media">
-        <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr__('Historic Gettysburg battlefield monument', 'walkridge'); ?>" fetchpriority="high">
+        <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr__('Historic Gettysburg battlefield monument', 'walkridge'); ?>" fetchpriority="high" decoding="async" width="1280" height="976" class="skip-lazy" data-no-lazy="1">
       </div>
       <div class="wrap hero-content">
         <p class="hero-badge"><?php echo esc_html($eyebrow); ?></p>

@@ -4,9 +4,7 @@
  * Overrides: woocommerce/templates/content-product.php
  *
  * @see     https://woo.com/document/template-structure/
- * @package WooCommerce/Templates
  */
-
 defined('ABSPATH') || exit;
 
 global $product;
@@ -16,16 +14,16 @@ if (empty($product) || ! $product->is_visible()) {
 }
 
 /* --- Pull tour meta (set via product edit screen or _wr_* fields) --- */
-$duration   = (string) $product->get_meta('_wr_duration');
-$capacity   = (string) $product->get_meta('_wr_capacity');
+$duration = (string) $product->get_meta('_wr_duration');
+$capacity = (string) $product->get_meta('_wr_capacity');
 $difficulty = (string) $product->get_meta('_wr_difficulty');
-$kicker     = (string) $product->get_meta('_wr_kicker');
+$kicker = (string) $product->get_meta('_wr_kicker');
 
 /* Fallback: derive chips from short description when meta is empty */
 $short_desc = wp_strip_all_tags($product->get_short_description());
 
 /* Primary category label for the thumbnail badge */
-$cats        = wp_get_post_terms($product->get_id(), 'product_cat', ['fields' => 'names']);
+$cats = wp_get_post_terms($product->get_id(), 'product_cat', ['fields' => 'names']);
 $primary_cat = (! is_wp_error($cats) && ! empty($cats)) ? reset($cats) : $kicker;
 
 /* Difficulty → CSS modifier */
@@ -43,48 +41,49 @@ if (str_contains($diff_lower, 'easy')) {
 
   <!-- Thumbnail -->
   <div class="wr-card__thumb">
-    <?php if ($product->get_image_id()) : ?>
+    <?php if ($product->get_image_id()) { ?>
       <a href="<?php echo esc_url(get_permalink($product->get_id())); ?>" tabindex="-1" aria-hidden="true">
         <?php echo wp_kses_post($product->get_image('medium', [
-            'class' => 'wr-card__img',
-            'loading' => 'lazy',
+            'class' => 'wr-card__img skip-lazy',
+            'loading' => 'eager',
+            'data-no-lazy' => '1',
             'alt' => $product->get_name(),
         ])); ?>
       </a>
-    <?php else : ?>
+    <?php } else { ?>
       <div class="wr-card__img-placeholder" aria-hidden="true">
         <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
       </div>
-    <?php endif; ?>
+    <?php } ?>
 
-    <?php if ($primary_cat) : ?>
+    <?php if ($primary_cat) { ?>
       <span class="wr-card__badge"><?php echo esc_html($primary_cat); ?></span>
-    <?php endif; ?>
+    <?php } ?>
   </div>
 
   <!-- Card body -->
   <a href="<?php echo esc_url(get_permalink($product->get_id())); ?>"
      class="wr-card__body woocommerce-LoopProduct-link">
 
-    <?php if ($duration || $capacity || $difficulty) : ?>
+    <?php if ($duration || $capacity || $difficulty) { ?>
       <div class="wr-card__chips">
-        <?php if ($duration) : ?>
+        <?php if ($duration) { ?>
           <span class="chip chip--time"><?php echo esc_html($duration); ?></span>
-        <?php endif; ?>
-        <?php if ($capacity) : ?>
+        <?php } ?>
+        <?php if ($capacity) { ?>
           <span class="chip chip--group"><?php echo esc_html($capacity); ?></span>
-        <?php endif; ?>
-        <?php if ($difficulty) : ?>
+        <?php } ?>
+        <?php if ($difficulty) { ?>
           <span class="chip <?php echo esc_attr($diff_class); ?>"><?php echo esc_html($difficulty); ?></span>
-        <?php endif; ?>
+        <?php } ?>
       </div>
-    <?php endif; ?>
+    <?php } ?>
 
     <h2 class="woocommerce-loop-product__title"><?php the_title(); ?></h2>
 
-    <?php if ($short_desc) : ?>
+    <?php if ($short_desc) { ?>
       <p class="wr-card__excerpt"><?php echo esc_html(wp_trim_words($short_desc, 22, '…')); ?></p>
-    <?php endif; ?>
+    <?php } ?>
 
     <?php woocommerce_template_loop_price(); ?>
 

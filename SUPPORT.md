@@ -169,6 +169,12 @@ You installed a git clone without `npm run build`, or a zip that omitted `public
 **Gutenberg comments leaked as page text (`<!-- wp:walkridge/...` or `&lt;!-- wp:`).**  
 Fixed in 1.7.1–1.7.2 (`serialize_block` / `JSON_HEX_TAG`, `wr_demo_layouts_v5`, `the_content` normalizer). Re-seed from Tools → Walkridge Blocks, or update to 1.7.2 and view the page once so the repair filter can strip leftover encoded markup. LiteSpeed page cache may still serve the old HTML until purged.
 
+**Home looks unstyled or canonicals say `http://` on an HTTPS site.**  
+LiteSpeed cached HTML from when WordPress `siteurl` was `http://`. Theme **1.7.3** treats Hostinger CDN as SSL and rewrites those URLs. Purge LiteSpeed + Hostinger CDN after updating.
+
+**Book a Tour opens WooCommerce “Shop” instead of tours.**  
+Fixed in 1.7.3: the header CTA uses the `/tours/` page when it exists. Purge cache after updating.
+
 **Can I use Elementor?**  
 The theme is not built around a page builder. Marketing pages expect Walkridge blocks.
 
@@ -193,6 +199,8 @@ wp acorn optimize:clear --path="$HOME/wp" --allow-root
 The live demo sits behind LiteSpeed on Hostinger. Combined CSS files can 404 after a theme swap; purge LiteSpeed (and CDN) after Update Theme. Guest-mode / bot checks can delay headless screenshots; real browsers load the parchment UI.
 
 If Combined CSS 404s, disable CSS combine for the theme or purge `wp-content/litespeed/`. The Vite file under `public/build/assets/app-*.css` is the real stylesheet.
+
+Homepage HTML cached with `http://` links (mixed content) is a LiteSpeed HIT of an old `siteurl`. 1.7.3 rewrites those URLs on HTTPS requests; still purge after deploy.
 
 ### Block comment leak
 
@@ -221,7 +229,7 @@ Requires PHP 8.3 and WordPress 6.6+. Sage 11 / Acorn will not run on 8.1.
 | Concept badge on the canvas | Hide in Theme Settings → Advanced |
 | Live checkout is fiction | Real Woo payments + tax/shipping |
 | Gettysburg copy as a ThemeForest-style demo | Your battlefield, your licensing, your prices |
-| Theme 1.7.2 in git; live host may lag | Ship a Release zip via Update Theme |
+| Theme 1.7.3 in git; live host may lag | Ship a Release zip via Update Theme |
 
 Do not present the live concept as a working ticket office. Do not invent guest reviews.
 

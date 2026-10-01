@@ -66,7 +66,6 @@
           <li><a href="{{ home_url('/guides') }}" @if($isGuides) class="is-active" aria-current="page" @endif>{{ __('Guides', 'walkridge') }}</a></li>
           <li><a href="{{ home_url('/area') }}" @if($isArea) class="is-active" aria-current="page" @endif>{{ __('The Area', 'walkridge') }}</a></li>
           <li><a href="{{ home_url('/contact') }}" @if($isContact) class="is-active" aria-current="page" @endif>{{ __('Contact', 'walkridge') }}</a></li>
-          <li><a href="{{ esc_url($shopUrl) }}" @if($isShop) class="is-active" aria-current="page" @endif>{{ __('Shop', 'walkridge') }}</a></li>
         </ul>
       @endif
     </nav>

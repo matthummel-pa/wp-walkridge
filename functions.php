@@ -5,6 +5,20 @@ use Roots\Acorn\Application;
 
 /*
 |--------------------------------------------------------------------------
+| HTTPS behind Hostinger CDN
+|--------------------------------------------------------------------------
+|
+| TLS terminates at the CDN. Without HTTPS=on, WordPress emits http://
+| asset and canonical URLs (mixed content / unstyled LiteSpeed CSS).
+*/
+
+$wrForwardedProto = strtolower(sanitize_text_field(wp_unslash((string) ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? ''))));
+if ($wrForwardedProto === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+}
+
+/*
+|--------------------------------------------------------------------------
 | Register The Auto Loader
 |--------------------------------------------------------------------------
 */

@@ -2,7 +2,7 @@
 
 Local Sage 11 workflow. Same shape as Acreline: one command to bootstrap, one command to serve.
 
-- Live concept: [walkridge.matthummel.com](https://walkridge.matthummel.com/) (host `style.css` may lag git; **1.7.2** is this repo)
+- Live concept: [walkridge.matthummel.com](https://walkridge.matthummel.com/) (host `style.css` may lag git; **1.7.3** is this repo)
 - Marketing README: [`README.md`](README.md)
 - Buyer/developer support: [`SUPPORT.md`](SUPPORT.md)
 - Cloud bootstrap: [`AGENTS.md`](AGENTS.md)

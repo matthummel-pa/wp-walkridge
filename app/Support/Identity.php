@@ -139,6 +139,14 @@ class Identity
             return $custom;
         }
 
+        $tours = get_page_by_path('tours');
+        if ($tours instanceof \WP_Post) {
+            $link = get_permalink($tours);
+            if (is_string($link) && $link !== '') {
+                return $link;
+            }
+        }
+
         if (function_exists('wc_get_page_permalink')) {
             $shop = wc_get_page_permalink('shop');
             if (is_string($shop) && $shop !== '') {
@@ -146,7 +154,7 @@ class Identity
             }
         }
 
-        return home_url('/shop/');
+        return home_url('/tours/');
     }
 
     public static function showDemoChrome(): bool

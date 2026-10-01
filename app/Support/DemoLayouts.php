@@ -131,7 +131,7 @@ class DemoLayouts
 <!-- /wp:shortcode -->',
             '<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/shop/">View all products</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/tours/">View all tours</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->',
             self::comment('walkridge/timeline', [

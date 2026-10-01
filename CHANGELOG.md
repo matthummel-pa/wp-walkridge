@@ -4,6 +4,14 @@
 
 - Marketing README, SUPPORT, compass mark, and live screenshots for GitHub / ThemeForest (no theme zip on `main`)
 
+## 1.7.3 — 2026-10-01
+
+Live HTTPS + tour-catalog CTA.
+
+- Behind Hostinger CDN, treat `X-Forwarded-Proto: https` as SSL and rewrite `home` / `siteurl` so CSS, JS, and canonicals are not `http://`
+- Book a Tour / shop helper prefers the published `/tours/` page (Woo products), not the generic Woo “Shop” archive
+- Hero and tour-card images opt out of LiteSpeed lazy placeholders (`skip-lazy`) so the LCP photo is not a gray SVG
+
 ## 1.7.2 — 2026-09-21
 
 Live WCAG 2.2 + light-theme UX pass (local theme only).

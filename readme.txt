@@ -3,7 +3,7 @@ Contributors: matthummel
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 8.3
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, translation-ready, one-column, threaded-comments
@@ -14,11 +14,11 @@ WooCommerce-ready WordPress theme for licensed-guide battlefield tours — booka
 
 Walkridge is a classic (non-block) Sage 11 WordPress theme for a licensed-guide battlefield tour company: bookable tours via WooCommerce, guide bios, area context, and a contact desk.
 
-Marketing pages are Walkridge Gutenberg blocks (Home, Tours, Guides, Area, Contact, Refund Policy). Seed them from **Appearance → Theme Settings → Advanced** or **Tools → Walkridge Blocks**. Buyers change brand, phone, email, hours, and the header button from **Appearance → Theme Settings**. Customizer → Identity is the live-preview twin. Upload a logo on Theme Settings or Site Identity. Booking CTAs point at the WooCommerce shop. Optional companion plugins in the seller pack — **Walkridge Bookings** and **Walkridge Field Map** — are sold separately and are not required to run the theme chrome.
+Marketing pages are Walkridge Gutenberg blocks (Home, Tours, Guides, Area, Contact, Refund Policy). Seed them from **Appearance → Theme Settings → Advanced** or **Tools → Walkridge Blocks**. Buyers change brand, phone, email, hours, and the header button from **Appearance → Theme Settings**. Customizer → Identity is the live-preview twin. Upload a logo on Theme Settings or Site Identity. Booking CTAs point at the Tours catalog (`/tours/`). Optional companion plugins in the seller pack — **Walkridge Bookings** and **Walkridge Field Map** — are sold separately and are not required to run the theme chrome.
 
 The sample office in the preview is named Walkridge — replace it under Theme Settings. This is a concept theme. Sample phones are 555 numbers (office `(717) 555-0100`). Concept emails use `@walkridge.test`. It is not a live ticket desk, licensed park concession, or payment processor by itself.
 
-Live concept: https://walkridge.matthummel.com/ (host version may lag git 1.7.2)
+Live concept: https://walkridge.matthummel.com/ (host version may lag git 1.7.3)
 Support: https://github.com/matthummel-pa/wp-walkridge/blob/main/SUPPORT.md
 Screenshots: docs/marketplace/screenshots/ in the git repo. Fiction: 555 phones, @walkridge.test.
 
@@ -114,6 +114,11 @@ Original compass mark (header/footer SVG; also `docs/brand/walkridge-mark.svg`):
 * Palette sample: slate `#0c1218` / `#17212c`, gold `#e0be72`, parchment `#f7f1e3`
 
 == Changelog ==
+
+= 1.7.3 =
+* HTTPS behind Hostinger CDN: no mixed-content http:// asset or canonical URLs
+* Book a Tour prefers `/tours/` (Woo tour products), not the generic Shop archive
+* Hero and tour-card images skip LiteSpeed lazy placeholders
 
 = 1.7.2 =
 * Light-theme WCAG 2.2: gold-800 focus rings, placeholder contrast, denser sections, skip link above the sticky bar
