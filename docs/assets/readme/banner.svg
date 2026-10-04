@@ -6,7 +6,7 @@
   </defs>
   <style>
     .kicker { font: 600 13px/1 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; fill: #e2c27a; letter-spacing: .18em; text-transform: uppercase; }
-    .title { font: 800 46px/1 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; fill: #ffffff; letter-spacing: -.03em; }
+    .title { font: 800 40px/1 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; fill: #ffffff; letter-spacing: -.03em; }
     .sub { font: 400 18px/1.4 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; fill: #f1e6cf; }
     .chip { fill: rgba(255,255,255,.08); stroke: rgba(255,255,255,.18); }
     .chipt { font: 600 12px/1 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; fill: #f3f4f6; letter-spacing: .02em; }
