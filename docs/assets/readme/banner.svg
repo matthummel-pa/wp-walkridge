@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-label="Walkridge — Sage 11 · Acorn 6 · Blade · Tailwind CSS v4 · Vite 8 · WooCommerce · PHP 8.3 · WordPress 6.6+">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b2110"/><stop offset="1" stop-color="#6b521f"/></linearGradient>
+    <linearGradient id="rule" x1="0" x2="1"><stop offset="0" stop-color="#e2c27a"/><stop offset="1" stop-color="#9fd8bf"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0v24" fill="none" stroke="#ffffff" stroke-opacity=".06"/></pattern>
+  </defs>
+  <style>
+    .kicker { font: 600 13px/1 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; fill: #e2c27a; letter-spacing: .18em; text-transform: uppercase; }
+    .title { font: 800 46px/1 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; fill: #ffffff; letter-spacing: -.03em; }
+    .sub { font: 400 18px/1.4 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; fill: #f1e6cf; }
+    .chip { fill: rgba(255,255,255,.08); stroke: rgba(255,255,255,.18); }
+    .chipt { font: 600 12px/1 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; fill: #f3f4f6; letter-spacing: .02em; }
+    .mono { font: 600 12px/1 ui-monospace, Menlo, Consolas, monospace; fill: #e2c27a; }
+    .markt { font: 800 26px/1 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; fill: #2b2110; letter-spacing: -.04em; }
+  </style>
+  <rect width="1200" height="260" rx="18" fill="url(#bg)"/><rect width="1200" height="260" rx="18" fill="url(#grid)"/>
+  <g transform="translate(56,58)"><rect width="72" height="72" rx="16" fill="#f7f1e3"/><text class="markt" x="36" y="46" text-anchor="middle">W</text></g>
+  <text class="kicker" x="156" y="70">matthummel-pa / wp-walkridge</text>
+  <text class="title" x="154" y="118">Walkridge — WordPress theme for guided tours</text>
+  <rect x="156" y="132" width="88" height="4" rx="2" fill="url(#rule)"/>
+  <text class="sub" x="156" y="168">Sage 11 · Acorn 6 · Blade · Tailwind CSS v4 · Vite 8 · WooCommerce · PHP 8.3 · WordPress 6.6+</text>
+  <g transform="translate(156,194)"><rect class="chip" x="0" width="184" height="30" rx="15"/><text class="chipt" x="14" y="19">22 Gutenberg blocks</text><rect class="chip" x="194" width="266" height="30" rx="15"/><text class="chipt" x="208" y="19">Tours as WooCommerce products</text><rect class="chip" x="470" width="233" height="30" rx="15"/><text class="chipt" x="484" y="19">Theme Settings front door</text><rect class="chip" x="713" width="307" height="30" rx="15"/><text class="chipt" x="727" y="19">WCAG 2.2 · light parchment default</text></g>
+  <text class="mono" x="1144" y="236" text-anchor="end">v1.7.2 · GPLv2+</text>
+</svg>
