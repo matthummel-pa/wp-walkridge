@@ -42,33 +42,129 @@ final class WRB_Cart
         add_filter('woocommerce_get_cart_item_from_session', [$this, 'restore_cart_item'], 10, 2);
         // Block duplicate bookings of the same slot.
         add_filter('woocommerce_add_to_cart_validation', [$this, 'prevent_duplicate_slot'], 30, 3);
+        // Re-check every booking before payment (classic and block checkout).
+        add_action('woocommerce_check_cart_items', [$this, 'revalidate_cart']);
+        // Tours need a date, so shop/archive buttons link to the tour page instead of adding to cart.
+        add_filter('woocommerce_product_add_to_cart_url', [$this, 'loop_button_url'], 10, 2);
+        add_filter('woocommerce_product_add_to_cart_text', [$this, 'loop_button_text'], 10, 2);
+        add_filter('woocommerce_product_supports', [$this, 'loop_button_no_ajax'], 10, 3);
         // AJAX handler for widget "Add to cart".
         add_action('wp_ajax_wrb_add_to_cart', [$this, 'ajax_add_to_cart']);
         add_action('wp_ajax_nopriv_wrb_add_to_cart', [$this, 'ajax_add_to_cart']);
+    }
+
+    /* ── Request parsing + validation (shared by every add-to-cart path) ─── */
+
+    /**
+     * Read the booking fields from the current request.
+     *
+     * Counts keep their sign so validate_booking() can reject tampered (negative) values
+     * instead of silently repricing them.
+     *
+     * @return array{slot_id:int, adults:int, children:int, seniors:int, requests:string}
+     */
+    private static function read_booking_request(): array
+    {
+        // phpcs:disable WordPress.Security.NonceVerification.Recommended -- WooCommerce add-to-cart has no nonce by design; the AJAX path verifies wrb_ajax first.
+        return [
+            'slot_id' => intval(wp_unslash($_REQUEST['wrb_slot_id'] ?? 0)),
+            'adults' => intval(wp_unslash($_REQUEST['wrb_adults'] ?? 1)),
+            'children' => intval(wp_unslash($_REQUEST['wrb_children'] ?? 0)),
+            'seniors' => intval(wp_unslash($_REQUEST['wrb_seniors'] ?? 0)),
+            'requests' => mb_substr(sanitize_textarea_field(wp_unslash($_REQUEST['wrb_special_requests'] ?? '')), 0, 1000),
+        ];
+        // phpcs:enable
+    }
+
+    /**
+     * Server-side rules for a booking. The widget enforces the same limits, but anyone can edit the request.
+     *
+     * @param  array{slot_id:int, adults:int, children:int, seniors:int}  $b
+     * @param  int  $held  Seats on this slot already held by the shopper's own unpaid order (a payment retry).
+     */
+    public static function validate_booking(int $product_id, array $b, int $held = 0): true|WP_Error
+    {
+        $counts = [(int) $b['adults'], (int) $b['children'], (int) $b['seniors']];
+        $guests = array_sum($counts);
+        $max = (int) get_post_meta($product_id, '_wrb_max_group', true) ?: 99; // Same default as booking.js.
+
+        if (min($counts) < 0 || $guests < 1 || $guests > $max) {
+            return new WP_Error('wrb_party', sprintf(
+                /* translators: %d: maximum number of guests */
+                __('Please choose between 1 and %d guests.', 'wr-bookings'),
+                $max
+            ));
+        }
+        if ((int) $b['slot_id'] <= 0) {
+            return new WP_Error('wrb_slot', __('Please choose a departure date.', 'wr-bookings'));
+        }
+
+        // Native slots live in our table, so we can check they belong to this tour and haven't passed.
+        // Bridged engines own their slot IDs; their check_capacity() is the source of truth.
+        if (wrb_engine()->engine_id() === 'native') {
+            $slot = WRB_DB::instance()->get_slot((int) $b['slot_id']);
+            if (! $slot
+                || (int) $slot->product_id !== $product_id
+                || $slot->status !== 'active'
+                || $slot->slot_date < current_time('Y-m-d')) {
+                return new WP_Error('wrb_slot', __('That departure is no longer available.', 'wr-bookings'));
+            }
+        }
+
+        return wrb_engine()->check_capacity((int) $b['slot_id'], max(0, $guests - $held));
+    }
+
+    /**
+     * Seats on a slot held by this shopper's unpaid order (classic `order_awaiting_payment` or the
+     * block checkout's draft order). A payment retry must not be blocked by its own earlier attempt.
+     */
+    private static function seats_held_by_session(int $slot_id): int
+    {
+        if (! WC()->session) {
+            return 0;
+        }
+        $order_ids = array_unique(array_filter([
+            (int) WC()->session->get('order_awaiting_payment'),
+            (int) WC()->session->get('store_api_draft_order'),
+        ]));
+        $held = 0;
+        foreach ($order_ids as $order_id) {
+            foreach (wrb_engine()->get_bookings(['order_id' => $order_id, 'slot_id' => $slot_id]) as $booking) {
+                if (in_array($booking->status, ['pending', 'confirmed'], true)) {
+                    $held += (int) $booking->adults + (int) $booking->children + (int) $booking->seniors;
+                }
+            }
+        }
+
+        return $held;
     }
 
     /* ── Cart data ───────────────────────────────────────────────────────── */
 
     /**
      * Capture booking parameters passed by the booking widget.
-     * Expected POST keys: wrb_slot_id, wrb_adults, wrb_children, wrb_seniors.
+     * Expected request keys: wrb_slot_id, wrb_adults, wrb_children, wrb_seniors, wrb_special_requests.
+     *
+     * @throws Exception When the booking is invalid; WC_Cart::add_to_cart() shows the message and adds nothing.
      */
     public function add_cart_item_data(array $cart_item_data, int $product_id, int $variation_id): array
     {
         if (! WRB_Product_Meta::is_bookable($product_id)) {
             return $cart_item_data;
         }
-        $slot_id = (int) ($_REQUEST['wrb_slot_id'] ?? 0);
-        $adults = (int) ($_REQUEST['wrb_adults'] ?? 1);
-        $children = (int) ($_REQUEST['wrb_children'] ?? 0);
-        $seniors = (int) ($_REQUEST['wrb_seniors'] ?? 0);
-        $requests = sanitize_textarea_field($_REQUEST['wrb_special_requests'] ?? '');
-
-        if ($slot_id <= 0 && ! isset($_REQUEST['wrb_skip_slot'])) {
-            return $cart_item_data;
+        $b = self::read_booking_request();
+        // Validate here too, so booking data can never be attached without passing the rules.
+        $check = self::validate_booking($product_id, $b);
+        if (is_wp_error($check)) {
+            throw new Exception(esc_html($check->get_error_message()));
         }
+        $slot_id = $b['slot_id'];
+        $adults = $b['adults'];
+        $children = $b['children'];
+        $seniors = $b['seniors'];
+        $requests = $b['requests'];
 
-        $slot = $slot_id > 0 ? WRB_DB::instance()->get_slot($slot_id) : null;
+        $slot = WRB_DB::instance()->get_slot($slot_id);
 
         $pricing = WRB_Product_Meta::get_pricing($product_id);
         $full_total = ($adults * $pricing['adult'])
@@ -118,7 +214,8 @@ final class WRB_Cart
             if (empty($item['hgb'])) {
                 continue;
             }
-            $item['data']->set_price($item['hgb']['charge_now']);
+            // Backstop: a booking line can never lower the cart total.
+            $item['data']->set_price(max(0.0, (float) $item['hgb']['charge_now']));
             // Force quantity 1 — the party count is encoded in the booking data.
             $item['data']->set_sold_individually(true);
         }
@@ -186,19 +283,11 @@ final class WRB_Cart
 
     public function validate_add_to_cart(bool $passed, int $product_id, int $qty): bool
     {
-        if (! WRB_Product_Meta::is_bookable($product_id)) {
+        if (! $passed || ! WRB_Product_Meta::is_bookable($product_id)) {
             return $passed;
         }
-        $slot_id = (int) ($_REQUEST['wrb_slot_id'] ?? 0);
-        if ($slot_id <= 0) {
-            return $passed; // widget not invoked — let through
-        }
-        $adults = (int) ($_REQUEST['wrb_adults'] ?? 1);
-        $children = (int) ($_REQUEST['wrb_children'] ?? 0);
-        $seniors = (int) ($_REQUEST['wrb_seniors'] ?? 0);
-        $total = $adults + $children + $seniors;
-
-        $check = wrb_engine()->check_capacity($slot_id, $total);
+        // A bookable product always needs a valid slot and party; there is no slot-less path.
+        $check = self::validate_booking($product_id, self::read_booking_request());
         if (is_wp_error($check)) {
             wc_add_notice($check->get_error_message(), 'error');
 
@@ -213,7 +302,7 @@ final class WRB_Cart
         if (! $passed) {
             return false;
         }
-        $new_slot = (int) ($_REQUEST['wrb_slot_id'] ?? 0);
+        $new_slot = self::read_booking_request()['slot_id'];
         if (! $new_slot) {
             return $passed;
         }
@@ -229,6 +318,52 @@ final class WRB_Cart
         }
 
         return $passed;
+    }
+
+    /**
+     * Re-check bookings before payment: seats may have sold out, or the date passed, while the item sat in the cart.
+     * WooCommerce blocks checkout while an error notice is present (classic and Store API).
+     */
+    public function revalidate_cart(): void
+    {
+        if (! WC()->cart) {
+            return;
+        }
+        foreach (WC()->cart->get_cart() as $item) {
+            $product_id = (int) $item['product_id'];
+            if (! WRB_Product_Meta::is_bookable($product_id)) {
+                continue;
+            }
+            $b = $item['hgb'] ?? null;
+            $check = $b === null
+                ? new WP_Error('wrb_slot', __('Please choose a departure date.', 'wr-bookings'))
+                : self::validate_booking($product_id, $b, self::seats_held_by_session((int) $b['slot_id']));
+            if (is_wp_error($check)) {
+                wc_add_notice(sprintf(
+                    /* translators: 1: tour name, 2: reason */
+                    __('%1$s: %2$s Please remove it from your cart and book again.', 'wr-bookings'),
+                    esc_html($item['data']->get_name()),
+                    esc_html($check->get_error_message())
+                ), 'error');
+            }
+        }
+    }
+
+    /* ── Shop/archive buttons ────────────────────────────────────────────── */
+
+    public function loop_button_url(string $url, WC_Product $product): string
+    {
+        return WRB_Product_Meta::is_bookable($product->get_id()) ? $product->get_permalink() : $url;
+    }
+
+    public function loop_button_text(string $text, WC_Product $product): string
+    {
+        return WRB_Product_Meta::is_bookable($product->get_id()) ? __('Choose a date', 'wr-bookings') : $text;
+    }
+
+    public function loop_button_no_ajax(bool $supports, string $feature, WC_Product $product): bool
+    {
+        return $feature === 'ajax_add_to_cart' && WRB_Product_Meta::is_bookable($product->get_id()) ? false : $supports;
     }
 
     /* ── Order item meta ─────────────────────────────────────────────────── */
@@ -258,23 +393,30 @@ final class WRB_Cart
     {
         check_ajax_referer('wrb_ajax', 'nonce');
 
-        $product_id = (int) ($_POST['product_id'] ?? 0);
-        $slot_id = (int) ($_POST['slot_id'] ?? 0);
-        $adults = max(0, (int) ($_POST['adults'] ?? 1));
-        $children = max(0, (int) ($_POST['children'] ?? 0));
-        $seniors = max(0, (int) ($_POST['seniors'] ?? 0));
-        $requests = sanitize_textarea_field($_POST['special_requests'] ?? '');
-
-        if (! $product_id || ($adults + $children + $seniors) < 1) {
+        $product_id = absint(wp_unslash($_POST['product_id'] ?? 0));
+        if (! $product_id) {
             wp_send_json_error(['message' => __('Invalid booking data.', 'wr-bookings')]);
         }
 
-        // Inject into $_REQUEST so woocommerce_add_cart_item_data picks it up.
-        $_REQUEST['wrb_slot_id'] = $slot_id;
-        $_REQUEST['wrb_adults'] = $adults;
-        $_REQUEST['wrb_children'] = $children;
-        $_REQUEST['wrb_seniors'] = $seniors;
-        $_REQUEST['wrb_special_requests'] = $requests;
+        // Hand the widget's fields to the same reader the classic add-to-cart uses, so there's one place
+        // that sanitizes them (read_booking_request) and one set of rules (validate_booking).
+        $fields = ['slot_id' => 'wrb_slot_id', 'adults' => 'wrb_adults', 'children' => 'wrb_children',
+            'seniors' => 'wrb_seniors', 'special_requests' => 'wrb_special_requests'];
+        foreach ($fields as $from => $to) {
+            unset($_REQUEST[$to]);
+            if (isset($_POST[$from])) {
+                $_REQUEST[$to] = $_POST[$from]; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- sanitized in read_booking_request().
+            }
+        }
+
+        // WC_Cart::add_to_cart() doesn't run this filter itself (only WooCommerce's form/AJAX handlers do),
+        // so run it here: capacity, slot and party-size rules plus the duplicate-slot check.
+        if (! apply_filters('woocommerce_add_to_cart_validation', true, $product_id, 1)) {
+            $notices = array_merge(wc_get_notices('error'), wc_get_notices('notice')); // Duplicate-slot uses 'notice'.
+            wc_clear_notices();
+            wp_send_json_error(['message' => $notices ? wp_strip_all_tags($notices[0]['notice'])
+                : __('Could not add to cart. Please try again.', 'wr-bookings')]);
+        }
 
         $ok = WC()->cart->add_to_cart($product_id, 1);
 

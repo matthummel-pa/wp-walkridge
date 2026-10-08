@@ -25,8 +25,17 @@ final class WRB_Emails
         add_action('woocommerce_email_after_order_table', [$this, 'email_booking_details'], 10, 4);
     }
 
-    public function email_booking_details(WC_Order $order, bool $sent_to_admin, bool $plain_text, WC_Email $email): void
+    /**
+     * Loose types on purpose: some email/PDF/subscription plugins fire this hook with $email = '' or null,
+     * and a strict signature would fatal and stop the order email from sending.
+     */
+    public function email_booking_details($order, $sent_to_admin = false, $plain_text = false, $email = null): void
     {
+        if (! $order instanceof WC_Order) {
+            return;
+        }
+        $sent_to_admin = (bool) $sent_to_admin;
+        $plain_text = (bool) $plain_text;
         $tickets = [];
         foreach ($order->get_items() as $item) {
             $ticket = (string) $item->get_meta('_wrb_ticket_number', true);

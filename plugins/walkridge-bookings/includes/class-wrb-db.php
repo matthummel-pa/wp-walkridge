@@ -307,9 +307,11 @@ final class WRB_DB
             $guests = (int) $booking->adults + (int) $booking->children + (int) $booking->seniors;
             $old = $booking->status;
             $new = $data['status'];
-            if ($new === 'cancelled' && $old !== 'cancelled' && (int) $booking->slot_id > 0) {
+            // A failed payment frees its seats too; otherwise a declined card holds them forever.
+            $released = ['cancelled', 'failed'];
+            if (in_array($new, $released, true) && ! in_array($old, $released, true) && (int) $booking->slot_id > 0) {
                 $this->adjust_booked((int) $booking->slot_id, -$guests);
-            } elseif ($old === 'cancelled' && in_array($new, ['confirmed', 'pending'], true) && (int) $booking->slot_id > 0) {
+            } elseif (in_array($old, $released, true) && in_array($new, ['confirmed', 'pending'], true) && (int) $booking->slot_id > 0) {
                 $this->adjust_booked((int) $booking->slot_id, $guests);
             }
         }
