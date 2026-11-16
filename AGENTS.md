@@ -6,16 +6,20 @@ Buyer-facing pitch: [`README.md`](README.md). Support (install, Theme Settings, 
 
 ## Cursor Cloud
 
+Standards come from the Cursor playbook plugin (matthummel-pa/ai-dev-standards-playbook). Do not copy those rules into this repo. When a playbook rule and a project rule disagree, follow this file for the text domain, local commands, target size, and deploy.
+
+The Build runs the playbook `cloud-install.sh` (PHP, Composer, WP-CLI), then this repo's `bin/setup-wp.sh`. Node is already on the image.
+
 This repository is only the **theme** (`wp-content/themes/walkridge`). WordPress core is not in the repo.
 
 ### System prerequisites (VM snapshot)
 
 PHP 8.3+ (`mbstring xml curl zip gd intl sqlite3 bcmath`), Composer 2, WP-CLI (`wp`), Node 20+/22+. If those are missing on a new machine, `bin/setup-wp.sh` runs `bin/install-php-tools.sh` once.
 
-Cloud `install` should be:
+Cloud `install` is `.cursor/environment.json`:
 
 ```bash
-bin/setup-wp.sh
+curl -fsSL https://raw.githubusercontent.com/matthummel-pa/ai-dev-standards-playbook/20954e12d0f08dc21a14b3dc2fd0e3fc0e1a392d/scripts/cloud-install.sh | bash && bin/setup-wp.sh
 ```
 
 Cloud `start` should be:
